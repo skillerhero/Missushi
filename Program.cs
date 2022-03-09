@@ -1,3 +1,5 @@
+using Missushi.Funciones;
+
 namespace Missushi
 {
     internal static class Program
@@ -11,7 +13,9 @@ namespace Missushi
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            ConexionBD connection = new ConexionBD();
             Application.Run(new FormMain());
+            
         }
     }
 }
