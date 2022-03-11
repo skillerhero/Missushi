@@ -1,35 +1,18 @@
 ﻿using Missushi.Funciones;
-using MySqlConnector;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Missushi.Forms
-{
-    public partial class FormRegistro : Form
-    {
-        private MySqlConnection connection;
 
-        public FormRegistro()
-        {
+namespace Missushi.Forms{
+    public partial class FormRegistro : Form{
+        public FormRegistro(){
             InitializeComponent();
             cbTipo.Items.Add("Cliente");
             cbTipo.Items.Add("Administrador");
             cbTipo.Items.Add("Gerente");
             cbTipo.Text = cbTipo.Items[0].ToString();
-
-            connection = ConexionBD.connection;
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            String nombres = txtNombres.Text, apellidos = txtApellidos.Text, contraseña = txtContraseña.Text, correo = txtCorreo.Text;
+        private void btnRegistrar_Click(object sender, EventArgs e){
+            String nombres = Validacion.ajustarEspacios(txtNombres.Text.Trim()), apellidos = Validacion.ajustarEspacios(txtApellidos.Text.Trim()), contraseña = txtContraseña.Text.Trim(), correo = txtCorreo.Text.Trim();
             char tipo=' ';
             switch (cbTipo.SelectedIndex) {
                 case 0:
@@ -43,25 +26,46 @@ namespace Missushi.Forms
                     break;
             }
 
-            try{
-                connection.Open();
-                string sql = "INSERT INTO usuario(nombres, apellidos, contrasenia, correo, tipo) VALUES(@0,@1,@2, @3, @4)";
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.Add("@0", MySqlDbType.VarChar, 80).Value = nombres;
-                cmd.Parameters.Add("@1", MySqlDbType.VarChar, 80).Value = apellidos;
-                cmd.Parameters.Add("@2", MySqlDbType.VarChar, 50).Value = contraseña;
-                cmd.Parameters.Add("@3", MySqlDbType.VarChar, 50).Value = correo;
-                cmd.Parameters.Add("@4", MySqlDbType.VarChar, 1).Value = tipo;
-                cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
-                connection.Close();
-                MessageBox.Show("Éxito", "Missushi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            if(!Validacion.esAlfabetico(nombres)){
+                MessageBox.Show("El nombre contiene caracteres no válidos.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }else if (Validacion.esMenor(nombres, 3)) {
+                MessageBox.Show("El nombre es demasiado corto.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            catch(Exception ex) {
-                MessageBox.Show(ex.Message, "Missushi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!Validacion.esAlfabetico(apellidos)){
+                MessageBox.Show("Los apellidos contienen caracteres no válidos.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            } else if (Validacion.esMenor(apellidos, 8)) {
+                MessageBox.Show("Los apellidos son demasiado cortos.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (Validacion.esMenor(contraseña, 7)) {
+                MessageBox.Show("La contraseña es demasiado corta.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!Validacion.validarCorreo(correo)) {
+                MessageBox.Show("El correo no es válido.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            } else if (Validacion.esMenor(correo, 5)) {
+                MessageBox.Show("El correo es demasiado corto.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             
+
+            try {
+                if(ConexionBD.insertarUsuario(nombres, apellidos, Validacion.encriptar(contraseña), correo, tipo)){
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void FormRegistro_FormClosing(object sender, FormClosingEventArgs e){
+            ConexionBD.connection.Close();
         }
     }
 }

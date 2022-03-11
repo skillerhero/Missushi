@@ -28,30 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHelloWorld = new System.Windows.Forms.Button();
-            this.lblHelloWorld = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            this.btnRegistro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnHelloWorld
+            // lblInfo
             // 
-            this.btnHelloWorld.Location = new System.Drawing.Point(389, 377);
-            this.btnHelloWorld.Name = "btnHelloWorld";
-            this.btnHelloWorld.Size = new System.Drawing.Size(75, 23);
-            this.btnHelloWorld.TabIndex = 0;
-            this.btnHelloWorld.Text = "Hola";
-            this.btnHelloWorld.UseVisualStyleBackColor = true;
-            this.btnHelloWorld.Click += new System.EventHandler(this.btnHelloWorld_Click);
-            // 
-            // lblHelloWorld
-            // 
-            this.lblHelloWorld.AutoSize = true;
-            this.lblHelloWorld.Location = new System.Drawing.Point(377, 84);
-            this.lblHelloWorld.Name = "lblHelloWorld";
-            this.lblHelloWorld.Size = new System.Drawing.Size(38, 15);
-            this.lblHelloWorld.TabIndex = 1;
-            this.lblHelloWorld.Text = "label1";
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Location = new System.Drawing.Point(377, 84);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(31, 15);
+            this.lblInfo.TabIndex = 1;
+            this.lblInfo.Text = "Info.";
+            this.lblInfo.Visible = false;
             // 
             // dgUsuarios
             // 
@@ -62,16 +53,27 @@
             this.dgUsuarios.Size = new System.Drawing.Size(745, 150);
             this.dgUsuarios.TabIndex = 2;
             // 
+            // btnRegistro
+            // 
+            this.btnRegistro.Location = new System.Drawing.Point(380, 358);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistro.TabIndex = 3;
+            this.btnRegistro.Text = "Registro";
+            this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistroClick);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.dgUsuarios);
-            this.Controls.Add(this.lblHelloWorld);
-            this.Controls.Add(this.btnHelloWorld);
+            this.Controls.Add(this.lblInfo);
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -80,8 +82,9 @@
 
         #endregion
 
-        private Button btnHelloWorld;
-        private Label lblHelloWorld;
+
+        private Label lblInfo;
         private DataGridView dgUsuarios;
+        private Button btnRegistro;
     }
 }
