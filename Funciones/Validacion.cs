@@ -1,14 +1,9 @@
-﻿using System;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Missushi.Funciones{
     static internal class Validacion{
-
-        private static byte[] key = new byte[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
-        private static byte[] iv = new byte[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
-
         public static bool validarCorreo(string correo){
                 var correoFormateado = correo.Trim();
                 if (correoFormateado.EndsWith(".")){
@@ -41,6 +36,8 @@ namespace Missushi.Funciones{
         }
 
         public static string encriptar(string cadena) {
+            byte[] key = new byte[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
+            byte[] iv = new byte[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
             SymmetricAlgorithm algorithm = DES.Create();
             ICryptoTransform transform = algorithm.CreateEncryptor(key, iv);
             byte[] inputbuffer = Encoding.Unicode.GetBytes(cadena);
