@@ -38,7 +38,7 @@
             this.btnIngresar.Location = new System.Drawing.Point(251, 199);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 0;
+            this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -49,7 +49,7 @@
             this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 23);
-            this.txtCorreo.TabIndex = 1;
+            this.txtCorreo.TabIndex = 0;
             // 
             // txtContraseña
             // 
@@ -57,7 +57,7 @@
             this.txtContraseña.MaxLength = 50;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 23);
-            this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.TabIndex = 1;
             this.txtContraseña.UseSystemPasswordChar = true;
             // 
             // FormLogin

@@ -38,6 +38,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblNombreGerente = new System.Windows.Forms.Label();
             this.txtFotoPrincipal = new System.Windows.Forms.TextBox();
+            this.txtNombreGerente = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -55,7 +56,7 @@
             this.lblDescripcion.Location = new System.Drawing.Point(59, 135);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(69, 15);
-            this.lblDescripcion.TabIndex = 1;
+            this.lblDescripcion.TabIndex = 0;
             this.lblDescripcion.Text = "Descripción";
             // 
             // lblLatitud
@@ -64,7 +65,7 @@
             this.lblLatitud.Location = new System.Drawing.Point(59, 183);
             this.lblLatitud.Name = "lblLatitud";
             this.lblLatitud.Size = new System.Drawing.Size(44, 15);
-            this.lblLatitud.TabIndex = 2;
+            this.lblLatitud.TabIndex = 0;
             this.lblLatitud.Text = "Latitud";
             // 
             // lblLongitud
@@ -73,7 +74,7 @@
             this.lblLongitud.Location = new System.Drawing.Point(59, 233);
             this.lblLongitud.Name = "lblLongitud";
             this.lblLongitud.Size = new System.Drawing.Size(55, 15);
-            this.lblLongitud.TabIndex = 3;
+            this.lblLongitud.TabIndex = 0;
             this.lblLongitud.Text = "Longitud";
             // 
             // lblFotoPrincipal
@@ -82,7 +83,7 @@
             this.lblFotoPrincipal.Location = new System.Drawing.Point(48, 282);
             this.lblFotoPrincipal.Name = "lblFotoPrincipal";
             this.lblFotoPrincipal.Size = new System.Drawing.Size(80, 15);
-            this.lblFotoPrincipal.TabIndex = 4;
+            this.lblFotoPrincipal.TabIndex = 0;
             this.lblFotoPrincipal.Text = "Foto Principal";
             // 
             // lblIdGerente
@@ -91,43 +92,49 @@
             this.lblIdGerente.Location = new System.Drawing.Point(59, 326);
             this.lblIdGerente.Name = "lblIdGerente";
             this.lblIdGerente.Size = new System.Drawing.Size(60, 15);
-            this.lblIdGerente.TabIndex = 5;
+            this.lblIdGerente.TabIndex = 0;
             this.lblIdGerente.Text = "Id gerente";
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(155, 87);
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 23);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(155, 127);
+            this.txtDescripcion.MaxLength = 500;
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 23);
-            this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.Size = new System.Drawing.Size(351, 42);
+            this.txtDescripcion.TabIndex = 1;
             // 
             // txtLatitud
             // 
             this.txtLatitud.Location = new System.Drawing.Point(155, 175);
+            this.txtLatitud.MaxLength = 100;
             this.txtLatitud.Name = "txtLatitud";
             this.txtLatitud.Size = new System.Drawing.Size(100, 23);
-            this.txtLatitud.TabIndex = 8;
+            this.txtLatitud.TabIndex = 2;
             // 
             // txtLongitud
             // 
             this.txtLongitud.Location = new System.Drawing.Point(155, 225);
+            this.txtLongitud.MaxLength = 100;
             this.txtLongitud.Name = "txtLongitud";
             this.txtLongitud.Size = new System.Drawing.Size(100, 23);
-            this.txtLongitud.TabIndex = 9;
+            this.txtLongitud.TabIndex = 3;
             // 
             // txtIdGerente
             // 
+            this.txtIdGerente.Enabled = false;
             this.txtIdGerente.Location = new System.Drawing.Point(155, 326);
             this.txtIdGerente.Name = "txtIdGerente";
             this.txtIdGerente.Size = new System.Drawing.Size(100, 23);
-            this.txtIdGerente.TabIndex = 11;
+            this.txtIdGerente.TabIndex = 5;
             // 
             // lblInfo
             // 
@@ -143,7 +150,7 @@
             this.btnModificar.Location = new System.Drawing.Point(365, 395);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 13;
+            this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -151,24 +158,33 @@
             // lblNombreGerente
             // 
             this.lblNombreGerente.AutoSize = true;
-            this.lblNombreGerente.Location = new System.Drawing.Point(298, 334);
+            this.lblNombreGerente.Location = new System.Drawing.Point(291, 329);
             this.lblNombreGerente.Name = "lblNombreGerente";
-            this.lblNombreGerente.Size = new System.Drawing.Size(57, 15);
+            this.lblNombreGerente.Size = new System.Drawing.Size(100, 15);
             this.lblNombreGerente.TabIndex = 14;
-            this.lblNombreGerente.Text = "Nombre: ";
+            this.lblNombreGerente.Text = "Nombre gerente: ";
             // 
             // txtFotoPrincipal
             // 
             this.txtFotoPrincipal.Location = new System.Drawing.Point(155, 279);
             this.txtFotoPrincipal.Name = "txtFotoPrincipal";
             this.txtFotoPrincipal.Size = new System.Drawing.Size(100, 23);
-            this.txtFotoPrincipal.TabIndex = 15;
+            this.txtFotoPrincipal.TabIndex = 4;
+            // 
+            // txtNombreGerente
+            // 
+            this.txtNombreGerente.Enabled = false;
+            this.txtNombreGerente.Location = new System.Drawing.Point(397, 326);
+            this.txtNombreGerente.Name = "txtNombreGerente";
+            this.txtNombreGerente.Size = new System.Drawing.Size(160, 23);
+            this.txtNombreGerente.TabIndex = 15;
             // 
             // FormModificarInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtNombreGerente);
             this.Controls.Add(this.txtFotoPrincipal);
             this.Controls.Add(this.lblNombreGerente);
             this.Controls.Add(this.btnModificar);
@@ -209,5 +225,6 @@
         private Button btnModificar;
         private Label lblNombreGerente;
         private TextBox txtFotoPrincipal;
+        private TextBox txtNombreGerente;
     }
 }

@@ -60,6 +60,7 @@ namespace Missushi.Forms{
                     return;
                 }
                 if(ConexionBD.insertarUsuario(nombres, apellidos, Validacion.encriptar(contraseña), correo, tipo)){
+
                     this.DialogResult = DialogResult.OK;
                 }
             }catch(Exception ex) {

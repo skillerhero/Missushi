@@ -41,7 +41,7 @@
             this.lblInfo.Location = new System.Drawing.Point(377, 84);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(31, 15);
-            this.lblInfo.TabIndex = 1;
+            this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "Info.";
             this.lblInfo.Visible = false;
             // 
@@ -52,14 +52,14 @@
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.RowTemplate.Height = 25;
             this.dgUsuarios.Size = new System.Drawing.Size(745, 150);
-            this.dgUsuarios.TabIndex = 2;
+            this.dgUsuarios.TabIndex = 3;
             // 
             // btnRegistro
             // 
             this.btnRegistro.Location = new System.Drawing.Point(380, 358);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistro.TabIndex = 3;
+            this.btnRegistro.TabIndex = 1;
             this.btnRegistro.Text = "Registro";
             this.btnRegistro.UseVisualStyleBackColor = true;
             this.btnRegistro.Click += new System.EventHandler(this.btnRegistroClick);
@@ -69,7 +69,7 @@
             this.btnLogin.Location = new System.Drawing.Point(140, 361);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);

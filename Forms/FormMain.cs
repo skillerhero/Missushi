@@ -3,6 +3,8 @@ using Missushi.Funciones;
 using MySqlConnector;
 using System.Data;
 using Missushi.Clases;
+using Missushi.Forms.Gerente;
+
 namespace Missushi
 {
     public partial class FormMain : Form
@@ -53,7 +55,9 @@ namespace Missushi
                     formMainAdministrador.Closed += (s, args) => this.Show();
                     formMainAdministrador.Show();
                 }else if (Usuario.type == 'G') {
-                   
+                   FormMainGerente formMainGerente = new FormMainGerente();
+                    formMainGerente.Closed += (s, args) => this.Show();
+                    formMainGerente.Show();
                 }
             }
             

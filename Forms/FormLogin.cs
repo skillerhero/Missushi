@@ -21,10 +21,10 @@ namespace Missushi.Forms
                 }
                 if (ConexionBD.login(correo, contraseña)) {
                     this.DialogResult = DialogResult.OK;
-                    MessageBox.Show("Exito");
+                    MessageBox.Show("Bienvenido/a");
                 } else {
                     this.DialogResult = DialogResult.No;
-                    MessageBox.Show("Incorrecto");
+                    MessageBox.Show("Correo o contraseña incorrectos.");
                 }
             } catch (Exception ex) { 
                 MessageBox.Show(ex.Message);
