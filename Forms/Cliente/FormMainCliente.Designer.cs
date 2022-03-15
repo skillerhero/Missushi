@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.label1 = new System.Windows.Forms.Label();
+            this.btnHacerReservacion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -35,11 +36,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
+            // btnHacerReservacion
+            // 
+            this.btnHacerReservacion.Location = new System.Drawing.Point(225, 258);
+            this.btnHacerReservacion.Name = "btnHacerReservacion";
+            this.btnHacerReservacion.Size = new System.Drawing.Size(193, 23);
+            this.btnHacerReservacion.TabIndex = 1;
+            this.btnHacerReservacion.Text = "Hacer Reservación";
+            this.btnHacerReservacion.UseVisualStyleBackColor = true;
+            this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
+            // 
             // FormMainCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnHacerReservacion);
             this.Controls.Add(this.label1);
             this.Name = "FormMainCliente";
             this.Text = "FormMainCliente";
@@ -52,5 +64,6 @@
         #endregion
 
         private Label label1;
+        private Button btnHacerReservacion;
     }
 }

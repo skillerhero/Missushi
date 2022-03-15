@@ -15,13 +15,17 @@ namespace Missushi.Forms.Gerente {
         }
 
         private void btnModificarInfo_Click(object sender, EventArgs e) {
-            try {
-                FormModificarInfo formModificarInfo = new FormModificarInfo();
-                formModificarInfo.ShowDialog();
-            } catch (Exception ex) { 
-                MessageBox.Show(ex.Message);
-            }
+            FormModificarInfo formModificarInfo = new FormModificarInfo();
+            formModificarInfo.ShowDialog();
+        }
 
+        private void btnModificarZona_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnAgregarZona_Click(object sender, EventArgs e) {
+            FormAgregarZona formAgregarZona = new FormAgregarZona();
+            formAgregarZona.ShowDialog();
         }
     }
 }

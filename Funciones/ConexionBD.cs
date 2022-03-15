@@ -180,5 +180,17 @@ namespace Missushi.Funciones{
             ConexionBD.connection.Close();
             return restaurante;
         }
+
+        static public bool agregarZona(int cupo, string foto) {
+            ConexionBD.connection.Open();
+            string sql = "INSERT INTO zona(cupo, foto) VALUES(@0, @1);";
+            MySqlCommand cmd = new MySqlCommand(sql, ConexionBD.connection);
+            cmd.Parameters.Add("@0", MySqlDbType.Int64).Value = cupo;
+            cmd.Parameters.Add("@1", MySqlDbType.String).Value = foto;
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            ConexionBD.connection.Close();
+            return true;
+        }
     }  
 }
