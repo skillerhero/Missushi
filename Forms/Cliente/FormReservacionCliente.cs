@@ -19,7 +19,20 @@ namespace Missushi.Forms.Cliente {
         }
 
         private void FormReservacionCliente_Load(object sender, EventArgs e) {
+            var horarios = new[] {
+                 new { Text = "08:00-11:00", Value = 0 },
+                 new { Text = "14:00-17:00", Value = 1 },
+                 new { Text = "17:00-20:00", Value = 2 },
+                 new { Text = "20:00-23:00", Value = 3 }
+            };
+            cbHoraInicio.DisplayMember = "Text";
+            cbHoraInicio.ValueMember = "Value";
+            cbHoraInicio.DataSource = horarios;
+        }
 
+        private void btnElegirZona_Click(object sender, EventArgs e) {
+            FormElegirZona formElegirZona = new FormElegirZona();
+            formElegirZona.ShowDialog();
         }
     }
 }
