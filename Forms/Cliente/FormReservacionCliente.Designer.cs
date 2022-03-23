@@ -39,7 +39,7 @@
             this.btnHacerReservacion.Location = new System.Drawing.Point(297, 361);
             this.btnHacerReservacion.Name = "btnHacerReservacion";
             this.btnHacerReservacion.Size = new System.Drawing.Size(205, 23);
-            this.btnHacerReservacion.TabIndex = 0;
+            this.btnHacerReservacion.TabIndex = 4;
             this.btnHacerReservacion.Text = "Hacer reservación";
             this.btnHacerReservacion.UseVisualStyleBackColor = true;
             this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
@@ -49,7 +49,7 @@
             this.dpFechaInicio.Location = new System.Drawing.Point(190, 142);
             this.dpFechaInicio.Name = "dpFechaInicio";
             this.dpFechaInicio.Size = new System.Drawing.Size(227, 23);
-            this.dpFechaInicio.TabIndex = 1;
+            this.dpFechaInicio.TabIndex = 0;
             // 
             // cbHoraInicio
             // 
@@ -57,14 +57,25 @@
             this.cbHoraInicio.Location = new System.Drawing.Point(437, 142);
             this.cbHoraInicio.Name = "cbHoraInicio";
             this.cbHoraInicio.Size = new System.Drawing.Size(121, 23);
-            this.cbHoraInicio.TabIndex = 4;
+            this.cbHoraInicio.TabIndex = 1;
             // 
             // nudCantidadPersonas
             // 
             this.nudCantidadPersonas.Location = new System.Drawing.Point(297, 199);
+            this.nudCantidadPersonas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudCantidadPersonas.Name = "nudCantidadPersonas";
             this.nudCantidadPersonas.Size = new System.Drawing.Size(120, 23);
-            this.nudCantidadPersonas.TabIndex = 5;
+            this.nudCantidadPersonas.TabIndex = 2;
+            this.nudCantidadPersonas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudCantidadPersonas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblFechaYHora
             // 
@@ -72,7 +83,7 @@
             this.lblFechaYHora.Location = new System.Drawing.Point(99, 145);
             this.lblFechaYHora.Name = "lblFechaYHora";
             this.lblFechaYHora.Size = new System.Drawing.Size(76, 15);
-            this.lblFechaYHora.TabIndex = 6;
+            this.lblFechaYHora.TabIndex = 0;
             this.lblFechaYHora.Text = "Fecha y Hora";
             // 
             // lblCantidadPersonas
@@ -81,7 +92,7 @@
             this.lblCantidadPersonas.Location = new System.Drawing.Point(99, 207);
             this.lblCantidadPersonas.Name = "lblCantidadPersonas";
             this.lblCantidadPersonas.Size = new System.Drawing.Size(121, 15);
-            this.lblCantidadPersonas.TabIndex = 7;
+            this.lblCantidadPersonas.TabIndex = 0;
             this.lblCantidadPersonas.Text = "Cantidad de personas";
             // 
             // btnElegirZona
@@ -89,7 +100,7 @@
             this.btnElegirZona.Location = new System.Drawing.Point(316, 274);
             this.btnElegirZona.Name = "btnElegirZona";
             this.btnElegirZona.Size = new System.Drawing.Size(75, 23);
-            this.btnElegirZona.TabIndex = 8;
+            this.btnElegirZona.TabIndex = 3;
             this.btnElegirZona.Text = "Elegir Zona";
             this.btnElegirZona.UseVisualStyleBackColor = true;
             this.btnElegirZona.Click += new System.EventHandler(this.btnElegirZona_Click);
@@ -100,7 +111,7 @@
             this.lblZona.Location = new System.Drawing.Point(141, 278);
             this.lblZona.Name = "lblZona";
             this.lblZona.Size = new System.Drawing.Size(34, 15);
-            this.lblZona.TabIndex = 9;
+            this.lblZona.TabIndex = 0;
             this.lblZona.Text = "Zona";
             // 
             // FormReservacionCliente
@@ -117,6 +128,7 @@
             this.Controls.Add(this.dpFechaInicio);
             this.Controls.Add(this.btnHacerReservacion);
             this.Name = "FormReservacionCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReservacionCliente";
             this.Load += new System.EventHandler(this.FormReservacionCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadPersonas)).EndInit();

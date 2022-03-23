@@ -42,6 +42,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Name = "FormMainAdministrador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMainAdministrador";
             this.Load += new System.EventHandler(this.FormMainAdministrador_Load);
             this.ResumeLayout(false);

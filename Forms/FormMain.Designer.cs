@@ -84,6 +84,7 @@
             this.Controls.Add(this.dgUsuarios);
             this.Controls.Add(this.lblInfo);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMain";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();

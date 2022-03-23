@@ -201,6 +201,7 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
             this.Name = "FormModificarInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormModificarInfo";
             this.Load += new System.EventHandler(this.FormModificarInfo_Load);
             this.ResumeLayout(false);

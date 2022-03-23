@@ -154,6 +154,7 @@
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.lblNombres);
             this.Name = "FormRegistro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegistro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegistro_FormClosing);
             this.ResumeLayout(false);

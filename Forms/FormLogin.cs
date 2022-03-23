@@ -23,7 +23,6 @@ namespace Missushi.Forms
                     this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Bienvenido/a");
                 } else {
-                    this.DialogResult = DialogResult.No;
                     MessageBox.Show("Correo o contraseña incorrectos.");
                 }
             } catch (Exception ex) { 

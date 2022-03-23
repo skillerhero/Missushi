@@ -67,6 +67,7 @@
             this.Controls.Add(this.btnModificarInfo);
             this.Controls.Add(this.btnModificarZona);
             this.Name = "FormMainGerente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMainGrerente";
             this.ResumeLayout(false);
 

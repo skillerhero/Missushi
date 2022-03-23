@@ -180,13 +180,44 @@ namespace Missushi.Funciones{
             ConexionBD.connection.Close();
             return restaurante;
         }
-
+        /*-----------------------------------------Zona-----------------------------------------*/
         static public bool agregarZona(int cupo, string foto) {
             ConexionBD.connection.Open();
             string sql = "INSERT INTO zona(cupo, foto) VALUES(@0, @1);";
             MySqlCommand cmd = new MySqlCommand(sql, ConexionBD.connection);
             cmd.Parameters.Add("@0", MySqlDbType.Int64).Value = cupo;
             cmd.Parameters.Add("@1", MySqlDbType.String).Value = foto;
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            ConexionBD.connection.Close();
+            return true;
+        }
+
+        static public List<Zona> consultarZonas() {
+            List<Zona> zonas = new List<Zona>();
+            ConexionBD.connection.Open();
+            String query = "SELECT * FROM zona;";
+            MySqlCommand cmd = new MySqlCommand(query, ConexionBD.connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read()) {
+                zonas.Add(new Zona(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2)));
+            }
+            ConexionBD.connection.Close();
+            return zonas;
+        }
+
+
+        /*--------------------------------------Reservacion--------------------------------------*/
+        static public bool agregarReservacion(DateTime fechaHoraInicio, DateTime fechaHoraFin, int cantidadPersonas, int idUsuario, int idZona, string estado) {
+            ConexionBD.connection.Open();
+            string sql = "INSERT INTO reservacion(fechaHoraInicio, fechaHoraFin, cantidadPersonas, idUsuario, idZona, estado) VALUES(@0, @1, @2, @3, @4, @5);";
+            MySqlCommand cmd = new MySqlCommand(sql, ConexionBD.connection);
+            cmd.Parameters.Add("@0", MySqlDbType.DateTime).Value = fechaHoraInicio;
+            cmd.Parameters.Add("@1", MySqlDbType.DateTime).Value = fechaHoraFin;
+            cmd.Parameters.Add("@2", MySqlDbType.Int32).Value = cantidadPersonas;
+            cmd.Parameters.Add("@3", MySqlDbType.Int32).Value = idUsuario;
+            cmd.Parameters.Add("@4", MySqlDbType.Int32).Value = idZona;
+            cmd.Parameters.Add("@5", MySqlDbType.VarChar, 10).Value = estado;
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
             ConexionBD.connection.Close();

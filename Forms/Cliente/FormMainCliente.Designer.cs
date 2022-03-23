@@ -54,6 +54,7 @@
             this.Controls.Add(this.btnHacerReservacion);
             this.Controls.Add(this.label1);
             this.Name = "FormMainCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMainCliente";
             this.Load += new System.EventHandler(this.FormMainCliente_Load);
             this.ResumeLayout(false);

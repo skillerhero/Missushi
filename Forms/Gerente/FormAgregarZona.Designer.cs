@@ -84,6 +84,7 @@
             this.Controls.Add(this.udCupo);
             this.Controls.Add(this.btnAgregarZona);
             this.Name = "FormAgregarZona";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAgregarZona";
             ((System.ComponentModel.ISupportInitialize)(this.udCupo)).EndInit();
             this.ResumeLayout(false);
