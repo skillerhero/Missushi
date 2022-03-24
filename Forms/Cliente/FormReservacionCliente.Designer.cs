@@ -47,6 +47,8 @@
             // dpFechaInicio
             // 
             this.dpFechaInicio.Location = new System.Drawing.Point(190, 142);
+            this.dpFechaInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dpFechaInicio.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dpFechaInicio.Name = "dpFechaInicio";
             this.dpFechaInicio.Size = new System.Drawing.Size(227, 23);
             this.dpFechaInicio.TabIndex = 0;

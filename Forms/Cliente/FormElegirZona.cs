@@ -75,7 +75,6 @@ namespace Missushi.Forms.Cliente {
                     for (int i = 0; i < pictureBoxList.Count; i++) {
                         if (pictureBoxList[i] == pb) {
                             if (e.Clicks == 2) {
-                                MessageBox.Show("Zona seleccionada: " + zonas[i].getIdZona());
                                 Zona.id = zonas[i].getIdZona();
                                 this.DialogResult = DialogResult.OK;
                             }

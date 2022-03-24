@@ -19,32 +19,17 @@ namespace Missushi.Forms.Cliente {
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
             try {
                 DateTime fechaInicio = dpFechaInicio.Value.Date;
-                DateTime fechaFin;
-                TimeSpan time = new TimeSpan();
+                DateTime fechaFin = obtenerFechaFin();
                 int cantidadPersonas = (int)nudCantidadPersonas.Value;
                 int idUsuario = Usuario.id;
                 int idZona = Zona.id;
                 string estado = "En espera";
-                switch (cbHoraInicio.SelectedIndex) {
-                    case 0:
-                        fechaInicio.AddHours(8);
-                        break;
-                    case 1:
-                        fechaInicio.AddHours(11);
-                        break;
-                    case 2:
-                        fechaInicio.AddHours(14);
-                        break;
-                    case 3:
-                        fechaInicio.AddHours(17);
-                        break;
-                    case 4:
-                        fechaInicio.AddHours(20);
-                        break;
+
+                if(cantidadPersonas > ConexionBD.consultarCupoZona(idZona, fechaInicio)) {
+
                 }
-                
-                fechaFin = fechaInicio;
-                fechaFin.AddHours(3);
+
+               
                 ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, idUsuario, idZona, estado);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -62,14 +47,41 @@ namespace Missushi.Forms.Cliente {
             cbHoraInicio.DisplayMember = "Text";
             cbHoraInicio.ValueMember = "Value";
             cbHoraInicio.DataSource = horarios;
+            btnHacerReservacion.Enabled = false;
+            dpFechaInicio.MinDate = DateTime.Today;
         }
-
         private void btnElegirZona_Click(object sender, EventArgs e) {
             FormElegirZona formElegirZona = new FormElegirZona();
             if(formElegirZona.ShowDialog() == DialogResult.OK) {
                 this.btnElegirZona.Text = "Zona " + Zona.id;
                 this.btnHacerReservacion.Focus();
+                btnHacerReservacion.Enabled = true;
             }
+        }
+
+        private DateTime obtenerFechaFin() {
+            DateTime fechaInicio = dpFechaInicio.Value.Date;
+            DateTime fechaFin;
+            switch (cbHoraInicio.SelectedIndex) {
+                case 0:
+                    fechaInicio = fechaInicio.AddHours(8);
+                    break;
+                case 1:
+                    fechaInicio = fechaInicio.AddHours(11);
+                    break;
+                case 2:
+                    fechaInicio = fechaInicio.AddHours(14);
+                    break;
+                case 3:
+                    fechaInicio = fechaInicio.AddHours(17);
+                    break;
+                case 4:
+                    fechaInicio = fechaInicio.AddHours(20);
+                    break;
+            }
+            fechaFin = fechaInicio;
+            fechaFin = fechaFin.AddHours(3);
+            return fechaFin;
         }
 
     }

@@ -28,6 +28,7 @@ namespace Missushi
                 lblInfo.Text = "Sin conexión.";
                 lblInfo.Visible = true;
                 btnRegistro.Enabled = false;
+                btnLogin.Enabled = false;
             }
         }
 
@@ -61,6 +62,10 @@ namespace Missushi
                 }
             }
             
+        }
+
+        private void FormMain_Load(object sender, EventArgs e) {
+
         }
     }
 }

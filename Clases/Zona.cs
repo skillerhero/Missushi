@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Missushi.Clases {
     internal class Zona {
-        public static int id;
+        public static int id = -1;
         private int idZona;
         private int cupo;
         private string foto;

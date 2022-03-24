@@ -206,6 +206,43 @@ namespace Missushi.Funciones{
             return zonas;
         }
 
+        static public int consultarCupoZona(int idZona) {
+            int cupo = 0;
+            string sql = "SELECT cupo FROM zona WHERE idZona = @0;";
+            ConexionBD.connection.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, ConexionBD.connection);
+            cmd.Parameters.AddWithValue("@0", idZona);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read()) {
+                cupo = reader.GetInt32(0);
+            }
+            ConexionBD.connection.Close();
+            return cupo;
+        }
+
+        static public int consultarCupoZona(int idZona, DateTime fechaInicio) {
+            int cupo = 0;
+            string sql = "SELECT cupo FROM zona WHERE idZona = @0;";
+            ConexionBD.connection.Open();
+            MySqlCommand cmd = new MySqlCommand(sql, ConexionBD.connection);
+            cmd.Parameters.AddWithValue("@0", idZona);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read()) {
+                cupo = reader.GetInt32(0);
+            }
+
+            sql = "SELECT SUM(cantidadPersonas) as ocupado from reservacion where idZona = @0 and fechaHoraInicio = @1;";
+            cmd = new MySqlCommand(sql, ConexionBD.connection);
+            cmd.Parameters.AddWithValue("@0", idZona);
+            cmd.Parameters.AddWithValue("@1", fechaInicio);
+            reader = cmd.ExecuteReader();
+            if (reader.Read()) {
+                cupo -= reader.GetInt32(0);
+            }
+            ConexionBD.connection.Close();
+            return cupo;
+        }
+
 
         /*--------------------------------------Reservacion--------------------------------------*/
         static public bool agregarReservacion(DateTime fechaHoraInicio, DateTime fechaHoraFin, int cantidadPersonas, int idUsuario, int idZona, string estado) {
