@@ -63,7 +63,7 @@
             // 
             // nudCantidadPersonas
             // 
-            this.nudCantidadPersonas.Location = new System.Drawing.Point(297, 199);
+            this.nudCantidadPersonas.Location = new System.Drawing.Point(313, 267);
             this.nudCantidadPersonas.Minimum = new decimal(new int[] {
             1,
             0,
@@ -91,7 +91,7 @@
             // lblCantidadPersonas
             // 
             this.lblCantidadPersonas.AutoSize = true;
-            this.lblCantidadPersonas.Location = new System.Drawing.Point(99, 207);
+            this.lblCantidadPersonas.Location = new System.Drawing.Point(115, 275);
             this.lblCantidadPersonas.Name = "lblCantidadPersonas";
             this.lblCantidadPersonas.Size = new System.Drawing.Size(121, 15);
             this.lblCantidadPersonas.TabIndex = 0;
@@ -99,7 +99,7 @@
             // 
             // btnElegirZona
             // 
-            this.btnElegirZona.Location = new System.Drawing.Point(316, 274);
+            this.btnElegirZona.Location = new System.Drawing.Point(327, 213);
             this.btnElegirZona.Name = "btnElegirZona";
             this.btnElegirZona.Size = new System.Drawing.Size(75, 23);
             this.btnElegirZona.TabIndex = 3;
@@ -110,7 +110,7 @@
             // lblZona
             // 
             this.lblZona.AutoSize = true;
-            this.lblZona.Location = new System.Drawing.Point(141, 278);
+            this.lblZona.Location = new System.Drawing.Point(152, 217);
             this.lblZona.Name = "lblZona";
             this.lblZona.Size = new System.Drawing.Size(34, 15);
             this.lblZona.TabIndex = 0;

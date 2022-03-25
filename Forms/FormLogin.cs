@@ -1,6 +1,5 @@
 ﻿using Missushi.Funciones;
 
-
 namespace Missushi.Forms
 {
     public partial class FormLogin : Form

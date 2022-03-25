@@ -230,8 +230,9 @@ namespace Missushi.Funciones{
             if (reader.Read()) {
                 cupo = reader.GetInt32(0);
             }
-
-            sql = "SELECT SUM(cantidadPersonas) as ocupado from reservacion where idZona = @0 and fechaHoraInicio = @1;";
+            ConexionBD.connection.Close();
+            ConexionBD.connection.Open();
+            sql = "SELECT COALESCE(SUM(cantidadPersonas),0) as ocupado from reservacion where idZona = @0 and fechaHoraInicio = @1;";
             cmd = new MySqlCommand(sql, ConexionBD.connection);
             cmd.Parameters.AddWithValue("@0", idZona);
             cmd.Parameters.AddWithValue("@1", fechaInicio);

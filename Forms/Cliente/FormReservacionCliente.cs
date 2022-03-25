@@ -18,18 +18,13 @@ namespace Missushi.Forms.Cliente {
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
             try {
-                DateTime fechaInicio = dpFechaInicio.Value.Date;
+                DateTime fechaInicio = obtenerFechaInicio();
                 DateTime fechaFin = obtenerFechaFin();
                 int cantidadPersonas = (int)nudCantidadPersonas.Value;
                 int idUsuario = Usuario.id;
                 int idZona = Zona.id;
                 string estado = "En espera";
-
-                if(cantidadPersonas > ConexionBD.consultarCupoZona(idZona, fechaInicio)) {
-
-                }
-
-               
+                
                 ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, idUsuario, idZona, estado);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -44,24 +39,30 @@ namespace Missushi.Forms.Cliente {
                  new { Text = "17:00-20:00", Value = 3 },
                  new { Text = "20:00-23:00", Value = 4 }
             };
+            cbHoraInicio.DropDownStyle = ComboBoxStyle.DropDownList;
             cbHoraInicio.DisplayMember = "Text";
             cbHoraInicio.ValueMember = "Value";
             cbHoraInicio.DataSource = horarios;
             btnHacerReservacion.Enabled = false;
+            nudCantidadPersonas.Enabled = false;
             dpFechaInicio.MinDate = DateTime.Today;
         }
         private void btnElegirZona_Click(object sender, EventArgs e) {
-            FormElegirZona formElegirZona = new FormElegirZona();
+            FormElegirZona formElegirZona = new FormElegirZona(obtenerFechaInicio());
             if(formElegirZona.ShowDialog() == DialogResult.OK) {
                 this.btnElegirZona.Text = "Zona " + Zona.id;
                 this.btnHacerReservacion.Focus();
+
+                nudCantidadPersonas.Maximum = ConexionBD.consultarCupoZona(Zona.id,obtenerFechaInicio());
+                nudCantidadPersonas.Enabled = true;
                 btnHacerReservacion.Enabled = true;
             }
         }
 
-        private DateTime obtenerFechaFin() {
-            DateTime fechaInicio = dpFechaInicio.Value.Date;
-            DateTime fechaFin;
+        private DateTime obtenerFechaInicio() {
+            DateTime fechaInicio;
+            fechaInicio = dpFechaInicio.Value.Date;
+            ;
             switch (cbHoraInicio.SelectedIndex) {
                 case 0:
                     fechaInicio = fechaInicio.AddHours(8);
@@ -79,10 +80,13 @@ namespace Missushi.Forms.Cliente {
                     fechaInicio = fechaInicio.AddHours(20);
                     break;
             }
-            fechaFin = fechaInicio;
+            return fechaInicio;
+        }
+        private DateTime obtenerFechaFin() {
+            DateTime fechaInicio = obtenerFechaInicio();
+            DateTime fechaFin = fechaInicio;
             fechaFin = fechaFin.AddHours(3);
             return fechaFin;
         }
-
     }
 }
