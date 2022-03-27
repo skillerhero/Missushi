@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistro));
             this.lblNombres = new System.Windows.Forms.Label();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
@@ -44,7 +45,7 @@
             // lblNombres
             // 
             this.lblNombres.AutoSize = true;
-            this.lblNombres.Location = new System.Drawing.Point(122, 109);
+            this.lblNombres.Location = new System.Drawing.Point(95, 60);
             this.lblNombres.Name = "lblNombres";
             this.lblNombres.Size = new System.Drawing.Size(67, 15);
             this.lblNombres.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(238, 106);
+            this.txtNombres.Location = new System.Drawing.Point(211, 57);
             this.txtNombres.MaxLength = 80;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(100, 23);
@@ -60,7 +61,7 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(238, 152);
+            this.txtApellidos.Location = new System.Drawing.Point(211, 103);
             this.txtApellidos.MaxLength = 80;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(100, 23);
@@ -68,7 +69,7 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(238, 206);
+            this.txtContraseña.Location = new System.Drawing.Point(211, 157);
             this.txtContraseña.MaxLength = 50;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 23);
@@ -77,7 +78,7 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(238, 256);
+            this.txtCorreo.Location = new System.Drawing.Point(211, 207);
             this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 23);
@@ -85,15 +86,16 @@
             // 
             // cbTipo
             // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Location = new System.Drawing.Point(227, 306);
+            this.cbTipo.Location = new System.Drawing.Point(211, 257);
             this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(121, 23);
+            this.cbTipo.Size = new System.Drawing.Size(100, 23);
             this.cbTipo.TabIndex = 4;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(263, 363);
+            this.btnRegistrar.Location = new System.Drawing.Point(173, 315);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 5;
@@ -104,7 +106,7 @@
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Location = new System.Drawing.Point(123, 159);
+            this.lblApellidos.Location = new System.Drawing.Point(96, 110);
             this.lblApellidos.Name = "lblApellidos";
             this.lblApellidos.Size = new System.Drawing.Size(56, 15);
             this.lblApellidos.TabIndex = 0;
@@ -113,7 +115,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(122, 206);
+            this.lblContraseña.Location = new System.Drawing.Point(95, 157);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(67, 15);
             this.lblContraseña.TabIndex = 0;
@@ -122,7 +124,7 @@
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(132, 256);
+            this.lblCorreo.Location = new System.Drawing.Point(105, 207);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(43, 15);
             this.lblCorreo.TabIndex = 0;
@@ -131,7 +133,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(140, 309);
+            this.lblTipo.Location = new System.Drawing.Point(113, 260);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(30, 15);
             this.lblTipo.TabIndex = 0;
@@ -139,9 +141,10 @@
             // 
             // FormRegistro
             // 
+            this.AcceptButton = this.btnRegistrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 450);
+            this.ClientSize = new System.Drawing.Size(382, 385);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.lblContraseña);
@@ -153,9 +156,10 @@
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.lblNombres);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormRegistro";
+            this.Text = "Registro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegistro_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
