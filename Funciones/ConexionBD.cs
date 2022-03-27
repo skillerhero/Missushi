@@ -244,6 +244,20 @@ namespace Missushi.Funciones{
             return cupo;
         }
 
+        static public bool modificarZona(int idZona, int cupo, string foto){
+            bool exito = false;
+            ConexionBD.connection.Open();
+            string sql = "UPDATE zona SET cupo = @0, foto = @1 WHERE idZona = @2;";
+            MySqlCommand cmd = new MySqlCommand(sql, ConexionBD.connection);
+            cmd.Parameters.Add("@0", MySqlDbType.Int32).Value = cupo;
+            cmd.Parameters.Add("@1", MySqlDbType.Text).Value = foto;
+            cmd.Parameters.Add("@2", MySqlDbType.Int32).Value = idZona;
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            ConexionBD.connection.Close();
+            return exito;
+        }
+
 
         /*--------------------------------------Reservacion--------------------------------------*/
         static public bool agregarReservacion(DateTime fechaHoraInicio, DateTime fechaHoraFin, int cantidadPersonas, int idUsuario, int idZona, string estado) {

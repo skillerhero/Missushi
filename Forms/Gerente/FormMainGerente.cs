@@ -20,7 +20,8 @@ namespace Missushi.Forms.Gerente {
         }
 
         private void btnModificarZona_Click(object sender, EventArgs e) {
-
+            FormModificarZona formModificarZona = new FormModificarZona();
+            formModificarZona.ShowDialog();
         }
 
         private void btnAgregarZona_Click(object sender, EventArgs e) {

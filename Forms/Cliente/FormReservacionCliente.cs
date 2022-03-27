@@ -26,6 +26,10 @@ namespace Missushi.Forms.Cliente {
                 string estado = "En espera";
                 
                 ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, idUsuario, idZona, estado);
+
+                MessageBox.Show("Reservacion creada");
+                this.DialogResult = DialogResult.OK;
+
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
