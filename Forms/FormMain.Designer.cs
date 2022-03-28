@@ -34,6 +34,7 @@
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.cbTablas = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -88,12 +89,22 @@
             this.pbLogo.TabStop = false;
             this.pbLogo.WaitOnLoad = true;
             // 
+            // cbTablas
+            // 
+            this.cbTablas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTablas.FormattingEnabled = true;
+            this.cbTablas.Location = new System.Drawing.Point(451, 440);
+            this.cbTablas.Name = "cbTablas";
+            this.cbTablas.Size = new System.Drawing.Size(121, 23);
+            this.cbTablas.TabIndex = 5;
+            this.cbTablas.SelectedIndexChanged += new System.EventHandler(this.cbTablas_SelectedIndexChanged);
+            // 
             // FormMain
             // 
-            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 426);
+            this.ClientSize = new System.Drawing.Size(364, 431);
+            this.Controls.Add(this.cbTablas);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRegistro);
@@ -104,7 +115,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
-            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
@@ -120,5 +130,6 @@
         private Button btnRegistro;
         private Button btnLogin;
         private PictureBox pbLogo;
+        private ComboBox cbTablas;
     }
 }

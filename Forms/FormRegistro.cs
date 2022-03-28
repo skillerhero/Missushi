@@ -1,6 +1,4 @@
 ﻿using Missushi.Funciones;
-
-
 namespace Missushi.Forms{
     public partial class FormRegistro : Form{
         public FormRegistro(){
@@ -60,7 +58,7 @@ namespace Missushi.Forms{
                     return;
                 }
                 if(ConexionBD.insertarUsuario(nombres, apellidos, Validacion.encriptar(contraseña), correo, tipo)){
-
+                    MessageBox.Show("Registrado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
             }catch(Exception ex) {
@@ -68,7 +66,9 @@ namespace Missushi.Forms{
             }  
         }
         private void FormRegistro_FormClosing(object sender, FormClosingEventArgs e){
-            ConexionBD.connection.Close();
+            if (ConexionBD.connection != null) {
+                ConexionBD.connection.Close();
+            }
         }
     }
 }

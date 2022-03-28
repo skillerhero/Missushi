@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Missushi.Clases {
+﻿namespace Missushi.Clases {
     internal class Zona {
         public static int id = -1;
         private int idZona;

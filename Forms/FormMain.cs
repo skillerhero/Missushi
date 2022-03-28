@@ -5,18 +5,33 @@ using System.Data;
 using Missushi.Clases;
 using Missushi.Forms.Gerente;
 
-namespace Missushi
-{
-    public partial class FormMain : Form
-    {
+namespace Missushi{
+    public partial class FormMain : Form{
         public FormMain(){
             InitializeComponent();
+            var tablas = new[] {
+                 "usuario",
+                 "reservacion",
+                  "zona",
+                 "restaurante",
+                 "menu",
+                 "resenia",
+                 "historial"
+            };
+            cbTablas.DisplayMember = "Text";
+            cbTablas.DataSource = tablas;
             cargarDataGrid();
         }
 
         private void cargarDataGrid(){
             try {
-                MySqlDataAdapter dataAdapter = ConexionBD.consultarUsuariosAdapter();
+                MySqlDataAdapter dataAdapter;
+                if (cbTablas.SelectedItem != null) {
+                    dataAdapter = ConexionBD.consultarTablaAdapter(cbTablas.SelectedItem.ToString());
+                } else {
+                    dataAdapter = ConexionBD.consultarTablaAdapter("usuario");
+                }
+                ConexionBD.consultarTablaAdapter(cbTablas.SelectedText);
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
                 DataSet ds = new DataSet();
                 dataAdapter.Fill(ds);
@@ -40,7 +55,9 @@ namespace Missushi
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e){
-            ConexionBD.connection.Close();
+            if(ConexionBD.connection != null) {
+                ConexionBD.connection.Close();
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
@@ -64,8 +81,8 @@ namespace Missushi
             
         }
 
-        private void FormMain_Load(object sender, EventArgs e) {
-
+        private void cbTablas_SelectedIndexChanged(object sender, EventArgs e) {
+            cargarDataGrid();
         }
     }
 }

@@ -1,15 +1,6 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Missushi.Forms.Cliente {
     public partial class FormElegirZona : Form {
@@ -66,7 +57,7 @@ namespace Missushi.Forms.Cliente {
                 try {
                     picture.LoadAsync(zonas[i].getFoto());
                 } catch(Exception ex) {
-                    Debug.WriteLine("Error al cargar la foto");
+                    Debug.WriteLine("Error al cargar la foto.\n" + ex.Message);
                 }
 
                 pictureBoxList.Add(picture);
@@ -82,7 +73,7 @@ namespace Missushi.Forms.Cliente {
             }
         }
 
-        private void pictureBox_MouseDown(object sender, MouseEventArgs e) {
+        private void pictureBox_MouseDown(object? sender, MouseEventArgs e) {
             try {
                 if (sender != null && sender is PictureBox) {
                     PictureBox pb = (PictureBox)sender;
