@@ -52,6 +52,7 @@
             this.dpFechaInicio.Name = "dpFechaInicio";
             this.dpFechaInicio.Size = new System.Drawing.Size(227, 23);
             this.dpFechaInicio.TabIndex = 0;
+            this.dpFechaInicio.ValueChanged += new System.EventHandler(this.dpFechaInicio_ValueChanged);
             // 
             // cbHoraInicio
             // 
@@ -60,6 +61,7 @@
             this.cbHoraInicio.Name = "cbHoraInicio";
             this.cbHoraInicio.Size = new System.Drawing.Size(121, 23);
             this.cbHoraInicio.TabIndex = 1;
+            this.cbHoraInicio.SelectedIndexChanged += new System.EventHandler(this.cbHoraInicio_SelectedIndexChanged);
             // 
             // nudCantidadPersonas
             // 
@@ -71,7 +73,7 @@
             0});
             this.nudCantidadPersonas.Name = "nudCantidadPersonas";
             this.nudCantidadPersonas.Size = new System.Drawing.Size(120, 23);
-            this.nudCantidadPersonas.TabIndex = 2;
+            this.nudCantidadPersonas.TabIndex = 3;
             this.nudCantidadPersonas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCantidadPersonas.Value = new decimal(new int[] {
             1,
@@ -102,7 +104,7 @@
             this.btnElegirZona.Location = new System.Drawing.Point(327, 213);
             this.btnElegirZona.Name = "btnElegirZona";
             this.btnElegirZona.Size = new System.Drawing.Size(75, 23);
-            this.btnElegirZona.TabIndex = 3;
+            this.btnElegirZona.TabIndex = 2;
             this.btnElegirZona.Text = "Elegir Zona";
             this.btnElegirZona.UseVisualStyleBackColor = true;
             this.btnElegirZona.Click += new System.EventHandler(this.btnElegirZona_Click);

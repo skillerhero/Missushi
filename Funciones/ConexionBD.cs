@@ -275,5 +275,24 @@ namespace Missushi.Funciones{
             ConexionBD.connection.Close();
             return true;
         }
+
+        static public bool usuarioTieneReservacionesEnEspera(int idUsuario) {
+            int reservaciones = 0;
+            bool tieneReservacion = false;
+
+            ConexionBD.connection.Open();
+            string sql = "SELECT COUNT(*) AS cantidadReservaciones FROM reservacion WHERE idUsuario = @0 and estado = 'En espera';";
+            MySqlCommand cmd = new MySqlCommand(sql, ConexionBD.connection);
+            cmd.Parameters.AddWithValue("@0", idUsuario);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read()) {
+                reservaciones = reader.GetInt32(0);
+            }
+            ConexionBD.connection.Close();
+            if (reservaciones > 0) {
+                tieneReservacion = true;
+            }
+            return tieneReservacion;
+        }
     }  
 }

@@ -1,4 +1,5 @@
-﻿using Missushi.Forms.Cliente;
+﻿using Missushi.Clases;
+using Missushi.Forms.Cliente;
 
 namespace Missushi.Forms {
     public partial class FormMainCliente : Form {
@@ -12,6 +13,7 @@ namespace Missushi.Forms {
         }
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
+            Zona.id = -1;
             FormReservacionCliente formReservacion = new FormReservacionCliente();
             formReservacion.ShowDialog();
         }
