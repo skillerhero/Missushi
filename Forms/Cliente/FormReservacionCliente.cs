@@ -1,8 +1,10 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
-
+using System.ComponentModel;
 namespace Missushi.Forms.Cliente {
     public partial class FormReservacionCliente : Form {
+        ProgressBar progressBar = new ProgressBar();
+        BackgroundWorker backgroundWorker = new BackgroundWorker();
         public FormReservacionCliente() {
             InitializeComponent();
         }
@@ -38,10 +40,11 @@ namespace Missushi.Forms.Cliente {
             btnHacerReservacion.Enabled = false;
             nudCantidadPersonas.Enabled = false;
             dpFechaInicio.MinDate = DateTime.Today;
+            dpFechaInicio.MaxDate = DateTime.Today.AddDays(7);
         }
-        private void btnElegirZona_Click(object sender, EventArgs e) {
+        private async void btnElegirZona_Click(object sender, EventArgs e) {
             FormElegirZona formElegirZona = new FormElegirZona(obtenerFechaInicio());
-            if(formElegirZona.ShowDialog() == DialogResult.OK) {
+            if (formElegirZona.ShowDialog() == DialogResult.OK) {
                 this.btnElegirZona.Text = "Zona " + Zona.id;
                 this.nudCantidadPersonas.Focus();
                 comprobarCupo();
