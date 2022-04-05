@@ -23,12 +23,47 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.btnHacerReservacion = new System.Windows.Forms.Button();
+            this.dgReservaciones = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnHacerReservacion
+            // 
+            this.btnHacerReservacion.Location = new System.Drawing.Point(235, 293);
+            this.btnHacerReservacion.Name = "btnHacerReservacion";
+            this.btnHacerReservacion.Size = new System.Drawing.Size(98, 41);
+            this.btnHacerReservacion.TabIndex = 0;
+            this.btnHacerReservacion.Text = "Hacer reservacion";
+            this.btnHacerReservacion.UseVisualStyleBackColor = true;
+            // 
+            // dgReservaciones
+            // 
+            this.dgReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgReservaciones.Location = new System.Drawing.Point(326, 73);
+            this.dgReservaciones.Name = "dgReservaciones";
+            this.dgReservaciones.RowTemplate.Height = 25;
+            this.dgReservaciones.Size = new System.Drawing.Size(240, 150);
+            this.dgReservaciones.TabIndex = 1;
+            // 
+            // FormReservacionAdministrador
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgReservaciones);
+            this.Controls.Add(this.btnHacerReservacion);
+            this.Name = "FormReservacionAdministrador";
             this.Text = "FormReservacionAdministrador";
+            this.Load += new System.EventHandler(this.FormReservacionAdministrador_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Button btnHacerReservacion;
+        private DataGridView dgReservaciones;
     }
 }

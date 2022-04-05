@@ -13,5 +13,9 @@ namespace Missushi.Forms.Administrador {
         public FormReservacionAdministrador() {
             InitializeComponent();
         }
+
+        private void FormReservacionAdministrador_Load(object sender, EventArgs e) {
+            
+        }
     }
 }

@@ -335,5 +335,20 @@ namespace Missushi.Funciones{
             }
             return tieneReservacion;
         }
+
+        static public List<Reservacion> consultarReservaciones() {
+            List<Reservacion> reservaciones = new List<Reservacion>();
+            string query = "SELECT * FROM reservacion;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    reservaciones.Add(new Reservacion(reader.GetInt32(0), reader.GetDateTime(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetInt32(4),reader.GetInt32(5), reader.GetString(6)));
+                }
+                connection.Close();
+            }
+            return reservaciones;
+        }
     }  
 }
