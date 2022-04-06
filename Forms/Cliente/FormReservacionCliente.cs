@@ -42,7 +42,7 @@ namespace Missushi.Forms.Cliente {
             dpFechaInicio.MinDate = DateTime.Today;
             dpFechaInicio.MaxDate = DateTime.Today.AddDays(7);
         }
-        private async void btnElegirZona_Click(object sender, EventArgs e) {
+        private void btnElegirZona_Click(object sender, EventArgs e) {
             FormElegirZona formElegirZona = new FormElegirZona(obtenerFechaInicio());
             if (formElegirZona.ShowDialog() == DialogResult.OK) {
                 this.btnElegirZona.Text = "Zona " + Zona.id;
