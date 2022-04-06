@@ -17,5 +17,9 @@ namespace Missushi.Forms.Administrador {
         private void FormReservacionAdministrador_Load(object sender, EventArgs e) {
             
         }
+
+        private void btnHacerReservacion_Click(object sender, EventArgs e) {
+
+        }
     }
 }

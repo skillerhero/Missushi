@@ -36,6 +36,7 @@
             this.btnHacerReservacion.TabIndex = 0;
             this.btnHacerReservacion.Text = "Hacer reservacion";
             this.btnHacerReservacion.UseVisualStyleBackColor = true;
+            this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
             // 
             // dgReservaciones
             // 
