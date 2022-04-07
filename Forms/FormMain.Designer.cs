@@ -35,6 +35,9 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.cbTablas = new System.Windows.Forms.ComboBox();
+            this.btnLoginAdmin = new System.Windows.Forms.Button();
+            this.btnLoginCliente = new System.Windows.Forms.Button();
+            this.btnLoginGerente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -99,11 +102,44 @@
             this.cbTablas.TabIndex = 5;
             this.cbTablas.SelectedIndexChanged += new System.EventHandler(this.cbTablas_SelectedIndexChanged);
             // 
+            // btnLoginAdmin
+            // 
+            this.btnLoginAdmin.Location = new System.Drawing.Point(66, 642);
+            this.btnLoginAdmin.Name = "btnLoginAdmin";
+            this.btnLoginAdmin.Size = new System.Drawing.Size(95, 47);
+            this.btnLoginAdmin.TabIndex = 6;
+            this.btnLoginAdmin.Text = "Entrar como admin";
+            this.btnLoginAdmin.UseVisualStyleBackColor = true;
+            this.btnLoginAdmin.Click += new System.EventHandler(this.btnLoginAdmin_Click);
+            // 
+            // btnLoginCliente
+            // 
+            this.btnLoginCliente.Location = new System.Drawing.Point(187, 642);
+            this.btnLoginCliente.Name = "btnLoginCliente";
+            this.btnLoginCliente.Size = new System.Drawing.Size(89, 47);
+            this.btnLoginCliente.TabIndex = 7;
+            this.btnLoginCliente.Text = "Entrar como cliente";
+            this.btnLoginCliente.UseVisualStyleBackColor = true;
+            this.btnLoginCliente.Click += new System.EventHandler(this.btnLoginCliente_Click);
+            // 
+            // btnLoginGerente
+            // 
+            this.btnLoginGerente.Location = new System.Drawing.Point(305, 642);
+            this.btnLoginGerente.Name = "btnLoginGerente";
+            this.btnLoginGerente.Size = new System.Drawing.Size(85, 47);
+            this.btnLoginGerente.TabIndex = 8;
+            this.btnLoginGerente.Text = "Entrar como gerente";
+            this.btnLoginGerente.UseVisualStyleBackColor = true;
+            this.btnLoginGerente.Click += new System.EventHandler(this.btnLoginGerente_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 431);
+            this.ClientSize = new System.Drawing.Size(361, 422);
+            this.Controls.Add(this.btnLoginGerente);
+            this.Controls.Add(this.btnLoginCliente);
+            this.Controls.Add(this.btnLoginAdmin);
             this.Controls.Add(this.cbTablas);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.btnLogin);
@@ -131,5 +167,8 @@
         private Button btnLogin;
         private PictureBox pbLogo;
         private ComboBox cbTablas;
+        private Button btnLoginAdmin;
+        private Button btnLoginCliente;
+        private Button btnLoginGerente;
     }
 }

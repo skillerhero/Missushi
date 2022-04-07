@@ -30,11 +30,12 @@
             // dgUsuarios
             // 
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(251, 101);
+            this.dgUsuarios.Location = new System.Drawing.Point(52, 33);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.RowTemplate.Height = 25;
-            this.dgUsuarios.Size = new System.Drawing.Size(240, 150);
+            this.dgUsuarios.Size = new System.Drawing.Size(692, 321);
             this.dgUsuarios.TabIndex = 0;
+            this.dgUsuarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuarios_CellContentDoubleClick);
             // 
             // FormElegirUsuario
             // 
@@ -43,6 +44,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgUsuarios);
             this.Name = "FormElegirUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormElegirUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);

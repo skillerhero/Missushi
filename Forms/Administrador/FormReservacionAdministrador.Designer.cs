@@ -30,7 +30,7 @@
             // 
             // btnHacerReservacion
             // 
-            this.btnHacerReservacion.Location = new System.Drawing.Point(235, 293);
+            this.btnHacerReservacion.Location = new System.Drawing.Point(50, 248);
             this.btnHacerReservacion.Name = "btnHacerReservacion";
             this.btnHacerReservacion.Size = new System.Drawing.Size(98, 41);
             this.btnHacerReservacion.TabIndex = 0;
@@ -41,7 +41,7 @@
             // dgReservaciones
             // 
             this.dgReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgReservaciones.Location = new System.Drawing.Point(326, 73);
+            this.dgReservaciones.Location = new System.Drawing.Point(111, 46);
             this.dgReservaciones.Name = "dgReservaciones";
             this.dgReservaciones.RowTemplate.Height = 25;
             this.dgReservaciones.Size = new System.Drawing.Size(240, 150);
@@ -51,7 +51,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(465, 359);
             this.Controls.Add(this.dgReservaciones);
             this.Controls.Add(this.btnHacerReservacion);
             this.Name = "FormReservacionAdministrador";

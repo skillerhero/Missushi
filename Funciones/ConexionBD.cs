@@ -65,6 +65,26 @@ namespace Missushi.Funciones{
             }
             return existe;
         }
+
+        static public bool consultarPrimerUsuario(char tipo) {
+            bool existe = false;
+            string query = "SELECT * FROM usuario where tipo = @0;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@0", tipo);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read()) {
+                    existe = true;
+                    Usuario.id = reader.GetInt32(0);
+                    Usuario.type = reader.GetChar(2);
+                }
+                connection.Close();
+            }
+            return existe;
+        }
+
+
         /*----------------------------------------Usuario----------------------------------------*/
         static public List<Usuario> consultarUsuarios() {
             List<Usuario> usuarios = new List<Usuario>();
@@ -79,6 +99,21 @@ namespace Missushi.Funciones{
                 connection.Close();
             }
             return usuarios;
+        }
+        static public Usuario consultarUsuario(int id) {
+            Usuario usuario = new Usuario();
+            string query = "SELECT * FROM usuario where idUsuario = @0;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@0", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    usuario = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5));
+                }
+                connection.Close();
+            }
+            return usuario;
         }
         static public MySqlDataAdapter consultarUsuariosAdapter() {
             MySqlDataAdapter adapter = new MySqlDataAdapter();

@@ -73,7 +73,7 @@ namespace Missushi{
                     formMainAdministrador.Closed += (s, args) => this.Show();
                     formMainAdministrador.Show();
                 }else if (Usuario.type == 'G') {
-                   FormMainGerente formMainGerente = new FormMainGerente();
+                    FormMainGerente formMainGerente = new FormMainGerente();
                     formMainGerente.Closed += (s, args) => this.Show();
                     formMainGerente.Show();
                 }
@@ -83,6 +83,36 @@ namespace Missushi{
 
         private void cbTablas_SelectedIndexChanged(object sender, EventArgs e) {
             cargarDataGrid();
+        }
+
+        private void btnLoginAdmin_Click(object sender, EventArgs e) {
+            if (ConexionBD.consultarPrimerUsuario('A')) {
+                FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
+                formMainAdministrador.Closed += (s, args) => this.Show();
+                formMainAdministrador.Show();
+            } else {
+                MessageBox.Show("No hay administradores registrados.");
+            } 
+        }
+
+        private void btnLoginCliente_Click(object sender, EventArgs e) {
+            if (ConexionBD.consultarPrimerUsuario('C')) {
+                FormMainCliente formMainCliente = new FormMainCliente();
+                formMainCliente.Closed += (s, args) => this.Show();
+                formMainCliente.Show();
+            } else {
+                MessageBox.Show("No hay clientes registrados.");
+            }
+        }
+
+        private void btnLoginGerente_Click(object sender, EventArgs e) {
+            if (ConexionBD.consultarPrimerUsuario('G')) {
+                FormMainGerente formMainGerente = new FormMainGerente();
+                formMainGerente.Closed += (s, args) => this.Show();
+                formMainGerente.Show();
+            } else {
+                MessageBox.Show("No hay gerentes registrados.");
+            }
         }
     }
 }

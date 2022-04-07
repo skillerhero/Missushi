@@ -19,7 +19,8 @@ namespace Missushi.Forms.Administrador {
         }
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
-
+            FormHacerReservacionAdministrador formHacerReservacionAdministrador = new FormHacerReservacionAdministrador();
+            formHacerReservacionAdministrador.ShowDialog();
         }
     }
 }
