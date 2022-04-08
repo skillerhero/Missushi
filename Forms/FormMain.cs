@@ -114,5 +114,10 @@ namespace Missushi{
                 MessageBox.Show("No hay gerentes registrados.");
             }
         }
+
+        private void btnQR_Click(object sender, EventArgs e) {
+            FormGenerarQR formGenerarQR = new FormGenerarQR();
+            formGenerarQR.Show();
+        }
     }
 }

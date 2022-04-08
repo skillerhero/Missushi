@@ -38,6 +38,7 @@
             this.btnLoginAdmin = new System.Windows.Forms.Button();
             this.btnLoginCliente = new System.Windows.Forms.Button();
             this.btnLoginGerente = new System.Windows.Forms.Button();
+            this.btnQR = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
@@ -132,11 +133,22 @@
             this.btnLoginGerente.UseVisualStyleBackColor = true;
             this.btnLoginGerente.Click += new System.EventHandler(this.btnLoginGerente_Click);
             // 
+            // btnQR
+            // 
+            this.btnQR.Location = new System.Drawing.Point(241, 14);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(75, 23);
+            this.btnQR.TabIndex = 9;
+            this.btnQR.Text = "QR";
+            this.btnQR.UseVisualStyleBackColor = true;
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 422);
+            this.Controls.Add(this.btnQR);
             this.Controls.Add(this.btnLoginGerente);
             this.Controls.Add(this.btnLoginCliente);
             this.Controls.Add(this.btnLoginAdmin);
@@ -170,5 +182,6 @@
         private Button btnLoginAdmin;
         private Button btnLoginCliente;
         private Button btnLoginGerente;
+        private Button btnQR;
     }
 }
