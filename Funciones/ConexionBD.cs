@@ -385,5 +385,19 @@ namespace Missushi.Funciones{
             }
             return reservaciones;
         }
+
+        static public bool cancelarReservacion(int idReservacion) {
+            string sql = "UPDATE reservacion SET estado = 'Cancelada' where idReservacion = @0;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.Int32).Value = idReservacion;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                return true;
+            }else 
+                return false;
+        }
     }  
 }

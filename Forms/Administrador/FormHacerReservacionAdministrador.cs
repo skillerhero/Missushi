@@ -4,7 +4,7 @@ using Missushi.Funciones;
 
 namespace Missushi.Forms.Administrador {
     public partial class FormHacerReservacionAdministrador : Form {
-        public static int idUsuario;
+        public static int idUsuario = -1;
         public FormHacerReservacionAdministrador() {
             InitializeComponent();
         }
@@ -14,6 +14,7 @@ namespace Missushi.Forms.Administrador {
             if(formElegirUsuario.ShowDialog() == DialogResult.OK) {
                 Usuario usuario = ConexionBD.consultarUsuario(idUsuario);
                 btnElegirUsuario.Text = usuario.getNombres() + " " + usuario.getApellidos();
+                comprobaciones();
             }
         }
 
@@ -34,7 +35,7 @@ namespace Missushi.Forms.Administrador {
             if (formElegirZona.ShowDialog() == DialogResult.OK) {
                 this.btnElegirZona.Text = "Zona " + Zona.id;
                 this.nudCantidadPersonas.Focus();
-                comprobarCupo();
+                comprobaciones();
             }
         }
 
@@ -77,20 +78,33 @@ namespace Missushi.Forms.Administrador {
             comprobarCupo();
         }
 
-        private void comprobarCupo() {
+        private bool comprobarCupo() {
             if (Zona.id == -1) {
-                return;
+                return false;
             }
             int cupoZona = ConexionBD.consultarCupoZona(Zona.id, obtenerFechaInicio());
             if (cupoZona == 0) {
                 btnHacerReservacion.Enabled = false;
                 nudCantidadPersonas.Enabled = false;
                 MessageBox.Show("No hay cupos en esta zona y horario.\nPuede seleccionar otra zona u horario.");
-                return;
+                return false;
             }
             nudCantidadPersonas.Maximum = cupoZona;
-            btnHacerReservacion.Enabled = true;
             nudCantidadPersonas.Enabled = true;
+            return true;
+        }
+
+        private bool comprobarId() {
+            if(idUsuario == -1) {
+                return false;
+            }
+            return true;
+        }
+
+        private void comprobaciones() {
+            if(comprobarCupo() && comprobarId()) {
+                btnHacerReservacion.Enabled = true;
+            }
         }
 
         private void comprobarHoraHoy() {
