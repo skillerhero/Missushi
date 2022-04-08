@@ -399,5 +399,25 @@ namespace Missushi.Funciones{
             }else 
                 return false;
         }
-    }  
+
+
+        /*--------------------------------------Menu--------------------------------------*/
+
+        static public List<Menu> consultarMenu() {
+            List<Menu> menu = new List<Menu>();
+            string query = "SELECT * FROM menu;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    menu.Add(new Menu(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetFloat(3), reader.GetString(4), reader.GetString(5)));
+                }
+                connection.Close();
+            }
+            return menu;
+        }
+
+    }
 }

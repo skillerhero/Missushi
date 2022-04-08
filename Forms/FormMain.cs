@@ -9,6 +9,7 @@ namespace Missushi{
     public partial class FormMain : Form{
         public FormMain(){
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             var tablas = new[] {
                  "usuario",
                  "reservacion",
@@ -118,6 +119,15 @@ namespace Missushi{
         private void btnQR_Click(object sender, EventArgs e) {
             FormGenerarQR formGenerarQR = new FormGenerarQR();
             formGenerarQR.Show();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e) {
+
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e) {
+            FormMenu formMenu = new FormMenu();
+            formMenu.ShowDialog();
         }
     }
 }
