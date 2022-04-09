@@ -8,13 +8,13 @@ namespace Missushi.Funciones{
         static public void conectarBD(){
             try{
                 MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-                builder.Server = "localhost";
-                builder.UserID = "root";
+                builder.Server = "18.117.132.41";
+                builder.UserID = "rafael";
                 builder.Database = "missushi";
-                builder.Password = "";
+                builder.Password = "Rafael1234.";
                 builder.ApplicationName = "";
                 //builder.ApplicationName = "app";
-                //builder.Port = 3306;
+                builder.Port = 3306;
                 connection = new MySqlConnection(builder.ToString());
             }catch (Exception e) {
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
