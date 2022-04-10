@@ -9,7 +9,7 @@ namespace Missushi{
     public partial class FormMain : Form{
         public FormMain(){
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
             var tablas = new[] {
                  "usuario",
                  "reservacion",

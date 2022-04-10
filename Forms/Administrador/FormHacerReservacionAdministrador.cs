@@ -117,6 +117,7 @@ namespace Missushi.Forms.Administrador {
             };
             if (dpFechaInicio.Value.Date != DateTime.Today) {
                 cbHoraInicio.DataSource = horarios;
+                cbHoraInicio.Enabled = true;
                 return;
             }
             TimeSpan horario1 = new TimeSpan(8, 0, 0);
