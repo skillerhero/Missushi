@@ -27,6 +27,7 @@
             this.btnGenerar = new System.Windows.Forms.Button();
             this.pbQR = new System.Windows.Forms.PictureBox();
             this.txtUrl = new System.Windows.Forms.TextBox();
+            this.lblHelp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(524, 372);
+            this.btnGenerar.Location = new System.Drawing.Point(511, 398);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(75, 23);
             this.btnGenerar.TabIndex = 1;
@@ -61,17 +62,27 @@
             // 
             // txtUrl
             // 
-            this.txtUrl.Location = new System.Drawing.Point(205, 360);
+            this.txtUrl.Location = new System.Drawing.Point(205, 384);
             this.txtUrl.Multiline = true;
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(300, 54);
             this.txtUrl.TabIndex = 3;
+            // 
+            // lblHelp
+            // 
+            this.lblHelp.AutoSize = true;
+            this.lblHelp.Location = new System.Drawing.Point(205, 357);
+            this.lblHelp.Name = "lblHelp";
+            this.lblHelp.Size = new System.Drawing.Size(181, 15);
+            this.lblHelp.TabIndex = 4;
+            this.lblHelp.Text = "Ingresa el número de reservación";
             // 
             // FormGenerarQR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.pbQR);
             this.Controls.Add(this.btnGenerar);
@@ -90,5 +101,6 @@
         private Button btnGenerar;
         private PictureBox pbQR;
         private TextBox txtUrl;
+        private Label lblHelp;
     }
 }
