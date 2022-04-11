@@ -25,7 +25,7 @@ namespace Missushi.Forms.Gerente {
                 string nombre = Validacion.ajustarEspacios(txtNombrePlatillo.Text.Trim()), 
                     descripcion = Validacion.ajustarEspacios(txtDescripcionMenu.Text.Trim()), 
                     foto = Validacion.ajustarEspacios(txtFotoMenu.Text.Trim()),
-                    tipo = Validacion.ajustarEspacios(txtPrecioMenu.Text.Trim());
+                    tipo = Validacion.ajustarEspacios(cbTipoMenu.Text.Trim());
                 
 
 
