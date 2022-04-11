@@ -17,5 +17,10 @@ namespace Missushi.Forms {
             FormReservacionCliente formReservacion = new FormReservacionCliente();
             formReservacion.ShowDialog();
         }
+
+        private void btnMensaje_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Adios");
+        }
     }
 }

@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             this.label1 = new System.Windows.Forms.Label();
             this.btnHacerReservacion = new System.Windows.Forms.Button();
+            this.btnMensaje = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -46,11 +48,30 @@
             this.btnHacerReservacion.UseVisualStyleBackColor = true;
             this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
             // 
+            // btnMensaje
+            // 
+            this.btnMensaje.Location = new System.Drawing.Point(273, 171);
+            this.btnMensaje.Name = "btnMensaje";
+            this.btnMensaje.Size = new System.Drawing.Size(111, 23);
+            this.btnMensaje.TabIndex = 2;
+            this.btnMensaje.Text = "Enviar Reseña";
+            this.btnMensaje.UseVisualStyleBackColor = true;
+            this.btnMensaje.Click += new System.EventHandler(this.btnMensaje_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(255, 119);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(144, 23);
+            this.textBox1.TabIndex = 3;
+            // 
             // FormMainCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnMensaje);
             this.Controls.Add(this.btnHacerReservacion);
             this.Controls.Add(this.label1);
             this.Name = "FormMainCliente";
@@ -66,5 +87,7 @@
 
         private Label label1;
         private Button btnHacerReservacion;
+        private Button btnMensaje;
+        private TextBox textBox1;
     }
 }
