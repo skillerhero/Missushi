@@ -70,5 +70,9 @@ namespace Missushi.Forms{
                 ConexionBD.connection.Close();
             }
         }
+
+        private void FormRegistro_Load(object sender, EventArgs e) {
+
+        }
     }
 }

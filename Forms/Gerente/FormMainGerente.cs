@@ -18,5 +18,10 @@
             FormAgregarZona formAgregarZona = new FormAgregarZona();
             formAgregarZona.ShowDialog();
         }
+
+        private void btnModificarMenu_Click(object sender, EventArgs e) {
+            FormModificarMenu formModificarMenu = new FormModificarMenu();
+            formModificarMenu.ShowDialog();
+        }
     }
 }

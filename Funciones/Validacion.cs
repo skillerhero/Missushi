@@ -44,5 +44,10 @@ namespace Missushi.Funciones{
             byte[] outputBuffer = transform.TransformFinalBlock(inputbuffer, 0, inputbuffer.Length);
             return Convert.ToBase64String(outputBuffer);
         }
+
+        public static bool IsNumeric(string text) { 
+            bool numero = float.TryParse(text, out float _);
+            return numero;
+        }
     }
 }

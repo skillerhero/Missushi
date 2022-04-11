@@ -16,5 +16,9 @@ namespace Missushi.Forms.Gerente {
                 this.DialogResult = DialogResult.No;
             }
         }
+
+        private void FormAgregarZona_Load(object sender, EventArgs e) {
+
+        }
     }
 }

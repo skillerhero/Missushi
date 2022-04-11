@@ -419,5 +419,24 @@ namespace Missushi.Funciones{
             return menu;
         }
 
+
+        static public bool agregarPlatillo(string nombre, string descripcion, float precio, string foto, string tipo) {
+            string sql = "INSERT INTO menu(nombre, descripcion, precio, foto, tipo) VALUES(@0, @1, @2, @3, @4);";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = nombre;
+                cmd.Parameters.Add("@1", MySqlDbType.VarChar, 20).Value = descripcion;
+                cmd.Parameters.Add("@2", MySqlDbType.Float).Value = precio;
+                cmd.Parameters.Add("@3", MySqlDbType.String).Value = foto;
+                cmd.Parameters.Add("@4", MySqlDbType.VarChar, 20).Value = tipo;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            return true;
+        }
+       
+
+
     }
 }
