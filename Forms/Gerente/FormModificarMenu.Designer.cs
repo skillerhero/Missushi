@@ -61,9 +61,9 @@
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Location = new System.Drawing.Point(238, 164);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(50, 20);
+            this.lblPrecio.Size = new System.Drawing.Size(150, 20);
             this.lblPrecio.TabIndex = 2;
-            this.lblPrecio.Text = "Precio";
+            this.lblPrecio.Text = "Precio                       $";
             // 
             // lblFotoPlatillo
             // 
@@ -116,7 +116,7 @@
             // 
             // txtPrecioMenu
             // 
-            this.txtPrecioMenu.Location = new System.Drawing.Point(418, 157);
+            this.txtPrecioMenu.Location = new System.Drawing.Point(418, 161);
             this.txtPrecioMenu.Name = "txtPrecioMenu";
             this.txtPrecioMenu.Size = new System.Drawing.Size(125, 27);
             this.txtPrecioMenu.TabIndex = 8;
@@ -142,8 +142,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cbTipoMenu);
             this.Controls.Add(this.txtFotoMenu);
+            this.Controls.Add(this.cbTipoMenu);
             this.Controls.Add(this.txtPrecioMenu);
             this.Controls.Add(this.txtDescripcionMenu);
             this.Controls.Add(this.txtNombrePlatillo);
@@ -155,6 +155,7 @@
             this.Controls.Add(this.lblNombrePlatillo);
             this.Name = "FormModificarMenu";
             this.Text = "FormModificarMenu";
+            this.Load += new System.EventHandler(this.FormModificarMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
