@@ -4,11 +4,12 @@ using System.Data;
 
 namespace Missushi.Funciones{
     static internal class ConexionBD{
+        static public string ipServidor = "13.59.196.2";
         static public MySqlConnection? connection;
         static public void conectarBD(){
             try{
                 MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-                builder.Server = "18.117.132.41";
+                builder.Server = ipServidor;
                 builder.UserID = "rafael";
                 builder.Database = "missushi";
                 builder.Password = "Rafael1234.";
