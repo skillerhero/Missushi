@@ -24,9 +24,9 @@ namespace Missushi.Forms.Gerente {
             try {
                 string nombre = Validacion.ajustarEspacios(txtNombrePlatillo.Text.Trim()), 
                     descripcion = Validacion.ajustarEspacios(txtDescripcionMenu.Text.Trim()), 
-                    foto = Validacion.ajustarEspacios(txtPrecioMenu.Text.Trim()),
-                    tipo = Validacion.ajustarEspacios(txtFotoMenu.Text.Trim());
-                float precio = float.Parse(txtPrecioMenu.Text.Trim());
+                    foto = Validacion.ajustarEspacios(txtFotoMenu.Text.Trim()),
+                    tipo = Validacion.ajustarEspacios(txtPrecioMenu.Text.Trim());
+                
 
 
                 switch (cbTipoMenu.SelectedIndex){
@@ -57,12 +57,10 @@ namespace Missushi.Forms.Gerente {
                     return;
                 }
 
-                if (!Validacion.IsNumeric(Convert.ToString(precio))){
+                if (!Validacion.IsNumeric(txtPrecioMenu.Text)){
                     MessageBox.Show("El precio contiene caracteres no validos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }
-
-                if (ConexionBD.agregarPlatillo(nombre, descripcion, precio,  foto,  tipo))  {
+                } else  if (ConexionBD.agregarPlatillo(nombre, descripcion, float.Parse(txtPrecioMenu.Text.Trim()) ,  foto,  tipo))  {
                     MessageBox.Show("Agregado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }else{
