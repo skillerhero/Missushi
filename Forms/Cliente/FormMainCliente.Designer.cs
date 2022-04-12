@@ -50,7 +50,7 @@
             // 
             // btnMensaje
             // 
-            this.btnMensaje.Location = new System.Drawing.Point(273, 171);
+            this.btnMensaje.Location = new System.Drawing.Point(266, 210);
             this.btnMensaje.Name = "btnMensaje";
             this.btnMensaje.Size = new System.Drawing.Size(111, 23);
             this.btnMensaje.TabIndex = 2;
@@ -60,7 +60,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(255, 119);
+            this.textBox1.Location = new System.Drawing.Point(255, 86);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(144, 23);
             this.textBox1.TabIndex = 3;
@@ -69,6 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnMensaje);

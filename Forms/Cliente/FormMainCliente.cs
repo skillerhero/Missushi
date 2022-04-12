@@ -20,7 +20,8 @@ namespace Missushi.Forms {
 
         private void btnMensaje_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Adios");
+            FormReseñas formReseñas = new FormReseñas();
+            formReseñas.ShowDialog();
         }
     }
 }
