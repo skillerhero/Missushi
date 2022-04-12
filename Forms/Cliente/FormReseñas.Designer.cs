@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnResenia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnResenia
             // 
-            this.button1.Location = new System.Drawing.Point(349, 189);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnResenia.Location = new System.Drawing.Point(323, 263);
+            this.btnResenia.Name = "btnResenia";
+            this.btnResenia.Size = new System.Drawing.Size(148, 59);
+            this.btnResenia.TabIndex = 0;
+            this.btnResenia.Text = "Enviar Reseña";
+            this.btnResenia.UseVisualStyleBackColor = true;
+            this.btnResenia.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormReseñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnResenia);
             this.Name = "FormReseñas";
             this.Text = "FormReseñas";
             this.ResumeLayout(false);
@@ -55,6 +55,6 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnResenia;
     }
 }
