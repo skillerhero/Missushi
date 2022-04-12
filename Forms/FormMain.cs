@@ -10,6 +10,7 @@ namespace Missushi{
         public FormMain(){
             InitializeComponent();
             //this.WindowState = FormWindowState.Maximized;
+            //pbLogo.ImageLocation = "https://i.ibb.co/ZH7DBFs/logo-Sin-Fondo.png";
             var tablas = new[] {
                  "usuario",
                  "reservacion",

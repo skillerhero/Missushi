@@ -86,7 +86,7 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.ImageLocation = "https://i.ibb.co/ZH7DBFs/logo-Sin-Fondo.png";
+            this.pbLogo.ImageLocation = "";
             this.pbLogo.Location = new System.Drawing.Point(46, 41);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(286, 313);
@@ -107,7 +107,7 @@
             // 
             // btnLoginAdmin
             // 
-            this.btnLoginAdmin.Location = new System.Drawing.Point(66, 642);
+            this.btnLoginAdmin.Location = new System.Drawing.Point(460, 292);
             this.btnLoginAdmin.Name = "btnLoginAdmin";
             this.btnLoginAdmin.Size = new System.Drawing.Size(95, 47);
             this.btnLoginAdmin.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             // btnLoginCliente
             // 
-            this.btnLoginCliente.Location = new System.Drawing.Point(187, 642);
+            this.btnLoginCliente.Location = new System.Drawing.Point(460, 225);
             this.btnLoginCliente.Name = "btnLoginCliente";
             this.btnLoginCliente.Size = new System.Drawing.Size(89, 47);
             this.btnLoginCliente.TabIndex = 7;
@@ -127,7 +127,7 @@
             // 
             // btnLoginGerente
             // 
-            this.btnLoginGerente.Location = new System.Drawing.Point(305, 642);
+            this.btnLoginGerente.Location = new System.Drawing.Point(464, 142);
             this.btnLoginGerente.Name = "btnLoginGerente";
             this.btnLoginGerente.Size = new System.Drawing.Size(85, 47);
             this.btnLoginGerente.TabIndex = 8;
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 428);
+            this.ClientSize = new System.Drawing.Size(811, 648);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnQR);
             this.Controls.Add(this.btnLoginGerente);
