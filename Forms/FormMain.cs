@@ -92,6 +92,7 @@ namespace Missushi{
                 FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
                 formMainAdministrador.Closed += (s, args) => this.Show();
                 formMainAdministrador.Show();
+                this.Hide();
             } else {
                 MessageBox.Show("No hay administradores registrados.");
             } 
@@ -102,6 +103,7 @@ namespace Missushi{
                 FormMainCliente formMainCliente = new FormMainCliente();
                 formMainCliente.Closed += (s, args) => this.Show();
                 formMainCliente.Show();
+                this.Hide();
             } else {
                 MessageBox.Show("No hay clientes registrados.");
             }
@@ -112,6 +114,7 @@ namespace Missushi{
                 FormMainGerente formMainGerente = new FormMainGerente();
                 formMainGerente.Closed += (s, args) => this.Show();
                 formMainGerente.Show();
+                this.Hide();
             } else {
                 MessageBox.Show("No hay gerentes registrados.");
             }

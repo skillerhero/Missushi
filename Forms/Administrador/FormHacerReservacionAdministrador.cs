@@ -13,7 +13,7 @@ namespace Missushi.Forms.Administrador {
             FormElegirUsuario formElegirUsuario = new FormElegirUsuario();
             if(formElegirUsuario.ShowDialog() == DialogResult.OK) {
                 Usuario usuario = ConexionBD.consultarUsuario(idUsuario);
-                btnElegirUsuario.Text = usuario.getNombres() + " " + usuario.getApellidos();
+                btnElegirUsuario.Text = usuario.Nombres + " " + usuario.Apellidos;
                 comprobaciones();
             }
         }
@@ -120,11 +120,11 @@ namespace Missushi.Forms.Administrador {
                 cbHoraInicio.Enabled = true;
                 return;
             }
-            TimeSpan horario1 = new TimeSpan(8, 0, 0);
-            TimeSpan horario2 = new TimeSpan(11, 0, 0);
-            TimeSpan horario3 = new TimeSpan(14, 0, 0);
-            TimeSpan horario4 = new TimeSpan(17, 0, 0);
-            TimeSpan horario5 = new TimeSpan(20, 0, 0);
+            TimeSpan horario1 = new(8, 0, 0);
+            TimeSpan horario2 = new(11, 0, 0);
+            TimeSpan horario3 = new(14, 0, 0);
+            TimeSpan horario4 = new(17, 0, 0);
+            TimeSpan horario5 = new(20, 0, 0);
 
 
             if (DateTime.Now.TimeOfDay > horario1) {

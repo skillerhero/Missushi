@@ -15,8 +15,8 @@ namespace Missushi.Forms.Gerente {
             txtLongitud.Text = restaurante.getLongitud();
             txtFotoPrincipal.Text = restaurante.getFotoPrincipal();
             if (ConexionBD.existeGerente()) {
-                txtIdGerente.Text = gerente.getIdUsuario().ToString();
-                txtNombreGerente.Text = gerente.getNombres() + " " + gerente.getApellidos();
+                txtIdGerente.Text = gerente.IdUsuario.ToString();
+                txtNombreGerente.Text = gerente.Nombres + " " + gerente.Apellidos;
             } else {
                 txtIdGerente.Enabled = true;
                 txtNombreGerente.Enabled = true;

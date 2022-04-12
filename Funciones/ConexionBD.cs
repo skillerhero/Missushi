@@ -95,7 +95,7 @@ namespace Missushi.Funciones{
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
-                    usuarios.Add(new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5)));
+                    usuarios.Add(new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6)));
                 }
                 connection.Close();
             }
@@ -110,7 +110,7 @@ namespace Missushi.Funciones{
                 cmd.Parameters.AddWithValue("@0", id);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
-                    usuario = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5));
+                    usuario = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6));
                 }
                 connection.Close();
             }
@@ -127,7 +127,7 @@ namespace Missushi.Funciones{
             return adapter;
         }
         static public bool insertarUsuario(string nombres, string apellidos, string contraseña, string correo, char tipo) {
-            string sql = "INSERT INTO usuario(nombres, apellidos, contrasenia, correo, tipo) VALUES(@0,@1,@2, @3, @4);";
+            string sql = "INSERT INTO usuario(nombres, apellidos, contrasenia, correo, tipo, estado) VALUES(@0,@1,@2, @3, @4, 'a');";
             if (connection != null) {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
@@ -166,7 +166,7 @@ namespace Missushi.Funciones{
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
-                    gerente = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5));
+                    gerente = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6));
                 }
                 connection.Close();
             }
@@ -420,7 +420,6 @@ namespace Missushi.Funciones{
             return menu;
         }
 
-
         static public bool agregarPlatillo(string nombre, string descripcion, float precio, string foto, string tipo) {
             string sql = "INSERT INTO menu(nombre, descripcion, precio, foto, tipo) VALUES(@0, @1, @2, @3, @4);";
             if (connection != null) {
@@ -437,6 +436,35 @@ namespace Missushi.Funciones{
             return true;
         }
        
+        static public List<string> consultarTiposMenu() {
+            List<string> tipos = new List<string>();
+            string query = "SELECT DISTINCT tipo FROM menu;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    tipos.Add(reader.GetString(0));
+                }
+                connection.Close();
+            }
+            return tipos;
+        }
+        static public List<Menu> consultarMenu(string tipo) {
+            List<Menu> menu = new List<Menu>();
+            string query = "SELECT * FROM menu WHERE tipo = @0;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.VarChar).Value = tipo;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    menu.Add(new Menu(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetFloat(3), reader.GetString(4), reader.GetString(5)));
+                }
+                connection.Close();
+            }
+            return menu;
+        }
 
 
     }
