@@ -19,8 +19,15 @@ namespace Missushi.Forms.Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hola");
+            MessageBox.Show("Gracias por su reseña");
             this.DialogResult = DialogResult.OK;
         }
+
+        private void FormReseñas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
