@@ -22,7 +22,7 @@ namespace Missushi.Funciones{
         }
 
         public static bool esMenor(string cadena, int tamaño) {
-            if(cadena.Length < tamaño) {
+            if(cadena.Length <= tamaño) {
                 return true;
             } else {
                 return false;

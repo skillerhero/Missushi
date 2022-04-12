@@ -85,6 +85,25 @@ namespace Missushi.Funciones{
             return existe;
         }
 
+        static public bool usuarioSuspendido(string correo, string contraseña) {
+            bool suspendido = false;
+            string sql = "SELECT idUsuario, contrasenia, tipo FROM usuario WHERE correo = @0 and estado = 's';";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", correo);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    if (reader.GetString(1) == contraseña) {
+                        suspendido = true;
+                        Usuario.id = reader.GetInt32(0);
+                        Usuario.type = reader.GetChar(2);
+                    }
+                }
+                connection.Close();
+            }
+            return suspendido;
+        }
 
         /*----------------------------------------Usuario----------------------------------------*/
         static public List<Usuario> consultarUsuarios() {

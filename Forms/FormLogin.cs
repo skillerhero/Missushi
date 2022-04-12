@@ -14,9 +14,14 @@ namespace Missushi.Forms{
                 if (contraseña.Length > 200) {
                     contraseña = contraseña[..200];
                 }
+                if (ConexionBD.usuarioSuspendido(correo, contraseña)) {
+                    MessageBox.Show("Este usuario ha sido suspendido.");
+                    this.DialogResult = DialogResult.Abort;
+                }
                 if (ConexionBD.login(correo, contraseña)) {
-                    this.DialogResult = DialogResult.OK;
                     MessageBox.Show("Bienvenido/a");
+                    this.DialogResult = DialogResult.OK;
+                    
                 } else {
                     MessageBox.Show("Correo o contraseña incorrectos.");
                 }
