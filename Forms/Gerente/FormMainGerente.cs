@@ -24,6 +24,9 @@
             formModificarMenu.ShowDialog();
         }
 
-
+        private void btnAgregarPlatillo_Click(object sender, EventArgs e) {
+            FormAgregarPlatillo formAgregarPlatillo = new FormAgregarPlatillo();
+            formAgregarPlatillo.ShowDialog();
+        }
     }
 }

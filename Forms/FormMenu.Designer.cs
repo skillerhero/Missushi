@@ -57,6 +57,7 @@
             this.pbPruebaMenu.Size = new System.Drawing.Size(75, 75);
             this.pbPruebaMenu.TabIndex = 1;
             this.pbPruebaMenu.TabStop = false;
+            this.pbPruebaMenu.Visible = false;
             // 
             // lblPruebaTipo
             // 
@@ -71,6 +72,7 @@
             this.lblPruebaTipo.TabIndex = 2;
             this.lblPruebaTipo.Text = "Tipo";
             this.lblPruebaTipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPruebaTipo.Visible = false;
             // 
             // lblPruebaDescripcion
             // 
@@ -80,6 +82,7 @@
             this.lblPruebaDescripcion.TabIndex = 3;
             this.lblPruebaDescripcion.Text = resources.GetString("lblPruebaDescripcion.Text");
             this.lblPruebaDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPruebaDescripcion.Visible = false;
             // 
             // lblPruebaPrecio
             // 
@@ -89,6 +92,7 @@
             this.lblPruebaPrecio.Size = new System.Drawing.Size(43, 15);
             this.lblPruebaPrecio.TabIndex = 4;
             this.lblPruebaPrecio.Text = "$42069";
+            this.lblPruebaPrecio.Visible = false;
             // 
             // lblPruebaNombre
             // 
@@ -98,6 +102,7 @@
             this.lblPruebaNombre.TabIndex = 5;
             this.lblPruebaNombre.Text = "Nombre";
             this.lblPruebaNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPruebaNombre.Visible = false;
             // 
             // FormMenu
             // 

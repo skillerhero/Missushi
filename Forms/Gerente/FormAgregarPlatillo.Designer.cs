@@ -87,6 +87,7 @@
             this.bntAceptarMenu.TabIndex = 16;
             this.bntAceptarMenu.Text = "Aceptar";
             this.bntAceptarMenu.UseVisualStyleBackColor = true;
+            this.bntAceptarMenu.Click += new System.EventHandler(this.bntAceptarMenu_Click);
             // 
             // lblTipoPlatillo
             // 

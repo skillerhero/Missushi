@@ -12,6 +12,7 @@ namespace Missushi.Forms{
 
         private void FormMenu_Load(object sender, EventArgs e) {
             cargarDataGrid();
+            mostrarMenu();
         }
 
         private void cargarDataGrid() {
@@ -47,37 +48,38 @@ namespace Missushi.Forms{
                     Font = new Font("Segoe Print", 14.25F, ((FontStyle.Bold | FontStyle.Italic) | FontStyle.Underline), GraphicsUnit.Point),
                     BackColor = Color.Black
                 };
+                this.Controls.Add(lblTipo);
                 platillos = ConexionBD.consultarMenu(tipos[i]);
                 for (int j = 0; j < platillos.Count; j++) {
                     PictureBox picture = new PictureBox {
-                        Name = "pbPlatillo" + i,
+                        Name = "pbPlatillo" + j,
                         Size = new Size(75, 75),
                         Location = new Point(100, 85 * y + 155),
                         SizeMode = PictureBoxSizeMode.StretchImage
                     };
                     Label lblNombre = new Label() {
-                        Name = "lblNombre" + i,
+                        Name = "lblNombre" + j,
                         Size = new Size(450, 30),
                         Location = new Point(190, 85 * y + 155),
-                        Text = platillos[i].Nombre,
+                        Text = platillos[j].Nombre,
                         TextAlign = ContentAlignment.MiddleCenter
                     };
                     Label lblDescripcion = new Label() {
-                        Name = "lblDescripcion" + i,
+                        Name = "lblDescripcion" + j,
                         Size = new Size(450, 45),
                         Location = new Point(190, 115 * y + 155),
-                        Text = platillos[i].Descripcion,
+                        Text = platillos[j].Descripcion,
                         TextAlign = ContentAlignment.MiddleLeft
                     };
                     Label lblPrecio = new Label() {
-                        Name = "lblPrecio" + i,
+                        Name = "lblPrecio" + j,
                         Size = new Size(43, 15),
                         Location = new Point(657, 115 * y + 155),
-                        Text = platillos[i].Precio.ToString(),
+                        Text = platillos[j].Precio.ToString(),
                         TextAlign = ContentAlignment.MiddleCenter
                     };
                     try {
-                        picture.LoadAsync(platillos[i].Foto);
+                        picture.LoadAsync(platillos[j].Foto);
                     } catch (Exception ex) {
                         Debug.WriteLine("Error al cargar la foto\n" + ex.Message);
                     }

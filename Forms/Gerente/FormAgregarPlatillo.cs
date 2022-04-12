@@ -1,4 +1,5 @@
 ﻿using Missushi.Funciones;
+using System.Globalization;
 
 namespace Missushi.Forms.Gerente {
     public partial class FormAgregarPlatillo : Form {
@@ -13,9 +14,12 @@ namespace Missushi.Forms.Gerente {
         private void bntAceptarMenu_Click(object sender, EventArgs e) {
             try {
                 string nombre = Validacion.ajustarEspacios(txtNombrePlatillo.Text.Trim()),
-                    descripcion = Validacion.ajustarEspacios(txtDescripcionMenu.Text.Trim()),
-                    foto = Validacion.ajustarEspacios(txtFotoMenu.Text.Trim()),
-                    tipo = Validacion.ajustarEspacios(cbTipoMenu.Text.Trim());
+                descripcion = Validacion.ajustarEspacios(txtDescripcionMenu.Text.Trim()),
+                foto = Validacion.ajustarEspacios(txtFotoMenu.Text.Trim()),
+                tipo = Validacion.ajustarEspacios(cbTipoMenu.Text.Trim());
+                string x = txtPrecioMenu.Text;
+                float precio = float.Parse(txtPrecioMenu.Text.Trim(), CultureInfo.InvariantCulture.NumberFormat);
+                
 
 
 
@@ -39,10 +43,7 @@ namespace Missushi.Forms.Gerente {
                     return;
                 }
 
-                if (!Validacion.esAlfabetico(descripcion)) {
-                    MessageBox.Show("La descripcion es demasiado larga", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                } else if (!Validacion.esMenor(descripcion, 200)) {
+                if (!Validacion.esMenor(descripcion, 200)) {
                     MessageBox.Show("La descripcion es demasiado larga", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -50,7 +51,7 @@ namespace Missushi.Forms.Gerente {
                 if (!Validacion.IsNumeric(txtPrecioMenu.Text)) {
                     MessageBox.Show("El precio contiene caracteres no validos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                } else if (ConexionBD.agregarPlatillo(nombre, descripcion, float.Parse(txtPrecioMenu.Text.Trim()), foto, tipo)) {
+                } else if (ConexionBD.agregarPlatillo(nombre, descripcion, precio, foto, tipo)) {
                     MessageBox.Show("Agregado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 } else {
