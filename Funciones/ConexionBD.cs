@@ -211,11 +211,9 @@ namespace Missushi.Funciones{
         }
 
         static public bool SuspenderUsuario(string correo) {
-            
             bool exito = false;
             string sql = "UPDATE usuario SET estado = 's' WHERE correo = @0;";
-            if (connection != null)
-            {
+            if (connection != null){
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = correo;

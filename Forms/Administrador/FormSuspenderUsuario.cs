@@ -51,7 +51,7 @@ namespace Missushi.Forms.Administrador {
                     else {
                         ConexionBD.SuspenderUsuario(correoSuspendido);
                         MessageBox.Show("Usuario suspendido con exito");
-                        this.DialogResult = DialogResult.Abort;
+                        this.DialogResult = DialogResult.OK;
                     }
                 }
             }
@@ -59,6 +59,13 @@ namespace Missushi.Forms.Administrador {
                 MessageBox.Show("Hubo ERROR con la actualización de la base de datos\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void dgTablaUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            int selectedrowindex = dgTablaUsuarios.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgTablaUsuarios.Rows[selectedrowindex];
+            var correo = selectedRow.Cells["correo"].Value;
+            txtCorreoSuspender.Text = correo.ToString();
         }
     }
 }

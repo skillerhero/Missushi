@@ -28,27 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            this.dgMenu = new System.Windows.Forms.DataGridView();
             this.pbPruebaMenu = new System.Windows.Forms.PictureBox();
             this.lblPruebaTipo = new System.Windows.Forms.Label();
             this.lblPruebaDescripcion = new System.Windows.Forms.Label();
             this.lblPruebaPrecio = new System.Windows.Forms.Label();
             this.lblPruebaNombre = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPruebaMenu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgMenu
-            // 
-            this.dgMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgMenu.Location = new System.Drawing.Point(61, 477);
-            this.dgMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgMenu.Name = "dgMenu";
-            this.dgMenu.RowHeadersWidth = 51;
-            this.dgMenu.RowTemplate.Height = 29;
-            this.dgMenu.Size = new System.Drawing.Size(642, 122);
-            this.dgMenu.TabIndex = 0;
             // 
             // pbPruebaMenu
             // 
@@ -80,7 +66,7 @@
             this.lblPruebaDescripcion.Name = "lblPruebaDescripcion";
             this.lblPruebaDescripcion.Size = new System.Drawing.Size(450, 45);
             this.lblPruebaDescripcion.TabIndex = 3;
-            this.lblPruebaDescripcion.Text = resources.GetString("lblPruebaDescripcion.Text");
+            this.lblPruebaDescripcion.Text = "Ingredientes, cantidades, etc";
             this.lblPruebaDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblPruebaDescripcion.Visible = false;
             // 
@@ -108,18 +94,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 627);
             this.Controls.Add(this.lblPruebaNombre);
             this.Controls.Add(this.lblPruebaPrecio);
             this.Controls.Add(this.lblPruebaDescripcion);
             this.Controls.Add(this.lblPruebaTipo);
             this.Controls.Add(this.pbPruebaMenu);
-            this.Controls.Add(this.dgMenu);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPruebaMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,8 +112,6 @@
         }
 
         #endregion
-
-        private DataGridView dgMenu;
         private PictureBox pbPruebaMenu;
         private Label lblPruebaTipo;
         private Label lblPruebaDescripcion;
