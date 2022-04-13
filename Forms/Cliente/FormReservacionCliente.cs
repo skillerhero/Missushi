@@ -36,7 +36,7 @@ namespace Missushi.Forms.Cliente {
         private void mandarCorreo() {
             try {
 
-                SmtpClient mySmtpClient = new SmtpClient("smtp.gmail.com");
+                SmtpClient mySmtpClient = new SmtpClient("smtp.gmail.com", 587);
 
                 // set smtp-client with basicAuthentication
                 mySmtpClient.UseDefaultCredentials = false;
