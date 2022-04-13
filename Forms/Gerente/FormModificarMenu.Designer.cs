@@ -155,7 +155,6 @@
             this.Controls.Add(this.lblNombrePlatillo);
             this.Name = "FormModificarMenu";
             this.Text = "FormModificarMenu";
-            this.Load += new System.EventHandler(this.FormModificarMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

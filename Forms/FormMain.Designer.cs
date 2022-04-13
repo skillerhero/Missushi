@@ -47,9 +47,9 @@
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(169, 9);
+            this.lblInfo.Location = new System.Drawing.Point(193, 12);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(31, 15);
+            this.lblInfo.Size = new System.Drawing.Size(38, 20);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "Info.";
             this.lblInfo.Visible = false;
@@ -57,18 +57,20 @@
             // dgUsuarios
             // 
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(21, 471);
+            this.dgUsuarios.Location = new System.Drawing.Point(12, 639);
+            this.dgUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.RowHeadersWidth = 51;
             this.dgUsuarios.RowTemplate.Height = 25;
-            this.dgUsuarios.Size = new System.Drawing.Size(745, 150);
+            this.dgUsuarios.Size = new System.Drawing.Size(1060, 200);
             this.dgUsuarios.TabIndex = 3;
             // 
             // btnRegistro
             // 
-            this.btnRegistro.Location = new System.Drawing.Point(219, 372);
+            this.btnRegistro.Location = new System.Drawing.Point(250, 496);
+            this.btnRegistro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistro.Size = new System.Drawing.Size(86, 31);
             this.btnRegistro.TabIndex = 1;
             this.btnRegistro.Text = "Registro";
             this.btnRegistro.UseVisualStyleBackColor = true;
@@ -76,9 +78,10 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(76, 372);
+            this.btnLogin.Location = new System.Drawing.Point(87, 496);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(86, 31);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -87,9 +90,10 @@
             // pbLogo
             // 
             this.pbLogo.ImageLocation = "";
-            this.pbLogo.Location = new System.Drawing.Point(46, 41);
+            this.pbLogo.Location = new System.Drawing.Point(53, 55);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(286, 313);
+            this.pbLogo.Size = new System.Drawing.Size(327, 417);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
@@ -99,17 +103,19 @@
             // 
             this.cbTablas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTablas.FormattingEnabled = true;
-            this.cbTablas.Location = new System.Drawing.Point(451, 440);
+            this.cbTablas.Location = new System.Drawing.Point(515, 587);
+            this.cbTablas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTablas.Name = "cbTablas";
-            this.cbTablas.Size = new System.Drawing.Size(121, 23);
+            this.cbTablas.Size = new System.Drawing.Size(138, 28);
             this.cbTablas.TabIndex = 5;
             this.cbTablas.SelectedIndexChanged += new System.EventHandler(this.cbTablas_SelectedIndexChanged);
             // 
             // btnLoginAdmin
             // 
-            this.btnLoginAdmin.Location = new System.Drawing.Point(460, 292);
+            this.btnLoginAdmin.Location = new System.Drawing.Point(526, 389);
+            this.btnLoginAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoginAdmin.Name = "btnLoginAdmin";
-            this.btnLoginAdmin.Size = new System.Drawing.Size(95, 47);
+            this.btnLoginAdmin.Size = new System.Drawing.Size(109, 63);
             this.btnLoginAdmin.TabIndex = 6;
             this.btnLoginAdmin.Text = "Entrar como admin";
             this.btnLoginAdmin.UseVisualStyleBackColor = true;
@@ -117,9 +123,10 @@
             // 
             // btnLoginCliente
             // 
-            this.btnLoginCliente.Location = new System.Drawing.Point(460, 225);
+            this.btnLoginCliente.Location = new System.Drawing.Point(526, 300);
+            this.btnLoginCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoginCliente.Name = "btnLoginCliente";
-            this.btnLoginCliente.Size = new System.Drawing.Size(89, 47);
+            this.btnLoginCliente.Size = new System.Drawing.Size(102, 63);
             this.btnLoginCliente.TabIndex = 7;
             this.btnLoginCliente.Text = "Entrar como cliente";
             this.btnLoginCliente.UseVisualStyleBackColor = true;
@@ -127,9 +134,10 @@
             // 
             // btnLoginGerente
             // 
-            this.btnLoginGerente.Location = new System.Drawing.Point(464, 142);
+            this.btnLoginGerente.Location = new System.Drawing.Point(530, 189);
+            this.btnLoginGerente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoginGerente.Name = "btnLoginGerente";
-            this.btnLoginGerente.Size = new System.Drawing.Size(85, 47);
+            this.btnLoginGerente.Size = new System.Drawing.Size(97, 63);
             this.btnLoginGerente.TabIndex = 8;
             this.btnLoginGerente.Text = "Entrar como gerente";
             this.btnLoginGerente.UseVisualStyleBackColor = true;
@@ -137,9 +145,10 @@
             // 
             // btnQR
             // 
-            this.btnQR.Location = new System.Drawing.Point(332, 439);
+            this.btnQR.Location = new System.Drawing.Point(379, 585);
+            this.btnQR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQR.Name = "btnQR";
-            this.btnQR.Size = new System.Drawing.Size(75, 23);
+            this.btnQR.Size = new System.Drawing.Size(86, 31);
             this.btnQR.TabIndex = 9;
             this.btnQR.Text = "QR";
             this.btnQR.UseVisualStyleBackColor = true;
@@ -147,10 +156,9 @@
             // 
             // btnMenu
             // 
-            this.btnMenu.Location = new System.Drawing.Point(229, 439);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMenu.Location = new System.Drawing.Point(262, 585);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(82, 22);
+            this.btnMenu.Size = new System.Drawing.Size(94, 29);
             this.btnMenu.TabIndex = 10;
             this.btnMenu.Text = "Menú";
             this.btnMenu.UseVisualStyleBackColor = true;
@@ -158,9 +166,9 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 648);
+            this.ClientSize = new System.Drawing.Size(1084, 864);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnQR);
             this.Controls.Add(this.btnLoginGerente);
@@ -173,6 +181,7 @@
             this.Controls.Add(this.dgUsuarios);
             this.Controls.Add(this.lblInfo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";

@@ -193,6 +193,39 @@ namespace Missushi.Funciones{
         }
         /*-------------------------------------Administrador-------------------------------------*/
 
+        static public bool VerificarEstado(string correo) {
+            bool existe = false;
+            string sql = "SELECT * FROM usuario WHERE correo = @0 AND estado='s';";
+            if (connection != null){
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", correo);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    existe = true;
+                }
+                connection.Close();
+            }
+            return existe;
+        }
+
+        static public bool SuspenderUsuario(string correo) {
+            
+            bool exito = false;
+            string sql = "UPDATE usuario SET estado = 's' WHERE correo = @0;";
+            if (connection != null)
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = correo;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            return exito;
+        }
+
 
         /*--------------------------------------Restaurante--------------------------------------*/
         static public bool existeInfoRestaurante() {

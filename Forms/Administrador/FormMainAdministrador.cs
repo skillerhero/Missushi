@@ -14,5 +14,11 @@ namespace Missushi.Forms {
             FormReservacionAdministrador formReservacionAdministrador = new FormReservacionAdministrador();
             formReservacionAdministrador.ShowDialog();
         }
+
+        private void btnSuspenderUsuarios_Click(object sender, EventArgs e) {
+            FormSuspenderUsuario formSuspenderUsuario = new FormSuspenderUsuario();
+            formSuspenderUsuario.ShowDialog();
+
+        }
     }
 }

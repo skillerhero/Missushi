@@ -62,8 +62,6 @@ namespace Missushi.Forms.Gerente {
             }
         }
 
-        private void FormModificarMenu_Load(object sender, EventArgs e) {
-
-        }
+        
     }
 }

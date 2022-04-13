@@ -17,7 +17,7 @@ namespace Missushi.Forms{
                 if (ConexionBD.usuarioSuspendido(correo, contraseña)) {
                     MessageBox.Show("Este usuario ha sido suspendido.");
                     this.DialogResult = DialogResult.Abort;
-                }
+                } else
                 if (ConexionBD.login(correo, contraseña)) {
                     MessageBox.Show("Bienvenido/a");
                     this.DialogResult = DialogResult.OK;
