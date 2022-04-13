@@ -3,11 +3,11 @@ using MySqlConnector;
 using System.Data;
 
 namespace Missushi.Funciones{
-    static internal class ConexionBD{
+    static internal class ConexionBD {
         static public string ipServidor = "13.59.196.2";
         static public MySqlConnection? connection;
-        static public void conectarBD(){
-            try{
+        static public void conectarBD() {
+            try {
                 MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
                 builder.Server = ipServidor;
                 builder.UserID = "rafael";
@@ -17,7 +17,7 @@ namespace Missushi.Funciones{
                 //builder.ApplicationName = "app";
                 builder.Port = 3306;
                 connection = new MySqlConnection(builder.ToString());
-            }catch (Exception e) {
+            } catch (Exception e) {
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -316,7 +316,7 @@ namespace Missushi.Funciones{
             return cupo;
         }
 
-        static public bool modificarZona(int idZona, int cupo, string foto){
+        static public bool modificarZona(int idZona, int cupo, string foto) {
             bool exito = false;
             string sql = "UPDATE zona SET cupo = @0, foto = @1 WHERE idZona = @2;";
             if (connection != null) {
@@ -380,7 +380,7 @@ namespace Missushi.Funciones{
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
-                    reservaciones.Add(new Reservacion(reader.GetInt32(0), reader.GetDateTime(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetInt32(4),reader.GetInt32(5), reader.GetString(6)));
+                    reservaciones.Add(new Reservacion(reader.GetInt32(0), reader.GetDateTime(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5), reader.GetString(6)));
                 }
                 connection.Close();
             }
@@ -397,7 +397,7 @@ namespace Missushi.Funciones{
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 return true;
-            }else 
+            } else
                 return false;
         }
 
@@ -436,7 +436,25 @@ namespace Missushi.Funciones{
             }
             return true;
         }
-       
+
+
+        /*-------------------------------------Reseñas--------------------------------------*/
+
+        static public bool agregarResenia(int estrellas, string coment)
+        {
+            string sql = "INSERT INTO reseni(cantidadEstrellas, comentario) VALUES(@0, @1);";
+            if (connection != null)
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.Int16, 50).Value = estrellas;
+                cmd.Parameters.Add("@1", MySqlDbType.VarChar, 20).Value = coment;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            return true;
+        }
+
 
 
     }

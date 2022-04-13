@@ -125,6 +125,7 @@
             this.label1.Size = new System.Drawing.Size(135, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "Puntuar servicio de 1 a 5";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
