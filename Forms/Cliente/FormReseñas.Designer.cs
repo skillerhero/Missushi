@@ -34,7 +34,7 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comentario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -109,13 +109,14 @@
             this.checkBox5.Text = "5";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // comentario
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Location = new System.Drawing.Point(270, 213);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 23);
-            this.textBox1.TabIndex = 6;
+            this.comentario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comentario.ForeColor = System.Drawing.Color.YellowGreen;
+            this.comentario.Location = new System.Drawing.Point(270, 213);
+            this.comentario.Name = "comentario";
+            this.comentario.Size = new System.Drawing.Size(236, 23);
+            this.comentario.TabIndex = 6;
             // 
             // label1
             // 
@@ -198,7 +199,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comentario);
             this.Controls.Add(this.checkBox5);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -226,7 +227,7 @@
         private CheckBox checkBox3;
         private CheckBox checkBox4;
         private CheckBox checkBox5;
-        private TextBox textBox1;
+        private TextBox comentario;
         private Label label1;
         private Label label3;
         private PictureBox pictureBox1;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Missushi.Funciones;
 
 namespace Missushi.Forms.Cliente
 {
@@ -19,7 +20,13 @@ namespace Missushi.Forms.Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Gracias por su reseña");
+            Form FormResenia = new FormReseñas();
+            
+           // ConexionBD.agregarResenia(estrellas, coment);
+
+            
+
+    MessageBox.Show("Gracias por su reseña");
             this.DialogResult = DialogResult.OK;
         }
 
