@@ -28,6 +28,8 @@
             this.pbQR = new System.Windows.Forms.PictureBox();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.lblHelp = new System.Windows.Forms.Label();
+            this.txtLinkGenerado = new System.Windows.Forms.TextBox();
+            this.lblLinkGenerado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbQR)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +79,29 @@
             this.lblHelp.TabIndex = 4;
             this.lblHelp.Text = "Ingresa el número de reservación";
             // 
+            // txtLinkGenerado
+            // 
+            this.txtLinkGenerado.Location = new System.Drawing.Point(618, 159);
+            this.txtLinkGenerado.Name = "txtLinkGenerado";
+            this.txtLinkGenerado.Size = new System.Drawing.Size(100, 23);
+            this.txtLinkGenerado.TabIndex = 5;
+            // 
+            // lblLinkGenerado
+            // 
+            this.lblLinkGenerado.AutoSize = true;
+            this.lblLinkGenerado.Location = new System.Drawing.Point(618, 141);
+            this.lblLinkGenerado.Name = "lblLinkGenerado";
+            this.lblLinkGenerado.Size = new System.Drawing.Size(65, 15);
+            this.lblLinkGenerado.TabIndex = 6;
+            this.lblLinkGenerado.Text = "Link del qr:";
+            // 
             // FormGenerarQR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblLinkGenerado);
+            this.Controls.Add(this.txtLinkGenerado);
             this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.pbQR);
@@ -102,5 +122,7 @@
         private PictureBox pbQR;
         private TextBox txtUrl;
         private Label lblHelp;
+        private TextBox txtLinkGenerado;
+        private Label lblLinkGenerado;
     }
 }

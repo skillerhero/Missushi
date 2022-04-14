@@ -1,6 +1,7 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
 using System.ComponentModel;
+using System.Net.Mail;
 namespace Missushi.Forms.Cliente {
     public partial class FormReservacionCliente : Form {
         ProgressBar progressBar = new ProgressBar();
@@ -24,9 +25,48 @@ namespace Missushi.Forms.Cliente {
                     return;
                 }
                 ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, idUsuario, idZona, estado);
-
+                mandarCorreo();
                 MessageBox.Show("Reservacion creada");
                 this.DialogResult = DialogResult.OK;
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void mandarCorreo() {
+            try {
+
+                SmtpClient mySmtpClient = new SmtpClient("smtp.gmail.com", 587);
+
+                // set smtp-client with basicAuthentication
+                mySmtpClient.UseDefaultCredentials = false;
+                System.Net.NetworkCredential basicAuthenticationInfo = new
+                System.Net.NetworkCredential("missushi.contacto@gmail.com", "frribGLDb7D2mf");
+                mySmtpClient.Credentials = basicAuthenticationInfo;
+
+                // add from,to mailaddresses
+                MailAddress from = new MailAddress("missushi.contacto@gmail.com","Missushi");
+                MailAddress to = new MailAddress("skillerhero@gmail.com","Rafael");
+                MailMessage myMail = new MailMessage(from, to);
+
+                // add ReplyTo
+                //MailAddress replyTo = new MailAddress("reply@example.com");
+                //myMail.ReplyToList.Add(replyTo);
+
+                // set subject and encoding
+                myMail.Subject = "Test message";
+                myMail.SubjectEncoding = System.Text.Encoding.UTF8;
+
+                // set body-message and encoding
+                myMail.Body = "<b>Test Mail</b><br>using <b>HTML</b>.";
+                myMail.BodyEncoding = System.Text.Encoding.UTF8;
+                // text or html
+                myMail.IsBodyHtml = true;
+
+                mySmtpClient.Send(myMail);
+            } catch (SmtpException ex) {
+                throw new ApplicationException
+                  ("SmtpException has occured: " + ex.Message);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }

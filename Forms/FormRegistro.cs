@@ -27,14 +27,14 @@ namespace Missushi.Forms{
                 if(!Validacion.esAlfabetico(nombres)){
                     MessageBox.Show("El nombre contiene caracteres no válidos.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }else if (Validacion.esMenor(nombres, 3)) {
+                }else if (Validacion.esMenor(nombres, 2)) {
                     MessageBox.Show("El nombre es demasiado corto.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (!Validacion.esAlfabetico(apellidos)){
                     MessageBox.Show("Los apellidos contienen caracteres no válidos.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                } else if (Validacion.esMenor(apellidos, 8)) {
+                } else if (Validacion.esMenor(apellidos, 3)) {
                     MessageBox.Show("Los apellidos son demasiado cortos.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
