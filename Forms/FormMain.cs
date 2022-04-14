@@ -7,10 +7,13 @@ using Missushi.Forms.Gerente;
 
 namespace Missushi{
     public partial class FormMain : Form{
+        private Globales globales;
         public FormMain(){
             InitializeComponent();
-            //this.WindowState = FormWindowState.Maximized;
-            //pbLogo.ImageLocation = "https://i.ibb.co/ZH7DBFs/logo-Sin-Fondo.png";
+            globales = new Globales();
+        }
+        private void FormMain_Load(object sender, EventArgs e) {
+            pbLogo.ImageLocation = "https://i.ibb.co/ZH7DBFs/logo-Sin-Fondo.png";
             var tablas = new[] {
                  "usuario",
                  "reservacion",
@@ -22,8 +25,8 @@ namespace Missushi{
             };
             cbTablas.DisplayMember = "Text";
             cbTablas.DataSource = tablas;
-            cargarDataGrid();
         }
+
 
         private void cargarDataGrid(){
             try {
@@ -87,29 +90,17 @@ namespace Missushi{
             cargarDataGrid();
         }
 
-        private void btnLoginAdmin_Click(object sender, EventArgs e) {
-            if (ConexionBD.consultarPrimerUsuario('A')) {
-                FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
-                formMainAdministrador.Closed += (s, args) => this.Show();
-                formMainAdministrador.Show();
-                this.Hide();
-            } else {
-                MessageBox.Show("No hay administradores registrados.");
-            } 
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e) {
+            FormMenu formMenu = new FormMenu();
+            formMenu.ShowDialog();
         }
 
-        private void btnLoginCliente_Click(object sender, EventArgs e) {
-            if (ConexionBD.consultarPrimerUsuario('C')) {
-                FormMainCliente formMainCliente = new FormMainCliente();
-                formMainCliente.Closed += (s, args) => this.Show();
-                formMainCliente.Show();
-                this.Hide();
-            } else {
-                MessageBox.Show("No hay clientes registrados.");
-            }
+        private void qRToolStripMenuItem_Click(object sender, EventArgs e) {
+            FormGenerarQR formGenerarQR = new FormGenerarQR();
+            formGenerarQR.Show();
         }
 
-        private void btnLoginGerente_Click(object sender, EventArgs e) {
+        private void entrarComoGerenteToolStripMenuItem_Click(object sender, EventArgs e) {
             if (ConexionBD.consultarPrimerUsuario('G')) {
                 FormMainGerente formMainGerente = new FormMainGerente();
                 formMainGerente.Closed += (s, args) => this.Show();
@@ -120,18 +111,45 @@ namespace Missushi{
             }
         }
 
-        private void btnQR_Click(object sender, EventArgs e) {
-            FormGenerarQR formGenerarQR = new FormGenerarQR();
-            formGenerarQR.Show();
+        private void entrarComoClienteToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (ConexionBD.consultarPrimerUsuario('C')) {
+                FormMainCliente formMainCliente = new FormMainCliente();
+                formMainCliente.Closed += (s, args) => this.Show();
+                formMainCliente.Show();
+                this.Hide();
+            } else {
+                MessageBox.Show("No hay clientes registrados.");
+            }
         }
 
-        private void FormMain_Load(object sender, EventArgs e) {
-
+        private void entrarComoAdminToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (ConexionBD.consultarPrimerUsuario('A')) {
+                FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
+                formMainAdministrador.Closed += (s, args) => this.Show();
+                formMainAdministrador.Show();
+                this.Hide();
+            } else {
+                MessageBox.Show("No hay administradores registrados.");
+            }
         }
 
-        private void btnMenu_Click(object sender, EventArgs e) {
-            FormMenu formMenu = new FormMenu();
-            formMenu.ShowDialog();
+        private void verBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e) {
+            dgUsuarios.Visible = true;
+            cbTablas.Visible = true;
+            btnLogin.Visible = false;
+            btnRegistro.Visible = false;
+            pbLogo.Visible = false;
+            this.WindowState = FormWindowState.Maximized;
+            cargarDataGrid();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e) {
+            dgUsuarios.Visible = false;
+            cbTablas.Visible = false;
+            btnLogin.Visible = true;
+            btnRegistro.Visible = true;
+            pbLogo.Visible = true;
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

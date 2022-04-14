@@ -35,21 +35,26 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.cbTablas = new System.Windows.Forms.ComboBox();
-            this.btnLoginAdmin = new System.Windows.Forms.Button();
-            this.btnLoginCliente = new System.Windows.Forms.Button();
-            this.btnLoginGerente = new System.Windows.Forms.Button();
-            this.btnQR = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entrarComoGerenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entrarComoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entrarComoAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verBaseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(238, 21);
+            this.lblInfo.Location = new System.Drawing.Point(141, 24);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(38, 20);
+            this.lblInfo.Size = new System.Drawing.Size(31, 15);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "Info.";
             this.lblInfo.Visible = false;
@@ -57,20 +62,19 @@
             // dgUsuarios
             // 
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(12, 639);
-            this.dgUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgUsuarios.Location = new System.Drawing.Point(12, 136);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.RowHeadersWidth = 51;
             this.dgUsuarios.RowTemplate.Height = 25;
-            this.dgUsuarios.Size = new System.Drawing.Size(1060, 200);
+            this.dgUsuarios.Size = new System.Drawing.Size(928, 150);
             this.dgUsuarios.TabIndex = 3;
+            this.dgUsuarios.Visible = false;
             // 
             // btnRegistro
             // 
-            this.btnRegistro.Location = new System.Drawing.Point(286, 498);
-            this.btnRegistro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRegistro.Location = new System.Drawing.Point(198, 367);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(86, 31);
+            this.btnRegistro.Size = new System.Drawing.Size(75, 23);
             this.btnRegistro.TabIndex = 1;
             this.btnRegistro.Text = "Registro";
             this.btnRegistro.UseVisualStyleBackColor = true;
@@ -78,10 +82,9 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(123, 498);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogin.Location = new System.Drawing.Point(97, 367);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(86, 31);
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -90,10 +93,9 @@
             // pbLogo
             // 
             this.pbLogo.ImageLocation = "";
-            this.pbLogo.Location = new System.Drawing.Point(53, 55);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbLogo.Location = new System.Drawing.Point(34, 42);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(396, 417);
+            this.pbLogo.Size = new System.Drawing.Size(286, 309);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
@@ -103,85 +105,99 @@
             // 
             this.cbTablas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTablas.FormattingEnabled = true;
-            this.cbTablas.Location = new System.Drawing.Point(515, 587);
-            this.cbTablas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbTablas.Location = new System.Drawing.Point(289, 107);
             this.cbTablas.Name = "cbTablas";
-            this.cbTablas.Size = new System.Drawing.Size(138, 28);
+            this.cbTablas.Size = new System.Drawing.Size(121, 23);
             this.cbTablas.TabIndex = 5;
+            this.cbTablas.Visible = false;
             this.cbTablas.SelectedIndexChanged += new System.EventHandler(this.cbTablas_SelectedIndexChanged);
             // 
-            // btnLoginAdmin
+            // menuStrip1
             // 
-            this.btnLoginAdmin.Location = new System.Drawing.Point(526, 389);
-            this.btnLoginAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLoginAdmin.Name = "btnLoginAdmin";
-            this.btnLoginAdmin.Size = new System.Drawing.Size(109, 63);
-            this.btnLoginAdmin.TabIndex = 6;
-            this.btnLoginAdmin.Text = "Entrar como admin";
-            this.btnLoginAdmin.UseVisualStyleBackColor = true;
-            this.btnLoginAdmin.Click += new System.EventHandler(this.btnLoginAdmin_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
+            this.entrarToolStripMenuItem,
+            this.menuToolStripMenuItem,
+            this.verBaseDeDatosToolStripMenuItem,
+            this.qRToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(344, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnLoginCliente
+            // homeToolStripMenuItem
             // 
-            this.btnLoginCliente.Location = new System.Drawing.Point(526, 300);
-            this.btnLoginCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLoginCliente.Name = "btnLoginCliente";
-            this.btnLoginCliente.Size = new System.Drawing.Size(109, 63);
-            this.btnLoginCliente.TabIndex = 7;
-            this.btnLoginCliente.Text = "Entrar como cliente";
-            this.btnLoginCliente.UseVisualStyleBackColor = true;
-            this.btnLoginCliente.Click += new System.EventHandler(this.btnLoginCliente_Click);
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
-            // btnLoginGerente
+            // entrarToolStripMenuItem
             // 
-            this.btnLoginGerente.Location = new System.Drawing.Point(526, 207);
-            this.btnLoginGerente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLoginGerente.Name = "btnLoginGerente";
-            this.btnLoginGerente.Size = new System.Drawing.Size(109, 63);
-            this.btnLoginGerente.TabIndex = 8;
-            this.btnLoginGerente.Text = "Entrar como gerente";
-            this.btnLoginGerente.UseVisualStyleBackColor = true;
-            this.btnLoginGerente.Click += new System.EventHandler(this.btnLoginGerente_Click);
+            this.entrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.entrarComoGerenteToolStripMenuItem,
+            this.entrarComoClienteToolStripMenuItem,
+            this.entrarComoAdminToolStripMenuItem});
+            this.entrarToolStripMenuItem.Name = "entrarToolStripMenuItem";
+            this.entrarToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.entrarToolStripMenuItem.Text = "Entrar";
             // 
-            // btnQR
+            // entrarComoGerenteToolStripMenuItem
             // 
-            this.btnQR.Location = new System.Drawing.Point(391, 585);
-            this.btnQR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnQR.Name = "btnQR";
-            this.btnQR.Size = new System.Drawing.Size(86, 31);
-            this.btnQR.TabIndex = 9;
-            this.btnQR.Text = "QR";
-            this.btnQR.UseVisualStyleBackColor = true;
-            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
+            this.entrarComoGerenteToolStripMenuItem.Name = "entrarComoGerenteToolStripMenuItem";
+            this.entrarComoGerenteToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.entrarComoGerenteToolStripMenuItem.Text = "Entrar como gerente";
+            this.entrarComoGerenteToolStripMenuItem.Click += new System.EventHandler(this.entrarComoGerenteToolStripMenuItem_Click);
             // 
-            // btnMenu
+            // entrarComoClienteToolStripMenuItem
             // 
-            this.btnMenu.Location = new System.Drawing.Point(262, 585);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(94, 29);
-            this.btnMenu.TabIndex = 10;
-            this.btnMenu.Text = "Menú";
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.entrarComoClienteToolStripMenuItem.Name = "entrarComoClienteToolStripMenuItem";
+            this.entrarComoClienteToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.entrarComoClienteToolStripMenuItem.Text = "Entrar como cliente";
+            this.entrarComoClienteToolStripMenuItem.Click += new System.EventHandler(this.entrarComoClienteToolStripMenuItem_Click);
+            // 
+            // entrarComoAdminToolStripMenuItem
+            // 
+            this.entrarComoAdminToolStripMenuItem.Name = "entrarComoAdminToolStripMenuItem";
+            this.entrarComoAdminToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.entrarComoAdminToolStripMenuItem.Text = "Entrar como admin";
+            this.entrarComoAdminToolStripMenuItem.Click += new System.EventHandler(this.entrarComoAdminToolStripMenuItem_Click);
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            // 
+            // verBaseDeDatosToolStripMenuItem
+            // 
+            this.verBaseDeDatosToolStripMenuItem.Name = "verBaseDeDatosToolStripMenuItem";
+            this.verBaseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.verBaseDeDatosToolStripMenuItem.Text = "Ver Base de datos";
+            this.verBaseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.verBaseDeDatosToolStripMenuItem_Click);
+            // 
+            // qRToolStripMenuItem
+            // 
+            this.qRToolStripMenuItem.Name = "qRToolStripMenuItem";
+            this.qRToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.qRToolStripMenuItem.Text = "QR";
+            this.qRToolStripMenuItem.Click += new System.EventHandler(this.qRToolStripMenuItem_Click);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 864);
-            this.Controls.Add(this.btnMenu);
-            this.Controls.Add(this.btnQR);
-            this.Controls.Add(this.btnLoginGerente);
-            this.Controls.Add(this.btnLoginCliente);
-            this.Controls.Add(this.btnLoginAdmin);
+            this.ClientSize = new System.Drawing.Size(344, 411);
             this.Controls.Add(this.cbTablas);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.dgUsuarios);
             this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
@@ -189,6 +205,8 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,10 +221,14 @@
         private Button btnLogin;
         private PictureBox pbLogo;
         private ComboBox cbTablas;
-        private Button btnLoginAdmin;
-        private Button btnLoginCliente;
-        private Button btnLoginGerente;
-        private Button btnQR;
-        private Button btnMenu;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem homeToolStripMenuItem;
+        private ToolStripMenuItem entrarToolStripMenuItem;
+        private ToolStripMenuItem entrarComoGerenteToolStripMenuItem;
+        private ToolStripMenuItem entrarComoClienteToolStripMenuItem;
+        private ToolStripMenuItem entrarComoAdminToolStripMenuItem;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem verBaseDeDatosToolStripMenuItem;
+        private ToolStripMenuItem qRToolStripMenuItem;
     }
 }
