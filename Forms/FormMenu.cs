@@ -1,8 +1,6 @@
-﻿using System.Data;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Missushi.Clases;
 using Missushi.Funciones;
-using MySqlConnector;
 
 namespace Missushi.Forms{
     public partial class FormMenu : Form {
