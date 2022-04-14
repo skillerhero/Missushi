@@ -47,7 +47,7 @@
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(193, 12);
+            this.lblInfo.Location = new System.Drawing.Point(238, 21);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(38, 20);
             this.lblInfo.TabIndex = 0;
@@ -67,7 +67,7 @@
             // 
             // btnRegistro
             // 
-            this.btnRegistro.Location = new System.Drawing.Point(250, 496);
+            this.btnRegistro.Location = new System.Drawing.Point(286, 498);
             this.btnRegistro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(86, 31);
@@ -78,7 +78,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(87, 496);
+            this.btnLogin.Location = new System.Drawing.Point(123, 498);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(86, 31);
@@ -93,7 +93,7 @@
             this.pbLogo.Location = new System.Drawing.Point(53, 55);
             this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(327, 417);
+            this.pbLogo.Size = new System.Drawing.Size(396, 417);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 4;
             this.pbLogo.TabStop = false;
@@ -126,7 +126,7 @@
             this.btnLoginCliente.Location = new System.Drawing.Point(526, 300);
             this.btnLoginCliente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoginCliente.Name = "btnLoginCliente";
-            this.btnLoginCliente.Size = new System.Drawing.Size(102, 63);
+            this.btnLoginCliente.Size = new System.Drawing.Size(109, 63);
             this.btnLoginCliente.TabIndex = 7;
             this.btnLoginCliente.Text = "Entrar como cliente";
             this.btnLoginCliente.UseVisualStyleBackColor = true;
@@ -134,10 +134,10 @@
             // 
             // btnLoginGerente
             // 
-            this.btnLoginGerente.Location = new System.Drawing.Point(530, 189);
+            this.btnLoginGerente.Location = new System.Drawing.Point(526, 207);
             this.btnLoginGerente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoginGerente.Name = "btnLoginGerente";
-            this.btnLoginGerente.Size = new System.Drawing.Size(97, 63);
+            this.btnLoginGerente.Size = new System.Drawing.Size(109, 63);
             this.btnLoginGerente.TabIndex = 8;
             this.btnLoginGerente.Text = "Entrar como gerente";
             this.btnLoginGerente.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             // 
             // btnQR
             // 
-            this.btnQR.Location = new System.Drawing.Point(379, 585);
+            this.btnQR.Location = new System.Drawing.Point(391, 585);
             this.btnQR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnQR.Name = "btnQR";
             this.btnQR.Size = new System.Drawing.Size(86, 31);

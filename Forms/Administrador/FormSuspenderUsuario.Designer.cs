@@ -34,23 +34,21 @@
             // dgTablaUsuarios
             // 
             this.dgTablaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTablaUsuarios.Location = new System.Drawing.Point(10, 9);
-            this.dgTablaUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgTablaUsuarios.Location = new System.Drawing.Point(12, 12);
             this.dgTablaUsuarios.Name = "dgTablaUsuarios";
             this.dgTablaUsuarios.RowHeadersVisible = false;
             this.dgTablaUsuarios.RowHeadersWidth = 51;
             this.dgTablaUsuarios.RowTemplate.Height = 29;
             this.dgTablaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgTablaUsuarios.Size = new System.Drawing.Size(844, 141);
+            this.dgTablaUsuarios.Size = new System.Drawing.Size(965, 274);
             this.dgTablaUsuarios.TabIndex = 0;
             this.dgTablaUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTablaUsuarios_CellDoubleClick);
             // 
             // btnCambios
             // 
-            this.btnCambios.Location = new System.Drawing.Point(388, 329);
-            this.btnCambios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCambios.Location = new System.Drawing.Point(443, 439);
             this.btnCambios.Name = "btnCambios";
-            this.btnCambios.Size = new System.Drawing.Size(82, 22);
+            this.btnCambios.Size = new System.Drawing.Size(94, 29);
             this.btnCambios.TabIndex = 1;
             this.btnCambios.Text = "Aceptar";
             this.btnCambios.UseVisualStyleBackColor = true;
@@ -58,31 +56,29 @@
             // 
             // txtCorreoSuspender
             // 
-            this.txtCorreoSuspender.Location = new System.Drawing.Point(455, 260);
-            this.txtCorreoSuspender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCorreoSuspender.Location = new System.Drawing.Point(520, 347);
             this.txtCorreoSuspender.Name = "txtCorreoSuspender";
-            this.txtCorreoSuspender.Size = new System.Drawing.Size(110, 23);
+            this.txtCorreoSuspender.Size = new System.Drawing.Size(125, 27);
             this.txtCorreoSuspender.TabIndex = 2;
             // 
             // lblSuspenderU
             // 
             this.lblSuspenderU.AutoSize = true;
-            this.lblSuspenderU.Location = new System.Drawing.Point(301, 262);
+            this.lblSuspenderU.Location = new System.Drawing.Point(344, 349);
             this.lblSuspenderU.Name = "lblSuspenderU";
-            this.lblSuspenderU.Size = new System.Drawing.Size(101, 15);
+            this.lblSuspenderU.Size = new System.Drawing.Size(127, 20);
             this.lblSuspenderU.TabIndex = 3;
             this.lblSuspenderU.Text = "Correo de usuario";
             // 
             // FormSuspenderUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 418);
+            this.ClientSize = new System.Drawing.Size(999, 557);
             this.Controls.Add(this.lblSuspenderU);
             this.Controls.Add(this.txtCorreoSuspender);
             this.Controls.Add(this.btnCambios);
             this.Controls.Add(this.dgTablaUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormSuspenderUsuario";
             this.Text = "FormSuspenderUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.dgTablaUsuarios)).EndInit();
