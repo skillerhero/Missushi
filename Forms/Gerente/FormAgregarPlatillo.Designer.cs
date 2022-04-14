@@ -80,7 +80,7 @@
             // 
             // bntAceptarMenu
             // 
-            this.bntAceptarMenu.Location = new System.Drawing.Point(199, 301);
+            this.bntAceptarMenu.Location = new System.Drawing.Point(235, 307);
             this.bntAceptarMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntAceptarMenu.Name = "bntAceptarMenu";
             this.bntAceptarMenu.Size = new System.Drawing.Size(82, 22);
@@ -110,7 +110,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(131, 150);
+            this.lblPrecio.Location = new System.Drawing.Point(131, 156);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(115, 15);
             this.lblPrecio.TabIndex = 13;

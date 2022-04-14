@@ -1,7 +1,11 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
+using QRCoder;
 using System.ComponentModel;
+using System.Net;
 using System.Net.Mail;
+using System.Net.Mime;
+
 namespace Missushi.Forms.Cliente {
     public partial class FormReservacionCliente : Form {
         ProgressBar progressBar = new ProgressBar();
@@ -35,43 +39,65 @@ namespace Missushi.Forms.Cliente {
 
         private void mandarCorreo() {
             try {
+                string remitente = "missushi.contacto@gmail.com";
+                string destinatario = "skillerhero@gmail.com";
+                string copiaA = "danna.medina2869@alumnos.udg.mx";
 
-                SmtpClient mySmtpClient = new SmtpClient("smtp.gmail.com", 587);
+                Usuario usuario = ConexionBD.consultarUsuario(Usuario.id);
+                var dirRemitente = new MailAddress(remitente, "Missushi");
+                var dirDestinatario = new MailAddress(destinatario, usuario.Nombres);
+                const string contra = "frribGLDb7D2mf";
+                const string asunto = "Reservación";
+                string body = "";
 
-                // set smtp-client with basicAuthentication
-                mySmtpClient.UseDefaultCredentials = false;
-                System.Net.NetworkCredential basicAuthenticationInfo = new
-                System.Net.NetworkCredential("missushi.contacto@gmail.com", "frribGLDb7D2mf");
-                mySmtpClient.Credentials = basicAuthenticationInfo;
-
-                // add from,to mailaddresses
-                MailAddress from = new MailAddress("missushi.contacto@gmail.com","Missushi");
-                MailAddress to = new MailAddress("skillerhero@gmail.com","Rafael");
-                MailMessage myMail = new MailMessage(from, to);
-
-                // add ReplyTo
-                //MailAddress replyTo = new MailAddress("reply@example.com");
-                //myMail.ReplyToList.Add(replyTo);
-
-                // set subject and encoding
-                myMail.Subject = "Test message";
-                myMail.SubjectEncoding = System.Text.Encoding.UTF8;
-
-                // set body-message and encoding
-                myMail.Body = "<b>Test Mail</b><br>using <b>HTML</b>.";
-                myMail.BodyEncoding = System.Text.Encoding.UTF8;
-                // text or html
-                myMail.IsBodyHtml = true;
-
-                mySmtpClient.Send(myMail);
-            } catch (SmtpException ex) {
-                throw new ApplicationException
-                  ("SmtpException has occured: " + ex.Message);
+                var smtp = new SmtpClient {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(dirRemitente.Address, contra)
+                };
+                var message = new MailMessage(dirRemitente, dirDestinatario);
+                message.Bcc.Add(copiaA);
+                message.AlternateViews.Add(GetEmbeddedImage());
+                message.Subject = asunto;
+                message.Body = body;    
+                message.IsBodyHtml = true;
+                smtp.Send(message);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
         }
 
+        private AlternateView GetEmbeddedImage() {
+            Reservacion reservacion = ConexionBD.consultarReservacion(Usuario.id);
+            Usuario usuario = ConexionBD.consultarUsuario(Usuario.id);
+            QRCodeGenerator qr = new QRCodeGenerator();
+            string url = "http://" + ConexionBD.ipServidor + "/modificarReservacion.php?idReservacion=" + reservacion.IdReservacion;
+            QRCodeData data = qr.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(data);
+
+            Bitmap b = code.GetGraphic(5);
+            ImageConverter ic = new ImageConverter();
+            Byte[]? ba = ic.ConvertTo(b, typeof(Byte[])) as Byte[];
+            MemoryStream memoryStream = new MemoryStream(ba);
+
+            LinkedResource res = new LinkedResource(memoryStream);
+            res.ContentId = Guid.NewGuid().ToString();
+            res.ContentType.Name = "reservacion.jpg";
+            string htmlBody = 
+                "<h2>Aquí están los datos de tu reservación.<h2/>"+
+                "<h3><b>Nombre:</b> "+usuario.Nombres+" "+usuario.Apellidos+ ".<h3>" +
+                "<h3><b>Personas:</b> "+reservacion.CantidadPersonas+ ".<h3>" +
+                "<h3><b>Fecha y hora inicio:</b> " + reservacion.FechaHoraInicio + "<h3>" +
+                "<h3><b>Fecha y hora fin:</b> " + reservacion.FechaHoraFin + "<h3>" +
+                "<h3><b>Zona:</b> " + reservacion.IdZona + ".<h3><br>" +
+                @"<img src='cid:" + res.ContentId + @"'/>";
+            AlternateView alternateView = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
+            alternateView.LinkedResources.Add(res);
+            return alternateView;
+        }
         private void FormReservacionCliente_Load(object sender, EventArgs e) {
             comprobarHoraHoy();
             cbHoraInicio.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -141,9 +167,11 @@ namespace Missushi.Forms.Cliente {
                 MessageBox.Show("No hay cupos en esta zona y horario.\nPuede seleccionar otra zona u horario.");
                 return;
             }
-            nudCantidadPersonas.Maximum = cupoZona;
-            btnHacerReservacion.Enabled = true;
-            nudCantidadPersonas.Enabled = true;
+            if(cbHoraInicio.Enabled == true) {
+                nudCantidadPersonas.Maximum = cupoZona;
+                btnHacerReservacion.Enabled = true;
+                nudCantidadPersonas.Enabled = true;
+            }
         }
 
         private void comprobarHoraHoy() {

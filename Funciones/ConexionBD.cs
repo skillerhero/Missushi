@@ -451,6 +451,22 @@ namespace Missushi.Funciones{
                 return false;
         }
 
+        static public Reservacion consultarReservacion(int idUsuario) {
+            Reservacion reservacion = new Reservacion();
+            string sql = "SELECT * FROM reservacion WHERE idUsuario = @0 and estado = 'En espera';";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", idUsuario);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read()) {
+                    reservacion = new Reservacion(reader.GetInt32(0), reader.GetDateTime(1), reader.GetDateTime(2), reader.GetInt32(3),reader.GetInt32(4),reader.GetInt32(5),reader.GetString(6));
+                }
+                connection.Close();
+            }
+            return reservacion;
+        }
+
 
         /*--------------------------------------Menu--------------------------------------*/
 
