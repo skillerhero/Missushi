@@ -5,10 +5,12 @@ namespace Missushi.Forms.Gerente {
     public partial class FormModificarMenu : Form {
         public FormModificarMenu() {
             InitializeComponent();
-            cbTipoMenu.Items.Add("Postre");
-            cbTipoMenu.Items.Add("Bebida");
-            cbTipoMenu.Items.Add("Principal");
-            cbTipoMenu.Items.Add("Complemento");
+            cbTipoMenu.Items.Add("Entradas");
+            cbTipoMenu.Items.Add("Rollos");
+            cbTipoMenu.Items.Add("Platillos");
+            cbTipoMenu.Items.Add("Paquetes");
+            cbTipoMenu.Items.Add("Postres");
+            cbTipoMenu.Items.Add("Bebidas");
             cbTipoMenu.Text = cbTipoMenu.Items[0].ToString();
         }
 
@@ -18,21 +20,25 @@ namespace Missushi.Forms.Gerente {
                     descripcion = Validacion.ajustarEspacios(txtDescripcionMenu.Text.Trim()), 
                     foto = Validacion.ajustarEspacios(txtFotoMenu.Text.Trim()),
                     tipo = Validacion.ajustarEspacios(cbTipoMenu.Text.Trim());
-                
-
 
                 switch (cbTipoMenu.SelectedIndex){
                     case 0:
-                        tipo = "Postre";
+                        tipo = "Entradas";
                         break;   
                     case 1:
-                        tipo = "Bebida";
+                        tipo = "Rollos";
                         break;
                     case 2:
-                        tipo = "Principal";
+                        tipo = "Platillos";
                         break;
                     case 3:
-                        tipo = "Complemento";
+                        tipo = "Paquetes";
+                        break;
+                    case 4:
+                        tipo = "Postres";
+                        break;
+                    case 5:
+                        tipo = "Bebidas";
                         break;
                 }
 
@@ -60,6 +66,11 @@ namespace Missushi.Forms.Gerente {
             {
                 MessageBox.Show(ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cbTipoMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

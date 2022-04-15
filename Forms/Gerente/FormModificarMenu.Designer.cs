@@ -137,6 +137,7 @@
             this.cbTipoMenu.Name = "cbTipoMenu";
             this.cbTipoMenu.Size = new System.Drawing.Size(151, 28);
             this.cbTipoMenu.TabIndex = 10;
+            this.cbTipoMenu.SelectedIndexChanged += new System.EventHandler(this.cbTipoMenu_SelectedIndexChanged);
             // 
             // FormModificarMenu
             // 
