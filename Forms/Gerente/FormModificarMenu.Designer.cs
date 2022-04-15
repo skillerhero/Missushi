@@ -92,7 +92,7 @@
             // 
             // bntAceptarMenu
             // 
-            this.bntAceptarMenu.BackColor = System.Drawing.Color.Crimson;
+            this.bntAceptarMenu.BackColor = System.Drawing.SystemColors.ControlLight;
             this.bntAceptarMenu.Location = new System.Drawing.Point(315, 366);
             this.bntAceptarMenu.Name = "bntAceptarMenu";
             this.bntAceptarMenu.Size = new System.Drawing.Size(94, 29);

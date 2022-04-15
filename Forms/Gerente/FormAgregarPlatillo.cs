@@ -5,10 +5,12 @@ namespace Missushi.Forms.Gerente {
     public partial class FormAgregarPlatillo : Form {
         public FormAgregarPlatillo() {
             InitializeComponent();
-            cbTipoMenu.Items.Add("Postre");
-            cbTipoMenu.Items.Add("Bebida");
-            cbTipoMenu.Items.Add("Principal");
-            cbTipoMenu.Items.Add("Complemento");
+            cbTipoMenu.Items.Add("Entradas");
+            cbTipoMenu.Items.Add("Rollos");
+            cbTipoMenu.Items.Add("Platillos");
+            cbTipoMenu.Items.Add("Paquetes");
+            cbTipoMenu.Items.Add("Postres");
+            cbTipoMenu.Items.Add("Bebidas");
             cbTipoMenu.Text = cbTipoMenu.Items[0].ToString();
         }
         private void bntAceptarMenu_Click(object sender, EventArgs e) {
@@ -19,22 +21,27 @@ namespace Missushi.Forms.Gerente {
                 tipo = Validacion.ajustarEspacios(cbTipoMenu.Text.Trim());
                 string x = txtPrecioMenu.Text;
                 float precio = float.Parse(txtPrecioMenu.Text.Trim(), CultureInfo.InvariantCulture.NumberFormat);
-                
 
 
-
-                switch (cbTipoMenu.SelectedIndex) {
+                switch (cbTipoMenu.SelectedIndex)
+                {
                     case 0:
-                        tipo = "Postre";
+                        tipo = "Entradas";
                         break;
                     case 1:
-                        tipo = "Bebida";
+                        tipo = "Rollos";
                         break;
                     case 2:
-                        tipo = "Principal";
+                        tipo = "Platillos";
                         break;
                     case 3:
-                        tipo = "Complemento";
+                        tipo = "Paquetes";
+                        break;
+                    case 4:
+                        tipo = "Postres";
+                        break;
+                    case 5:
+                        tipo = "Bebidas";
                         break;
                 }
 
