@@ -61,7 +61,5 @@ namespace Missushi.Forms.Gerente {
                 MessageBox.Show(ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
     }
 }

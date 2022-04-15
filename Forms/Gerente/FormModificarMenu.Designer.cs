@@ -92,12 +92,13 @@
             // 
             // bntAceptarMenu
             // 
+            this.bntAceptarMenu.BackColor = System.Drawing.Color.Crimson;
             this.bntAceptarMenu.Location = new System.Drawing.Point(315, 366);
             this.bntAceptarMenu.Name = "bntAceptarMenu";
             this.bntAceptarMenu.Size = new System.Drawing.Size(94, 29);
             this.bntAceptarMenu.TabIndex = 5;
             this.bntAceptarMenu.Text = "Aceptar";
-            this.bntAceptarMenu.UseVisualStyleBackColor = true;
+            this.bntAceptarMenu.UseVisualStyleBackColor = false;
             this.bntAceptarMenu.Click += new System.EventHandler(this.bntAceptarMenu_Click);
             // 
             // txtNombrePlatillo
