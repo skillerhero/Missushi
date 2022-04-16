@@ -49,6 +49,7 @@ namespace Missushi.Forms.Gerente {
                     MessageBox.Show("El nombre tiene caracteres no válidos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                
 
                 if (!Validacion.esMenor(descripcion, 200)) {
                     MessageBox.Show("La descripcion es demasiado larga", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -58,7 +59,11 @@ namespace Missushi.Forms.Gerente {
                 if (!Validacion.IsNumeric(txtPrecioMenu.Text)) {
                     MessageBox.Show("El precio contiene caracteres no validos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                } else if (ConexionBD.agregarPlatillo(nombre, descripcion, precio, foto, tipo)) {
+                } else if (ConexionBD.existePlatillo(nombre))
+                {
+                    MessageBox.Show("El platillo ya existe.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }else if (ConexionBD.agregarPlatillo(nombre, descripcion, precio, foto, tipo)) {
                     MessageBox.Show("Agregado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 } else {

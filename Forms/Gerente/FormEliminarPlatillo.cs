@@ -45,7 +45,7 @@ namespace Missushi.Forms.Gerente {
             {
                 if (ConexionBD.eliminarPlatillo(nombre))
                 {
-                    MessageBox.Show("Modificado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Eliminado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
                 else

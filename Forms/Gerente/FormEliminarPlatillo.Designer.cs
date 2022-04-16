@@ -44,7 +44,7 @@
             // 
             // btnEliminarPlatillo
             // 
-            this.btnEliminarPlatillo.Location = new System.Drawing.Point(253, 369);
+            this.btnEliminarPlatillo.Location = new System.Drawing.Point(256, 386);
             this.btnEliminarPlatillo.Name = "btnEliminarPlatillo";
             this.btnEliminarPlatillo.Size = new System.Drawing.Size(154, 29);
             this.btnEliminarPlatillo.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // txtPlatilloEliminar
             // 
-            this.txtPlatilloEliminar.Location = new System.Drawing.Point(330, 303);
+            this.txtPlatilloEliminar.Location = new System.Drawing.Point(330, 324);
             this.txtPlatilloEliminar.Name = "txtPlatilloEliminar";
             this.txtPlatilloEliminar.Size = new System.Drawing.Size(180, 27);
             this.txtPlatilloEliminar.TabIndex = 2;
@@ -62,7 +62,7 @@
             // lblPlatilloEliminar
             // 
             this.lblPlatilloEliminar.AutoSize = true;
-            this.lblPlatilloEliminar.Location = new System.Drawing.Point(190, 307);
+            this.lblPlatilloEliminar.Location = new System.Drawing.Point(190, 328);
             this.lblPlatilloEliminar.Name = "lblPlatilloEliminar";
             this.lblPlatilloEliminar.Size = new System.Drawing.Size(115, 20);
             this.lblPlatilloEliminar.TabIndex = 3;

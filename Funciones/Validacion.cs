@@ -62,5 +62,7 @@ namespace Missushi.Funciones{
             bool numero = float.TryParse(text, out float _);
             return numero;
         }
+
+
     }
 }

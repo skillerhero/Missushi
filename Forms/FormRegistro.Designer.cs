@@ -41,12 +41,14 @@
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
             this.mySqlCommandBuilder1 = new MySqlConnector.MySqlCommandBuilder();
+            this.lblContraseña2 = new System.Windows.Forms.Label();
+            this.txtConfirmarContra = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNombres
             // 
             this.lblNombres.AutoSize = true;
-            this.lblNombres.Location = new System.Drawing.Point(109, 80);
+            this.lblNombres.Location = new System.Drawing.Point(107, 65);
             this.lblNombres.Name = "lblNombres";
             this.lblNombres.Size = new System.Drawing.Size(84, 20);
             this.lblNombres.TabIndex = 0;
@@ -54,7 +56,7 @@
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(241, 76);
+            this.txtNombres.Location = new System.Drawing.Point(239, 61);
             this.txtNombres.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombres.MaxLength = 80;
             this.txtNombres.Name = "txtNombres";
@@ -63,7 +65,7 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(241, 137);
+            this.txtApellidos.Location = new System.Drawing.Point(239, 144);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtApellidos.MaxLength = 80;
             this.txtApellidos.Name = "txtApellidos";
@@ -72,7 +74,7 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(241, 209);
+            this.txtContraseña.Location = new System.Drawing.Point(239, 216);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContraseña.MaxLength = 50;
             this.txtContraseña.Name = "txtContraseña";
@@ -82,30 +84,30 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(241, 276);
+            this.txtCorreo.Location = new System.Drawing.Point(239, 356);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(114, 27);
-            this.txtCorreo.TabIndex = 3;
+            this.txtCorreo.TabIndex = 4;
             // 
             // cbTipo
             // 
             this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Location = new System.Drawing.Point(241, 343);
+            this.cbTipo.Location = new System.Drawing.Point(239, 423);
             this.cbTipo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(114, 28);
-            this.cbTipo.TabIndex = 4;
+            this.cbTipo.TabIndex = 5;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(198, 420);
+            this.btnRegistrar.Location = new System.Drawing.Point(190, 506);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(86, 31);
-            this.btnRegistrar.TabIndex = 5;
+            this.btnRegistrar.TabIndex = 6;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -113,7 +115,7 @@
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Location = new System.Drawing.Point(110, 147);
+            this.lblApellidos.Location = new System.Drawing.Point(108, 154);
             this.lblApellidos.Name = "lblApellidos";
             this.lblApellidos.Size = new System.Drawing.Size(72, 20);
             this.lblApellidos.TabIndex = 0;
@@ -122,7 +124,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(109, 209);
+            this.lblContraseña.Location = new System.Drawing.Point(107, 216);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(83, 20);
             this.lblContraseña.TabIndex = 0;
@@ -131,7 +133,7 @@
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(120, 276);
+            this.lblCorreo.Location = new System.Drawing.Point(118, 356);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(54, 20);
             this.lblCorreo.TabIndex = 0;
@@ -140,7 +142,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(129, 347);
+            this.lblTipo.Location = new System.Drawing.Point(127, 427);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(39, 20);
             this.lblTipo.TabIndex = 0;
@@ -152,12 +154,33 @@
             this.mySqlCommandBuilder1.QuotePrefix = "`";
             this.mySqlCommandBuilder1.QuoteSuffix = "`";
             // 
+            // lblContraseña2
+            // 
+            this.lblContraseña2.AutoSize = true;
+            this.lblContraseña2.Location = new System.Drawing.Point(46, 289);
+            this.lblContraseña2.Name = "lblContraseña2";
+            this.lblContraseña2.Size = new System.Drawing.Size(163, 20);
+            this.lblContraseña2.TabIndex = 6;
+            this.lblContraseña2.Text = "Contraseña confirmada";
+            // 
+            // txtConfirmarContra
+            // 
+            this.txtConfirmarContra.Location = new System.Drawing.Point(239, 286);
+            this.txtConfirmarContra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtConfirmarContra.MaxLength = 50;
+            this.txtConfirmarContra.Name = "txtConfirmarContra";
+            this.txtConfirmarContra.Size = new System.Drawing.Size(114, 27);
+            this.txtConfirmarContra.TabIndex = 3;
+            this.txtConfirmarContra.UseSystemPasswordChar = true;
+            // 
             // FormRegistro
             // 
             this.AcceptButton = this.btnRegistrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 513);
+            this.ClientSize = new System.Drawing.Size(458, 594);
+            this.Controls.Add(this.lblContraseña2);
+            this.Controls.Add(this.txtConfirmarContra);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.lblContraseña);
@@ -195,5 +218,7 @@
         private Label lblCorreo;
         private Label lblTipo;
         private MySqlConnector.MySqlCommandBuilder mySqlCommandBuilder1;
+        private Label lblContraseña2;
+        private TextBox txtConfirmarContra;
     }
 }

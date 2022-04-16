@@ -68,6 +68,26 @@ namespace Missushi.Funciones{
             return existe;
         }
 
+
+        static public bool existePlatillo(string nombre) {
+            bool existe = false;
+            string sql = "SELECT * FROM menu WHERE nombre = @0;";
+            if (connection != null)
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", nombre);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    existe = true;
+                }
+                connection.Close();
+            }
+            return existe;
+        }
+
+
         static public bool consultarPrimerUsuario(char tipo) {
             bool existe = false;
             string query = "SELECT * FROM usuario where tipo = @0;";

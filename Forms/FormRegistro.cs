@@ -11,7 +11,9 @@ namespace Missushi.Forms{
 
         private void btnRegistrar_Click(object sender, EventArgs e){
             try {
-                String nombres = Validacion.ajustarEspacios(txtNombres.Text.Trim()), apellidos = Validacion.ajustarEspacios(txtApellidos.Text.Trim()), contraseña = txtContraseña.Text.Trim(), correo = txtCorreo.Text.Trim();
+                String nombres = Validacion.ajustarEspacios(txtNombres.Text.Trim()), apellidos = Validacion.ajustarEspacios(txtApellidos.Text.Trim()), 
+                    contraseña = txtContraseña.Text.Trim(), correo = txtCorreo.Text.Trim(), contraseña2 = Validacion.ajustarEspacios(txtConfirmarContra.Text.Trim());
+
                 char tipo=' ';
                 switch (cbTipo.SelectedIndex) {
                     case 0:
@@ -41,7 +43,7 @@ namespace Missushi.Forms{
                 if (Validacion.esMenor(contraseña, 7)) {
                     MessageBox.Show("La contraseña es demasiado corta.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }
+                } 
                 if (!Validacion.validarCorreo(correo)) {
                     MessageBox.Show("El correo no es válido.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -49,18 +51,29 @@ namespace Missushi.Forms{
                     MessageBox.Show("El correo es demasiado corto.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (ConexionBD.existeCorreo(correo)) {
-                    MessageBox.Show("El correo ya existe.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                if (contraseña == contraseña2)
+                {
+                    if (ConexionBD.existeCorreo(correo))
+                    {
+                        MessageBox.Show("El correo ya existe.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (tipo == 'G' && ConexionBD.existeGerente())
+                    {
+                        MessageBox.Show("Ya existe un gerente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (ConexionBD.insertarUsuario(nombres, apellidos, Validacion.encriptar(contraseña), correo, tipo))
+                    {
+                        MessageBox.Show("Registrado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                    }
                 }
-                if(tipo == 'G' && ConexionBD.existeGerente()) {
-                    MessageBox.Show("Ya existe un gerente.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                else
+                {
+                    MessageBox.Show("Las contraseñas no son iguales");
                 }
-                if(ConexionBD.insertarUsuario(nombres, apellidos, Validacion.encriptar(contraseña), correo, tipo)){
-                    MessageBox.Show("Registrado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
-                }
+               
             }catch(Exception ex) {
                 MessageBox.Show(ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }  
