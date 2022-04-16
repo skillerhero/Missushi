@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Missushi.Clases{
     internal class Menu{
-        private int idPlatillo;
+        public static int idPlatillo = -1;
         private string nombre;
         private string descripcion;
         private float precio;

@@ -38,52 +38,46 @@
             // 
             // txtFotoMenu
             // 
-            this.txtFotoMenu.Location = new System.Drawing.Point(289, 185);
-            this.txtFotoMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFotoMenu.Location = new System.Drawing.Point(330, 247);
             this.txtFotoMenu.Name = "txtFotoMenu";
-            this.txtFotoMenu.Size = new System.Drawing.Size(110, 23);
+            this.txtFotoMenu.Size = new System.Drawing.Size(125, 27);
             this.txtFotoMenu.TabIndex = 20;
             // 
             // cbTipoMenu
             // 
             this.cbTipoMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoMenu.FormattingEnabled = true;
-            this.cbTipoMenu.Location = new System.Drawing.Point(289, 239);
-            this.cbTipoMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbTipoMenu.Location = new System.Drawing.Point(330, 319);
             this.cbTipoMenu.Name = "cbTipoMenu";
-            this.cbTipoMenu.Size = new System.Drawing.Size(133, 23);
+            this.cbTipoMenu.Size = new System.Drawing.Size(151, 28);
             this.cbTipoMenu.TabIndex = 21;
             // 
             // txtPrecioMenu
             // 
-            this.txtPrecioMenu.Location = new System.Drawing.Point(289, 148);
-            this.txtPrecioMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPrecioMenu.Location = new System.Drawing.Point(330, 197);
             this.txtPrecioMenu.Name = "txtPrecioMenu";
-            this.txtPrecioMenu.Size = new System.Drawing.Size(110, 23);
+            this.txtPrecioMenu.Size = new System.Drawing.Size(125, 27);
             this.txtPrecioMenu.TabIndex = 19;
             // 
             // txtDescripcionMenu
             // 
-            this.txtDescripcionMenu.Location = new System.Drawing.Point(289, 103);
-            this.txtDescripcionMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescripcionMenu.Location = new System.Drawing.Point(330, 137);
             this.txtDescripcionMenu.Name = "txtDescripcionMenu";
-            this.txtDescripcionMenu.Size = new System.Drawing.Size(110, 23);
+            this.txtDescripcionMenu.Size = new System.Drawing.Size(125, 27);
             this.txtDescripcionMenu.TabIndex = 18;
             // 
             // txtNombrePlatillo
             // 
-            this.txtNombrePlatillo.Location = new System.Drawing.Point(289, 65);
-            this.txtNombrePlatillo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombrePlatillo.Location = new System.Drawing.Point(330, 87);
             this.txtNombrePlatillo.Name = "txtNombrePlatillo";
-            this.txtNombrePlatillo.Size = new System.Drawing.Size(110, 23);
+            this.txtNombrePlatillo.Size = new System.Drawing.Size(125, 27);
             this.txtNombrePlatillo.TabIndex = 17;
             // 
             // bntAceptarMenu
             // 
-            this.bntAceptarMenu.Location = new System.Drawing.Point(235, 307);
-            this.bntAceptarMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bntAceptarMenu.Location = new System.Drawing.Point(269, 409);
             this.bntAceptarMenu.Name = "bntAceptarMenu";
-            this.bntAceptarMenu.Size = new System.Drawing.Size(82, 22);
+            this.bntAceptarMenu.Size = new System.Drawing.Size(94, 29);
             this.bntAceptarMenu.TabIndex = 16;
             this.bntAceptarMenu.Text = "Aceptar";
             this.bntAceptarMenu.UseVisualStyleBackColor = true;
@@ -92,53 +86,53 @@
             // lblTipoPlatillo
             // 
             this.lblTipoPlatillo.AutoSize = true;
-            this.lblTipoPlatillo.Location = new System.Drawing.Point(131, 245);
+            this.lblTipoPlatillo.Location = new System.Drawing.Point(150, 327);
             this.lblTipoPlatillo.Name = "lblTipoPlatillo";
-            this.lblTipoPlatillo.Size = new System.Drawing.Size(30, 15);
+            this.lblTipoPlatillo.Size = new System.Drawing.Size(39, 20);
             this.lblTipoPlatillo.TabIndex = 15;
             this.lblTipoPlatillo.Text = "Tipo";
             // 
             // lblFotoPlatillo
             // 
             this.lblFotoPlatillo.AutoSize = true;
-            this.lblFotoPlatillo.Location = new System.Drawing.Point(131, 191);
+            this.lblFotoPlatillo.Location = new System.Drawing.Point(150, 255);
             this.lblFotoPlatillo.Name = "lblFotoPlatillo";
-            this.lblFotoPlatillo.Size = new System.Drawing.Size(31, 15);
+            this.lblFotoPlatillo.Size = new System.Drawing.Size(39, 20);
             this.lblFotoPlatillo.TabIndex = 14;
             this.lblFotoPlatillo.Text = "Foto";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(131, 156);
+            this.lblPrecio.Location = new System.Drawing.Point(150, 208);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(115, 15);
+            this.lblPrecio.Size = new System.Drawing.Size(150, 20);
             this.lblPrecio.TabIndex = 13;
             this.lblPrecio.Text = "Precio                       $";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(131, 108);
+            this.lblDescripcion.Location = new System.Drawing.Point(150, 144);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(69, 15);
+            this.lblDescripcion.Size = new System.Drawing.Size(87, 20);
             this.lblDescripcion.TabIndex = 12;
             this.lblDescripcion.Text = "Descripcion";
             // 
             // lblNombrePlatillo
             // 
             this.lblNombrePlatillo.AutoSize = true;
-            this.lblNombrePlatillo.Location = new System.Drawing.Point(131, 65);
+            this.lblNombrePlatillo.Location = new System.Drawing.Point(150, 87);
             this.lblNombrePlatillo.Name = "lblNombrePlatillo";
-            this.lblNombrePlatillo.Size = new System.Drawing.Size(51, 15);
+            this.lblNombrePlatillo.Size = new System.Drawing.Size(64, 20);
             this.lblNombrePlatillo.TabIndex = 11;
             this.lblNombrePlatillo.Text = "Nombre";
             // 
             // FormAgregarPlatillo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 402);
+            this.ClientSize = new System.Drawing.Size(606, 536);
             this.Controls.Add(this.txtFotoMenu);
             this.Controls.Add(this.cbTipoMenu);
             this.Controls.Add(this.txtPrecioMenu);
@@ -150,6 +144,7 @@
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombrePlatillo);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAgregarPlatillo";
             this.Text = "FormAgregarPlatillo";
             this.ResumeLayout(false);

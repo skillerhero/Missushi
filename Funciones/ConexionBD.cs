@@ -32,6 +32,7 @@ namespace Missushi.Funciones{
             }
             return adapter;
         }
+
         static public bool login(string correo, string contraseña) {
             bool exito = false;
             string sql = "SELECT idUsuario, contrasenia, tipo FROM usuario WHERE correo = @0;";
@@ -191,6 +192,7 @@ namespace Missushi.Funciones{
             }
             return gerente;
         }
+        
         /*-------------------------------------Administrador-------------------------------------*/
 
         static public bool VerificarEstado(string correo) {
@@ -492,7 +494,7 @@ namespace Missushi.Funciones{
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = nombre;
-                cmd.Parameters.Add("@1", MySqlDbType.VarChar, 20).Value = descripcion;
+                cmd.Parameters.Add("@1", MySqlDbType.VarChar, 200).Value = descripcion;
                 cmd.Parameters.Add("@2", MySqlDbType.Float).Value = precio;
                 cmd.Parameters.Add("@3", MySqlDbType.String).Value = foto;
                 cmd.Parameters.Add("@4", MySqlDbType.VarChar, 20).Value = tipo;
@@ -532,6 +534,35 @@ namespace Missushi.Funciones{
             return menu;
         }
 
+        static public MySqlDataAdapter consultarTablaMenu() {
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            string query = "SELECT nombre,descripcion,precio,tipo FROM menu";
+            if (connection != null)
+            {
+                connection.Open();
+                adapter = new MySqlDataAdapter(query, connection);
+                connection.Close();
+            }
+            return adapter;
+        }
 
+
+        static public bool modificarPlatillo(string nombre, string descripcion, float precio, string foto, string tipo) {
+            string sql = "UPDATE menu SET descripcion=@1, precio=@2, foto=@3, tipo=@4 WHERE nombre = @0;";
+            if (connection != null)
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = nombre;
+                cmd.Parameters.Add("@1", MySqlDbType.VarChar, 200).Value = descripcion;
+                cmd.Parameters.Add("@2", MySqlDbType.Float).Value = precio;
+                cmd.Parameters.Add("@3", MySqlDbType.String).Value = foto;
+                cmd.Parameters.Add("@4", MySqlDbType.VarChar, 20).Value = tipo;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            return true;
+        }
     }
 }
