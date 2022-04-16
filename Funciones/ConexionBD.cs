@@ -564,5 +564,21 @@ namespace Missushi.Funciones{
             }
             return true;
         }
+
+        static public bool eliminarPlatillo(string nombre) {
+            string sql = "DELETE FROM menu WHERE nombre = @0;";
+
+            if (connection != null)
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = nombre;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            return true;
+        }
     }
 }

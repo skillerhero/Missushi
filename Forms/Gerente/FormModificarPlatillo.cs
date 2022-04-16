@@ -115,8 +115,8 @@ namespace Missushi.Forms.Gerente {
         private void dgPlatillosModi_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             int selectedrowindex = dgPlatillosModi.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dgPlatillosModi.Rows[selectedrowindex];
-            var correo = selectedRow.Cells["nombre"].Value;
-            txtNombreModi.Text = correo.ToString();
+            var nombre = selectedRow.Cells["nombre"].Value;
+            txtNombreModi.Text = nombre.ToString();
         }
 
        
