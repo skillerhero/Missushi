@@ -63,6 +63,16 @@ namespace Missushi.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap disponi {
+            get {
+                object obj = ResourceManager.GetObject("disponi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoFondoRosa {
             get {
                 object obj = ResourceManager.GetObject("logoFondoRosa", resourceCulture);
@@ -76,6 +86,16 @@ namespace Missushi.Properties {
         internal static System.Drawing.Bitmap logoFondoRosaHD {
             get {
                 object obj = ResourceManager.GetObject("logoFondoRosaHD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mapa {
+            get {
+                object obj = ResourceManager.GetObject("mapa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
