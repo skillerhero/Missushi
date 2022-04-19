@@ -27,23 +27,27 @@
             this.lblBarraPrincipal = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.lblMenu = new System.Windows.Forms.Label();
-            this.pbMenu = new System.Windows.Forms.PictureBox();
+            this.pbUbicacion = new System.Windows.Forms.PictureBox();
             this.lblBarra1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblIngresar = new System.Windows.Forms.Label();
+            this.lblRegistro = new System.Windows.Forms.Label();
+            this.lblUbicacion = new System.Windows.Forms.Label();
+            this.lblDisponibilidad = new System.Windows.Forms.Label();
+            this.pbDisponibilidad = new System.Windows.Forms.PictureBox();
+            this.pbMenu = new System.Windows.Forms.PictureBox();
+            this.lblBarra2 = new System.Windows.Forms.Label();
+            this.lblBarra3 = new System.Windows.Forms.Label();
+            this.lblBarra4 = new System.Windows.Forms.Label();
+            this.lblBarra5 = new System.Windows.Forms.Label();
+            this.lblBarra6 = new System.Windows.Forms.Label();
+            this.pbCerrar = new System.Windows.Forms.PictureBox();
+            this.pbMinimizar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUbicacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDisponibilidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBarraPrincipal
@@ -51,7 +55,7 @@
             this.lblBarraPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblBarraPrincipal.Location = new System.Drawing.Point(0, -1);
             this.lblBarraPrincipal.Name = "lblBarraPrincipal";
-            this.lblBarraPrincipal.Size = new System.Drawing.Size(1008, 73);
+            this.lblBarraPrincipal.Size = new System.Drawing.Size(1024, 73);
             this.lblBarraPrincipal.TabIndex = 0;
             // 
             // pbLogo
@@ -62,7 +66,7 @@
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(73, 73);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
             // lblMenu
@@ -70,173 +74,206 @@
             this.lblMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblMenu.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMenu.ForeColor = System.Drawing.Color.White;
-            this.lblMenu.Location = new System.Drawing.Point(79, 12);
+            this.lblMenu.Location = new System.Drawing.Point(98, 12);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(81, 48);
-            this.lblMenu.TabIndex = 5;
+            this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "Menú";
             this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMenu.Click += new System.EventHandler(this.lblMenu_Click);
             // 
-            // pbMenu
+            // pbUbicacion
             // 
-            this.pbMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.pbMenu.Image = global::Missushi.Properties.Resources.mapa;
-            this.pbMenu.Location = new System.Drawing.Point(366, 15);
-            this.pbMenu.Name = "pbMenu";
-            this.pbMenu.Size = new System.Drawing.Size(46, 48);
-            this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMenu.TabIndex = 6;
-            this.pbMenu.TabStop = false;
+            this.pbUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.pbUbicacion.Image = global::Missushi.Properties.Resources.mapa;
+            this.pbUbicacion.Location = new System.Drawing.Point(366, 12);
+            this.pbUbicacion.Name = "pbUbicacion";
+            this.pbUbicacion.Size = new System.Drawing.Size(46, 48);
+            this.pbUbicacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUbicacion.TabIndex = 0;
+            this.pbUbicacion.TabStop = false;
             // 
             // lblBarra1
             // 
             this.lblBarra1.BackColor = System.Drawing.SystemColors.Window;
-            this.lblBarra1.Location = new System.Drawing.Point(166, 12);
+            this.lblBarra1.Location = new System.Drawing.Point(98, 12);
             this.lblBarra1.Name = "lblBarra1";
             this.lblBarra1.Size = new System.Drawing.Size(1, 45);
-            this.lblBarra1.TabIndex = 7;
+            this.lblBarra1.TabIndex = 0;
             // 
-            // label1
+            // lblIngresar
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.label1.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(914, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 48);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Ingresar";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.lblIngresar.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIngresar.ForeColor = System.Drawing.Color.White;
+            this.lblIngresar.Location = new System.Drawing.Point(890, 12);
+            this.lblIngresar.Name = "lblIngresar";
+            this.lblIngresar.Size = new System.Drawing.Size(94, 48);
+            this.lblIngresar.TabIndex = 0;
+            this.lblIngresar.Text = "Ingresar";
+            this.lblIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIngresar.Click += new System.EventHandler(this.lblIngresar_Click);
             // 
-            // label2
+            // lblRegistro
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.label2.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(782, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 48);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Registro";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.lblRegistro.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRegistro.ForeColor = System.Drawing.Color.White;
+            this.lblRegistro.Location = new System.Drawing.Point(782, 12);
+            this.lblRegistro.Name = "lblRegistro";
+            this.lblRegistro.Size = new System.Drawing.Size(95, 48);
+            this.lblRegistro.TabIndex = 0;
+            this.lblRegistro.Text = "Registro";
+            this.lblRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRegistro.Click += new System.EventHandler(this.lblRegistro_Click);
             // 
-            // label3
+            // lblUbicacion
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.label3.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(257, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 48);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Ubicación";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.lblUbicacion.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUbicacion.ForeColor = System.Drawing.Color.White;
+            this.lblUbicacion.Location = new System.Drawing.Point(257, 12);
+            this.lblUbicacion.Name = "lblUbicacion";
+            this.lblUbicacion.Size = new System.Drawing.Size(106, 48);
+            this.lblUbicacion.TabIndex = 0;
+            this.lblUbicacion.Text = "Ubicación";
+            this.lblUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lblDisponibilidad
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.label4.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(450, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 48);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Disponibilidad";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDisponibilidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.lblDisponibilidad.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDisponibilidad.ForeColor = System.Drawing.Color.White;
+            this.lblDisponibilidad.Location = new System.Drawing.Point(450, 9);
+            this.lblDisponibilidad.Name = "lblDisponibilidad";
+            this.lblDisponibilidad.Size = new System.Drawing.Size(148, 48);
+            this.lblDisponibilidad.TabIndex = 0;
+            this.lblDisponibilidad.Text = "Disponibilidad";
+            this.lblDisponibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // pbDisponibilidad
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.pictureBox1.Image = global::Missushi.Properties.Resources.disponi;
-            this.pictureBox1.Location = new System.Drawing.Point(591, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pbDisponibilidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.pbDisponibilidad.Image = global::Missushi.Properties.Resources.disponi;
+            this.pbDisponibilidad.Location = new System.Drawing.Point(591, 6);
+            this.pbDisponibilidad.Name = "pbDisponibilidad";
+            this.pbDisponibilidad.Size = new System.Drawing.Size(46, 48);
+            this.pbDisponibilidad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDisponibilidad.TabIndex = 0;
+            this.pbDisponibilidad.TabStop = false;
             // 
-            // pictureBox2
+            // pbMenu
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.pictureBox2.Image = global::Missushi.Properties.Resources.menu;
-            this.pictureBox2.Location = new System.Drawing.Point(173, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.pbMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.pbMenu.Image = global::Missushi.Properties.Resources.menu;
+            this.pbMenu.Location = new System.Drawing.Point(173, 9);
+            this.pbMenu.Name = "pbMenu";
+            this.pbMenu.Size = new System.Drawing.Size(46, 48);
+            this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMenu.TabIndex = 0;
+            this.pbMenu.TabStop = false;
             // 
-            // label5
+            // lblBarra2
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(225, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 45);
-            this.label5.TabIndex = 14;
+            this.lblBarra2.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBarra2.Location = new System.Drawing.Point(225, 12);
+            this.lblBarra2.Name = "lblBarra2";
+            this.lblBarra2.Size = new System.Drawing.Size(1, 45);
+            this.lblBarra2.TabIndex = 0;
             // 
-            // label6
+            // lblBarra3
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(418, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 45);
-            this.label6.TabIndex = 15;
+            this.lblBarra3.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBarra3.Location = new System.Drawing.Point(418, 15);
+            this.lblBarra3.Name = "lblBarra3";
+            this.lblBarra3.Size = new System.Drawing.Size(1, 45);
+            this.lblBarra3.TabIndex = 0;
             // 
-            // label7
+            // lblBarra4
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(643, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 45);
-            this.label7.TabIndex = 16;
+            this.lblBarra4.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBarra4.Location = new System.Drawing.Point(643, 9);
+            this.lblBarra4.Name = "lblBarra4";
+            this.lblBarra4.Size = new System.Drawing.Size(1, 45);
+            this.lblBarra4.TabIndex = 0;
             // 
-            // label8
+            // lblBarra5
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(750, 15);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(26, 45);
-            this.label8.TabIndex = 17;
+            this.lblBarra5.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBarra5.Location = new System.Drawing.Point(750, 15);
+            this.lblBarra5.Name = "lblBarra5";
+            this.lblBarra5.Size = new System.Drawing.Size(1, 45);
+            this.lblBarra5.TabIndex = 0;
             // 
-            // label9
+            // lblBarra6
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.Window;
-            this.label9.Location = new System.Drawing.Point(883, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 45);
-            this.label9.TabIndex = 18;
+            this.lblBarra6.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBarra6.Location = new System.Drawing.Point(883, 15);
+            this.lblBarra6.Name = "lblBarra6";
+            this.lblBarra6.Size = new System.Drawing.Size(1, 45);
+            this.lblBarra6.TabIndex = 0;
+            // 
+            // pbCerrar
+            // 
+            this.pbCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.pbCerrar.Image = global::Missushi.Properties.Resources.Cerrar;
+            this.pbCerrar.Location = new System.Drawing.Point(994, -1);
+            this.pbCerrar.Name = "pbCerrar";
+            this.pbCerrar.Size = new System.Drawing.Size(30, 30);
+            this.pbCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCerrar.TabIndex = 0;
+            this.pbCerrar.TabStop = false;
+            this.pbCerrar.Click += new System.EventHandler(this.pbCerrar_Click);
+            // 
+            // pbMinimizar
+            // 
+            this.pbMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.pbMinimizar.Image = global::Missushi.Properties.Resources.Minimizar;
+            this.pbMinimizar.Location = new System.Drawing.Point(967, -1);
+            this.pbMinimizar.Name = "pbMinimizar";
+            this.pbMinimizar.Size = new System.Drawing.Size(30, 30);
+            this.pbMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMinimizar.TabIndex = 0;
+            this.pbMinimizar.TabStop = false;
+            this.pbMinimizar.Click += new System.EventHandler(this.pbMinimizar_Click);
             // 
             // FormDiseño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblBarra1);
+            this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.pbMinimizar);
+            this.Controls.Add(this.pbCerrar);
+            this.Controls.Add(this.lblBarra6);
+            this.Controls.Add(this.lblBarra5);
+            this.Controls.Add(this.lblBarra4);
+            this.Controls.Add(this.lblBarra3);
+            this.Controls.Add(this.lblBarra2);
             this.Controls.Add(this.pbMenu);
+            this.Controls.Add(this.pbDisponibilidad);
+            this.Controls.Add(this.lblDisponibilidad);
+            this.Controls.Add(this.lblUbicacion);
+            this.Controls.Add(this.lblRegistro);
+            this.Controls.Add(this.lblIngresar);
+            this.Controls.Add(this.lblBarra1);
+            this.Controls.Add(this.pbUbicacion);
             this.Controls.Add(this.lblMenu);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lblBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDiseño";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiseño";
             this.Load += new System.EventHandler(this.FormDiseño_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDiseño_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUbicacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDisponibilidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimizar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,18 +283,20 @@
         private Label lblBarraPrincipal;
         private PictureBox pbLogo;
         private Label lblMenu;
-        private PictureBox pbMenu;
+        private PictureBox pbUbicacion;
         private Label lblBarra1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
+        private Label lblIngresar;
+        private Label lblRegistro;
+        private Label lblUbicacion;
+        private Label lblDisponibilidad;
+        private PictureBox pbDisponibilidad;
+        private PictureBox pbMenu;
+        private Label lblBarra2;
+        private Label lblBarra3;
+        private Label lblBarra4;
+        private Label lblBarra5;
+        private Label lblBarra6;
+        private PictureBox pbCerrar;
+        private PictureBox pbMinimizar;
     }
 }

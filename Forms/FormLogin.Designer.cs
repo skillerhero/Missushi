@@ -34,6 +34,11 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnIngresar
@@ -81,6 +86,39 @@
             this.lblContraseña.TabIndex = 4;
             this.lblContraseña.Text = "Contraseña";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clienteToolStripMenuItem,
+            this.adminToolStripMenuItem,
+            this.gerenteToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(356, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // clienteToolStripMenuItem
+            // 
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            // 
+            // gerenteToolStripMenuItem
+            // 
+            this.gerenteToolStripMenuItem.Name = "gerenteToolStripMenuItem";
+            this.gerenteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.gerenteToolStripMenuItem.Text = "Gerente";
+            this.gerenteToolStripMenuItem.Click += new System.EventHandler(this.gerenteToolStripMenuItem_Click);
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.btnIngresar;
@@ -92,10 +130,14 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,5 +150,9 @@
         private TextBox txtContraseña;
         private Label lblCorreo;
         private Label lblContraseña;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem clienteToolStripMenuItem;
+        private ToolStripMenuItem adminToolStripMenuItem;
+        private ToolStripMenuItem gerenteToolStripMenuItem;
     }
 }
