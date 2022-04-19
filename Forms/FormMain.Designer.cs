@@ -181,14 +181,15 @@
             // qRToolStripMenuItem
             // 
             this.qRToolStripMenuItem.Name = "qRToolStripMenuItem";
-            this.qRToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-            this.qRToolStripMenuItem.Text = "QR";
+            this.qRToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.qRToolStripMenuItem.Text = "Diseño";
             this.qRToolStripMenuItem.Click += new System.EventHandler(this.qRToolStripMenuItem_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(344, 411);
             this.Controls.Add(this.cbTablas);
             this.Controls.Add(this.pbLogo);

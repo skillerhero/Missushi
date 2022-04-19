@@ -96,8 +96,8 @@ namespace Missushi{
         }
 
         private void qRToolStripMenuItem_Click(object sender, EventArgs e) {
-            FormGenerarQR formGenerarQR = new FormGenerarQR();
-            formGenerarQR.Show();
+            FormDiseño formDiseño = new FormDiseño();
+            formDiseño.Show();
         }
 
         private void entrarComoGerenteToolStripMenuItem_Click(object sender, EventArgs e) {
