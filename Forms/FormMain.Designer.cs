@@ -39,6 +39,7 @@ namespace Missushi
             this.Text = "Home";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
