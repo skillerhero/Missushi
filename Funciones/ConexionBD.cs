@@ -99,7 +99,7 @@ namespace Missushi.Funciones{
                 if (reader.Read()) {
                     existe = true;
                     Usuario.id = reader.GetInt32(0);
-                    Usuario.type = reader.GetChar(2);
+                    Usuario.type = reader.GetChar(5);
                 }
                 connection.Close();
             }

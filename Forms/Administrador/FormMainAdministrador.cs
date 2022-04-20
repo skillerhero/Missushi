@@ -20,5 +20,10 @@ namespace Missushi.Forms {
             formSuspenderUsuario.ShowDialog();
 
         }
+
+        private void btnBD_Click(object sender, EventArgs e) {
+            FormBDAdmin formBDAdmin = new FormBDAdmin();
+            formBDAdmin.Show();
+        }
     }
 }

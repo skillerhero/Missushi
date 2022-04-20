@@ -36,7 +36,6 @@
             this.cbTablas.Name = "cbTablas";
             this.cbTablas.Size = new System.Drawing.Size(121, 23);
             this.cbTablas.TabIndex = 7;
-            this.cbTablas.Visible = false;
             this.cbTablas.SelectedIndexChanged += new System.EventHandler(this.cbTablas_SelectedIndexChanged);
             // 
             // dgUsuarios
@@ -48,7 +47,6 @@
             this.dgUsuarios.RowTemplate.Height = 25;
             this.dgUsuarios.Size = new System.Drawing.Size(545, 87);
             this.dgUsuarios.TabIndex = 6;
-            this.dgUsuarios.Visible = false;
             // 
             // FormBDAdmin
             // 

@@ -1,5 +1,7 @@
 ﻿using Missushi.Forms.Gerente;
 using Missushi.Funciones;
+using System.Runtime.InteropServices;
+
 namespace Missushi.Forms{
     public partial class FormLogin{
 
@@ -34,10 +36,7 @@ namespace Missushi.Forms{
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e) {
             if (ConexionBD.consultarPrimerUsuario('C')) {
-                FormMainCliente formMainCliente = new FormMainCliente();
-                formMainCliente.Closed += (s, args) => this.Show();
-                formMainCliente.Show();
-                this.Hide();
+                this.DialogResult = DialogResult.OK;
             } else {
                 MessageBox.Show("No hay clientes registrados.");
             }
@@ -45,10 +44,7 @@ namespace Missushi.Forms{
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e) {
             if (ConexionBD.consultarPrimerUsuario('A')) {
-                FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
-                formMainAdministrador.Closed += (s, args) => this.Show();
-                formMainAdministrador.Show();
-                this.Hide();
+                this.DialogResult = DialogResult.OK;
             } else {
                 MessageBox.Show("No hay administradores registrados.");
             }
@@ -56,10 +52,7 @@ namespace Missushi.Forms{
 
         private void gerenteToolStripMenuItem_Click(object sender, EventArgs e) {
             if (ConexionBD.consultarPrimerUsuario('G')) {
-                FormMainGerente formMainGerente = new FormMainGerente();
-                formMainGerente.Closed += (s, args) => this.Show();
-                formMainGerente.Show();
-                this.Hide();
+                this.DialogResult = DialogResult.OK;
             } else {
                 MessageBox.Show("No hay gerentes registrados.");
             }

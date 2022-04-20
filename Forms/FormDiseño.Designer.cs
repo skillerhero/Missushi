@@ -26,23 +26,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDiseño));
             this.lblBarraPrincipal = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.lblMenu = new System.Windows.Forms.Label();
-            this.pbUbicacion = new System.Windows.Forms.PictureBox();
+            this.lblMenu = new Missushi.Forms.LabelPersonalizado();
+            this.pbUbicacion = new Missushi.Forms.PictureBoxPersonalizado();
+            this.lblIngresar = new Missushi.Forms.LabelPersonalizado();
+            this.lblRegistro = new Missushi.Forms.LabelPersonalizado();
+            this.lblUbicacion = new Missushi.Forms.LabelPersonalizado();
+            this.lblDisponibilidad = new Missushi.Forms.LabelPersonalizado();
+            this.pbDisponibilidad = new Missushi.Forms.PictureBoxPersonalizado();
+            this.pbMenu = new Missushi.Forms.PictureBoxPersonalizado();
             this.lblBarra1 = new System.Windows.Forms.Label();
-            this.lblIngresar = new System.Windows.Forms.Label();
-            this.lblRegistro = new System.Windows.Forms.Label();
-            this.lblUbicacion = new System.Windows.Forms.Label();
-            this.lblDisponibilidad = new System.Windows.Forms.Label();
-            this.pbDisponibilidad = new System.Windows.Forms.PictureBox();
-            this.pbMenu = new System.Windows.Forms.PictureBox();
-            this.lblBarra20 = new System.Windows.Forms.Label();
             this.lblBarra2 = new System.Windows.Forms.Label();
-            this.lblBarra5 = new System.Windows.Forms.Label();
+            this.lblBarra3 = new System.Windows.Forms.Label();
             this.lblBarra4 = new System.Windows.Forms.Label();
+            this.lblBarra5 = new System.Windows.Forms.Label();
             this.pbImagenesRestaurante = new System.Windows.Forms.PictureBox();
             this.pbLetrasLogo = new System.Windows.Forms.PictureBox();
             this.btnReseñas = new Missushi.Forms.BotonPersonalizado();
-            this.lblInfo = new Missushi.Forms.LabelPersonalizado();
             this.pbSalir = new Missushi.Forms.PictureBoxPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUbicacion)).BeginInit();
@@ -100,14 +99,6 @@
             this.pbUbicacion.TabIndex = 0;
             this.pbUbicacion.TabStop = false;
             this.pbUbicacion.Click += new System.EventHandler(this.pbUbicacion_Click);
-            // 
-            // lblBarra1
-            // 
-            this.lblBarra1.BackColor = System.Drawing.SystemColors.Window;
-            this.lblBarra1.Location = new System.Drawing.Point(225, 15);
-            this.lblBarra1.Name = "lblBarra1";
-            this.lblBarra1.Size = new System.Drawing.Size(1, 45);
-            this.lblBarra1.TabIndex = 0;
             // 
             // lblIngresar
             // 
@@ -190,13 +181,13 @@
             this.pbMenu.TabStop = false;
             this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click);
             // 
-            // lblBarra20
+            // lblBarra1
             // 
-            this.lblBarra20.BackColor = System.Drawing.SystemColors.Window;
-            this.lblBarra20.Location = new System.Drawing.Point(900, 15);
-            this.lblBarra20.Name = "lblBarra20";
-            this.lblBarra20.Size = new System.Drawing.Size(1, 45);
-            this.lblBarra20.TabIndex = 0;
+            this.lblBarra1.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBarra1.Location = new System.Drawing.Point(225, 15);
+            this.lblBarra1.Name = "lblBarra1";
+            this.lblBarra1.Size = new System.Drawing.Size(1, 45);
+            this.lblBarra1.TabIndex = 0;
             // 
             // lblBarra2
             // 
@@ -206,21 +197,29 @@
             this.lblBarra2.Size = new System.Drawing.Size(1, 45);
             this.lblBarra2.TabIndex = 0;
             // 
-            // lblBarra5
+            // lblBarra3
             // 
-            this.lblBarra5.BackColor = System.Drawing.SystemColors.Window;
-            this.lblBarra5.Location = new System.Drawing.Point(770, 15);
-            this.lblBarra5.Name = "lblBarra5";
-            this.lblBarra5.Size = new System.Drawing.Size(1, 45);
-            this.lblBarra5.TabIndex = 0;
+            this.lblBarra3.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBarra3.Location = new System.Drawing.Point(630, 15);
+            this.lblBarra3.Name = "lblBarra3";
+            this.lblBarra3.Size = new System.Drawing.Size(1, 45);
+            this.lblBarra3.TabIndex = 0;
             // 
             // lblBarra4
             // 
             this.lblBarra4.BackColor = System.Drawing.SystemColors.Window;
-            this.lblBarra4.Location = new System.Drawing.Point(630, 15);
+            this.lblBarra4.Location = new System.Drawing.Point(770, 15);
             this.lblBarra4.Name = "lblBarra4";
             this.lblBarra4.Size = new System.Drawing.Size(1, 45);
             this.lblBarra4.TabIndex = 0;
+            // 
+            // lblBarra5
+            // 
+            this.lblBarra5.BackColor = System.Drawing.SystemColors.Window;
+            this.lblBarra5.Location = new System.Drawing.Point(900, 15);
+            this.lblBarra5.Name = "lblBarra5";
+            this.lblBarra5.Size = new System.Drawing.Size(1, 45);
+            this.lblBarra5.TabIndex = 0;
             // 
             // pbImagenesRestaurante
             // 
@@ -254,20 +253,7 @@
             this.btnReseñas.TabIndex = 1;
             this.btnReseñas.Text = "Reseñas";
             this.btnReseñas.UseVisualStyleBackColor = false;
-            this.btnReseñas.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
-            // 
-            // lblInfo
-            // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.BackColor = System.Drawing.Color.Transparent;
-            this.lblInfo.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblInfo.ForeColor = System.Drawing.Color.Black;
-            this.lblInfo.Location = new System.Drawing.Point(299, 561);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(425, 45);
-            this.lblInfo.TabIndex = 0;
-            this.lblInfo.Text = "Correo: jessicaCA@gmail.com      Teléfono: 644-2510241";
-            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnReseñas.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
             // 
             // pbSalir
             // 
@@ -288,13 +274,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.pbSalir);
-            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pbLetrasLogo);
-            this.Controls.Add(this.lblBarra4);
+            this.Controls.Add(this.lblBarra3);
             this.Controls.Add(this.pbUbicacion);
-            this.Controls.Add(this.lblBarra5);
+            this.Controls.Add(this.lblBarra4);
             this.Controls.Add(this.lblBarra2);
-            this.Controls.Add(this.lblBarra20);
+            this.Controls.Add(this.lblBarra5);
             this.Controls.Add(this.pbMenu);
             this.Controls.Add(this.pbDisponibilidad);
             this.Controls.Add(this.lblDisponibilidad);
@@ -331,23 +316,22 @@
 
         private Label lblBarraPrincipal;
         private PictureBox pbLogo;
-        private Label lblMenu;
-        private PictureBox pbUbicacion;
         private Label lblBarra1;
-        private Label lblIngresar;
-        private Label lblRegistro;
-        private Label lblUbicacion;
-        private Label lblDisponibilidad;
-        private PictureBox pbDisponibilidad;
-        private PictureBox pbMenu;
-        private Label lblBarra20;
         private Label lblBarra2;
-        private Label lblBarra5;
+        private Label lblBarra3;
         private Label lblBarra4;
+        private Label lblBarra5;
         private PictureBox pbImagenesRestaurante;
         private PictureBox pbLetrasLogo;
         private BotonPersonalizado btnReseñas;
-        private LabelPersonalizado lblInfo;
         private PictureBoxPersonalizado pbSalir;
+        private LabelPersonalizado lblMenu;
+        private LabelPersonalizado lblIngresar;
+        private LabelPersonalizado lblRegistro;
+        private LabelPersonalizado lblUbicacion;
+        private LabelPersonalizado lblDisponibilidad;
+        private PictureBoxPersonalizado pbUbicacion;
+        private PictureBoxPersonalizado pbDisponibilidad;
+        private PictureBoxPersonalizado pbMenu;
     }
 }
