@@ -1,11 +1,7 @@
-﻿using Missushi.Forms;
-using Missushi.Funciones;
-using MySqlConnector;
-using System.Data;
-using Missushi.Clases;
+﻿using Missushi.Clases;
 using Missushi.Forms.Gerente;
 using System.Runtime.InteropServices;
-using System.Drawing.Drawing2D;
+
 
 namespace Missushi.Forms {
     public partial class FormDiseño : Form {
@@ -15,6 +11,20 @@ namespace Missushi.Forms {
         }
 
         private void FormDiseño_Load(object sender, EventArgs e) {
+        }
+
+        protected void cargarPantallaPrincipal() {
+            lblRegistro.Visible = true;
+            lblIngresar.Visible = true;
+            pbSalir.Visible = false;
+        }
+
+        protected void cargarPantallaIngresar() {
+            this.lblIngresar.ForeColor = Color.FromArgb(57,74,44);
+            this.pbImagenesRestaurante.Visible = false;
+            this.lblInfo.Visible = false;
+            this.btnReseñas.Visible = false;
+            pbSalir.Visible = false;
         }
 
 

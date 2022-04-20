@@ -43,12 +43,14 @@
             this.pbLetrasLogo = new System.Windows.Forms.PictureBox();
             this.btnReseñas = new Missushi.Forms.BotonPersonalizado();
             this.lblInfo = new Missushi.Forms.LabelPersonalizado();
+            this.pbSalir = new Missushi.Forms.PictureBoxPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDisponibilidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBarraPrincipal
@@ -267,15 +269,27 @@
             this.lblInfo.Text = "Correo: jessicaCA@gmail.com      Teléfono: 644-2510241";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pbSalir
+            // 
+            this.pbSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.pbSalir.Image = global::Missushi.Properties.Resources.Maximizar;
+            this.pbSalir.Location = new System.Drawing.Point(940, 15);
+            this.pbSalir.Name = "pbSalir";
+            this.pbSalir.Size = new System.Drawing.Size(45, 45);
+            this.pbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSalir.TabIndex = 0;
+            this.pbSalir.TabStop = false;
+            this.pbSalir.Visible = false;
+            // 
             // FormDiseño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.pbSalir);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pbLetrasLogo);
-            this.Controls.Add(this.pbImagenesRestaurante);
             this.Controls.Add(this.lblBarra4);
             this.Controls.Add(this.pbUbicacion);
             this.Controls.Add(this.lblBarra5);
@@ -292,6 +306,7 @@
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lblBarraPrincipal);
             this.Controls.Add(this.btnReseñas);
+            this.Controls.Add(this.pbImagenesRestaurante);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDiseño";
@@ -306,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,5 +348,6 @@
         private PictureBox pbLetrasLogo;
         private BotonPersonalizado btnReseñas;
         private LabelPersonalizado lblInfo;
+        private PictureBoxPersonalizado pbSalir;
     }
 }

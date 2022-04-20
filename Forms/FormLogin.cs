@@ -1,10 +1,11 @@
 ﻿using Missushi.Forms.Gerente;
 using Missushi.Funciones;
 namespace Missushi.Forms{
-    public partial class FormLogin : Form{
+    public partial class FormLogin{
 
         public FormLogin(){
             InitializeComponent();
+            this.cargarPantallaIngresar();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e) {

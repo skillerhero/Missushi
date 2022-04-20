@@ -1,7 +1,6 @@
 ﻿namespace Missushi.Forms
 {
-    partial class FormLogin
-    {
+    partial class FormLogin : FormDiseño{
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -43,7 +42,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(183, 164);
+            this.btnIngresar.Location = new System.Drawing.Point(495, 417);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 2;
@@ -53,7 +52,7 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(174, 56);
+            this.txtCorreo.Location = new System.Drawing.Point(499, 293);
             this.txtCorreo.MaxLength = 50;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 23);
@@ -61,7 +60,7 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(174, 114);
+            this.txtContraseña.Location = new System.Drawing.Point(499, 351);
             this.txtContraseña.MaxLength = 50;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 23);
@@ -71,7 +70,7 @@
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(86, 64);
+            this.lblCorreo.Location = new System.Drawing.Point(411, 301);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(43, 15);
             this.lblCorreo.TabIndex = 3;
@@ -80,7 +79,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(86, 117);
+            this.lblContraseña.Location = new System.Drawing.Point(411, 354);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(67, 15);
             this.lblContraseña.TabIndex = 4;
@@ -88,13 +87,15 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteToolStripMenuItem,
             this.adminToolStripMenuItem,
             this.gerenteToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 75);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(356, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(179, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -124,7 +125,7 @@
             this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 241);
+            this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.txtContraseña);
@@ -134,8 +135,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Controls.SetChildIndex(this.menuStrip1, 0);
+            this.Controls.SetChildIndex(this.btnIngresar, 0);
+            this.Controls.SetChildIndex(this.txtCorreo, 0);
+            this.Controls.SetChildIndex(this.txtContraseña, 0);
+            this.Controls.SetChildIndex(this.lblCorreo, 0);
+            this.Controls.SetChildIndex(this.lblContraseña, 0);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
