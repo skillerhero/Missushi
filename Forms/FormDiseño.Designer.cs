@@ -41,6 +41,8 @@
             this.lblBarra4 = new System.Windows.Forms.Label();
             this.pbImagenesRestaurante = new System.Windows.Forms.PictureBox();
             this.pbLetrasLogo = new System.Windows.Forms.PictureBox();
+            this.btnReseñas = new Missushi.Forms.BotonPersonalizado();
+            this.lblInfo = new Missushi.Forms.LabelPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDisponibilidad)).BeginInit();
@@ -238,12 +240,40 @@
             this.pbLetrasLogo.TabIndex = 0;
             this.pbLetrasLogo.TabStop = false;
             // 
+            // btnReseñas
+            // 
+            this.btnReseñas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
+            this.btnReseñas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReseñas.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnReseñas.ForeColor = System.Drawing.Color.White;
+            this.btnReseñas.Location = new System.Drawing.Point(454, 515);
+            this.btnReseñas.Name = "btnReseñas";
+            this.btnReseñas.Size = new System.Drawing.Size(116, 43);
+            this.btnReseñas.TabIndex = 1;
+            this.btnReseñas.Text = "Reseñas";
+            this.btnReseñas.UseVisualStyleBackColor = false;
+            this.btnReseñas.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblInfo.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblInfo.ForeColor = System.Drawing.Color.Black;
+            this.lblInfo.Location = new System.Drawing.Point(299, 561);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(425, 45);
+            this.lblInfo.TabIndex = 0;
+            this.lblInfo.Text = "Correo: jessicaCA@gmail.com      Teléfono: 644-2510241";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormDiseño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pbLetrasLogo);
             this.Controls.Add(this.pbImagenesRestaurante);
             this.Controls.Add(this.lblBarra4);
@@ -261,6 +291,7 @@
             this.Controls.Add(this.lblMenu);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lblBarraPrincipal);
+            this.Controls.Add(this.btnReseñas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDiseño";
@@ -299,5 +330,7 @@
         private Label lblBarra4;
         private PictureBox pbImagenesRestaurante;
         private PictureBox pbLetrasLogo;
+        private BotonPersonalizado btnReseñas;
+        private LabelPersonalizado lblInfo;
     }
 }

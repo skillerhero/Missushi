@@ -9,6 +9,7 @@ using System.Drawing.Drawing2D;
 
 namespace Missushi.Forms {
     public partial class FormDiseño : Form {
+
         public FormDiseño() {
             InitializeComponent();
         }
@@ -45,6 +46,27 @@ namespace Missushi.Forms {
             }
         }
 
+        //----------------------Código para redondear el botón-----------------------
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern System.IntPtr CreateRoundRectRgn(
+           int nLeftRect,     // x-coordinate of upper-left corner
+           int nTopRect,      // y-coordinate of upper-left corner
+           int nRightRect,    // x-coordinate of lower-right corner
+           int nBottomRect,   // y-coordinate of lower-right corner
+           int nWidthEllipse, // height of ellipse
+           int nHeightEllipse // width of ellipse
+        );
+
+        [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
+        private static extern bool DeleteObject(System.IntPtr hObject);
+
+        private void button1_Paint(object sender, PaintEventArgs e) {
+            IntPtr ptr = CreateRoundRectRgn(0, 0, btnReseñas.Width, btnReseñas.Height, 15, 15);
+            btnReseñas.Region = Region.FromHrgn(ptr);
+            DeleteObject(ptr);
+        }
+
+        //----------------------------Eventos----------------------------------------------
         private void lblIngresar_Click(object sender, EventArgs e) {
             FormLogin formLogin = new FormLogin();
             if (formLogin.ShowDialog() == DialogResult.OK) {
@@ -109,21 +131,18 @@ namespace Missushi.Forms {
         }
 
     }
-    public class RoundButton : Button {
-        protected override void OnPaint(PaintEventArgs e) {
-            base.OnPaint(e);
-            Rectangle Rect = new Rectangle(0, 0, this.Width, this.Height);
-            GraphicsPath GraphPath = new GraphicsPath();
-            GraphPath.AddArc(Rect.X, Rect.Y, 50, 50, 180, 90);
-            GraphPath.AddArc(Rect.X + Rect.Width - 50, Rect.Y, 50, 50, 270, 90);
-            GraphPath.AddArc(Rect.X + Rect.Width - 50, Rect.Y + Rect.Height - 50, 50, 50, 0, 90);
-            GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - 50, 50, 50, 90, 90);
-            this.Region = new Region(GraphPath);
+    public class BotonPersonalizado : Button {
+        public BotonPersonalizado() {
+            this.FlatAppearance.BorderSize = 0;
+            this.FlatStyle = FlatStyle.Flat;
+            this.Font = new Font("Gabriola", 12F, FontStyle.Regular, GraphicsUnit.Point);
         }
     }
 
+
+
     public class PictureBoxPersonalizado : PictureBox {
-        PictureBoxPersonalizado() {
+        public PictureBoxPersonalizado() {
             this.BackColor = Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.TabIndex = 0;
@@ -131,12 +150,12 @@ namespace Missushi.Forms {
     }
 
     public class LabelPersonalizado : Label {
-        LabelPersonalizado() {
+        public LabelPersonalizado() {
             this.BackColor = Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.Font = new Font("Gabriola", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             this.ForeColor = Color.White;
             this.TabIndex = 0;
-            this.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TextAlign = ContentAlignment.MiddleCenter;
         }
     }
 }
