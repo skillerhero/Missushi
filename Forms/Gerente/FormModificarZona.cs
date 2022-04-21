@@ -9,7 +9,7 @@ namespace Missushi.Forms.Gerente {
 
         private void btnModificar_Click(object sender, EventArgs e){
             try{
-                int idZona = Zona.id;
+                int idZona = Globales.zonaSeleccionada.IdZona;
                 int cupo = Decimal.ToInt32(nudCupo.Value);
                 string foto = txtFotoZona.Text;
 
@@ -28,7 +28,7 @@ namespace Missushi.Forms.Gerente {
             FormElegirZona formElegirZona = new FormElegirZona();
             if (formElegirZona.ShowDialog() == DialogResult.OK)
             {
-                this.btnElegirZona.Text = "Zona " + Zona.id;
+                this.btnElegirZona.Text = "Zona " + Globales.zonaSeleccionada.IdZona;
             }
         }
     }

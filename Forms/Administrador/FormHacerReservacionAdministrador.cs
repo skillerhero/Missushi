@@ -33,7 +33,7 @@ namespace Missushi.Forms.Administrador {
         private void btnElegirZona_Click(object sender, EventArgs e) {
             FormElegirZona formElegirZona = new FormElegirZona(obtenerFechaInicio());
             if (formElegirZona.ShowDialog() == DialogResult.OK) {
-                this.btnElegirZona.Text = "Zona " + Zona.id;
+                this.btnElegirZona.Text = "Zona " + Globales.zonaSeleccionada.IdZona;
                 this.nudCantidadPersonas.Focus();
                 comprobaciones();
             }
@@ -79,10 +79,10 @@ namespace Missushi.Forms.Administrador {
         }
 
         private bool comprobarCupo() {
-            if (Zona.id == -1) {
+            if (Globales.zonaSeleccionada.IdZona == -1) {
                 return false;
             }
-            int cupoZona = ConexionBD.consultarCupoZona(Zona.id, obtenerFechaInicio());
+            int cupoZona = ConexionBD.consultarCupoZona(Globales.zonaSeleccionada.IdZona, obtenerFechaInicio());
             if (cupoZona == 0) {
                 btnHacerReservacion.Enabled = false;
                 nudCantidadPersonas.Enabled = false;
@@ -167,7 +167,7 @@ namespace Missushi.Forms.Administrador {
                 DateTime fechaInicio = obtenerFechaInicio();
                 DateTime fechaFin = obtenerFechaFin();
                 int cantidadPersonas = (int)nudCantidadPersonas.Value;
-                int idZona = Zona.id;
+                int idZona = Globales.zonaSeleccionada.IdZona;
                 string estado = "En espera";
 
                 if (ConexionBD.usuarioTieneReservacionesEnEspera(idUsuario)) {

@@ -89,17 +89,17 @@ namespace Missushi.Forms {
             FormLogin formLogin = new FormLogin();
             formLogin.Closed += (s, args) => this.Show();
             if (formLogin.ShowDialog() == DialogResult.OK) {
-                if (Usuario.type == 'C') {
+                if (Globales.usuarioActual.Tipo == 'C') {
                     this.Hide();
                     FormMainCliente formMainCliente = new FormMainCliente();
                     formMainCliente.Closed += (s, args) => this.Show();
                     formMainCliente.Show();
-                } else if (Usuario.type == 'A') {
+                } else if (Globales.usuarioActual.Tipo == 'A') {
                     this.Hide();
                     FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
                     formMainAdministrador.Closed += (s, args) => this.Show();
                     formMainAdministrador.Show();
-                } else if (Usuario.type == 'G') {
+                } else if (Globales.usuarioActual.Tipo == 'G') {
                     this.Hide();
                     FormMainGerente formMainGerente = new FormMainGerente();
                     formMainGerente.Closed += (s, args) => this.Show();
@@ -159,9 +159,8 @@ namespace Missushi.Forms {
             this.FlatAppearance.BorderSize = 0;
             this.FlatStyle = FlatStyle.Flat;
             this.Font = new Font("Gabriola", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            this.Cursor = Cursors.Hand;
         }
-
-
     }
 
 
@@ -176,14 +175,30 @@ namespace Missushi.Forms {
     }
 
     public class LabelPersonalizado : Label {
+        private Color colorLetra;
+        private Color colorLetraSeleccionada;
         public LabelPersonalizado() {
+            colorLetra = Color.White;
+            colorLetraSeleccionada = Globales.verdeFuerte;
+
             this.BackColor = Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.Font = new Font("Gabriola", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            this.ForeColor = Color.White;
+            this.ForeColor = colorLetra;
             this.TabIndex = 0;
             this.TextAlign = ContentAlignment.MiddleCenter;
             this.Cursor = Cursors.Hand;
+            this.MouseHover += new EventHandler(this.hover);
+            this.MouseLeave += new EventHandler(this.leave);
         }
+
+        private void hover(object? sender, EventArgs e) {
+            this.ForeColor = colorLetraSeleccionada;
+        }
+
+        private void leave(object? sender, EventArgs e) {
+            this.ForeColor = colorLetra;
+        }
+
     }
 
     public class ComboBoxPersonalizado : ComboBox {
@@ -208,6 +223,20 @@ namespace Missushi.Forms {
 
     public class NumericUpDownPersonalizado : NumericUpDown {
         public NumericUpDownPersonalizado() { }
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect, // X-coordinate of upper-left corner or padding at start
+            int nTopRect,// Y-coordinate of upper-left corner or padding at the top of the textbox
+            int nRightRect, // X-coordinate of lower-right corner or Width of the object
+            int nBottomRect,// Y-coordinate of lower-right corner or Height of the object
+                            //RADIUS, how round do you want it to be?
+            int nheightRect, //height of ellipse 
+            int nweightRect //width of ellipse
+        );
+        protected override void OnResize(EventArgs e) {
+            base.OnResize(e);
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, this.Width, this.Height, 15, 15)); //play with these values till you are happy
+        }
     }
     class TextBoxPersonalizado : TextBox {
         public TextBoxPersonalizado() {

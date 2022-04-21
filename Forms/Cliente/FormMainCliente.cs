@@ -8,12 +8,12 @@ namespace Missushi.Forms {
         }
 
         private void FormMainCliente_Load(object sender, EventArgs e) {
-            label1.Text = Clases.Usuario.id.ToString();
+            label1.Text = Globales.usuarioActual.IdUsuario.ToString();
             
         }
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
-            Zona.id = -1;
+            Globales.zonaSeleccionada.IdZona = -1;
             FormReservacionCliente formReservacion = new FormReservacionCliente();
             formReservacion.ShowDialog();
         }

@@ -19,8 +19,8 @@ namespace Missushi.Forms.Cliente {
                 DateTime fechaInicio = obtenerFechaInicio();
                 DateTime fechaFin = obtenerFechaFin();
                 int cantidadPersonas = (int)nudCantidadPersonas.Value;
-                int idUsuario = Usuario.id;
-                int idZona = Zona.id;
+                int idUsuario = Globales.usuarioActual.IdUsuario;
+                int idZona = Globales.zonaSeleccionada.IdZona;
                 string estado = "En espera";
 
                 if (ConexionBD.usuarioTieneReservacionesEnEspera(idUsuario)) {
@@ -41,9 +41,9 @@ namespace Missushi.Forms.Cliente {
             try {
                 string remitente = "missushi.contacto@gmail.com";
                 string destinatario = "skillerhero@gmail.com";
-                string copiaA = "danna.medina2869@alumnos.udg.mx";
+                //string copiaA = "danna.medina2869@alumnos.udg.mx";
 
-                Usuario usuario = ConexionBD.consultarUsuario(Usuario.id);
+                Usuario usuario = Globales.usuarioActual;
                 var dirRemitente = new MailAddress(remitente, "Missushi");
                 var dirDestinatario = new MailAddress(destinatario, usuario.Nombres);
                 const string contra = "frribGLDb7D2mf";
@@ -59,7 +59,7 @@ namespace Missushi.Forms.Cliente {
                     Credentials = new NetworkCredential(dirRemitente.Address, contra)
                 };
                 var message = new MailMessage(dirRemitente, dirDestinatario);
-                message.Bcc.Add(copiaA);
+                //message.Bcc.Add(copiaA);
                 message.AlternateViews.Add(GetEmbeddedImage());
                 message.Subject = asunto;
                 message.Body = body;    
@@ -71,8 +71,8 @@ namespace Missushi.Forms.Cliente {
         }
 
         private AlternateView GetEmbeddedImage() {
-            Reservacion reservacion = ConexionBD.consultarReservacion(Usuario.id);
-            Usuario usuario = ConexionBD.consultarUsuario(Usuario.id);
+            Reservacion reservacion = ConexionBD.consultarReservacion(Globales.usuarioActual.IdUsuario);
+            Usuario usuario = Globales.usuarioActual;
             QRCodeGenerator qr = new QRCodeGenerator();
             string url = "http://" + ConexionBD.ipServidor + "/modificarReservacion.php?idReservacion=" + reservacion.IdReservacion;
             QRCodeData data = qr.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
@@ -111,7 +111,7 @@ namespace Missushi.Forms.Cliente {
         private void btnElegirZona_Click(object sender, EventArgs e) {
             FormElegirZona formElegirZona = new FormElegirZona(obtenerFechaInicio());
             if (formElegirZona.ShowDialog() == DialogResult.OK) {
-                this.btnElegirZona.Text = "Zona " + Zona.id;
+                this.btnElegirZona.Text = "Zona " + Globales.zonaSeleccionada.IdZona;
                 this.nudCantidadPersonas.Focus();
                 comprobarCupo();
             }
@@ -157,10 +157,10 @@ namespace Missushi.Forms.Cliente {
         }
 
         private void comprobarCupo() {
-            if (Zona.id == -1) {
+            if (Globales.zonaSeleccionada.IdZona == -1) {
                 return;
             }
-            int cupoZona = ConexionBD.consultarCupoZona(Zona.id, obtenerFechaInicio());
+            int cupoZona = ConexionBD.consultarCupoZona(Globales.zonaSeleccionada.IdZona, obtenerFechaInicio());
             if (cupoZona == 0) {
                 btnHacerReservacion.Enabled = false;
                 nudCantidadPersonas.Enabled = false;

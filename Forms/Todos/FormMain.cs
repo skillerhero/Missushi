@@ -7,14 +7,10 @@ namespace Missushi{
         private Globales globales;
         private FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();
         public FormMain(){
-            this.Visible = false;
             InitializeComponent();
             cargarPantallaPrincipal();
             cargarInfoRestaurante();
             globales = new Globales();
-        }
-        private void FormMain_Shown(object sender, EventArgs e) {
-            
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e){
@@ -34,16 +30,12 @@ namespace Missushi{
             }
             lblInfoRestaurante.Text = "Correo: " + gerente.Correo + "    Teléfono: " + restaurante.Telefono;
         }
-
-        private void FormMain_Load(object sender, EventArgs e) {
-        }
-
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
-            if (this.Visible == false) {
-                if (formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
-                    this.Visible = true;
-                }
-            }
+            //if (this.Visible == false) {
+            //    if (formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
+            //        this.Visible = true;
+            //    }
+            //}
         }
     }
 }

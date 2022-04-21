@@ -35,6 +35,7 @@ namespace Missushi
             // lblInfoRestaurante
             // 
             this.lblInfoRestaurante.AutoSize = true;
+            this.lblInfoRestaurante.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblInfoRestaurante.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoRestaurante.Font = new System.Drawing.Font("Gabriola", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblInfoRestaurante.ForeColor = System.Drawing.Color.Black;
@@ -54,8 +55,6 @@ namespace Missushi
             this.Text = "Home";
             this.HandleCreated += new EventHandler(this.mostrarPantallaDeCarga);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
-            this.Load += new System.EventHandler(this.FormMain_Load);
-            this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.Controls.SetChildIndex(this.lblInfoRestaurante, 0);
             this.ResumeLayout(false);
             this.PerformLayout();

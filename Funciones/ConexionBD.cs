@@ -44,17 +44,16 @@ namespace Missushi.Funciones{
 
         static public bool login(string correo, string contraseña) {
             bool exito = false;
-            string sql = "SELECT idUsuario, contrasenia, tipo FROM usuario WHERE correo = @0;";
+            string sql = "SELECT * FROM usuario WHERE correo = @0;";
             if (connection != null) {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@0", correo);
                 MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read()) {
+                if (reader.Read()) {
                     if (reader.GetString(1) == contraseña) {
                         exito = true;
-                        Usuario.id = reader.GetInt32(0);
-                        Usuario.type = reader.GetChar(2);
+                        Globales.usuarioActual = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6));
                     }
                 }
                 connection.Close();
@@ -107,8 +106,7 @@ namespace Missushi.Funciones{
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
                     existe = true;
-                    Usuario.id = reader.GetInt32(0);
-                    Usuario.type = reader.GetChar(5);
+                    Globales.usuarioActual = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6));
                 }
                 connection.Close();
             }
@@ -126,8 +124,6 @@ namespace Missushi.Funciones{
                 while (reader.Read()) {
                     if (reader.GetString(1) == contraseña) {
                         suspendido = true;
-                        Usuario.id = reader.GetInt32(0);
-                        Usuario.type = reader.GetChar(2);
                     }
                 }
                 connection.Close();

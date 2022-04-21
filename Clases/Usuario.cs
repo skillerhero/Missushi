@@ -1,7 +1,5 @@
 ﻿namespace Missushi.Clases {
     internal class Usuario {
-        public static int id;
-        public static char type;
         private int idUsuario;
         private string nombres;
         private string apellidos;
@@ -11,8 +9,6 @@
         private char estado;
 
         public Usuario(int idUsuario, string nombres, string apellidos, string contraseña, string correo, char tipo, char estado) {
-            id = idUsuario;
-            type = '\x0';
             this.idUsuario = idUsuario;
             this.nombres = nombres;
             this.apellidos = apellidos;
@@ -23,8 +19,6 @@
         }
 
         public Usuario() {
-            id = 0;
-            type = '\x0';
             idUsuario = 0;
             nombres = "";
             apellidos = "";
