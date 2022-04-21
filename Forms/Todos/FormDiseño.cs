@@ -31,6 +31,26 @@ namespace Missushi.Forms {
 
         }
 
+        private void hover(object sender, EventArgs e) {
+            if (((PictureBoxPersonalizado)sender).Name == "pbMenu") {
+                lblMenu.ForeColor = lblMenu.colorLetraSeleccionada;
+            }else if (((PictureBoxPersonalizado)sender).Name == "pbUbicacion") {
+                lblUbicacion.ForeColor = lblUbicacion.colorLetraSeleccionada;
+            } else if (((PictureBoxPersonalizado)sender).Name == "pbDisponibilidad") {
+                lblDisponibilidad.ForeColor = lblDisponibilidad.colorLetraSeleccionada;
+            }
+        }
+
+        private void leave(object sender, EventArgs e) {
+            if (((PictureBoxPersonalizado)sender).Name == "pbMenu") {
+                lblMenu.ForeColor = lblMenu.colorLetra;
+            } else if (((PictureBoxPersonalizado)sender).Name == "pbUbicacion") {
+                lblUbicacion.ForeColor = lblUbicacion.colorLetra;
+            } else if (((PictureBoxPersonalizado)sender).Name == "pbDisponibilidad") {
+                lblDisponibilidad.ForeColor = lblDisponibilidad.colorLetra;
+            }
+        }
+
 
 
         //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------

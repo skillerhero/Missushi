@@ -36,6 +36,7 @@
             this.pbGif.BackColor = System.Drawing.Color.White;
             this.pbGif.Image = global::Missushi.Properties.Resources.sushi_1;
             this.pbGif.Location = new System.Drawing.Point(100, 5);
+            this.pbGif.Cursor = Cursors.Default;
             this.pbGif.Name = "pbGif";
             this.pbGif.Size = new System.Drawing.Size(150, 150);
             this.pbGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -61,6 +62,7 @@
             this.lblPorcentaje.Font = new System.Drawing.Font("Gabriola", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPorcentaje.ForeColor = System.Drawing.Color.Black;
             this.lblPorcentaje.Location = new System.Drawing.Point(147, 198);
+            this.lblPorcentaje.Margin = new System.Windows.Forms.Padding(0);
             this.lblPorcentaje.Name = "lblPorcentaje";
             this.lblPorcentaje.Size = new System.Drawing.Size(56, 54);
             this.lblPorcentaje.TabIndex = 0;

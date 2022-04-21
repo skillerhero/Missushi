@@ -75,10 +75,16 @@
             // 
             // lblMenu
             // 
+            this.lblMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.lblMenu.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMenu.ForeColor = System.Drawing.Color.White;
             this.lblMenu.Location = new System.Drawing.Point(95, 12);
+            this.lblMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(70, 50);
+            this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "Menú";
+            this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMenu.Click += new System.EventHandler(this.lblMenu_Click);
             // 
             // pbUbicacion
@@ -92,6 +98,8 @@
             this.pbUbicacion.TabIndex = 0;
             this.pbUbicacion.TabStop = false;
             this.pbUbicacion.Click += new System.EventHandler(this.pbUbicacion_Click);
+            this.pbUbicacion.MouseLeave += new System.EventHandler(this.leave);
+            this.pbUbicacion.MouseHover += new System.EventHandler(this.hover);
             // 
             // lblIngresar
             // 
@@ -164,6 +172,8 @@
             this.pbDisponibilidad.TabIndex = 0;
             this.pbDisponibilidad.TabStop = false;
             this.pbDisponibilidad.Click += new System.EventHandler(this.pbDisponibilidad_Click);
+            this.pbDisponibilidad.MouseLeave += new System.EventHandler(this.leave);
+            this.pbDisponibilidad.MouseHover += new System.EventHandler(this.hover);
             // 
             // pbMenu
             // 
@@ -176,6 +186,8 @@
             this.pbMenu.TabIndex = 0;
             this.pbMenu.TabStop = false;
             this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click);
+            this.pbMenu.MouseLeave += new System.EventHandler(this.leave);
+            this.pbMenu.MouseHover += new System.EventHandler(this.hover);
             // 
             // lblBarra1
             // 
