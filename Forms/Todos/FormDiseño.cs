@@ -1,6 +1,6 @@
 ﻿using Missushi.Clases;
 using Missushi.Forms.Gerente;
-using System.Drawing.Drawing2D;
+using Missushi.Funciones;
 using System.Runtime.InteropServices;
 
 
@@ -16,6 +16,7 @@ namespace Missushi.Forms {
         }
 
         protected void cargarPantallaPrincipal() {
+            pbImagenesRestaurante.ImageLocation = ConexionBD.consultarRestaurante().FotoPrincipal;
             lblRegistro.Visible = true;
             lblIngresar.Visible = true;
             pbSalir.Visible = false;

@@ -21,6 +21,15 @@ namespace Missushi.Funciones{
                 MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        static public void manejarErrores(Exception e) {
+            if (e is MySqlException) {
+                if(connection != null) {
+                    connection.Close();
+                }
+            }
+            MessageBox.Show(e.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         /*----------------------------------------General----------------------------------------*/
         static public MySqlDataAdapter consultarTablaAdapter(string? tabla) {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
@@ -262,17 +271,18 @@ namespace Missushi.Funciones{
             }
             return existe;
         }
-        static public bool modificarRestaurante(string nombre, string descripcion, string latitud, string longitud, string fotoPrincipal, int idGerente) {
-            string sql = "UPDATE restaurante SET nombre=@0, descripcion=@1, latitud=@2, longitud=@3, fotoPrincipal=@4, idGerente=@5;";
+        static public bool modificarRestaurante(string nombre, string descripcion, string direccion, string direccionMaps, string telefono, string fotoPrincipal, int idGerente) {
+            string sql = "UPDATE restaurante SET nombre=@0, descripcion=@1, direccion=@2, direccionMaps=@3, telefono = @4, fotoPrincipal=@5, idGerente=@6;";
             if (connection != null) {
-                connection.Open();
+                connection.Open();  
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = nombre;
                 cmd.Parameters.Add("@1", MySqlDbType.VarChar, 500).Value = descripcion;
-                cmd.Parameters.Add("@2", MySqlDbType.VarChar, 100).Value = latitud;
-                cmd.Parameters.Add("@3", MySqlDbType.VarChar, 100).Value = longitud;
-                cmd.Parameters.Add("@4", MySqlDbType.String).Value = fotoPrincipal;
-                cmd.Parameters.Add("@5", MySqlDbType.Int32).Value = idGerente;
+                cmd.Parameters.Add("@2", MySqlDbType.VarChar, 100).Value = direccion;
+                cmd.Parameters.Add("@3", MySqlDbType.String).Value = direccionMaps;
+                cmd.Parameters.Add("@4", MySqlDbType.VarChar, 15).Value = telefono;
+                cmd.Parameters.Add("@5", MySqlDbType.String).Value = fotoPrincipal;
+                cmd.Parameters.Add("@6", MySqlDbType.Int32).Value = idGerente;
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -280,17 +290,18 @@ namespace Missushi.Funciones{
             return true;
         }
 
-        static public bool insertarRestaurante(string nombre, string descripcion, string latitud, string longitud, string fotoPrincipal, int idGerente) {
-            string sql = "INSERT INTO restaurante(nombre, descripcion, latitud, longitud, fotoPrincipal, idGerente) VALUES(@0, @1, @2, @3, @4, (SELECT idUsuario FROM usuario WHERE tipo = 'G'));";
+        static public bool insertarRestaurante(string nombre, string descripcion, string direccion, string direccionMaps, string telefono, string fotoPrincipal, int idGerente) {
+            string sql = "INSERT INTO restaurante(nombre, descripcion, direccion, direccionMaps, telefono, fotoPrincipal, idGerente) VALUES(@0, @1, @2, @3, @4, @5, (SELECT idUsuario FROM usuario WHERE tipo = 'G'));";
             if (connection != null) {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = nombre;
                 cmd.Parameters.Add("@1", MySqlDbType.VarChar, 500).Value = descripcion;
-                cmd.Parameters.Add("@2", MySqlDbType.VarChar, 100).Value = latitud;
-                cmd.Parameters.Add("@3", MySqlDbType.VarChar, 100).Value = longitud;
-                cmd.Parameters.Add("@4", MySqlDbType.String).Value = fotoPrincipal;
-                cmd.Parameters.Add("@5", MySqlDbType.Int32).Value = idGerente;
+                cmd.Parameters.Add("@2", MySqlDbType.VarChar, 100).Value = direccion;
+                cmd.Parameters.Add("@3", MySqlDbType.String).Value = direccionMaps;
+                cmd.Parameters.Add("@4", MySqlDbType.VarChar, 15).Value = telefono;
+                cmd.Parameters.Add("@5", MySqlDbType.String).Value = fotoPrincipal;
+                cmd.Parameters.Add("@6", MySqlDbType.Int32).Value = idGerente;
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -305,12 +316,13 @@ namespace Missushi.Funciones{
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
-                    restaurante.setNombre(reader.GetString(0));
-                    restaurante.setDescripcion(reader.GetString(1));
-                    restaurante.setLatitud(reader.GetString(2));
-                    restaurante.setLongitud(reader.GetString(3));
-                    restaurante.setFotoPrincipal(reader.GetString(4));
-                    restaurante.setGerente(reader.GetInt32(5));
+                    restaurante.Nombre = reader.GetString(0);
+                    restaurante.Descripcion = reader.GetString(1);
+                    restaurante.Direccion = reader.GetString(2);
+                    restaurante.DireccionMaps = reader.GetString(3);
+                    restaurante.Telefono = reader.GetString(4);
+                    restaurante.FotoPrincipal = reader.GetString(5);
+                    restaurante.IdGerente = reader.GetInt32(6);
                 }
                 connection.Close();
             }

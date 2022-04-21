@@ -5,7 +5,7 @@
         }
 
         private void btnModificarInfo_Click(object sender, EventArgs e) {
-            FormModificarInfo formModificarInfo = new FormModificarInfo();
+            FormModificarInfoRestaurante formModificarInfo = new FormModificarInfoRestaurante();
             formModificarInfo.ShowDialog();
         }
 

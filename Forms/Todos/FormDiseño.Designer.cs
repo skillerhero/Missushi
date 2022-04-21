@@ -223,13 +223,13 @@
             // 
             // pbImagenesRestaurante
             // 
-            this.pbImagenesRestaurante.Image = global::Missushi.Properties.Resources.principal;
             this.pbImagenesRestaurante.Location = new System.Drawing.Point(62, 135);
             this.pbImagenesRestaurante.Name = "pbImagenesRestaurante";
             this.pbImagenesRestaurante.Size = new System.Drawing.Size(900, 380);
             this.pbImagenesRestaurante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagenesRestaurante.TabIndex = 0;
             this.pbImagenesRestaurante.TabStop = false;
+            this.pbImagenesRestaurante.WaitOnLoad = true;
             // 
             // pbLetrasLogo
             // 
@@ -258,7 +258,7 @@
             // pbSalir
             // 
             this.pbSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.pbSalir.Image = global::Missushi.Properties.Resources.Maximizar;
+            this.pbSalir.Image = global::Missushi.Properties.Resources.salir;
             this.pbSalir.Location = new System.Drawing.Point(940, 15);
             this.pbSalir.Name = "pbSalir";
             this.pbSalir.Size = new System.Drawing.Size(45, 45);

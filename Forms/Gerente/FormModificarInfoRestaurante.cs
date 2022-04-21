@@ -1,19 +1,20 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
 namespace Missushi.Forms.Gerente {
-    public partial class FormModificarInfo : Form {
-        public FormModificarInfo() {
+    public partial class FormModificarInfoRestaurante : Form {
+        public FormModificarInfoRestaurante() {
             InitializeComponent();
         }
 
         private void FormModificarInfo_Load(object sender, EventArgs e) {
             Restaurante restaurante = ConexionBD.consultarRestaurante();
             Usuario gerente = ConexionBD.consultarGerente();
-            txtNombre.Text= restaurante.getNombre();
-            txtDescripcion.Text = restaurante.getDescription();
-            txtLatitud.Text = restaurante.getLatitud();
-            txtLongitud.Text = restaurante.getLongitud();
-            txtFotoPrincipal.Text = restaurante.getFotoPrincipal();
+            txtNombre.Text= restaurante.Nombre;
+            txtDescripcion.Text = restaurante.Descripcion;
+            txtDireccion.Text = restaurante.Direccion;
+            txtDireccionMaps.Text = restaurante.DireccionMaps;
+            txtTelefono.Text = restaurante.Telefono;
+            txtFotoPrincipal.Text = restaurante.FotoPrincipal;
             if (ConexionBD.existeGerente()) {
                 txtIdGerente.Text = gerente.IdUsuario.ToString();
                 txtNombreGerente.Text = gerente.Nombres + " " + gerente.Apellidos;
@@ -27,19 +28,20 @@ namespace Missushi.Forms.Gerente {
             try {
                 string nombre = txtNombre.Text;
                 string descripcion = txtDescripcion.Text;
-                string latitud = txtLatitud.Text;
-                string longitud = txtLongitud.Text;
+                string direccion = txtDireccion.Text;
+                string direccionMaps = txtDireccionMaps.Text;
+                string telefono = txtTelefono.Text;
                 string fotoPrincipal = txtFotoPrincipal.Text;
                 int idGerente = Convert.ToInt32(txtIdGerente.Text);
                 if (ConexionBD.existeInfoRestaurante()) {
-                    ConexionBD.modificarRestaurante(nombre, descripcion, latitud, longitud, fotoPrincipal, idGerente);
+                    ConexionBD.modificarRestaurante(nombre, descripcion, direccion, direccionMaps,telefono, fotoPrincipal, idGerente);
                 } else {
-                    ConexionBD.insertarRestaurante(nombre, descripcion, latitud, longitud, fotoPrincipal, idGerente);
+                    ConexionBD.insertarRestaurante(nombre, descripcion, direccion, direccionMaps, telefono, fotoPrincipal, idGerente);
                 }
                 MessageBox.Show("Modificado con éxito.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
             } catch (Exception ex) {
-                MessageBox.Show(ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConexionBD.manejarErrores(ex);
                 this.DialogResult = DialogResult.No;
             }
         }
