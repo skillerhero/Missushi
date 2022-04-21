@@ -52,7 +52,9 @@ namespace Missushi
             this.Controls.Add(this.lblInfoRestaurante);
             this.Name = "FormMain";
             this.Text = "Home";
+            this.HandleCreated += new EventHandler(this.mostrarPantallaDeCarga);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.Controls.SetChildIndex(this.lblInfoRestaurante, 0);
             this.ResumeLayout(false);

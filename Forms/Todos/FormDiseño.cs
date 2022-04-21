@@ -1,18 +1,17 @@
 ﻿using Missushi.Clases;
 using Missushi.Forms.Gerente;
+using Missushi.Forms.Todos;
 using Missushi.Funciones;
 using System.Runtime.InteropServices;
 
 
 namespace Missushi.Forms {
     public partial class FormDiseño : Form {
-
         public FormDiseño() {
             InitializeComponent();
         }
 
         private void FormDiseño_Load(object sender, EventArgs e) {
-
         }
 
         protected void cargarPantallaPrincipal() {
@@ -154,9 +153,6 @@ namespace Missushi.Forms {
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Close();
         }
-
-
-
     }
     public class BotonPersonalizado : Button {
         public BotonPersonalizado() {

@@ -1,16 +1,20 @@
 using Missushi.Funciones;
 using Missushi.Clases;
+using Missushi.Forms.Todos;
 
 namespace Missushi{
     public partial class FormMain{
         private Globales globales;
+        private FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();
         public FormMain(){
+            this.Visible = false;
             InitializeComponent();
             cargarPantallaPrincipal();
+            cargarInfoRestaurante();
             globales = new Globales();
         }
         private void FormMain_Shown(object sender, EventArgs e) {
-            cargarInfoRestaurante();
+            
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e){
@@ -29,6 +33,17 @@ namespace Missushi{
                 gerente.Correo = "No registrado.";
             }
             lblInfoRestaurante.Text = "Correo: " + gerente.Correo + "    Teléfono: " + restaurante.Telefono;
+        }
+
+        private void FormMain_Load(object sender, EventArgs e) {
+        }
+
+        private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
+            if (this.Visible == false) {
+                if (formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
+                    this.Visible = true;
+                }
+            }
         }
     }
 }
