@@ -28,14 +28,17 @@ namespace Missushi{
             if (!ConexionBD.existeGerente()) {
                 gerente.Correo = "No registrado.";
             }
+            lblInfoRestaurante.colorLetra = Color.Black;
+            lblInfoRestaurante.MouseHover -= lblInfoRestaurante.hover;
+            lblInfoRestaurante.MouseLeave -= lblInfoRestaurante.leave;
             lblInfoRestaurante.Text = "Correo: " + gerente.Correo + "    Teléfono: " + restaurante.Telefono;
         }
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
-            //if (this.Visible == false) {
-            //    if (formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
-            //        this.Visible = true;
-            //    }
-            //}
+            if (this.Visible == false) {
+                if (formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
+                    this.Visible = true;
+                }
+            }
         }
     }
 }

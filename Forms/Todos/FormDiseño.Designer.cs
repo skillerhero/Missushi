@@ -75,17 +75,10 @@
             // 
             // lblMenu
             // 
-            this.lblMenu.AutoSize = true;
-            this.lblMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.lblMenu.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMenu.ForeColor = System.Drawing.Color.White;
             this.lblMenu.Location = new System.Drawing.Point(95, 12);
-            this.lblMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(70, 50);
-            this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "Menú";
-            this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMenu.Click += new System.EventHandler(this.lblMenu_Click);
             // 
             // pbUbicacion
@@ -107,6 +100,7 @@
             this.lblIngresar.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblIngresar.ForeColor = System.Drawing.Color.White;
             this.lblIngresar.Location = new System.Drawing.Point(920, 12);
+            this.lblIngresar.Margin = new System.Windows.Forms.Padding(0);
             this.lblIngresar.Name = "lblIngresar";
             this.lblIngresar.Size = new System.Drawing.Size(91, 50);
             this.lblIngresar.TabIndex = 0;
@@ -121,6 +115,7 @@
             this.lblRegistro.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
             this.lblRegistro.Location = new System.Drawing.Point(790, 12);
+            this.lblRegistro.Margin = new System.Windows.Forms.Padding(0);
             this.lblRegistro.Name = "lblRegistro";
             this.lblRegistro.Size = new System.Drawing.Size(90, 50);
             this.lblRegistro.TabIndex = 0;
@@ -150,6 +145,7 @@
             this.lblDisponibilidad.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDisponibilidad.ForeColor = System.Drawing.Color.White;
             this.lblDisponibilidad.Location = new System.Drawing.Point(425, 15);
+            this.lblDisponibilidad.Margin = new System.Windows.Forms.Padding(0);
             this.lblDisponibilidad.Name = "lblDisponibilidad";
             this.lblDisponibilidad.Size = new System.Drawing.Size(146, 50);
             this.lblDisponibilidad.TabIndex = 0;

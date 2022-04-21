@@ -15,7 +15,9 @@ namespace Missushi
             ApplicationConfiguration.Initialize();
             ConexionBD.conectarBD();
             Application.Run(new FormMain());
-            ConexionBD.connection.Close();
+            if(ConexionBD.connection != null) {
+                ConexionBD.connection.Close();
+            }
         }
     }
 }

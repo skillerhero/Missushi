@@ -9,7 +9,7 @@ namespace Missushi.Forms.Gerente{
         private List<PictureBox> pictureBoxList = new List<PictureBox>();
         private List<Label> labelList = new List<Label>();
         private Rectangle rectangulo = new Rectangle();
-        private Brush selectionBrush = new SolidBrush(Color.FromArgb(128, 72, 145, 220));
+        private Brush selectionBrush = new SolidBrush(Globales.azulSeleccion);
         private int seleccionado = -1;
         public FormElegirZona(){
             InitializeComponent();

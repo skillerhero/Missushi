@@ -22,7 +22,7 @@ namespace Missushi.Forms {
         }
 
         protected void cargarPantallaIngresar() {
-            this.lblIngresar.ForeColor = Color.FromArgb(57, 74, 44);
+            this.lblIngresar.colorLetra = Globales.verdeFuerteLetra;
             this.pbImagenesRestaurante.Visible = false;
             this.btnReseñas.Visible = false;
             pbSalir.Visible = false;
@@ -167,7 +167,7 @@ namespace Missushi.Forms {
 
     public class PictureBoxPersonalizado : PictureBox {
         public PictureBoxPersonalizado() {
-            this.BackColor = Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.BackColor = Globales.verdeBarra;
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.TabIndex = 0;
             this.Cursor = Cursors.Hand;
@@ -175,27 +175,27 @@ namespace Missushi.Forms {
     }
 
     public class LabelPersonalizado : Label {
-        private Color colorLetra;
-        private Color colorLetraSeleccionada;
+        public Color colorLetra;
+        public Color colorLetraSeleccionada;
         public LabelPersonalizado() {
             colorLetra = Color.White;
-            colorLetraSeleccionada = Globales.verdeFuerte;
-
-            this.BackColor = Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            colorLetraSeleccionada = Globales.verdeFuerteLetra;
+            BackColor = Globales.verdeBarra;
             this.Font = new Font("Gabriola", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             this.ForeColor = colorLetra;
             this.TabIndex = 0;
             this.TextAlign = ContentAlignment.MiddleCenter;
             this.Cursor = Cursors.Hand;
+            this.Margin = new Padding(0);
             this.MouseHover += new EventHandler(this.hover);
             this.MouseLeave += new EventHandler(this.leave);
         }
 
-        private void hover(object? sender, EventArgs e) {
+        public void hover(object? sender, EventArgs e) {
             this.ForeColor = colorLetraSeleccionada;
         }
 
-        private void leave(object? sender, EventArgs e) {
+        public void leave(object? sender, EventArgs e) {
             this.ForeColor = colorLetra;
         }
 
@@ -240,7 +240,7 @@ namespace Missushi.Forms {
     }
     class TextBoxPersonalizado : TextBox {
         public TextBoxPersonalizado() {
-            this.BackColor = Color.FromArgb(255, 216, 196);
+            this.BackColor = Globales.rosaTextBox;
             this.Size = new Size(70, 70);
             this.Multiline = true;
         }
