@@ -159,5 +159,14 @@ namespace Missushi.Forms.Todos {
             base.OnScroll(se);
             this.Invalidate(false);
         }
+
+        private void cbHora_SelectedIndexChanged(object sender, EventArgs e) {
+            //this.Controls.Clear();
+            //for (int ix = this.Controls.Count - 1; ix >= 0; ix--) {
+            //    if (this.Controls[ix] is PictureBox) this.Controls[ix].Dispose();
+            //}
+            //InitializeComponent();
+            cargarZonas();
+        }
     }
 }

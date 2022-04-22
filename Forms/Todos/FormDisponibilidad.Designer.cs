@@ -39,6 +39,7 @@
             this.cbHora.Name = "cbHora";
             this.cbHora.Size = new System.Drawing.Size(155, 31);
             this.cbHora.TabIndex = 1;
+            this.cbHora.SelectedIndexChanged += new System.EventHandler(this.cbHora_SelectedIndexChanged);
             // 
             // dtFecha
             // 
