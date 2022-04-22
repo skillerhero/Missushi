@@ -7,8 +7,8 @@ namespace Missushi.Forms.Gerente {
         }
 
         private void FormModificarInfo_Load(object sender, EventArgs e) {
-            Restaurante restaurante = ConexionBD.consultarRestaurante();
-            Usuario gerente = ConexionBD.consultarGerente();
+            Restaurante restaurante = Globales.restaurante;
+            Usuario gerente = Globales.gerente;
             txtNombre.Text= restaurante.Nombre;
             txtDescripcion.Text = restaurante.Descripcion;
             txtDireccion.Text = restaurante.Direccion;
@@ -30,13 +30,15 @@ namespace Missushi.Forms.Gerente {
                 string descripcion = txtDescripcion.Text;
                 string direccion = txtDireccion.Text;
                 string direccionMaps = txtDireccionMaps.Text;
+                string fotoMaps = txtFotoMaps.Text;
+                string fotoMapaZonas = txtFotoMapaZonas.Text;
                 string telefono = txtTelefono.Text;
                 string fotoPrincipal = txtFotoPrincipal.Text;
                 int idGerente = Convert.ToInt32(txtIdGerente.Text);
                 if (ConexionBD.existeInfoRestaurante()) {
-                    ConexionBD.modificarRestaurante(nombre, descripcion, direccion, direccionMaps,telefono, fotoPrincipal, idGerente);
+                    ConexionBD.modificarRestaurante(nombre, descripcion, direccion, direccionMaps, fotoMaps, fotoMapaZonas, telefono, fotoPrincipal, idGerente);
                 } else {
-                    ConexionBD.insertarRestaurante(nombre, descripcion, direccion, direccionMaps, telefono, fotoPrincipal, idGerente);
+                    ConexionBD.insertarRestaurante(nombre, descripcion, direccion, direccionMaps, fotoMaps, fotoMapaZonas, telefono, fotoPrincipal, idGerente);
                 }
                 MessageBox.Show("Modificado con éxito.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;

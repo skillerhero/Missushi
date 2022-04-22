@@ -1,15 +1,12 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
 using QRCoder;
-using System.ComponentModel;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Mime;
 
 namespace Missushi.Forms.Cliente {
     public partial class FormReservacionCliente : Form {
-        ProgressBar progressBar = new ProgressBar();
-        BackgroundWorker backgroundWorker = new BackgroundWorker();
         public FormReservacionCliente() {
             InitializeComponent();
         }

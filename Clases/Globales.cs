@@ -1,7 +1,10 @@
-﻿namespace Missushi.Clases {
+﻿using Missushi.Funciones;
+
+namespace Missushi.Clases {
     internal class Globales {
         static public Usuario? usuarioActual;
         static public Usuario? usuarioSeleccionado;
+        static public Usuario? gerente;
         static public Menu? platilloSeleccionado;
         static public Zona? zonaSeleccionada;
         static public Restaurante? restaurante;
@@ -18,7 +21,9 @@
             usuarioSeleccionado = new Usuario();
             platilloSeleccionado = new Menu();
             zonaSeleccionada = new Zona();
-            restaurante = new Restaurante();
+            restaurante = ConexionBD.consultarRestaurante();
+            gerente = ConexionBD.consultarGerente();
         }
+
     }
 }

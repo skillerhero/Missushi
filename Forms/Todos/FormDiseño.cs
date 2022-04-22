@@ -15,20 +15,33 @@ namespace Missushi.Forms {
         }
 
         protected void cargarPantallaPrincipal() {
-            pbImagenesRestaurante.ImageLocation = ConexionBD.consultarRestaurante().FotoPrincipal;
+            pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
             lblRegistro.Visible = true;
             lblIngresar.Visible = true;
-            pbSalir.Visible = false;
+        }
+
+        protected void noCargarPantallaPrincipal() {
+            pbImagenesRestaurante.Visible = false;
+            btnReseñas.Visible = false;
+            pbLetrasLogo.Visible = false;
         }
 
         protected void cargarPantallaIngresar() {
-            this.lblIngresar.colorLetra = Globales.verdeFuerteLetra;
-            this.pbImagenesRestaurante.Visible = false;
-            this.btnReseñas.Visible = false;
-            pbSalir.Visible = false;
+            noCargarPantallaPrincipal();
+            lblIngresar.colorLetra = Globales.verdeFuerteLetra;
             lblIngresar.Enabled = false;
-            pbLetrasLogo.Visible = false;
+        }
 
+        protected void cargarPantallaUbicacion() {
+            noCargarPantallaPrincipal();
+            lblUbicacion.colorLetra = Globales.verdeFuerteLetra;
+            lblUbicacion.Enabled = false;
+        }
+
+        protected void cargarPantallaDisponibilidad() {
+            noCargarPantallaPrincipal();
+            lblDisponibilidad.colorLetra = Globales.verdeFuerteLetra;
+            lblDisponibilidad.Enabled = false;
         }
 
         private void hover(object sender, EventArgs e) {
@@ -104,8 +117,8 @@ namespace Missushi.Forms {
 
         //----------------------------Eventos----------------------------------------------
         private void lblIngresar_Click(object sender, EventArgs e) {
-            this.DialogResult = DialogResult.Abort;
-            this.Hide();
+            DialogResult = DialogResult.Abort;
+            Hide();
             FormLogin formLogin = new FormLogin();
             formLogin.Closed += (s, args) => this.Show();
             if (formLogin.ShowDialog() == DialogResult.OK) {
@@ -129,8 +142,8 @@ namespace Missushi.Forms {
         }
 
         private void lblRegistro_Click(object sender, EventArgs e) {
-            this.DialogResult = DialogResult.Abort;
-            this.Hide();
+            DialogResult = DialogResult.Abort;
+            Hide();
             FormRegistro formRegistro = new FormRegistro();
             formRegistro.Closed += (s, args) => this.Show();
             if (formRegistro.ShowDialog() == DialogResult.OK) {
@@ -139,30 +152,50 @@ namespace Missushi.Forms {
         }
 
         private void lblMenu_Click(object sender, EventArgs e) {
+            DialogResult = DialogResult.Abort;
+            Hide();
             FormMenu formMenu = new FormMenu();
+            formMenu.Closed += (s, args) => this.Show();
             formMenu.ShowDialog();
         }
 
         private void pbMenu_Click(object sender, EventArgs e) {
+            DialogResult = DialogResult.Abort;
+            Hide();
             FormMenu formMenu = new FormMenu();
+            formMenu.Closed += (s, args) => this.Show();
             formMenu.ShowDialog();
         }
 
         private void pbUbicacion_Click(object sender, EventArgs e) {
-
+            DialogResult = DialogResult.Abort;
+            Hide();
+            FormUbicacion formUbicacion = new FormUbicacion();
+            formUbicacion.Closed += (s, args) => this.Show();
+            formUbicacion.ShowDialog();
         }
 
         private void lblUbicacion_Click(object sender, EventArgs e) {
-
+            DialogResult = DialogResult.Abort;
+            Hide();
+            FormUbicacion formUbicacion = new FormUbicacion();
+            formUbicacion.Closed += (s, args) => this.Show();
+            formUbicacion.ShowDialog();
         }
 
         private void lblDisponibilidad_Click(object sender, EventArgs e) {
+            DialogResult = DialogResult.Abort;
+            Hide();
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
+            formDisponibilidad.Closed += (s, args) => this.Show();
             formDisponibilidad.ShowDialog();
         }
 
         private void pbDisponibilidad_Click(object sender, EventArgs e) {
+            DialogResult = DialogResult.Abort;
+            Hide();
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
+            formDisponibilidad.Closed += (s, args) => this.Show();
             formDisponibilidad.ShowDialog();
         }
 
@@ -174,6 +207,12 @@ namespace Missushi.Forms {
         private void FormDiseño_DoubleClick(object sender, EventArgs e) {
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Close();
+        }
+
+        private void pbLogo_Click(object sender, EventArgs e) {
+            if(this is not FormMain) {
+                Close();
+            }
         }
     }
     public class BotonPersonalizado : Button {

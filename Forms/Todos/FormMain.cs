@@ -7,10 +7,8 @@ namespace Missushi{
         private Globales globales;
         private FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();
         public FormMain(){
-            InitializeComponent();
-            cargarPantallaPrincipal();
-            cargarInfoRestaurante();
             globales = new Globales();
+            InitializeComponent();
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e){
@@ -20,8 +18,8 @@ namespace Missushi{
         }
 
         private void cargarInfoRestaurante() {
-            Restaurante restaurante = ConexionBD.consultarRestaurante();
-            Usuario gerente = ConexionBD.consultarGerente();
+            Restaurante restaurante = Globales.restaurante;
+            Usuario gerente = Globales.gerente;
             if (!ConexionBD.existeInfoRestaurante()){
                 restaurante.Telefono = "No registrado.";
             }
@@ -39,6 +37,11 @@ namespace Missushi{
                     this.Visible = true;
                 }
             }
+        }
+
+        private void FormMain_Shown(object sender, EventArgs e) {
+            cargarPantallaPrincipal();
+            cargarInfoRestaurante();
         }
     }
 }

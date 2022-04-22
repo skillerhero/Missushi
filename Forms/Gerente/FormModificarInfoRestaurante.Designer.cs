@@ -41,6 +41,10 @@
             this.txtNombreGerente = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
+            this.txtFotoMaps = new System.Windows.Forms.TextBox();
+            this.lblFotoMaps = new System.Windows.Forms.Label();
+            this.lblFotoMapaZonas = new System.Windows.Forms.Label();
+            this.txtFotoMapaZonas = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -198,11 +202,47 @@
             this.lblTelefono.TabIndex = 16;
             this.lblTelefono.Text = "Teléfono";
             // 
+            // txtFotoMaps
+            // 
+            this.txtFotoMaps.Location = new System.Drawing.Point(457, 230);
+            this.txtFotoMaps.Name = "txtFotoMaps";
+            this.txtFotoMaps.Size = new System.Drawing.Size(100, 23);
+            this.txtFotoMaps.TabIndex = 18;
+            // 
+            // lblFotoMaps
+            // 
+            this.lblFotoMaps.AutoSize = true;
+            this.lblFotoMaps.Location = new System.Drawing.Point(317, 233);
+            this.lblFotoMaps.Name = "lblFotoMaps";
+            this.lblFotoMaps.Size = new System.Drawing.Size(119, 15);
+            this.lblFotoMaps.TabIndex = 19;
+            this.lblFotoMaps.Text = "Foto de google maps";
+            // 
+            // lblFotoMapaZonas
+            // 
+            this.lblFotoMapaZonas.AutoSize = true;
+            this.lblFotoMapaZonas.Location = new System.Drawing.Point(291, 301);
+            this.lblFotoMapaZonas.Name = "lblFotoMapaZonas";
+            this.lblFotoMapaZonas.Size = new System.Drawing.Size(149, 15);
+            this.lblFotoMapaZonas.TabIndex = 21;
+            this.lblFotoMapaZonas.Text = "Foto del mapa de las zonas";
+            // 
+            // txtFotoMapaZonas
+            // 
+            this.txtFotoMapaZonas.Location = new System.Drawing.Point(447, 298);
+            this.txtFotoMapaZonas.Name = "txtFotoMapaZonas";
+            this.txtFotoMapaZonas.Size = new System.Drawing.Size(100, 23);
+            this.txtFotoMapaZonas.TabIndex = 20;
+            // 
             // FormModificarInfoRestaurante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 463);
+            this.Controls.Add(this.lblFotoMapaZonas);
+            this.Controls.Add(this.txtFotoMapaZonas);
+            this.Controls.Add(this.lblFotoMaps);
+            this.Controls.Add(this.txtFotoMaps);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.txtNombreGerente);
@@ -250,5 +290,9 @@
         private TextBox txtNombreGerente;
         private TextBox txtTelefono;
         private Label lblTelefono;
+        private TextBox txtFotoMaps;
+        private Label lblFotoMaps;
+        private Label lblFotoMapaZonas;
+        private TextBox txtFotoMapaZonas;
     }
 }

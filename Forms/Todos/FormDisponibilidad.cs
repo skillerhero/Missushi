@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Missushi.Clases;
 
 namespace Missushi.Forms.Todos {
-    public partial class FormDisponibilidad : Form {
+    public partial class FormDisponibilidad : FormDiseño {
         public FormDisponibilidad() {
             InitializeComponent();
+        }
+
+        private void FormDisponibilidad_Load(object sender, EventArgs e) {
+            pbMapaZonas.ImageLocation = Globales.restaurante.FotoMapaZonas;
+
         }
     }
 }

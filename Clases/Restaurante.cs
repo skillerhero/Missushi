@@ -4,15 +4,19 @@
         private string descripcion;
         private string direccion;
         private string direccionMaps;
+        private string fotoMaps;
+        private string fotoMapaZonas;
         private string telefono;
         private string fotoPrincipal;
         private int idGerente;
 
-        public Restaurante(string nombre, string descripcion, string direccion, string direccionMaps, string telefono, string fotoPrincipal, int idGerente) {
+        public Restaurante(string nombre, string descripcion, string direccion, string direccionMaps, string fotoMaps, string fotoMapaZonas, string telefono, string fotoPrincipal, int idGerente) {
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.direccion = direccion;
             this.direccionMaps = direccionMaps;
+            this.fotoMaps = fotoMaps;
+            this.fotoMapaZonas = fotoMapaZonas;
             this.telefono = telefono;
             this.fotoPrincipal = fotoPrincipal;
             this.idGerente = idGerente;
@@ -23,6 +27,8 @@
             descripcion = "";
             direccion = "";
             direccionMaps = "";
+            fotoMaps = "";
+            fotoMapaZonas = "";
             telefono = "";
             fotoPrincipal = "";
             idGerente = 0;
@@ -35,5 +41,7 @@
         public string Telefono { get => telefono; set => telefono = value; }
         public string FotoPrincipal { get => fotoPrincipal; set => fotoPrincipal = value; }
         public int IdGerente { get => idGerente; set => idGerente = value; }
+        public string FotoMaps { get => fotoMaps; set => fotoMaps = value; }
+        public string FotoMapaZonas { get => fotoMapaZonas; set => fotoMapaZonas = value; }
     }
 }

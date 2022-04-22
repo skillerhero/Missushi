@@ -25,7 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDiseño));
             this.lblBarraPrincipal = new System.Windows.Forms.Label();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new Missushi.Forms.PictureBoxPersonalizado();
             this.lblMenu = new Missushi.Forms.LabelPersonalizado();
             this.pbUbicacion = new Missushi.Forms.PictureBoxPersonalizado();
             this.lblIngresar = new Missushi.Forms.LabelPersonalizado();
@@ -72,6 +72,7 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // lblMenu
             // 
@@ -323,7 +324,7 @@
         #endregion
 
         private Label lblBarraPrincipal;
-        private PictureBox pbLogo;
+        private PictureBoxPersonalizado pbLogo;
         private Label lblBarra1;
         private Label lblBarra2;
         private Label lblBarra3;
