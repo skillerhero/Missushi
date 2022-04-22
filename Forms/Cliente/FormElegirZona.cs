@@ -20,18 +20,19 @@ namespace Missushi.Forms.Cliente {
         }
 
         private void FormElegirZona_Load(object sender, EventArgs e) {
-            int x = 0, y = 0;
+            int x = 0, y = 0, desplazamientoY = y * 400;
             rectangulo = new Rectangle();
             for (int i = 0; i < zonas.Count; i++) {
                 zonas[i].CupoDisponible = ConexionBD.consultarCupoZona(zonas[i].IdZona, fechaInicio);
                 x = i % 3;
                 if( i % 3 == 0 && i>0) {
                     y++;
+                    desplazamientoY = y * 400;
                 }
                 Label lblIdZona = new Label() {
                     Name = "lblIdZona" + i,
                     Size = new Size(160, 20),
-                    Location = new Point(80 + 320 * x, y * 400 + 10),
+                    Location = new Point(80 + 320 * x, 10 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     Text = "Zona " + zonas[i].IdZona.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter
@@ -39,7 +40,7 @@ namespace Missushi.Forms.Cliente {
                 Label lblCupoDisponible = new Label() {
                     Name = "lblIdZona" + i,
                     Size = new Size(160, 20),
-                    Location = new Point(80 + 320 * x, y * 400 + 40),
+                    Location = new Point(80 + 320 * x, 40 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     Text = "Cupo " + zonas[i].CupoDisponible.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter
@@ -47,7 +48,7 @@ namespace Missushi.Forms.Cliente {
                 PictureBox picture = new PictureBox {
                     Name = "pbZona" + i,
                     Size = new Size(320, 320),
-                    Location = new Point(x * 320, y * 400 + 70),
+                    Location = new Point(x * 320, 70 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };

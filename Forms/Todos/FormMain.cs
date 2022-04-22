@@ -9,6 +9,8 @@ namespace Missushi{
         public FormMain(){
             globales = new Globales();
             InitializeComponent();
+            cargarPantallaPrincipal();
+            cargarInfoRestaurante();
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e){
@@ -40,8 +42,7 @@ namespace Missushi{
         }
 
         private void FormMain_Shown(object sender, EventArgs e) {
-            cargarPantallaPrincipal();
-            cargarInfoRestaurante();
+            
         }
     }
 }

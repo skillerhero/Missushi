@@ -23,34 +23,39 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.dtHora = new Missushi.Forms.ComboBoxPersonalizado();
+            this.cbHora = new Missushi.Forms.ComboBoxPersonalizado();
             this.dtFecha = new Missushi.Forms.DateTimePickerPersonalizado();
             this.pbMapaZonas = new Missushi.Forms.PictureBoxPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbMapaZonas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dtHora
+            // cbHora
             // 
-            this.dtHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dtHora.FormattingEnabled = true;
-            this.dtHora.Location = new System.Drawing.Point(425, 91);
-            this.dtHora.Name = "dtHora";
-            this.dtHora.Size = new System.Drawing.Size(121, 23);
-            this.dtHora.TabIndex = 1;
+            this.cbHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHora.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbHora.FormattingEnabled = true;
+            this.cbHora.Location = new System.Drawing.Point(813, 84);
+            this.cbHora.MinimumSize = new System.Drawing.Size(155, 0);
+            this.cbHora.Name = "cbHora";
+            this.cbHora.Size = new System.Drawing.Size(155, 31);
+            this.cbHora.TabIndex = 1;
             // 
             // dtFecha
             // 
-            this.dtFecha.Location = new System.Drawing.Point(184, 91);
+            this.dtFecha.CalendarFont = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtFecha.Location = new System.Drawing.Point(475, 84);
+            this.dtFecha.MinimumSize = new System.Drawing.Size(307, 32);
             this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(235, 23);
+            this.dtFecha.Size = new System.Drawing.Size(307, 32);
             this.dtFecha.TabIndex = 2;
+            this.dtFecha.ValueChanged += new System.EventHandler(this.dtFecha_ValueChanged);
             // 
             // pbMapaZonas
             // 
             this.pbMapaZonas.BackColor = System.Drawing.Color.White;
-            this.pbMapaZonas.Location = new System.Drawing.Point(62, 135);
+            this.pbMapaZonas.Location = new System.Drawing.Point(43, 148);
             this.pbMapaZonas.Name = "pbMapaZonas";
-            this.pbMapaZonas.Size = new System.Drawing.Size(100, 50);
+            this.pbMapaZonas.Size = new System.Drawing.Size(387, 494);
             this.pbMapaZonas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapaZonas.TabIndex = 0;
             this.pbMapaZonas.TabStop = false;
@@ -60,8 +65,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.dtHora);
+            this.Controls.Add(this.cbHora);
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.pbMapaZonas);
             this.Name = "FormDisponibilidad";
@@ -69,7 +75,7 @@
             this.Load += new System.EventHandler(this.FormDisponibilidad_Load);
             this.Controls.SetChildIndex(this.pbMapaZonas, 0);
             this.Controls.SetChildIndex(this.dtFecha, 0);
-            this.Controls.SetChildIndex(this.dtHora, 0);
+            this.Controls.SetChildIndex(this.cbHora, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbMapaZonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -77,7 +83,7 @@
         }
 
         #endregion
-        private ComboBoxPersonalizado dtHora;
+        private ComboBoxPersonalizado cbHora;
         private DateTimePickerPersonalizado dtFecha;
         private PictureBoxPersonalizado pbMapaZonas;
     }
