@@ -135,7 +135,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLogin";
-            this.Text = "Login";
+            this.Text = "Missushi - Login";
             this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.Controls.SetChildIndex(this.btnIngresar, 0);
             this.Controls.SetChildIndex(this.txtCorreo, 0);

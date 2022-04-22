@@ -1,7 +1,6 @@
 ﻿using Missushi.Clases;
 using Missushi.Forms.Gerente;
 using Missushi.Forms.Todos;
-using Missushi.Funciones;
 using System.Runtime.InteropServices;
 
 
@@ -36,18 +35,28 @@ namespace Missushi.Forms {
             noCargarPantallaPrincipal();
             lblUbicacion.colorLetra = Globales.verdeFuerteLetra;
             lblUbicacion.Enabled = false;
+            pbUbicacion.Enabled = false;
         }
 
         protected void cargarPantallaDisponibilidad() {
             noCargarPantallaPrincipal();
             lblDisponibilidad.colorLetra = Globales.verdeFuerteLetra;
             lblDisponibilidad.Enabled = false;
+            pbDisponibilidad.Enabled = false;
         }
 
+        protected void cargarPantallaMenu() {
+            noCargarPantallaPrincipal();
+            lblMenu.colorLetra = Globales.verdeFuerteLetra;
+            lblMenu.Enabled = false;
+            pbMenu.Enabled = false;
+        }
+
+        //----------------------------Eventos----------------------------------------------
         private void hover(object sender, EventArgs e) {
             if (((PictureBoxPersonalizado)sender).Name == "pbMenu") {
                 lblMenu.ForeColor = lblMenu.colorLetraSeleccionada;
-            }else if (((PictureBoxPersonalizado)sender).Name == "pbUbicacion") {
+            } else if (((PictureBoxPersonalizado)sender).Name == "pbUbicacion") {
                 lblUbicacion.ForeColor = lblUbicacion.colorLetraSeleccionada;
             } else if (((PictureBoxPersonalizado)sender).Name == "pbDisponibilidad") {
                 lblDisponibilidad.ForeColor = lblDisponibilidad.colorLetraSeleccionada;
@@ -64,58 +73,6 @@ namespace Missushi.Forms {
             }
         }
 
-
-
-        //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------
-        protected override void WndProc(ref Message m) {
-            const int WM_SYSCOMMAND = 0x0112;
-            const int SC_RESTORE = 0xF120;
-            if (m.Msg == WM_SYSCOMMAND && (int)m.WParam == SC_RESTORE) {
-                this.FormBorderStyle = FormBorderStyle.None;
-            }
-            base.WndProc(ref m);
-        }
-
-        //-------------Código para que se mueva la ventana sin bordes-----------
-
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImportAttribute("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImportAttribute("user32.dll")]
-        public static extern bool ReleaseCapture();
-
-        private void FormDiseño_MouseDown(object sender, MouseEventArgs e) {
-            if (e.Button == MouseButtons.Left) {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
-        //----------------------Código para redondear el botón-----------------------
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-           int nLeftRect,     // x-coordinate of upper-left corner
-           int nTopRect,      // y-coordinate of upper-left corner
-           int nRightRect,    // x-coordinate of lower-right corner
-           int nBottomRect,   // y-coordinate of lower-right corner
-           int nWidthEllipse, // height of ellipse
-           int nHeightEllipse // width of ellipse
-        );
-
-        [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
-        private static extern bool DeleteObject(IntPtr hObject);
-
-        protected void cortarEsquinas(object sender, PaintEventArgs e) {
-            if (sender.GetType().Name == "BotonPersonalizado") {
-                IntPtr ptr = CreateRoundRectRgn(0, 0, ((BotonPersonalizado)sender).Width, ((BotonPersonalizado)sender).Height, 15, 15);
-                btnReseñas.Region = Region.FromHrgn(ptr);
-                DeleteObject(ptr);
-            }
-        }
-
-        //----------------------------Eventos----------------------------------------------
         private void lblIngresar_Click(object sender, EventArgs e) {
             DialogResult = DialogResult.Abort;
             Hide();
@@ -214,6 +171,55 @@ namespace Missushi.Forms {
                 Close();
             }
         }
+        //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------
+        protected override void WndProc(ref Message m) {
+            const int WM_SYSCOMMAND = 0x0112;
+            const int SC_RESTORE = 0xF120;
+            if (m.Msg == WM_SYSCOMMAND && (int)m.WParam == SC_RESTORE) {
+                this.FormBorderStyle = FormBorderStyle.None;
+            }
+            base.WndProc(ref m);
+        }
+
+        //-------------Código para que se mueva la ventana sin bordes-----------
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void FormDiseño_MouseDown(object sender, MouseEventArgs e) {
+            if (e.Button == MouseButtons.Left) {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        //----------------------Código para redondear el botón-----------------------
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+           int nLeftRect,     // x-coordinate of upper-left corner
+           int nTopRect,      // y-coordinate of upper-left corner
+           int nRightRect,    // x-coordinate of lower-right corner
+           int nBottomRect,   // y-coordinate of lower-right corner
+           int nWidthEllipse, // height of ellipse
+           int nHeightEllipse // width of ellipse
+        );
+
+        [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
+        private static extern bool DeleteObject(IntPtr hObject);
+
+        protected void cortarEsquinas(object sender, PaintEventArgs e) {
+            if (sender.GetType().Name == "BotonPersonalizado") {
+                IntPtr ptr = CreateRoundRectRgn(0, 0, ((BotonPersonalizado)sender).Width, ((BotonPersonalizado)sender).Height, 15, 15);
+                btnReseñas.Region = Region.FromHrgn(ptr);
+                DeleteObject(ptr);
+            }
+        }
+
     }
     public class BotonPersonalizado : Button {
         public BotonPersonalizado() {
@@ -259,7 +265,6 @@ namespace Missushi.Forms {
         public void leave(object? sender, EventArgs e) {
             this.ForeColor = colorLetra;
         }
-
     }
 
     public class ComboBoxPersonalizado : ComboBox {
@@ -315,14 +320,14 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, this.Width, this.Height, 15, 15)); //play with these values till you are happy
+            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
         }
     }
     class TextBoxPersonalizado : TextBox {
         public TextBoxPersonalizado() {
-            this.BackColor = Globales.rosaTextBox;
-            this.Size = new Size(70, 70);
-            this.Multiline = true;
+            BackColor = Globales.rosaTextBox;
+            Size = new Size(70, 70);
+            Multiline = true;
         }
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -336,7 +341,7 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, this.Width, this.Height, 15, 15)); //play with these values till you are happy
+            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
         }
     }
 }

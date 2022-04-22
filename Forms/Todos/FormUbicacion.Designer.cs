@@ -69,7 +69,7 @@
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.pbFotoMaps);
             this.Name = "FormUbicacion";
-            this.Text = "FormUbicacion";
+            this.Text = "Missushi - Ubicación";
             this.Controls.SetChildIndex(this.pbFotoMaps, 0);
             this.Controls.SetChildIndex(this.lblDireccion, 0);
             this.Controls.SetChildIndex(this.lblDescripcion, 0);

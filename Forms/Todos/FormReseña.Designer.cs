@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "FormReseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormReseña";
+            this.Text = "Missushi - Reseñas";
             this.ResumeLayout(false);
 
         }

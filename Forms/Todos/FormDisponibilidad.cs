@@ -4,6 +4,7 @@ namespace Missushi.Forms.Todos {
     public partial class FormDisponibilidad : FormDiseño {
         public FormDisponibilidad() {
             InitializeComponent();
+            cargarPantallaDisponibilidad();
         }
 
         private void FormDisponibilidad_Load(object sender, EventArgs e) {

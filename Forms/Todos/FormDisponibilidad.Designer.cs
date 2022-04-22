@@ -65,7 +65,7 @@
             this.Controls.Add(this.dtFecha);
             this.Controls.Add(this.pbMapaZonas);
             this.Name = "FormDisponibilidad";
-            this.Text = "FormDisponibilidad";
+            this.Text = "Missushi - Disponibilidad";
             this.Load += new System.EventHandler(this.FormDisponibilidad_Load);
             this.Controls.SetChildIndex(this.pbMapaZonas, 0);
             this.Controls.SetChildIndex(this.dtFecha, 0);
