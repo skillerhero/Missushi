@@ -9,7 +9,7 @@ namespace Missushi.Forms.Cliente {
         private List<PictureBox> pictureBoxList = new List<PictureBox>();
         private List<Label> labelList = new List<Label>();
         private Rectangle rectangulo = new Rectangle();
-        private Brush selectionBrush = new SolidBrush(Color.FromArgb(128, 72, 145, 220));
+        private Brush selectionBrush = new SolidBrush(Globales.azulSeleccion);
         private int seleccionado = -1;
         public FormElegirZona() {
             InitializeComponent();
@@ -20,34 +20,35 @@ namespace Missushi.Forms.Cliente {
         }
 
         private void FormElegirZona_Load(object sender, EventArgs e) {
-            int x = 0, y = 0;
+            int x = 0, y = 0, desplazamientoY = y * 400;
             rectangulo = new Rectangle();
             for (int i = 0; i < zonas.Count; i++) {
-                zonas[i].setCupoDisponible(ConexionBD.consultarCupoZona(zonas[i].getIdZona(), fechaInicio));
+                zonas[i].CupoDisponible = ConexionBD.consultarCupoZona(zonas[i].IdZona, fechaInicio);
                 x = i % 3;
                 if( i % 3 == 0 && i>0) {
                     y++;
+                    desplazamientoY = y * 400;
                 }
                 Label lblIdZona = new Label() {
                     Name = "lblIdZona" + i,
                     Size = new Size(160, 20),
-                    Location = new Point(80 + 320 * x, y * 400 + 10),
+                    Location = new Point(80 + 320 * x, 10 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
-                    Text = "Zona " + zonas[i].getIdZona().ToString(),
+                    Text = "Zona " + zonas[i].IdZona.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter
                 };
                 Label lblCupoDisponible = new Label() {
                     Name = "lblIdZona" + i,
                     Size = new Size(160, 20),
-                    Location = new Point(80 + 320 * x, y * 400 + 40),
+                    Location = new Point(80 + 320 * x, 40 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
-                    Text = "Cupo " + zonas[i].getCupoDisponible().ToString(),
+                    Text = "Cupo " + zonas[i].CupoDisponible.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter
                 };
                 PictureBox picture = new PictureBox {
                     Name = "pbZona" + i,
                     Size = new Size(320, 320),
-                    Location = new Point(x * 320, y * 400 + 70),
+                    Location = new Point(x * 320, 70 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };
@@ -55,7 +56,7 @@ namespace Missushi.Forms.Cliente {
                 rectangulo.Location = new Point(0,0);
                 picture.MouseDown += new MouseEventHandler(pictureBox_MouseDown);
                 try {
-                    picture.LoadAsync(zonas[i].getFoto());
+                    picture.LoadAsync(zonas[i].Foto);
                 } catch(Exception ex) {
                     Debug.WriteLine("Error al cargar la foto.\n" + ex.Message);
                 }
@@ -80,11 +81,11 @@ namespace Missushi.Forms.Cliente {
                     for (int i = 0; i < pictureBoxList.Count; i++) {
                         if (pictureBoxList[i] == pb) {
                             if (e.Clicks == 2) {
-                                if (zonas[i].getCupoDisponible() == 0) {
+                                if (zonas[i].CupoDisponible == 0) {
                                     MessageBox.Show("Esta zona está llena en este horario.");
                                     return;
                                 }
-                                Zona.id = zonas[i].getIdZona();
+                                Globales.zonaSeleccionada.IdZona = zonas[i].IdZona;
                                 this.DialogResult = DialogResult.OK;
                                 return;
                             }

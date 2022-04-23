@@ -1,12 +1,11 @@
 ﻿namespace Missushi.Clases {
     internal class Zona {
-        public static int id = -1;
         private int idZona;
         private int cupo;
         private string foto;
         private int cupoDisponible;
         public Zona() {
-            idZona = 0;
+            idZona = -1;
             cupo = 0;
             foto = "";
             cupoDisponible = 0;
@@ -15,6 +14,7 @@
             this.idZona = idZona;
             this.cupo = cupo;
             this.foto = foto;
+            cupoDisponible = 0;
         }
 
         public Zona(int idZona, int cupo, string foto, int cupoDisponible) {
@@ -23,29 +23,10 @@
             this.foto = foto;
             this.cupoDisponible = cupoDisponible;
         }
-        public int getIdZona() {
-            return idZona;
-        }
-        public void setIdZona(int idZona) {
-            this.idZona = idZona;
-        }
-        public int getCupo() {
-            return cupo;
-        }
-        public void setCupo(int cupo) {
-            this.cupo = cupo;
-        }
-        public int getCupoDisponible() {
-            return cupoDisponible;
-        }
-        public void setCupoDisponible(int cupoDisponible) {
-            this.cupoDisponible = cupoDisponible;
-        }
-        public string getFoto() {
-            return foto;
-        }
-        public void setFoto(string foto) {
-            this.foto = foto;
-        }
+
+        public int IdZona { get => idZona; set => idZona = value; }
+        public int Cupo { get => cupo; set => cupo = value; }
+        public string Foto { get => foto; set => foto = value; }
+        public int CupoDisponible { get => cupoDisponible; set => cupoDisponible = value; }
     }
 }

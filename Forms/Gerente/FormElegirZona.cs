@@ -9,7 +9,7 @@ namespace Missushi.Forms.Gerente{
         private List<PictureBox> pictureBoxList = new List<PictureBox>();
         private List<Label> labelList = new List<Label>();
         private Rectangle rectangulo = new Rectangle();
-        private Brush selectionBrush = new SolidBrush(Color.FromArgb(128, 72, 145, 220));
+        private Brush selectionBrush = new SolidBrush(Globales.azulSeleccion);
         private int seleccionado = -1;
         public FormElegirZona(){
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace Missushi.Forms.Gerente{
             int x = 0, y = 0;
             rectangulo = new Rectangle();
             for (int i = 0; i < zonas.Count; i++){
-                zonas[i].setCupoDisponible(ConexionBD.consultarCupoZona(zonas[i].getIdZona(), fechaInicio));
+                zonas[i].CupoDisponible = ConexionBD.consultarCupoZona(zonas[i].IdZona, fechaInicio);
                 x = i % 3;
                 if (i % 3 == 0 && i > 0){
                     y++;
@@ -33,7 +33,7 @@ namespace Missushi.Forms.Gerente{
                     Size = new Size(160, 20),
                     Location = new Point(80 + 320 * x, y * 400 + 10),
                     BorderStyle = BorderStyle.FixedSingle,
-                    Text = "Zona " + zonas[i].getIdZona().ToString(),
+                    Text = "Zona " + zonas[i].IdZona.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter
                 };
                 Label lblCupoDisponible = new Label(){
@@ -41,7 +41,7 @@ namespace Missushi.Forms.Gerente{
                     Size = new Size(160, 20),
                     Location = new Point(80 + 320 * x, y * 400 + 40),
                     BorderStyle = BorderStyle.FixedSingle,
-                    Text = "Cupo " + zonas[i].getCupoDisponible().ToString(),
+                    Text = "Cupo " + zonas[i].CupoDisponible.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter
                 };
                 PictureBox picture = new PictureBox{
@@ -55,7 +55,7 @@ namespace Missushi.Forms.Gerente{
                 rectangulo.Location = new Point(0, 0);
                 picture.MouseDown += new MouseEventHandler(pictureBox_MouseDown);
                 try{
-                    picture.LoadAsync(zonas[i].getFoto());
+                    picture.LoadAsync(zonas[i].Foto);
                 }
                 catch (Exception ex){
                     Debug.WriteLine("Error al cargar la foto\n" + ex.Message);
@@ -81,7 +81,7 @@ namespace Missushi.Forms.Gerente{
                     for (int i = 0; i < pictureBoxList.Count; i++){
                         if (pictureBoxList[i] == pb){
                             if (e.Clicks == 2){
-                                Zona.id = zonas[i].getIdZona();
+                                Globales.zonaSeleccionada.IdZona = zonas[i].IdZona;
                                 this.DialogResult = DialogResult.OK;
                                 return;
                             }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Missushi.Clases {
     internal class Reservacion {
-        public static int id = -1;
         private int idReservacion;
         private DateTime fechaHoraInicio;
         private DateTime fechaHoraFin;

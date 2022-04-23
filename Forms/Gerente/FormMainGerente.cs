@@ -5,7 +5,7 @@
         }
 
         private void btnModificarInfo_Click(object sender, EventArgs e) {
-            FormModificarInfo formModificarInfo = new FormModificarInfo();
+            FormModificarInfoRestaurante formModificarInfo = new FormModificarInfoRestaurante();
             formModificarInfo.ShowDialog();
         }
 
@@ -19,9 +19,19 @@
             formAgregarZona.ShowDialog();
         }
 
-        private void btnModificarMenu_Click(object sender, EventArgs e) {
-            FormModificarMenu formModificarMenu = new FormModificarMenu();
-            formModificarMenu.ShowDialog();
+        private void btnAgregarPlatillo_Click_1(object sender, EventArgs e) {
+            FormAgregarPlatillo formAgregarPlatillo = new FormAgregarPlatillo();
+            formAgregarPlatillo.ShowDialog();
+        }
+
+        private void btnModificarPlatillos_Click_1(object sender, EventArgs e) {
+            FormModificarPlatillo formModificarPlatillo = new FormModificarPlatillo();
+            formModificarPlatillo.ShowDialog();
+        }
+
+        private void btnEliminarP_Click_1(object sender, EventArgs e) {
+            FormEliminarPlatillo formEliminarPlatillo = new FormEliminarPlatillo();
+            formEliminarPlatillo.ShowDialog();
         }
     }
 }
