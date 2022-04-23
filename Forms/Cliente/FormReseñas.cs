@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Missushi.Funciones;
+using Missushi.Clases;
+using QRCoder;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
 
 namespace Missushi.Forms.Cliente
 {
@@ -21,12 +26,25 @@ namespace Missushi.Forms.Cliente
         private void button1_Click(object sender, EventArgs e)
         {
             Form FormResenia = new FormReseñas();
-            
-           // ConexionBD.agregarResenia(estrellas, coment);
+            string coment = "hola";
+            int idUsuario = 1;
+ 
+            int cantidadEstrellas = 1;
+            DateTime fecha = new DateTime(2011, 6, 10);
 
             
+            if (ConexionBD.agregarResenia(fecha,cantidadEstrellas,idUsuario,coment))
+            {
+                MessageBox.Show("Enviada con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("No");
+            }
+           
 
-    MessageBox.Show("Gracias por su reseña");
+             MessageBox.Show("Gracias por su reseña");
             this.DialogResult = DialogResult.OK;
         }
 
