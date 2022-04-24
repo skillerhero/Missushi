@@ -426,10 +426,10 @@ namespace Missushi.Funciones{
             {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.Add("@1", MySqlDbType.DateTime).Value = fecha;
+                cmd.Parameters.Add("@3", MySqlDbType.DateTime).Value = fecha;
                 cmd.Parameters.Add("@0", MySqlDbType.Int32).Value = cantidadEstrellas;
                 cmd.Parameters.Add("@2", MySqlDbType.Int32).Value = idUsuario;
-                cmd.Parameters.Add("@3", MySqlDbType.String).Value = comentario;
+                cmd.Parameters.Add("@1", MySqlDbType.String).Value = comentario;
                 
                 
            
