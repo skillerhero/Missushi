@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.btnResenia = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.comentario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,11 +37,13 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.N_Estrellas = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N_Estrellas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnResenia
@@ -59,58 +56,10 @@
             this.btnResenia.UseVisualStyleBackColor = true;
             this.btnResenia.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(272, 122);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(32, 19);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(325, 122);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(32, 19);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "2";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(377, 122);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(32, 19);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(428, 122);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(32, 19);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.Text = "4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(478, 122);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(32, 19);
-            this.checkBox5.TabIndex = 5;
-            this.checkBox5.Text = "5";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
             // comentario
             // 
+            this.comentario.AcceptsReturn = true;
+            this.comentario.AllowDrop = true;
             this.comentario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comentario.ForeColor = System.Drawing.Color.YellowGreen;
             this.comentario.Location = new System.Drawing.Point(270, 213);
@@ -123,9 +72,10 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(270, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 15);
+            this.label1.Size = new System.Drawing.Size(141, 15);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Puntuar servicio de 1 a 5";
+            this.label1.Text = "Puntuar servicio  del 1 a 5";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -139,7 +89,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Missushi.Properties.Resources.star;
-            this.pictureBox1.Location = new System.Drawing.Point(270, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(273, 118);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,7 +99,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Missushi.Properties.Resources.star;
-            this.pictureBox2.Location = new System.Drawing.Point(321, 118);
+            this.pictureBox2.Location = new System.Drawing.Point(305, 118);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(20, 23);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -159,7 +109,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Missushi.Properties.Resources.star;
-            this.pictureBox3.Location = new System.Drawing.Point(373, 118);
+            this.pictureBox3.Location = new System.Drawing.Point(340, 118);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(20, 23);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -169,7 +119,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Missushi.Properties.Resources.star;
-            this.pictureBox4.Location = new System.Drawing.Point(424, 118);
+            this.pictureBox4.Location = new System.Drawing.Point(375, 118);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(20, 23);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,18 +129,42 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Missushi.Properties.Resources.star;
-            this.pictureBox5.Location = new System.Drawing.Point(474, 118);
+            this.pictureBox5.Location = new System.Drawing.Point(410, 118);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(20, 23);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 14;
             this.pictureBox5.TabStop = false;
             // 
+            // N_Estrellas
+            // 
+            this.N_Estrellas.Location = new System.Drawing.Point(460, 118);
+            this.N_Estrellas.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.N_Estrellas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.N_Estrellas.Name = "N_Estrellas";
+            this.N_Estrellas.Size = new System.Drawing.Size(46, 23);
+            this.N_Estrellas.TabIndex = 15;
+            this.N_Estrellas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N_Estrellas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // FormReseñas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 508);
+            this.Controls.Add(this.N_Estrellas);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -199,11 +173,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comentario);
-            this.Controls.Add(this.checkBox5);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnResenia);
             this.Name = "FormReseñas";
             this.Text = "FormReseñas";
@@ -213,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.N_Estrellas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,12 +191,6 @@
         #endregion
 
         private Button btnResenia;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
-        private CheckBox checkBox5;
-        private TextBox comentario;
         private Label label1;
         private Label label3;
         private PictureBox pictureBox1;
@@ -234,5 +198,7 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private TextBox comentario;
+        private NumericUpDown N_Estrellas;
     }
 }

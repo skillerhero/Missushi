@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+
+
+using System;
 using Missushi.Funciones;
 using Missushi.Clases;
-using QRCoder;
-using System.Net;
-using System.Net.Mail;
-using System.Net.Mime;
+
+
 
 namespace Missushi.Forms.Cliente
 {
@@ -26,26 +19,23 @@ namespace Missushi.Forms.Cliente
         private void button1_Click(object sender, EventArgs e)
         {
             Form FormResenia = new FormReseñas();
-            string coment = "hola";
-            int idUsuario = 1;
- 
-            int cantidadEstrellas = 1;
-            DateTime fecha = new DateTime(2011, 6, 10);
+            string coment = (string)comentario.Text;
+            int idUsuario = Globales.usuarioActual.IdUsuario;
+            int cantidadEstrellas = (int)N_Estrellas.Value;
+            // DateTime fecha = new DateTime(2011, 6, 10);
+            DateTime Now = DateTime.Now;
+         
 
-            
-            if (ConexionBD.agregarResenia(fecha,cantidadEstrellas,idUsuario,coment))
+            if (ConexionBD.agregarResenia(Now,cantidadEstrellas,idUsuario,coment))
             {
-                MessageBox.Show("Enviada con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Gracias por su reseña", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
             }
             else
             {
-                MessageBox.Show("No");
+                MessageBox.Show("Vuelva a intentar");
             }
            
-
-             MessageBox.Show("Gracias por su reseña");
-            this.DialogResult = DialogResult.OK;
         }
 
         private void FormReseñas_Load(object sender, EventArgs e)

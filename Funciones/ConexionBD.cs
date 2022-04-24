@@ -419,20 +419,18 @@ namespace Missushi.Funciones{
         }
 
         /*--------------------------------------Reseñas--------------------------------------*/
-        static public bool agregarResenia(DateTime fecha, int cantidadEstrellas, int idUsuario,string comentario)
+        static public bool agregarResenia(DateTime Now, int cantidadEstrellas, int idUsuario,string comentario)
         {
-            string sql = "INSERT INTO resenia(fecha,cantidadEstrellas,idUsuario, idResenia,comentario) VALUES(@0, @1, @2, @3);";
+            string sql = "INSERT INTO resenia(fecha,cantidadEstrellas,idUsuario,comentario) VALUES(@0, @1, @2, @3);";
             if (connection != null)
             {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.Add("@3", MySqlDbType.DateTime).Value = fecha;
-                cmd.Parameters.Add("@0", MySqlDbType.Int32).Value = cantidadEstrellas;
-                cmd.Parameters.Add("@2", MySqlDbType.Int32).Value = idUsuario;
-                cmd.Parameters.Add("@1", MySqlDbType.String).Value = comentario;
+                cmd.Parameters.Add("@0", MySqlDbType.DateTime).Value = Now;
+                cmd.Parameters.Add("@1", MySqlDbType.Int32).Value =  cantidadEstrellas;
+                cmd.Parameters.Add("@2", MySqlDbType.Int32).Value =  idUsuario;
+                cmd.Parameters.Add("@3", MySqlDbType.String).Value =  comentario;
                 
-                
-           
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 connection.Close();
