@@ -8,7 +8,7 @@ namespace Missushi.Forms.Todos {
         private List<Zona> zonas = ConexionBD.consultarZonas();
         private List<PictureBox> pictureBoxList = new List<PictureBox>();
         private List<Label> labelList = new List<Label>();
-        private FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();
+        private FormPantallaDeCarga formPantallaDeCarga;
         public FormDisponibilidad() {
             InitializeComponent();
             AutoScroll = false;
@@ -215,13 +215,13 @@ namespace Missushi.Forms.Todos {
         }
 
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
-            formPantallaDeCarga.setDuracionTimer(5);
             Thread t = new Thread(new ThreadStart(hilo));
             t.SetApartmentState(ApartmentState.STA); // THIS IS REQUIRED!
             t.Start();
         }
         public void hilo() {
             formPantallaDeCarga = new FormPantallaDeCarga();
+            formPantallaDeCarga.setDuracionTimer(5);
             Application.Run(formPantallaDeCarga);
         }
 
