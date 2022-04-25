@@ -173,11 +173,13 @@ namespace Missushi.Forms.Cliente {
 
         private void comprobarHoraHoy() {
             var horarios = new[] {
-                 new { Text = "08:00-11:00", Value = 0 },
-                 new { Text = "11:00-14:00", Value = 1 },
-                 new { Text = "14:00-17:00", Value = 2 },
-                 new { Text = "17:00-20:00", Value = 3 },
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "08:00-10:00", Value = 0 },
+                 new { Text = "10:00-12:00", Value = 1 },
+                 new { Text = "12:00-14:00", Value = 2 },
+                 new { Text = "14:00-16:00", Value = 3 },
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
             };
             if (dpFechaInicio.Value.Date != DateTime.Today) {
                 cbHoraInicio.DataSource = horarios;
@@ -185,39 +187,53 @@ namespace Missushi.Forms.Cliente {
                 return;
             }
             TimeSpan horario1 = new TimeSpan(8, 0, 0);
-            TimeSpan horario2 = new TimeSpan(11, 0, 0);
-            TimeSpan horario3 = new TimeSpan(14, 0, 0);
-            TimeSpan horario4 = new TimeSpan(17, 0, 0);
-            TimeSpan horario5 = new TimeSpan(20, 0, 0);
+            TimeSpan horario2 = new TimeSpan(10, 0, 0);
+            TimeSpan horario3 = new TimeSpan(12, 0, 0);
+            TimeSpan horario4 = new TimeSpan(14, 0, 0);
+            TimeSpan horario5 = new TimeSpan(16, 0, 0);
+            TimeSpan horario6 = new TimeSpan(18, 0, 0);
+            TimeSpan horario7 = new TimeSpan(20, 0, 0);
 
-            
-            if(DateTime.Now.TimeOfDay > horario1) {
+            if (DateTime.Now.TimeOfDay > horario1) {
                 horarios = new[] {
-                 new { Text = "11:00-14:00", Value = 1 },
-                 new { Text = "14:00-17:00", Value = 2 },
-                 new { Text = "17:00-20:00", Value = 3 },
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "10:00-12:00", Value = 1 },
+                 new { Text = "12:00-14:00", Value = 2 },
+                 new { Text = "14:00-16:00", Value = 3 },
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
             };
-            }
-            if (DateTime.Now.TimeOfDay > horario2) {
+            } else if (DateTime.Now.TimeOfDay > horario2) {
                 horarios = new[] {
-                 new { Text = "14:00-17:00", Value = 2 },
-                 new { Text = "17:00-20:00", Value = 3 },
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "12:00-14:00", Value = 2 },
+                 new { Text = "14:00-16:00", Value = 3 },
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
             };
-            }
-            if (DateTime.Now.TimeOfDay > horario3) {
+            } else if (DateTime.Now.TimeOfDay > horario3) {
                 horarios = new[] {
-                 new { Text = "17:00-20:00", Value = 3 },
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "14:00-16:00", Value = 3 },
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
             };
-            }
-            if (DateTime.Now.TimeOfDay > horario4) {
+            } else if (DateTime.Now.TimeOfDay > horario4) {
                 horarios = new[] {
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
                 };
-            }
-            if (DateTime.Now.TimeOfDay > horario5) {
+            } else if (DateTime.Now.TimeOfDay > horario5) {
+                horarios = new[] {
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
+                };
+            } else if (DateTime.Now.TimeOfDay > horario6) {
+                horarios = new[] {
+                 new { Text = "20:00-22:00", Value = 6}
+                };
+            } else if (DateTime.Now.TimeOfDay > horario7) {
                 horarios = null;
                 cbHoraInicio.Enabled = false;
             } else {

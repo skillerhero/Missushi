@@ -360,6 +360,22 @@ namespace Missushi.Funciones{
             return zonas;
         }
 
+        static public Zona consultarZona(int idZona) {
+            Zona zona = new Zona();
+            string sql = "SELECT * FROM zona where idZona = @0;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", idZona);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read()) {
+                    zona = new Zona(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
+                }
+                connection.Close();
+            }
+            return zona;
+        }
+
         static public int consultarCupoZona(int idZona) {
             int cupo = 0;
             string sql = "SELECT cupo FROM zona WHERE idZona = @0;";

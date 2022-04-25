@@ -1,14 +1,21 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Missushi.Forms.Todos {
     public partial class FormDisponibilidad : FormDiseño {
         private List<Zona> zonas = ConexionBD.consultarZonas();
         private List<PictureBox> pictureBoxList = new List<PictureBox>();
         private List<Label> labelList = new List<Label>();
+        private FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();
         public FormDisponibilidad() {
             InitializeComponent();
+            AutoScroll = false;
+            HorizontalScroll.Enabled = false;
+            HorizontalScroll.Visible = false;
+            HorizontalScroll.Maximum = 0;
+            AutoScroll = true;
             cargarPantallaDisponibilidad();
             cbHora.DisplayMember = "Text";
             cbHora.ValueMember = "Value";
@@ -22,36 +29,64 @@ namespace Missushi.Forms.Todos {
             cargarZonas();
         }
 
+        private void cbHora_SelectedIndexChanged(object sender, EventArgs e) {
+            obtenerFechaInicio();
+            cargarZonas();
+        }
+
+        private void limpiar() {
+            foreach (PictureBox p in pictureBoxList) {
+                Controls.Remove(p);
+            }
+            foreach (Label l in labelList) {
+                Controls.Remove(l);
+            }
+        }
+
         private void cargarZonas() {
+            limpiar();
+            zonas.Clear();
+            pictureBoxList.Clear();
+            labelList.Clear();
+
+            zonas = ConexionBD.consultarZonas();
+            pictureBoxList = new List<PictureBox>();
+            labelList = new List<Label>();
             int x = 0, y = 0, desplazamientoX = 0, desplazamientoY = 0;
             for (int i = 0; i < zonas.Count; i++) {
                 zonas[i].CupoDisponible = ConexionBD.consultarCupoZona(zonas[i].IdZona, obtenerFechaInicio());
                 x = i % 2;
-                desplazamientoX = x * 200;
+                desplazamientoX = x * 250;
                 if (i % 2 == 0 && i > 0) {
                     y++;
-                    desplazamientoY = y * 200;
+                    desplazamientoY = y * 292 + 8;
                 }
-                Label lblIdZona = new Label() {
+                LabelPersonalizado lblIdZona = new LabelPersonalizado() {
                     Name = "lblIdZona" + i,
-                    Size = new Size(69, 18),
-                    Location = new Point(503 + desplazamientoX, 167 + desplazamientoY),
-                    BorderStyle = BorderStyle.FixedSingle,
+                    Size = new Size(103, 37),
+                    Location = new Point(485 + desplazamientoX, 148 + desplazamientoY),
                     Text = "Zona " + zonas[i].IdZona.ToString(),
-                    TextAlign = ContentAlignment.MiddleCenter
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Font = new Font("Gabriola", 15F, FontStyle.Regular, GraphicsUnit.Point),
+                    BackColor = Globales.rojoBoton,
+                    Cursor = Cursors.Default
                 };
-                Label lblCupoDisponible = new Label() {
+                LabelPersonalizado lblCupoDisponible = new LabelPersonalizado() {
                     Name = "lblIdZona" + i,
-                    Size = new Size(69, 18),
-                    Location = new Point(583 + desplazamientoX, 167 + desplazamientoY),
-                    BorderStyle = BorderStyle.FixedSingle,
+                    Size = new Size(103, 37),
+                    Location = new Point(597 + desplazamientoX, 148 + desplazamientoY),
                     Text = "Cupo " + zonas[i].CupoDisponible.ToString(),
-                    TextAlign = ContentAlignment.MiddleCenter
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    BackColor = Color.LightGray,
+                    Font = new Font("Gabriola", 15F, FontStyle.Regular, GraphicsUnit.Point),
+                    ForeColor = Color.Black,
+                    Cursor = Cursors.Default
+
                 };
                 PictureBox picture = new PictureBox {
                     Name = "pbZona" + i,
-                    Size = new Size(164, 164),
-                    Location = new Point(475 + desplazamientoX, 194 + desplazamientoY),
+                    Size = new Size(246, 246),
+                    Location = new Point(475 + desplazamientoX, 195 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };
@@ -60,7 +95,10 @@ namespace Missushi.Forms.Todos {
                 } catch (Exception ex) {
                     Debug.WriteLine("Error al cargar la foto.\n" + ex.Message);
                 }
-
+                lblIdZona.MouseHover -= lblIdZona.hover;
+                lblIdZona.MouseLeave -= lblIdZona.leave;
+                lblCupoDisponible.MouseHover -= lblCupoDisponible.hover;
+                lblCupoDisponible.MouseLeave -= lblCupoDisponible.leave;
                 pictureBoxList.Add(picture);
                 labelList.Add(lblIdZona);
                 labelList.Add(lblCupoDisponible);
@@ -98,11 +136,13 @@ namespace Missushi.Forms.Todos {
         }
         private void comprobarHoraHoy() {
             var horarios = new[] {
-                 new { Text = "08:00-11:00", Value = 0 },
-                 new { Text = "11:00-14:00", Value = 1 },
-                 new { Text = "14:00-17:00", Value = 2 },
-                 new { Text = "17:00-20:00", Value = 3 },
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "08:00-10:00", Value = 0 },
+                 new { Text = "10:00-12:00", Value = 1 },
+                 new { Text = "12:00-14:00", Value = 2 },
+                 new { Text = "14:00-16:00", Value = 3 },
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
             };
             if (dtFecha.Value.Date != DateTime.Today) {
                 cbHora.DataSource = horarios;
@@ -110,39 +150,53 @@ namespace Missushi.Forms.Todos {
                 return;
             }
             TimeSpan horario1 = new TimeSpan(8, 0, 0);
-            TimeSpan horario2 = new TimeSpan(11, 0, 0);
-            TimeSpan horario3 = new TimeSpan(14, 0, 0);
-            TimeSpan horario4 = new TimeSpan(17, 0, 0);
-            TimeSpan horario5 = new TimeSpan(20, 0, 0);
-
+            TimeSpan horario2 = new TimeSpan(10, 0, 0);
+            TimeSpan horario3 = new TimeSpan(12, 0, 0);
+            TimeSpan horario4 = new TimeSpan(14, 0, 0);
+            TimeSpan horario5 = new TimeSpan(16, 0, 0);
+            TimeSpan horario6 = new TimeSpan(18, 0, 0);
+            TimeSpan horario7 = new TimeSpan(20, 0, 0);
 
             if (DateTime.Now.TimeOfDay > horario1) {
                 horarios = new[] {
-                 new { Text = "11:00-14:00", Value = 1 },
-                 new { Text = "14:00-17:00", Value = 2 },
-                 new { Text = "17:00-20:00", Value = 3 },
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "10:00-12:00", Value = 1 },
+                 new { Text = "12:00-14:00", Value = 2 },
+                 new { Text = "14:00-16:00", Value = 3 },
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
             };
-            }
-            if (DateTime.Now.TimeOfDay > horario2) {
+            } else if (DateTime.Now.TimeOfDay > horario2) {
                 horarios = new[] {
-                 new { Text = "14:00-17:00", Value = 2 },
-                 new { Text = "17:00-20:00", Value = 3 },
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "12:00-14:00", Value = 2 },
+                 new { Text = "14:00-16:00", Value = 3 },
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
             };
-            }
-            if (DateTime.Now.TimeOfDay > horario3) {
+            } else if (DateTime.Now.TimeOfDay > horario3) {
                 horarios = new[] {
-                 new { Text = "17:00-20:00", Value = 3 },
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "14:00-16:00", Value = 3 },
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
             };
-            }
-            if (DateTime.Now.TimeOfDay > horario4) {
+            } else if (DateTime.Now.TimeOfDay > horario4) {
                 horarios = new[] {
-                 new { Text = "20:00-23:00", Value = 4 }
+                 new { Text = "16:00-18:00", Value = 4 },
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
                 };
-            }
-            if (DateTime.Now.TimeOfDay > horario5) {
+            } else if (DateTime.Now.TimeOfDay > horario5) {
+                horarios = new[] {
+                 new { Text = "18:00-20:00", Value = 5},
+                 new { Text = "20:00-22:00", Value = 6}
+                };
+            } else if (DateTime.Now.TimeOfDay > horario6) {
+                horarios = new[] {
+                 new { Text = "20:00-22:00", Value = 6}
+                };
+            } else if (DateTime.Now.TimeOfDay > horario7) {
                 horarios = null;
                 cbHora.Enabled = false;
             } else {
@@ -160,13 +214,21 @@ namespace Missushi.Forms.Todos {
             this.Invalidate(false);
         }
 
-        private void cbHora_SelectedIndexChanged(object sender, EventArgs e) {
-            //this.Controls.Clear();
-            //for (int ix = this.Controls.Count - 1; ix >= 0; ix--) {
-            //    if (this.Controls[ix] is PictureBox) this.Controls[ix].Dispose();
-            //}
-            //InitializeComponent();
-            cargarZonas();
+        private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
+            formPantallaDeCarga.setDuracionTimer(5);
+            Thread t = new Thread(new ThreadStart(hilo));
+            t.SetApartmentState(ApartmentState.STA); // THIS IS REQUIRED!
+            t.Start();
+        }
+        public void hilo() {
+            formPantallaDeCarga = new FormPantallaDeCarga();
+            Application.Run(formPantallaDeCarga);
+        }
+
+        private void FormDisponibilidad_Shown(object sender, EventArgs e) {
+            if (formPantallaDeCarga != null) {
+                formPantallaDeCarga.BeginInvoke(new Action(() => formPantallaDeCarga.Close()));
+            }
         }
     }
 }

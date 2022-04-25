@@ -66,7 +66,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.cbHora);
             this.Controls.Add(this.dtFecha);
@@ -74,6 +73,8 @@
             this.Name = "FormDisponibilidad";
             this.Text = "Missushi - Disponibilidad";
             this.Load += new System.EventHandler(this.FormDisponibilidad_Load);
+            this.Shown += new System.EventHandler(this.FormDisponibilidad_Shown);
+            this.HandleCreated += new System.EventHandler(this.mostrarPantallaDeCarga);
             this.Controls.SetChildIndex(this.pbMapaZonas, 0);
             this.Controls.SetChildIndex(this.dtFecha, 0);
             this.Controls.SetChildIndex(this.cbHora, 0);

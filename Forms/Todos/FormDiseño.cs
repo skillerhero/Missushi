@@ -138,6 +138,7 @@ namespace Missushi.Forms {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Closed += (s, args) => this.Show();
             formUbicacion.ShowDialog();
+
         }
 
         private void lblDisponibilidad_Click(object sender, EventArgs e) {
@@ -145,7 +146,7 @@ namespace Missushi.Forms {
             Hide();
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Closed += (s, args) => this.Show();
-            formDisponibilidad.ShowDialog();
+            formDisponibilidad.Show();
         }
 
         private void pbDisponibilidad_Click(object sender, EventArgs e) {
@@ -153,7 +154,7 @@ namespace Missushi.Forms {
             Hide();
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Closed += (s, args) => this.Show();
-            formDisponibilidad.ShowDialog();
+            formDisponibilidad.Show();
         }
 
         private void lblBarraPrincipal_DoubleClick(object sender, EventArgs e) {
@@ -223,10 +224,11 @@ namespace Missushi.Forms {
     }
     public class BotonPersonalizado : Button {
         public BotonPersonalizado() {
-            this.FlatAppearance.BorderSize = 0;
-            this.FlatStyle = FlatStyle.Flat;
-            this.Font = new Font("Gabriola", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            this.Cursor = Cursors.Hand;
+            FlatAppearance.BorderSize = 0;
+            FlatStyle = FlatStyle.Flat;
+            Font = new Font("Gabriola", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Cursor = Cursors.Hand;
+            BackColor = Globales.rojoBoton;
         }
     }
 
@@ -238,6 +240,7 @@ namespace Missushi.Forms {
             this.SizeMode = PictureBoxSizeMode.StretchImage;
             this.TabIndex = 0;
             this.Cursor = Cursors.Hand;
+            this.WaitOnLoad = false;
         }
     }
 
@@ -248,14 +251,14 @@ namespace Missushi.Forms {
             colorLetra = Color.White;
             colorLetraSeleccionada = Globales.verdeFuerteLetra;
             BackColor = Globales.verdeBarra;
-            this.Font = new Font("Gabriola", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            this.ForeColor = colorLetra;
-            this.TabIndex = 0;
-            this.TextAlign = ContentAlignment.MiddleCenter;
-            this.Cursor = Cursors.Hand;
-            this.Margin = new Padding(0);
-            this.MouseHover += new EventHandler(this.hover);
-            this.MouseLeave += new EventHandler(this.leave);
+            Font = new Font("Gabriola", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = colorLetra;
+            TabIndex = 0;
+            TextAlign = ContentAlignment.MiddleCenter;
+            Cursor = Cursors.Hand;
+            Margin = new Padding(0);
+            MouseHover += new EventHandler(this.hover);
+            MouseLeave += new EventHandler(this.leave);
         }
 
         public void hover(object? sender, EventArgs e) {
@@ -264,6 +267,21 @@ namespace Missushi.Forms {
 
         public void leave(object? sender, EventArgs e) {
             this.ForeColor = colorLetra;
+        }
+
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect, // X-coordinate of upper-left corner or padding at start
+            int nTopRect,// Y-coordinate of upper-left corner or padding at the top of the textbox
+            int nRightRect, // X-coordinate of lower-right corner or Width of the object
+            int nBottomRect,// Y-coordinate of lower-right corner or Height of the object
+                            //RADIUS, how round do you want it to be?
+            int nheightRect, //height of ellipse 
+            int nweightRect //width of ellipse
+        );
+        protected override void OnResize(EventArgs e) {
+            base.OnResize(e);
+            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
         }
     }
 

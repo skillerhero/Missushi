@@ -252,7 +252,6 @@
             // 
             // btnReseñas
             // 
-            this.btnReseñas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
             this.btnReseñas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReseñas.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnReseñas.ForeColor = System.Drawing.Color.White;

@@ -29,21 +29,27 @@ namespace Missushi.Forms.Cliente {
                     y++;
                     desplazamientoY = y * 400;
                 }
-                Label lblIdZona = new Label() {
+                LabelPersonalizado lblIdZona = new LabelPersonalizado() {
                     Name = "lblIdZona" + i,
                     Size = new Size(160, 20),
                     Location = new Point(80 + 320 * x, 10 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     Text = "Zona " + zonas[i].IdZona.ToString(),
-                    TextAlign = ContentAlignment.MiddleCenter
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Font = new Font("Gabriola", 10F, FontStyle.Regular, GraphicsUnit.Point),
+                    BackColor = Globales.rojoBoton,
+                    Cursor = Cursors.Default
                 };
-                Label lblCupoDisponible = new Label() {
+                LabelPersonalizado lblCupoDisponible = new LabelPersonalizado() {
                     Name = "lblIdZona" + i,
                     Size = new Size(160, 20),
                     Location = new Point(80 + 320 * x, 40 + desplazamientoY),
-                    BorderStyle = BorderStyle.FixedSingle,
                     Text = "Cupo " + zonas[i].CupoDisponible.ToString(),
-                    TextAlign = ContentAlignment.MiddleCenter
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    BackColor = Color.LightGray,
+                    Font = new Font("Gabriola", 10F, FontStyle.Regular, GraphicsUnit.Point),
+                    ForeColor = Color.Black,
+                    Cursor = Cursors.Default
                 };
                 PictureBox picture = new PictureBox {
                     Name = "pbZona" + i,
@@ -56,11 +62,14 @@ namespace Missushi.Forms.Cliente {
                 rectangulo.Location = new Point(0,0);
                 picture.MouseDown += new MouseEventHandler(pictureBox_MouseDown);
                 try {
-                    picture.LoadAsync(zonas[i].Foto);
+                    picture.Load(zonas[i].Foto);
                 } catch(Exception ex) {
                     Debug.WriteLine("Error al cargar la foto.\n" + ex.Message);
                 }
-
+                lblIdZona.MouseHover -= lblIdZona.hover;
+                lblIdZona.MouseLeave -= lblIdZona.leave;
+                lblCupoDisponible.MouseHover -= lblCupoDisponible.hover;
+                lblCupoDisponible.MouseLeave -= lblCupoDisponible.leave;
                 pictureBoxList.Add(picture);
                 labelList.Add(lblIdZona);
                 labelList.Add(lblCupoDisponible);
@@ -85,7 +94,7 @@ namespace Missushi.Forms.Cliente {
                                     MessageBox.Show("Esta zona está llena en este horario.");
                                     return;
                                 }
-                                Globales.zonaSeleccionada.IdZona = zonas[i].IdZona;
+                                Globales.zonaSeleccionada = zonas[i];
                                 this.DialogResult = DialogResult.OK;
                                 return;
                             }

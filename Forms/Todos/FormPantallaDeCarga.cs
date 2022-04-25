@@ -9,15 +9,19 @@ namespace Missushi.Forms.Todos {
             this.lblPorcentaje.Cursor = Cursors.Default;
             this.lblPorcentaje.MouseHover -= lblPorcentaje.hover;
             this.lblPorcentaje.MouseLeave -= lblPorcentaje.leave;
+            progressBar1.Maximum = 100;
+            progressBar1.Step = 1;
+            progressBar1.Value = 0;
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e) {
-            count += 2;
-            if (count == 102) {
+            count += 1;
+            if (count >= 100) {
                 count = 0;
                 timer1.Stop();
                 player.Stop();
-                this.DialogResult = DialogResult.OK;
+                //Close();
                 return;
             } else {
                 progressBar1.Value = count;
@@ -25,10 +29,21 @@ namespace Missushi.Forms.Todos {
             }         
         }
 
+        public void setDuracionTimer(int segundos) {
+            segundos = segundos * 10;
+            timer1.Interval = segundos;
+        }
+
         private void FormPantallaDeCarga_Shown(object sender, EventArgs e) {
+            cargarGif();
+            cargarAudio();
+
+        }
+
+        private void cargarGif() {
             Random random = new Random();
             int num = random.Next(100);
-            switch (num%6) {
+            switch (num % 6) {
                 case 0:
                     pbGif.Image = Resources.sushi_1;
                     break;
@@ -48,15 +63,18 @@ namespace Missushi.Forms.Todos {
                     pbGif.Image = Resources.sushi_6;
                     break;
             }
+        }
+
+        private void cargarAudio() {
             string dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string path = Path.Combine(dir, "Resources");
             string file = "aplausos.wav";
             player.SoundLocation = Path.Combine(path, file);
             player.Play();
-            progressBar1.Maximum = 100;
-            progressBar1.Step = 2;
-            progressBar1.Value = 0;
-            timer1.Start();
+        }
+
+        public void cerrar() {
+            this.Visible = false;
         }
     }
 }

@@ -34,11 +34,8 @@ namespace Missushi{
             lblInfoRestaurante.Text = "Correo: " + gerente.Correo + "    Teléfono: " + restaurante.Telefono;
         }
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
-            if (this.Visible == false) {
-                if (formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
-                    this.Visible = true;
-                }
-            }
+            //formPantallaDeCarga.setDuracionTimer(1);
+            //formPantallaDeCarga.ShowDialog();
         }
 
         private void FormMain_Shown(object sender, EventArgs e) {

@@ -26,9 +26,10 @@ namespace Missushi.Forms.Gerente {
 
         private void btnElegirZona_Click(object sender, EventArgs e){
             FormElegirZona formElegirZona = new FormElegirZona();
-            if (formElegirZona.ShowDialog() == DialogResult.OK)
-            {
+            if (formElegirZona.ShowDialog() == DialogResult.OK){
                 this.btnElegirZona.Text = "Zona " + Globales.zonaSeleccionada.IdZona;
+                nudCupo.Value = Globales.zonaSeleccionada.Cupo;
+                txtFotoZona.Text = Globales.zonaSeleccionada.Foto;
             }
         }
     }

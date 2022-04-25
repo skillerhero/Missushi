@@ -12,7 +12,7 @@ namespace Missushi.Clases {
         static public Color verdeBarra = Color.FromArgb(97, 120, 79);
         static public Color azulSeleccion = Color.FromArgb(128, 72, 145, 220);
         static public Color rosaTextBox = Color.FromArgb(255, 216, 196);
-
+        static public Color rojoBoton = Color.FromArgb(143, 68, 60);
         public Globales() {
             System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
             customCulture.NumberFormat.NumberDecimalSeparator = ".";
