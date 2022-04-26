@@ -1,4 +1,5 @@
 ﻿using Missushi.Properties;
+using System.Diagnostics;
 
 namespace Missushi.Forms.Todos {
     public partial class FormPantallaDeCarga : Form {
@@ -21,7 +22,7 @@ namespace Missushi.Forms.Todos {
                 count = 0;
                 timer1.Stop();
                 player.Stop();
-                //Close();
+                DialogResult = DialogResult.OK;
                 return;
             } else {
                 progressBar1.Value = count;
@@ -36,7 +37,7 @@ namespace Missushi.Forms.Todos {
 
         private void FormPantallaDeCarga_Shown(object sender, EventArgs e) {
             //cargarGif();
-            cargarAudio();
+            //cargarAudio();
 
         }
 
@@ -73,8 +74,9 @@ namespace Missushi.Forms.Todos {
             player.Play();
         }
 
-        public void cerrar() {
-            this.Visible = false;
+        private void FormPantallaDeCarga_Deactivate(object sender, EventArgs e) {
+            timer1.Stop();
+            player.Stop();
         }
     }
 }

@@ -4,8 +4,7 @@ using Missushi.Forms.Todos;
 
 namespace Missushi{
     public partial class FormMain{
-        private Globales globales;
-        private FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();
+        private Globales globales; 
         public FormMain(){
             globales = new Globales();
             InitializeComponent();
@@ -34,12 +33,12 @@ namespace Missushi{
             lblInfoRestaurante.Text = "Correo: " + gerente.Correo + "    Teléfono: " + restaurante.Telefono;
         }
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
-            //formPantallaDeCarga.setDuracionTimer(1);
-            //formPantallaDeCarga.ShowDialog();
-        }
-
-        private void FormMain_Shown(object sender, EventArgs e) {
-            
+            FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();
+            formPantallaDeCarga.setDuracionTimer(2);
+            if(formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
+                this.BringToFront();
+                this.Activate();
+            }
         }
     }
 }

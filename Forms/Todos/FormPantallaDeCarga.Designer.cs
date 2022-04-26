@@ -85,6 +85,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cargando";
+            this.Deactivate += new System.EventHandler(this.FormPantallaDeCarga_Deactivate);
             this.Shown += new System.EventHandler(this.FormPantallaDeCarga_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbGif)).EndInit();
             this.ResumeLayout(false);

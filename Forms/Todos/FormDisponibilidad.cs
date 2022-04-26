@@ -221,7 +221,7 @@ namespace Missushi.Forms.Todos {
         }
         public void hilo() {
             formPantallaDeCarga = new FormPantallaDeCarga();
-            formPantallaDeCarga.setDuracionTimer(5);
+            formPantallaDeCarga.setDuracionTimer(2);
             Application.Run(formPantallaDeCarga);
         }
 
