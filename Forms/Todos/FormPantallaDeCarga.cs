@@ -73,10 +73,5 @@ namespace Missushi.Forms.Todos {
             player.SoundLocation = Path.Combine(path, file);
             player.Play();
         }
-
-        private void FormPantallaDeCarga_Deactivate(object sender, EventArgs e) {
-            timer1.Stop();
-            player.Stop();
-        }
     }
 }

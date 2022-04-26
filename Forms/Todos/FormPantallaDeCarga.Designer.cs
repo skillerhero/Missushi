@@ -40,6 +40,7 @@
             this.pbGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbGif.TabIndex = 0;
             this.pbGif.TabStop = false;
+            this.pbGif.Cursor = Cursors.Default;
             // 
             // timer1
             // 
@@ -85,7 +86,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cargando";
-            this.Deactivate += new System.EventHandler(this.FormPantallaDeCarga_Deactivate);
             this.Shown += new System.EventHandler(this.FormPantallaDeCarga_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pbGif)).EndInit();
             this.ResumeLayout(false);

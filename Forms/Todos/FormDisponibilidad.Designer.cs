@@ -31,6 +31,7 @@
             // 
             // cbHora
             // 
+            this.cbHora.BackColor = System.Drawing.SystemColors.Window;
             this.cbHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHora.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbHora.FormattingEnabled = true;
@@ -43,8 +44,9 @@
             // 
             // dtFecha
             // 
-            this.dtFecha.CalendarFont = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtFecha.Location = new System.Drawing.Point(475, 84);
+            this.dtFecha.CalendarFont = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtFecha.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.dtFecha.Location = new System.Drawing.Point(485, 84);
             this.dtFecha.MinimumSize = new System.Drawing.Size(307, 32);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(307, 32);
@@ -61,6 +63,7 @@
             this.pbMapaZonas.TabIndex = 0;
             this.pbMapaZonas.TabStop = false;
             this.pbMapaZonas.WaitOnLoad = true;
+            this.pbMapaZonas.Cursor = Cursors.Default;
             // 
             // FormDisponibilidad
             // 

@@ -43,7 +43,11 @@ namespace Missushi.Forms{
                 if (Validacion.esMenor(contraseña, 7)) {
                     MessageBox.Show("La contraseña es demasiado corta.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                } 
+                }
+                if(contraseña != contraseña2) {
+                    MessageBox.Show("Las contraseñas no coinciden.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (!Validacion.validarCorreo(correo)) {
                     MessageBox.Show("El correo no es válido.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

@@ -1,6 +1,6 @@
-﻿using Missushi.Forms.Gerente;
+﻿using Missushi.Clases;
+using Missushi.Forms.Gerente;
 using Missushi.Funciones;
-using System.Runtime.InteropServices;
 
 namespace Missushi.Forms{
     public partial class FormLogin{
@@ -8,6 +8,25 @@ namespace Missushi.Forms{
         public FormLogin(){
             InitializeComponent();
             this.cargarPantallaIngresar();
+        }
+
+        private void entrar() {
+            if (Globales.usuarioActual.Tipo == 'C') {
+                FormMainCliente formMainCliente = new FormMainCliente();
+                formMainCliente.Closed += (s, args) => Owner.Show();
+                formMainCliente.Show();
+                Close();
+            } else if (Globales.usuarioActual.Tipo == 'A') {
+                FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
+                formMainAdministrador.Closed += (s, args) => Owner.Show();
+                formMainAdministrador.Show();
+                Close();
+            } else if (Globales.usuarioActual.Tipo == 'G') {
+                FormMainGerente formMainGerente = new FormMainGerente();
+                formMainGerente.Closed += (s, args) => Owner.Show();
+                formMainGerente.Show();
+                Close();
+            }
         }
 
         private void btnIngresar_Click(object sender, EventArgs e) {
@@ -20,11 +39,11 @@ namespace Missushi.Forms{
                 }
                 if (ConexionBD.usuarioSuspendido(correo, contraseña)) {
                     MessageBox.Show("Este usuario ha sido suspendido.");
-                    this.DialogResult = DialogResult.Abort;
+                    Close();
                 } else
                 if (ConexionBD.login(correo, contraseña)) {
                     MessageBox.Show("Bienvenido/a");
-                    this.DialogResult = DialogResult.OK;
+                    entrar();
                     
                 } else {
                     MessageBox.Show("Correo o contraseña incorrectos.");
@@ -36,7 +55,7 @@ namespace Missushi.Forms{
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e) {
             if (ConexionBD.consultarPrimerUsuario('C')) {
-                this.DialogResult = DialogResult.OK;
+                entrar();
             } else {
                 MessageBox.Show("No hay clientes registrados.");
             }
@@ -44,7 +63,7 @@ namespace Missushi.Forms{
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e) {
             if (ConexionBD.consultarPrimerUsuario('A')) {
-                this.DialogResult = DialogResult.OK;
+                entrar();
             } else {
                 MessageBox.Show("No hay administradores registrados.");
             }
@@ -52,7 +71,7 @@ namespace Missushi.Forms{
 
         private void gerenteToolStripMenuItem_Click(object sender, EventArgs e) {
             if (ConexionBD.consultarPrimerUsuario('G')) {
-                this.DialogResult = DialogResult.OK;
+                entrar();
             } else {
                 MessageBox.Show("No hay gerentes registrados.");
             }

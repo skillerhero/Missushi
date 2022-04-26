@@ -20,18 +20,20 @@ namespace Missushi.Forms.Gerente{
         }
 
         private void FormElegirZona_Load(object sender, EventArgs e){
-            int x = 0, y = 0;
+            int x = 0, y = 0, desplazamientoX = 0, desplazamientoY = 0;
             rectangulo = new Rectangle();
             for (int i = 0; i < zonas.Count; i++){
                 zonas[i].CupoDisponible = ConexionBD.consultarCupoZona(zonas[i].IdZona, fechaInicio);
                 x = i % 3;
+                desplazamientoX = x * 320;
                 if (i % 3 == 0 && i > 0){
                     y++;
+                    desplazamientoY = y * 400;
                 }
                 LabelPersonalizado lblIdZona = new LabelPersonalizado(){
                     Name = "lblIdZona" + i,
                     Size = new Size(160, 20),
-                    Location = new Point(80 + 320 * x, y * 400 + 10),
+                    Location = new Point(80 + desplazamientoX, 10 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     Text = "Zona " + zonas[i].IdZona.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -42,7 +44,7 @@ namespace Missushi.Forms.Gerente{
                 LabelPersonalizado lblCupoDisponible = new LabelPersonalizado(){
                     Name = "lblIdZona" + i,
                     Size = new Size(160, 20),
-                    Location = new Point(80 + 320 * x, y * 400 + 40),
+                    Location = new Point(80 + desplazamientoX, 40 + desplazamientoY),
                     Text = "Cupo " + zonas[i].CupoDisponible.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter,
                     BackColor = Color.LightGray,
@@ -53,7 +55,7 @@ namespace Missushi.Forms.Gerente{
                 PictureBox picture = new PictureBox{
                     Name = "pbZona" + i,
                     Size = new Size(320, 320),
-                    Location = new Point(x * 320, y * 400 + 70),
+                    Location = new Point(desplazamientoX, 70 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };

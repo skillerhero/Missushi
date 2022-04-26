@@ -74,87 +74,92 @@ namespace Missushi.Forms {
         }
 
         private void lblIngresar_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Hide();
             FormLogin formLogin = new FormLogin();
-            formLogin.Closed += (s, args) => this.Show();
-            if (formLogin.ShowDialog() == DialogResult.OK) {
-                if (Globales.usuarioActual.Tipo == 'C') {
-                    this.Hide();
-                    FormMainCliente formMainCliente = new FormMainCliente();
-                    formMainCliente.Closed += (s, args) => this.Show();
-                    formMainCliente.Show();
-                } else if (Globales.usuarioActual.Tipo == 'A') {
-                    this.Hide();
-                    FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
-                    formMainAdministrador.Closed += (s, args) => this.Show();
-                    formMainAdministrador.Show();
-                } else if (Globales.usuarioActual.Tipo == 'G') {
-                    this.Hide();
-                    FormMainGerente formMainGerente = new FormMainGerente();
-                    formMainGerente.Closed += (s, args) => this.Show();
-                    formMainGerente.Show();
-                }
+            if (this is FormMain) {
+                Hide();
+                formLogin.Show(this);
+            } else {
+                formLogin.Show(Owner);
+                Close();
             }
         }
 
         private void lblRegistro_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Hide();
             FormRegistro formRegistro = new FormRegistro();
-            formRegistro.Closed += (s, args) => this.Show();
-            if (formRegistro.ShowDialog() == DialogResult.OK) {
-
+            if (this is FormMain) {
+                Hide();
+                formRegistro.Show(this);
+            } else {
+                formRegistro.Show(this.Owner);
+                Close();
             }
+            
         }
 
         private void lblMenu_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Hide();
             FormMenu formMenu = new FormMenu();
-            formMenu.Closed += (s, args) => this.Show();
-            formMenu.ShowDialog();
+            if (this is FormMain) {
+                Hide();
+                formMenu.Show(this);
+            } else {
+                formMenu.Show(this.Owner);
+                Close();
+            }
         }
 
         private void pbMenu_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Hide();
             FormMenu formMenu = new FormMenu();
-            formMenu.Closed += (s, args) => this.Show();
-            formMenu.ShowDialog();
+            if (this is FormMain) {
+                Hide();
+                formMenu.Show(this);
+            } else {
+                formMenu.Show(this.Owner);
+                Close();
+            }
         }
 
         private void pbUbicacion_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Hide();
             FormUbicacion formUbicacion = new FormUbicacion();
-            formUbicacion.Closed += (s, args) => this.Show();
-            formUbicacion.ShowDialog();
+            if (this is FormMain) {
+                Hide();
+                formUbicacion.Show(this);
+            } else {
+                formUbicacion.Show(this.Owner);
+                Close();
+            }
         }
 
         private void lblUbicacion_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Hide();
             FormUbicacion formUbicacion = new FormUbicacion();
-            formUbicacion.Closed += (s, args) => this.Show();
-            formUbicacion.ShowDialog();
-
+            if (this is FormMain) {
+                Hide();
+                formUbicacion.Show(this);
+            } else {
+                formUbicacion.Show(this.Owner);
+                Close();
+            }
         }
 
         private void lblDisponibilidad_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Hide();
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
-            formDisponibilidad.Closed += (s, args) => this.Show();
-            formDisponibilidad.Show();
+            if (this is FormMain) {
+                Hide();
+                formDisponibilidad.Show(this);
+            } else {
+                formDisponibilidad.Show(this.Owner);
+                Close();
+            }
         }
 
-        private void pbDisponibilidad_Click(object sender, EventArgs e) {
-            DialogResult = DialogResult.Abort;
-            Hide();
+        private void pbDisponibilidad_Click(object sender, EventArgs e) { 
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
-            formDisponibilidad.Closed += (s, args) => this.Show();
-            formDisponibilidad.Show();
+            if (this is FormMain) {
+                Hide();
+                formDisponibilidad.Show(this);
+            } else {
+                formDisponibilidad.Show(this.Owner);
+                Close();
+            }
         }
 
         private void lblBarraPrincipal_DoubleClick(object sender, EventArgs e) {
@@ -169,6 +174,7 @@ namespace Missushi.Forms {
 
         private void pbLogo_Click(object sender, EventArgs e) {
             if(this is not FormMain) {
+                Owner.Show();
                 Close();
             }
         }
@@ -301,7 +307,7 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, this.Width, this.Height, 15, 15)); //play with these values till you are happy
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
         }
     }
 
@@ -319,7 +325,7 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, this.Width, this.Height, 15, 15)); //play with these values till you are happy
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height+3, 15, 15)); //play with these values till you are happy
         }
     }
 

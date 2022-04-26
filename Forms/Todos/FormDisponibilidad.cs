@@ -1,7 +1,6 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
 using System.Diagnostics;
-using System.Threading;
 
 namespace Missushi.Forms.Todos {
     public partial class FormDisponibilidad : FormDiseño {
@@ -10,6 +9,7 @@ namespace Missushi.Forms.Todos {
         private List<Label> labelList = new List<Label>();
         private FormPantallaDeCarga formPantallaDeCarga;
         public FormDisponibilidad() {
+            this.SetStyle(ControlStyles.UserPaint, true);
             InitializeComponent();
             AutoScroll = false;
             HorizontalScroll.Enabled = false;
@@ -21,6 +21,7 @@ namespace Missushi.Forms.Todos {
             cbHora.ValueMember = "Value";
             dtFecha.MinDate = DateTime.Today;
             dtFecha.MaxDate = DateTime.Today.AddDays(7);
+            dtFecha.Invalidate();
         }
 
         private void FormDisponibilidad_Load(object sender, EventArgs e) {
@@ -59,7 +60,7 @@ namespace Missushi.Forms.Todos {
                 desplazamientoX = x * 250;
                 if (i % 2 == 0 && i > 0) {
                     y++;
-                    desplazamientoY = y * 292 + 8;
+                    desplazamientoY = y * 303 + y*20;
                 }
                 LabelPersonalizado lblIdZona = new LabelPersonalizado() {
                     Name = "lblIdZona" + i,
@@ -67,8 +68,8 @@ namespace Missushi.Forms.Todos {
                     Location = new Point(485 + desplazamientoX, 148 + desplazamientoY),
                     Text = "Zona " + zonas[i].IdZona.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Gabriola", 15F, FontStyle.Regular, GraphicsUnit.Point),
-                    BackColor = Globales.rojoBoton,
+                    Font = new Font("Century gothic", 10F, FontStyle.Regular, GraphicsUnit.Point),
+                    BackColor = Globales.rojoTinto,
                     Cursor = Cursors.Default
                 };
                 LabelPersonalizado lblCupoDisponible = new LabelPersonalizado() {
@@ -77,8 +78,8 @@ namespace Missushi.Forms.Todos {
                     Location = new Point(597 + desplazamientoX, 148 + desplazamientoY),
                     Text = "Cupo " + zonas[i].CupoDisponible.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter,
-                    BackColor = Color.LightGray,
-                    Font = new Font("Gabriola", 15F, FontStyle.Regular, GraphicsUnit.Point),
+                    BackColor = Globales.gris,
+                    Font = new Font("Century gothic", 10F, FontStyle.Regular, GraphicsUnit.Point),
                     ForeColor = Color.Black,
                     Cursor = Cursors.Default
 
@@ -221,7 +222,7 @@ namespace Missushi.Forms.Todos {
         }
         public void hilo() {
             formPantallaDeCarga = new FormPantallaDeCarga();
-            formPantallaDeCarga.setDuracionTimer(2);
+            formPantallaDeCarga.setDuracionTimer(1);
             Application.Run(formPantallaDeCarga);
         }
 
