@@ -4,7 +4,7 @@ using Missushi.Forms.Todos;
 
 namespace Missushi{
     public partial class FormMain{
-        private Globales globales; 
+        private Globales globales;
         public static Form instancia = null;
         public FormMain(){
             globales = new Globales();

@@ -55,6 +55,14 @@ namespace Missushi.Forms {
         protected void cargarPantallaMainCliente() {
             pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
             pbSalir.Visible = true;
+            lblIngresar.Visible = false;
+            lblRegistro.Visible = false;
+        }
+
+        protected void cargarPantallaRegistro() {
+            noCargarPantallaPrincipal();
+            lblRegistro.colorLetra = Globales.verdeFuerteLetra;
+            lblRegistro.Enabled = false;
         }
 
 
@@ -82,82 +90,49 @@ namespace Missushi.Forms {
         private void lblIngresar_Click(object sender, EventArgs e) {
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
-            if (this is FormMain) {
-                Hide();
-            } else {
-                Close();
-            }
+            Hide();
         }
-
         private void lblRegistro_Click(object sender, EventArgs e) {
             FormRegistro formRegistro = new FormRegistro();
             formRegistro.Show();
-            if (this is FormMain) {
-                Hide();
-            } else {
-                Close();
-            }
-            
+            Hide();
+
         }
 
         private void lblMenu_Click(object sender, EventArgs e) {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
-            if (this is FormMain) {
-                Hide();
-            } else {
-                Close();
-            }
+            Hide();
         }
 
         private void pbMenu_Click(object sender, EventArgs e) {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
-            if (this is FormMain) {
-                Hide();
-            } else {
-                Close();
-            }
+            Hide();
         }
 
         private void pbUbicacion_Click(object sender, EventArgs e) {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Show();
-            if (this is FormMain) {
-                Hide();
-            } else {
-                Close();
-            }
+            Hide();
         }
 
         private void lblUbicacion_Click(object sender, EventArgs e) {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Show();
-            if (this is FormMain) {
-                Hide();
-            } else {
-                Close();
-            }
+            Hide();
         }
 
         private void lblDisponibilidad_Click(object sender, EventArgs e) {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Show();
-            if (this is FormMain) {
-                Hide();
-            } else {
-                Close();
-            }
+            Hide();
         }
 
-        private void pbDisponibilidad_Click(object sender, EventArgs e) { 
+        private void pbDisponibilidad_Click(object sender, EventArgs e) {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Show();
-            if (this is FormMain) {
-                Hide();
-            } else {
-                Close();
-            }
+            Hide();
         }
 
         private void lblBarraPrincipal_DoubleClick(object sender, EventArgs e) {
@@ -171,13 +146,13 @@ namespace Missushi.Forms {
         }
 
         private void pbLogo_Click(object sender, EventArgs e) {
-            if(this is not FormMain) {
-                FormMain.instancia.Show();
-                Close();
-            }
+            FormMain formMain = new FormMain();
+            formMain.Show();
+            Close();
         }
         private void pbSalir_Click(object sender, EventArgs e) {
-            FormMain.instancia.Show();
+            FormMain formMain = new FormMain();
+            formMain.Show();
             Close();
         }
 
@@ -186,7 +161,7 @@ namespace Missushi.Forms {
             const int WM_SYSCOMMAND = 0x0112;
             const int SC_RESTORE = 0xF120;
             if (m.Msg == WM_SYSCOMMAND && (int)m.WParam == SC_RESTORE) {
-                this.FormBorderStyle = FormBorderStyle.None;
+                //this.FormBorderStyle = FormBorderStyle.None;
             }
             base.WndProc(ref m);
         }
@@ -295,7 +270,13 @@ namespace Missushi.Forms {
 
     public class ComboBoxPersonalizado : ComboBox {
         public ComboBoxPersonalizado() {
-            this.DropDownStyle = ComboBoxStyle.DropDownList;
+            DropDownStyle = ComboBoxStyle.DropDownList;
+            //DrawMode = DrawMode.OwnerDrawFixed;
+            FlatStyle = FlatStyle.Flat;
+            Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = Globales.verdeFuerteLetra;
+            DisplayMember = "Text";
+            ValueMember = "Value";
         }
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -311,6 +292,7 @@ namespace Missushi.Forms {
             base.OnResize(e);
             this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
         }
+
     }
 
     public class DateTimePickerPersonalizado : DateTimePicker {

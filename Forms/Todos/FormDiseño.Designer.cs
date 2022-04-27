@@ -302,8 +302,9 @@
             this.Controls.Add(this.lblBarraPrincipal);
             this.Controls.Add(this.btnReseñas);
             this.Controls.Add(this.pbImagenesRestaurante);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormDiseño";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiseño";

@@ -1,12 +1,13 @@
 ﻿using Missushi.Funciones;
 namespace Missushi.Forms{
-    public partial class FormRegistro : Form{
+    public partial class FormRegistro : FormDiseño{
         public FormRegistro(){
             InitializeComponent();
             cbTipo.Items.Add("Cliente");
             cbTipo.Items.Add("Administrador");
             cbTipo.Items.Add("Gerente");
             cbTipo.Text = cbTipo.Items[0].ToString();
+            noCargarPantallaPrincipal();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e){

@@ -5,6 +5,7 @@ namespace Missushi.Forms {
     public partial class FormMainCliente : FormDiseño {
         public FormMainCliente() {
             InitializeComponent();
+            cargarPantallaMainCliente();
         }
 
         private void FormMainCliente_Load(object sender, EventArgs e) {

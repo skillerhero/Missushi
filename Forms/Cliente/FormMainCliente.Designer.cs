@@ -31,7 +31,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(141, 68);
+            this.label1.Location = new System.Drawing.Point(12, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 0;
@@ -39,7 +39,7 @@
             // 
             // btnHacerReservacion
             // 
-            this.btnHacerReservacion.Location = new System.Drawing.Point(141, 258);
+            this.btnHacerReservacion.Location = new System.Drawing.Point(129, 93);
             this.btnHacerReservacion.Name = "btnHacerReservacion";
             this.btnHacerReservacion.Size = new System.Drawing.Size(193, 23);
             this.btnHacerReservacion.TabIndex = 1;
@@ -49,7 +49,7 @@
             // 
             // btnMensaje
             // 
-            this.btnMensaje.Location = new System.Drawing.Point(416, 258);
+            this.btnMensaje.Location = new System.Drawing.Point(12, 93);
             this.btnMensaje.Name = "btnMensaje";
             this.btnMensaje.Size = new System.Drawing.Size(111, 23);
             this.btnMensaje.TabIndex = 2;
@@ -59,13 +59,17 @@
             // 
             // FormMainCliente
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.btnMensaje);
             this.Controls.Add(this.btnHacerReservacion);
             this.Controls.Add(this.label1);
             this.Name = "FormMainCliente";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMainCliente";
             this.Load += new System.EventHandler(this.FormMainCliente_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.btnHacerReservacion, 0);
+            this.Controls.SetChildIndex(this.btnMensaje, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,6 @@
-﻿namespace Missushi.Forms
+﻿using Missushi.Clases;
+
+namespace Missushi.Forms
 {
     partial class FormLogin : FormDiseño{
         /// <summary>
@@ -28,44 +30,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtCorreo = new Missushi.Forms.TextBoxPersonalizado();
+            this.txtContraseña = new Missushi.Forms.TextBoxPersonalizado();
+            this.btnIngresar = new Missushi.Forms.BotonPersonalizado();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.Location = new System.Drawing.Point(495, 417);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 2;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(499, 293);
-            this.txtCorreo.MaxLength = 50;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(100, 23);
-            this.txtCorreo.TabIndex = 0;
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(499, 351);
-            this.txtContraseña.MaxLength = 50;
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(100, 23);
-            this.txtContraseña.TabIndex = 1;
-            this.txtContraseña.UseSystemPasswordChar = true;
             // 
             // lblCorreo
             // 
@@ -120,28 +95,59 @@
             this.gerenteToolStripMenuItem.Text = "Gerente";
             this.gerenteToolStripMenuItem.Click += new System.EventHandler(this.gerenteToolStripMenuItem_Click);
             // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.txtCorreo.Location = new System.Drawing.Point(476, 301);
+            this.txtCorreo.Multiline = true;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(173, 31);
+            this.txtCorreo.TabIndex = 6;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.txtContraseña.Location = new System.Drawing.Point(484, 351);
+            this.txtContraseña.Multiline = true;
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(165, 30);
+            this.txtContraseña.TabIndex = 7;
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(230)))), ((int)(((byte)(212)))));
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.btnIngresar.Location = new System.Drawing.Point(493, 421);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(117, 40);
+            this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.Text = "Iniciar";
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            // 
             // FormLogin
             // 
-            this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.lblContraseña);
-            this.Controls.Add(this.lblCorreo);
+            this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.lblContraseña);
+            this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLogin";
             this.Text = "Missushi - Login";
             this.Controls.SetChildIndex(this.menuStrip1, 0);
-            this.Controls.SetChildIndex(this.btnIngresar, 0);
-            this.Controls.SetChildIndex(this.txtCorreo, 0);
-            this.Controls.SetChildIndex(this.txtContraseña, 0);
             this.Controls.SetChildIndex(this.lblCorreo, 0);
             this.Controls.SetChildIndex(this.lblContraseña, 0);
+            this.Controls.SetChildIndex(this.txtCorreo, 0);
+            this.Controls.SetChildIndex(this.txtContraseña, 0);
+            this.Controls.SetChildIndex(this.btnIngresar, 0);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -150,15 +156,14 @@
         }
 
         #endregion
-
-        private Button btnIngresar;
-        private TextBox txtCorreo;
-        private TextBox txtContraseña;
         private Label lblCorreo;
         private Label lblContraseña;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem clienteToolStripMenuItem;
         private ToolStripMenuItem adminToolStripMenuItem;
         private ToolStripMenuItem gerenteToolStripMenuItem;
+        private TextBoxPersonalizado txtCorreo;
+        private TextBoxPersonalizado txtContraseña;
+        private BotonPersonalizado btnIngresar;
     }
 }

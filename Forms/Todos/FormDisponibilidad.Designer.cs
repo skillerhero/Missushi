@@ -23,33 +23,20 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.cbHora = new Missushi.Forms.ComboBoxPersonalizado();
             this.dtFecha = new Missushi.Forms.DateTimePickerPersonalizado();
             this.pbMapaZonas = new Missushi.Forms.PictureBoxPersonalizado();
+            this.cbHora = new Missushi.Forms.ComboBoxPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbMapaZonas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cbHora
-            // 
-            this.cbHora.BackColor = System.Drawing.SystemColors.Window;
-            this.cbHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbHora.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbHora.FormattingEnabled = true;
-            this.cbHora.Location = new System.Drawing.Point(813, 84);
-            this.cbHora.MinimumSize = new System.Drawing.Size(155, 0);
-            this.cbHora.Name = "cbHora";
-            this.cbHora.Size = new System.Drawing.Size(155, 31);
-            this.cbHora.TabIndex = 1;
-            this.cbHora.SelectedIndexChanged += new System.EventHandler(this.cbHora_SelectedIndexChanged);
             // 
             // dtFecha
             // 
             this.dtFecha.CalendarFont = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtFecha.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dtFecha.Location = new System.Drawing.Point(485, 84);
-            this.dtFecha.MinimumSize = new System.Drawing.Size(307, 32);
+            this.dtFecha.MinimumSize = new System.Drawing.Size(250, 32);
             this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(307, 32);
+            this.dtFecha.Size = new System.Drawing.Size(250, 32);
             this.dtFecha.TabIndex = 2;
             this.dtFecha.ValueChanged += new System.EventHandler(this.dtFecha_ValueChanged);
             // 
@@ -63,7 +50,20 @@
             this.pbMapaZonas.TabIndex = 0;
             this.pbMapaZonas.TabStop = false;
             this.pbMapaZonas.WaitOnLoad = true;
-            this.pbMapaZonas.Cursor = Cursors.Default;
+            // 
+            // cbHora
+            // 
+            this.cbHora.DisplayMember = "Text";
+            this.cbHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.cbHora.FormattingEnabled = true;
+            this.cbHora.Location = new System.Drawing.Point(819, 92);
+            this.cbHora.Name = "cbHora";
+            this.cbHora.Size = new System.Drawing.Size(143, 28);
+            this.cbHora.TabIndex = 3;
+            this.cbHora.ValueMember = "Value";
             // 
             // FormDisponibilidad
             // 
@@ -88,8 +88,8 @@
         }
 
         #endregion
-        private ComboBoxPersonalizado cbHora;
         private DateTimePickerPersonalizado dtFecha;
         private PictureBoxPersonalizado pbMapaZonas;
+        private ComboBoxPersonalizado cbHora;
     }
 }

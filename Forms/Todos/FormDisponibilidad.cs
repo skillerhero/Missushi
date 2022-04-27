@@ -20,6 +20,7 @@ namespace Missushi.Forms.Todos {
             cargarPantallaDisponibilidad();
             cbHora.DisplayMember = "Text";
             cbHora.ValueMember = "Value";
+            cbHora.BackColor = Globales.rosaTextBox;
             dtFecha.MinDate = DateTime.Today;
             dtFecha.MaxDate = DateTime.Today.AddDays(7);
             dtFecha.Invalidate();
@@ -232,5 +233,6 @@ namespace Missushi.Forms.Todos {
                 formPantallaDeCarga.BeginInvoke(new Action(() => formPantallaDeCarga.Close()));
             }
         }
+
     }
 }
