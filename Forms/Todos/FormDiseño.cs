@@ -52,6 +52,12 @@ namespace Missushi.Forms {
             pbMenu.Enabled = false;
         }
 
+        protected void cargarPantallaMainCliente() {
+            pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
+            pbSalir.Visible = true;
+        }
+
+
         //----------------------------Eventos----------------------------------------------
         private void hover(object sender, EventArgs e) {
             if (((PictureBoxPersonalizado)sender).Name == "pbMenu") {
@@ -170,6 +176,11 @@ namespace Missushi.Forms {
                 Close();
             }
         }
+        private void pbSalir_Click(object sender, EventArgs e) {
+            FormMain.instancia.Show();
+            Close();
+        }
+
         //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------
         protected override void WndProc(ref Message m) {
             const int WM_SYSCOMMAND = 0x0112;
@@ -218,7 +229,6 @@ namespace Missushi.Forms {
                 DeleteObject(ptr);
             }
         }
-
     }
     public class BotonPersonalizado : Button {
         public BotonPersonalizado() {

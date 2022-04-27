@@ -2,7 +2,7 @@
 using Missushi.Forms.Cliente;
 
 namespace Missushi.Forms {
-    public partial class FormMainCliente : Form {
+    public partial class FormMainCliente : FormDiseño {
         public FormMainCliente() {
             InitializeComponent();
         }
