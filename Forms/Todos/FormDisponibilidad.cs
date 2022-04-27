@@ -11,6 +11,7 @@ namespace Missushi.Forms.Todos {
         public FormDisponibilidad() {
             this.SetStyle(ControlStyles.UserPaint, true);
             InitializeComponent();
+            this.DoubleBuffered = true;
             AutoScroll = false;
             HorizontalScroll.Enabled = false;
             HorizontalScroll.Visible = false;

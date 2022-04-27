@@ -38,10 +38,9 @@
             // 
             // pbPruebaMenu
             // 
-            this.pbPruebaMenu.Location = new System.Drawing.Point(114, 113);
-            this.pbPruebaMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbPruebaMenu.Location = new System.Drawing.Point(100, 85);
             this.pbPruebaMenu.Name = "pbPruebaMenu";
-            this.pbPruebaMenu.Size = new System.Drawing.Size(86, 100);
+            this.pbPruebaMenu.Size = new System.Drawing.Size(75, 75);
             this.pbPruebaMenu.TabIndex = 1;
             this.pbPruebaMenu.TabStop = false;
             this.pbPruebaMenu.Visible = false;
@@ -52,9 +51,9 @@
             this.lblPruebaTipo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPruebaTipo.Font = new System.Drawing.Font("Segoe Print", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblPruebaTipo.ForeColor = System.Drawing.Color.White;
-            this.lblPruebaTipo.Location = new System.Drawing.Point(114, 33);
+            this.lblPruebaTipo.Location = new System.Drawing.Point(100, 25);
             this.lblPruebaTipo.Name = "lblPruebaTipo";
-            this.lblPruebaTipo.Size = new System.Drawing.Size(685, 59);
+            this.lblPruebaTipo.Size = new System.Drawing.Size(600, 45);
             this.lblPruebaTipo.TabIndex = 2;
             this.lblPruebaTipo.Text = "Tipo";
             this.lblPruebaTipo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -62,9 +61,9 @@
             // 
             // lblPruebaDescripcion
             // 
-            this.lblPruebaDescripcion.Location = new System.Drawing.Point(229, 152);
+            this.lblPruebaDescripcion.Location = new System.Drawing.Point(200, 114);
             this.lblPruebaDescripcion.Name = "lblPruebaDescripcion";
-            this.lblPruebaDescripcion.Size = new System.Drawing.Size(434, 60);
+            this.lblPruebaDescripcion.Size = new System.Drawing.Size(380, 45);
             this.lblPruebaDescripcion.TabIndex = 3;
             this.lblPruebaDescripcion.Text = "Ingredientes, cantidades, etc";
             this.lblPruebaDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -72,10 +71,10 @@
             // 
             // lblPruebaPrecio
             // 
-            this.lblPruebaPrecio.Location = new System.Drawing.Point(693, 169);
+            this.lblPruebaPrecio.Location = new System.Drawing.Point(606, 127);
             this.lblPruebaPrecio.Name = "lblPruebaPrecio";
             this.lblPruebaPrecio.Padding = new System.Windows.Forms.Padding(1);
-            this.lblPruebaPrecio.Size = new System.Drawing.Size(107, 27);
+            this.lblPruebaPrecio.Size = new System.Drawing.Size(94, 20);
             this.lblPruebaPrecio.TabIndex = 4;
             this.lblPruebaPrecio.Text = "$4206909809";
             this.lblPruebaPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,9 +83,9 @@
             // lblPruebaNombre
             // 
             this.lblPruebaNombre.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPruebaNombre.Location = new System.Drawing.Point(217, 112);
+            this.lblPruebaNombre.Location = new System.Drawing.Point(190, 84);
             this.lblPruebaNombre.Name = "lblPruebaNombre";
-            this.lblPruebaNombre.Size = new System.Drawing.Size(514, 40);
+            this.lblPruebaNombre.Size = new System.Drawing.Size(450, 30);
             this.lblPruebaNombre.TabIndex = 5;
             this.lblPruebaNombre.Text = "Nombre";
             this.lblPruebaNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -94,22 +93,26 @@
             // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(914, 749);
+            this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.lblPruebaNombre);
             this.Controls.Add(this.lblPruebaPrecio);
             this.Controls.Add(this.lblPruebaDescripcion);
             this.Controls.Add(this.lblPruebaTipo);
             this.Controls.Add(this.pbPruebaMenu);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Missushi - Menú";
             this.Load += new System.EventHandler(this.FormMenu_Load);
+            this.Controls.SetChildIndex(this.pbPruebaMenu, 0);
+            this.Controls.SetChildIndex(this.lblPruebaTipo, 0);
+            this.Controls.SetChildIndex(this.lblPruebaDescripcion, 0);
+            this.Controls.SetChildIndex(this.lblPruebaPrecio, 0);
+            this.Controls.SetChildIndex(this.lblPruebaNombre, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbPruebaMenu)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

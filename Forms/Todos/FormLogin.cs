@@ -4,7 +4,7 @@ using Missushi.Funciones;
 
 namespace Missushi.Forms{
     public partial class FormLogin{
-
+        public Form owner;
         public FormLogin(){
             InitializeComponent();
             this.cargarPantallaIngresar();
@@ -13,17 +13,17 @@ namespace Missushi.Forms{
         private void entrar() {
             if (Globales.usuarioActual.Tipo == 'C') {
                 FormMainCliente formMainCliente = new FormMainCliente();
-                formMainCliente.Closed += (s, args) => Owner.Show();
+                formMainCliente.Closed += (s, args) => FormMain.instancia.Show();
                 formMainCliente.Show();
                 Close();
             } else if (Globales.usuarioActual.Tipo == 'A') {
                 FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
-                formMainAdministrador.Closed += (s, args) => Owner.Show();
+                formMainAdministrador.Closed += (s, args) => FormMain.instancia.Show();
                 formMainAdministrador.Show();
                 Close();
             } else if (Globales.usuarioActual.Tipo == 'G') {
                 FormMainGerente formMainGerente = new FormMainGerente();
-                formMainGerente.Closed += (s, args) => Owner.Show();
+                formMainGerente.Closed += (s, args) => FormMain.instancia.Show();
                 formMainGerente.Show();
                 Close();
             }

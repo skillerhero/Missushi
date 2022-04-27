@@ -13,6 +13,7 @@ namespace Missushi.Forms.Cliente {
         private int seleccionado = -1;
         public FormElegirZona() {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
         public FormElegirZona(DateTime fechaInicio) {
             InitializeComponent();

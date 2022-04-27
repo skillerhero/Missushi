@@ -75,22 +75,20 @@ namespace Missushi.Forms {
 
         private void lblIngresar_Click(object sender, EventArgs e) {
             FormLogin formLogin = new FormLogin();
+            formLogin.Show();
             if (this is FormMain) {
                 Hide();
-                formLogin.Show(this);
             } else {
-                formLogin.Show(Owner);
                 Close();
             }
         }
 
         private void lblRegistro_Click(object sender, EventArgs e) {
             FormRegistro formRegistro = new FormRegistro();
+            formRegistro.Show();
             if (this is FormMain) {
                 Hide();
-                formRegistro.Show(this);
             } else {
-                formRegistro.Show(this.Owner);
                 Close();
             }
             
@@ -98,66 +96,60 @@ namespace Missushi.Forms {
 
         private void lblMenu_Click(object sender, EventArgs e) {
             FormMenu formMenu = new FormMenu();
+            formMenu.Show();
             if (this is FormMain) {
                 Hide();
-                formMenu.Show(this);
             } else {
-                formMenu.Show(this.Owner);
                 Close();
             }
         }
 
         private void pbMenu_Click(object sender, EventArgs e) {
             FormMenu formMenu = new FormMenu();
+            formMenu.Show();
             if (this is FormMain) {
                 Hide();
-                formMenu.Show(this);
             } else {
-                formMenu.Show(this.Owner);
                 Close();
             }
         }
 
         private void pbUbicacion_Click(object sender, EventArgs e) {
             FormUbicacion formUbicacion = new FormUbicacion();
+            formUbicacion.Show();
             if (this is FormMain) {
                 Hide();
-                formUbicacion.Show(this);
             } else {
-                formUbicacion.Show(this.Owner);
                 Close();
             }
         }
 
         private void lblUbicacion_Click(object sender, EventArgs e) {
             FormUbicacion formUbicacion = new FormUbicacion();
+            formUbicacion.Show();
             if (this is FormMain) {
                 Hide();
-                formUbicacion.Show(this);
             } else {
-                formUbicacion.Show(this.Owner);
                 Close();
             }
         }
 
         private void lblDisponibilidad_Click(object sender, EventArgs e) {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
+            formDisponibilidad.Show();
             if (this is FormMain) {
                 Hide();
-                formDisponibilidad.Show(this);
             } else {
-                formDisponibilidad.Show(this.Owner);
                 Close();
             }
         }
 
         private void pbDisponibilidad_Click(object sender, EventArgs e) { 
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
+            formDisponibilidad.Show();
             if (this is FormMain) {
                 Hide();
-                formDisponibilidad.Show(this);
             } else {
-                formDisponibilidad.Show(this.Owner);
                 Close();
             }
         }
@@ -174,7 +166,7 @@ namespace Missushi.Forms {
 
         private void pbLogo_Click(object sender, EventArgs e) {
             if(this is not FormMain) {
-                Owner.Show();
+                FormMain.instancia.Show();
                 Close();
             }
         }

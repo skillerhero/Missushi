@@ -36,8 +36,8 @@ namespace Missushi.Forms.Todos {
         }
 
         private void FormPantallaDeCarga_Shown(object sender, EventArgs e) {
-            //cargarGif();
-            //cargarAudio();
+            cargarGif();
+            cargarAudio();
 
         }
 

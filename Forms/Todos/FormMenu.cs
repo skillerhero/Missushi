@@ -3,9 +3,10 @@ using Missushi.Clases;
 using Missushi.Funciones;
 
 namespace Missushi.Forms{
-    public partial class FormMenu : Form {
+    public partial class FormMenu : FormDiseño {
         public FormMenu() {
             InitializeComponent();
+            cargarPantallaMenu();
         }
 
         private void FormMenu_Load(object sender, EventArgs e) {
@@ -24,7 +25,7 @@ namespace Missushi.Forms{
                 {
                     Name = "lblTipo" + i,
                     Size = new Size(610, 45),
-                    Location = new Point(100, 25 + desplazamiento),
+                    Location = new Point(207, 100 + desplazamiento),
                     Text = tipos[i],
                     TextAlign = ContentAlignment.MiddleCenter,
                     Font = new Font("Segoe Print", 15.25F, ((FontStyle.Bold | FontStyle.Italic)), GraphicsUnit.Point),
@@ -37,13 +38,13 @@ namespace Missushi.Forms{
                     PictureBox picture = new PictureBox {
                         Name = "pbPlatillo" + j,
                         Size = new Size(75, 75),
-                        Location = new Point(100, 85 + desplazamiento),
+                        Location = new Point(207, 160 + desplazamiento),
                         SizeMode = PictureBoxSizeMode.StretchImage
                     };
                     Label lblNombre = new Label() {
                         Name = "lblNombre" + j,
                         Size = new Size(450, 30),
-                        Location = new Point(190, 85 + desplazamiento),
+                        Location = new Point(297, 160 + desplazamiento),
                         Font = new Font("Segoe Print", 10.25F, ((FontStyle.Bold)), GraphicsUnit.Point),
                         Text = platillos[j].Nombre,
                         TextAlign = ContentAlignment.MiddleCenter
@@ -51,14 +52,14 @@ namespace Missushi.Forms{
                     Label lblDescripcion = new Label() {
                         Name = "lblDescripcion" + j,
                         Size = new Size(420, 47),
-                        Location = new Point(190, 115 + desplazamiento),
+                        Location = new Point(297, 190 + desplazamiento),
                         Text = platillos[j].Descripcion,
                         TextAlign = ContentAlignment.MiddleLeft
                     };
                     Label lblPrecio = new Label() {
                         Name = "lblPrecio" + j,
                         Size = new Size(75, 19),
-                        Location = new Point(645, 122 + desplazamiento),
+                        Location = new Point(752, 197 + desplazamiento),
                         Text = "$ " + platillos[j].Precio.ToString(),
                         TextAlign = ContentAlignment.MiddleCenter
                     };

@@ -5,11 +5,13 @@ using Missushi.Forms.Todos;
 namespace Missushi{
     public partial class FormMain{
         private Globales globales; 
+        public static Form instancia = null;
         public FormMain(){
             globales = new Globales();
             InitializeComponent();
             cargarPantallaPrincipal();
             cargarInfoRestaurante();
+            instancia = this;
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e){
