@@ -39,24 +39,30 @@ namespace Missushi.Forms
             this.txtCorreo = new Missushi.Forms.TextBoxPersonalizado();
             this.txtContraseña = new Missushi.Forms.TextBoxPersonalizado();
             this.btnIngresar = new Missushi.Forms.BotonPersonalizado();
+            this.pictureBoxPersonalizado1 = new Missushi.Forms.PictureBoxPersonalizado();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPersonalizado1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(411, 301);
+            this.lblCorreo.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.lblCorreo.Location = new System.Drawing.Point(373, 284);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(43, 15);
+            this.lblCorreo.Size = new System.Drawing.Size(78, 50);
             this.lblCorreo.TabIndex = 0;
             this.lblCorreo.Text = "Correo";
             // 
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(411, 354);
+            this.lblContraseña.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.lblContraseña.Location = new System.Drawing.Point(343, 351);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(67, 15);
+            this.lblContraseña.Size = new System.Drawing.Size(119, 50);
             this.lblContraseña.TabIndex = 0;
             this.lblContraseña.Text = "Contraseña";
             // 
@@ -108,6 +114,7 @@ namespace Missushi.Forms
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtContraseña.Location = new System.Drawing.Point(484, 351);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(165, 23);
             this.txtContraseña.TabIndex = 2;
             // 
@@ -127,12 +134,24 @@ namespace Missushi.Forms
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             this.btnIngresar.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
             // 
+            // pictureBoxPersonalizado1
+            // 
+            this.pictureBoxPersonalizado1.BackColor = System.Drawing.Color.White;
+            this.pictureBoxPersonalizado1.Image = global::Missushi.Properties.Resources.login;
+            this.pictureBoxPersonalizado1.Location = new System.Drawing.Point(444, 141);
+            this.pictureBoxPersonalizado1.Name = "pictureBoxPersonalizado1";
+            this.pictureBoxPersonalizado1.Size = new System.Drawing.Size(205, 134);
+            this.pictureBoxPersonalizado1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPersonalizado1.TabIndex = 0;
+            this.pictureBoxPersonalizado1.TabStop = false;
+            // 
             // FormLogin
             // 
             this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.pictureBoxPersonalizado1);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtCorreo);
@@ -149,8 +168,10 @@ namespace Missushi.Forms
             this.Controls.SetChildIndex(this.txtCorreo, 0);
             this.Controls.SetChildIndex(this.txtContraseña, 0);
             this.Controls.SetChildIndex(this.btnIngresar, 0);
+            this.Controls.SetChildIndex(this.pictureBoxPersonalizado1, 0);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPersonalizado1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +187,6 @@ namespace Missushi.Forms
         private TextBoxPersonalizado txtCorreo;
         private TextBoxPersonalizado txtContraseña;
         private BotonPersonalizado btnIngresar;
+        private PictureBoxPersonalizado pictureBoxPersonalizado1;
     }
 }

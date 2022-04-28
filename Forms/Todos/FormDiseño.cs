@@ -29,6 +29,7 @@ namespace Missushi.Forms {
             noCargarPantallaPrincipal();
             lblIngresar.colorLetra = Globales.verdeFuerteLetra;
             lblIngresar.Enabled = false;
+            lblTitulo.Visible = true;
         }
 
         protected void cargarPantallaUbicacion() {
@@ -201,14 +202,6 @@ namespace Missushi.Forms {
             }
         }
 
-        protected void cerrarTodo() {
-            Closed += (s, args) => Globales.instancia.Close();
-        }
-
-        private void cerrarUno() {
-            Closed -= (s, args) => Globales.instancia.Close();
-        }
-
         //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------
         protected override void WndProc(ref Message m) {
             const int WM_SYSCOMMAND = 0x0112;
@@ -252,7 +245,7 @@ namespace Missushi.Forms {
 
         protected void cortarEsquinas(object sender, PaintEventArgs e) {
             if (sender.GetType().Name == "BotonPersonalizado") {
-                IntPtr ptr = CreateRoundRectRgn(0, 0, ((BotonPersonalizado)sender).Width, ((BotonPersonalizado)sender).Height, 15, 15);
+                IntPtr ptr = CreateRoundRectRgn(2, 3, ((BotonPersonalizado)sender).Width, ((BotonPersonalizado)sender).Height, 15, 15);
                 ((BotonPersonalizado)sender).Region = Region.FromHrgn(ptr);
                 DeleteObject(ptr);
             }

@@ -8,6 +8,10 @@ namespace Missushi.Forms{
         public FormLogin(){
             InitializeComponent();
             this.cargarPantallaIngresar();
+            lblCorreo.Enabled = false;
+            lblContraseña.Enabled = false;
+            lblTitulo.Enabled = false;
+            lblTitulo.Text = "INICIAR SESIÓN";
         }
 
         private void entrar() {

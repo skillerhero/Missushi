@@ -1,4 +1,6 @@
-﻿namespace Missushi.Forms {
+﻿using Missushi.Clases;
+
+namespace Missushi.Forms {
     partial class FormDiseño {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +45,7 @@
             this.pbLetrasLogo = new System.Windows.Forms.PictureBox();
             this.btnReseñas = new Missushi.Forms.BotonPersonalizado();
             this.pbSalir = new Missushi.Forms.PictureBoxPersonalizado();
+            this.lblTitulo = new Missushi.Forms.LabelPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDisponibilidad)).BeginInit();
@@ -278,11 +281,27 @@
             this.pbSalir.Visible = false;
             this.pbSalir.Click += new System.EventHandler(this.pbSalir_Click);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.White;
+            this.lblTitulo.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(402, 75);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(71, 50);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Titulo";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo.Visible = false;
+            // 
             // FormDiseño
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblMenu);
             this.Controls.Add(this.pbSalir);
             this.Controls.Add(this.pbLetrasLogo);
@@ -345,5 +364,6 @@
         private PictureBoxPersonalizado pbUbicacion;
         private PictureBoxPersonalizado pbDisponibilidad;
         private PictureBoxPersonalizado pbMenu;
+        protected LabelPersonalizado lblTitulo;
     }
 }
