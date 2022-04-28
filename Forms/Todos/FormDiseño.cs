@@ -90,50 +90,88 @@ namespace Missushi.Forms {
         private void lblIngresar_Click(object sender, EventArgs e) {
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
-
-            Hide();
+            if (this is not FormMain) {
+                Globales.transicion = true;
+                Close();
+            } else {
+                Hide();
+            }
         }
         private void lblRegistro_Click(object sender, EventArgs e) {
             FormRegistro formRegistro = new FormRegistro();
             formRegistro.Show();
-            Hide();
-
+            if (this is not FormMain) {
+                Globales.transicion = true;
+                Close();
+            } else {
+                Hide();
+            }
         }
 
         private void lblMenu_Click(object sender, EventArgs e) {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
-            Hide();
+            if (this is not FormMain) {
+                Globales.transicion = true;
+                Close();
+            } else {
+                Hide();
+            }
         }
 
         private void pbMenu_Click(object sender, EventArgs e) {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
-            Hide();
+            if (this is not FormMain) {
+                Globales.transicion = true;
+                Close();
+            } else {
+                Hide();
+            }
         }
 
         private void pbUbicacion_Click(object sender, EventArgs e) {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Show();
-            Hide();
+            if (this is not FormMain) {
+                Globales.transicion = true;
+                Close();
+            } else {
+                Hide();
+            }
         }
 
         private void lblUbicacion_Click(object sender, EventArgs e) {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Show();
-            Hide();
+            if (this is not FormMain) {
+                Globales.transicion = true;
+                Close();
+            } else {
+                Hide();
+            }
         }
 
         private void lblDisponibilidad_Click(object sender, EventArgs e) {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Show();
-            Hide();
+            if (this is not FormMain) {
+                Globales.transicion = true;
+                Close();
+            } else {
+                Hide();
+            }
         }
 
         private void pbDisponibilidad_Click(object sender, EventArgs e) {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Show();
-            Hide();
+            if (this is not FormMain) {
+                Globales.transicion = true;
+                Close();
+            } else {
+                Hide();
+            }
         }
 
         private void lblBarraPrincipal_DoubleClick(object sender, EventArgs e) {
@@ -147,9 +185,7 @@ namespace Missushi.Forms {
         }
 
         private void pbLogo_Click(object sender, EventArgs e) {
-            FormMain formMain = new FormMain();
-            formMain.Show();
-            Close();
+            Globales.instancia.Show();
         }
         private void pbSalir_Click(object sender, EventArgs e) {
             FormMain formMain = new FormMain();
@@ -157,12 +193,20 @@ namespace Missushi.Forms {
             Close();
         }
 
-        private void cerrarTodo() {
-            Closed += (s, args) => FormMain.instancia.Close();
+        private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {
+            if (Globales.transicion) {
+                Globales.transicion = false;
+            } else {
+                Globales.instancia.Show();
+            }
+        }
+
+        protected void cerrarTodo() {
+            Closed += (s, args) => Globales.instancia.Close();
         }
 
         private void cerrarUno() {
-            Closed -= (s, args) => FormMain.instancia.Close();
+            Closed -= (s, args) => Globales.instancia.Close();
         }
 
         //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------

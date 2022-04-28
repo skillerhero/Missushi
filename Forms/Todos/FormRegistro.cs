@@ -7,7 +7,7 @@ namespace Missushi.Forms{
             cbTipo.Items.Add("Administrador");
             cbTipo.Items.Add("Gerente");
             cbTipo.Text = cbTipo.Items[0].ToString();
-            noCargarPantallaPrincipal();
+            cargarPantallaRegistro();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e){

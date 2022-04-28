@@ -308,6 +308,7 @@
             this.Name = "FormDiseño";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiseño";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDiseño_FormClosing);
             this.Load += new System.EventHandler(this.FormDiseño_Load);
             this.DoubleClick += new System.EventHandler(this.FormDiseño_DoubleClick);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDiseño_MouseDown);

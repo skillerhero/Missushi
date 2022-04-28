@@ -16,7 +16,9 @@ namespace Missushi.Clases {
         static public Color rosaTextBox = Color.FromArgb(255, 216, 196);
         static public Color rojoBoton = Color.FromArgb(143, 68, 60);
         static public Color grisClaro = Color.FromArgb(242, 230, 212);
-        public Globales() {
+        static public Form instancia;
+        static public bool transicion = false;
+        public Globales(Form form) {
             System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
             customCulture.NumberFormat.NumberDecimalSeparator = ".";
             Thread.CurrentThread.CurrentCulture = customCulture;
@@ -26,6 +28,7 @@ namespace Missushi.Clases {
             zonaSeleccionada = new Zona();
             restaurante = ConexionBD.consultarRestaurante();
             gerente = ConexionBD.consultarGerente();
+            instancia = form;
         }
 
     }
