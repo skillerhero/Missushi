@@ -80,10 +80,10 @@
             this.lblMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblMenu.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMenu.ForeColor = System.Drawing.Color.White;
-            this.lblMenu.Location = new System.Drawing.Point(95, 12);
+            this.lblMenu.Location = new System.Drawing.Point(87, 9);
             this.lblMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblMenu.Name = "lblMenu";
-            this.lblMenu.Size = new System.Drawing.Size(70, 50);
+            this.lblMenu.Size = new System.Drawing.Size(88, 63);
             this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "Menú";
             this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,7 +93,7 @@
             // 
             this.pbUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.pbUbicacion.Image = global::Missushi.Properties.Resources.mapa;
-            this.pbUbicacion.Location = new System.Drawing.Point(340, 15);
+            this.pbUbicacion.Location = new System.Drawing.Point(354, 15);
             this.pbUbicacion.Name = "pbUbicacion";
             this.pbUbicacion.Size = new System.Drawing.Size(45, 45);
             this.pbUbicacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,10 +109,10 @@
             this.lblIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblIngresar.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblIngresar.ForeColor = System.Drawing.Color.White;
-            this.lblIngresar.Location = new System.Drawing.Point(920, 12);
+            this.lblIngresar.Location = new System.Drawing.Point(911, 9);
             this.lblIngresar.Margin = new System.Windows.Forms.Padding(0);
             this.lblIngresar.Name = "lblIngresar";
-            this.lblIngresar.Size = new System.Drawing.Size(91, 50);
+            this.lblIngresar.Size = new System.Drawing.Size(113, 63);
             this.lblIngresar.TabIndex = 0;
             this.lblIngresar.Text = "Ingresar";
             this.lblIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,10 +124,10 @@
             this.lblRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblRegistro.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
-            this.lblRegistro.Location = new System.Drawing.Point(790, 12);
+            this.lblRegistro.Location = new System.Drawing.Point(785, 9);
             this.lblRegistro.Margin = new System.Windows.Forms.Padding(0);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(90, 50);
+            this.lblRegistro.Size = new System.Drawing.Size(112, 63);
             this.lblRegistro.TabIndex = 0;
             this.lblRegistro.Text = "Registro";
             this.lblRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,10 +139,10 @@
             this.lblUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblUbicacion.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUbicacion.ForeColor = System.Drawing.Color.White;
-            this.lblUbicacion.Location = new System.Drawing.Point(240, 12);
+            this.lblUbicacion.Location = new System.Drawing.Point(225, 9);
             this.lblUbicacion.Margin = new System.Windows.Forms.Padding(0);
             this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(106, 50);
+            this.lblUbicacion.Size = new System.Drawing.Size(133, 63);
             this.lblUbicacion.TabIndex = 0;
             this.lblUbicacion.Text = "Ubicación";
             this.lblUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,10 +154,10 @@
             this.lblDisponibilidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblDisponibilidad.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDisponibilidad.ForeColor = System.Drawing.Color.White;
-            this.lblDisponibilidad.Location = new System.Drawing.Point(425, 15);
+            this.lblDisponibilidad.Location = new System.Drawing.Point(409, 9);
             this.lblDisponibilidad.Margin = new System.Windows.Forms.Padding(0);
             this.lblDisponibilidad.Name = "lblDisponibilidad";
-            this.lblDisponibilidad.Size = new System.Drawing.Size(146, 50);
+            this.lblDisponibilidad.Size = new System.Drawing.Size(185, 63);
             this.lblDisponibilidad.TabIndex = 0;
             this.lblDisponibilidad.Text = "Disponibilidad";
             this.lblDisponibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,7 +167,7 @@
             // 
             this.pbDisponibilidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.pbDisponibilidad.Image = global::Missushi.Properties.Resources.disponi;
-            this.pbDisponibilidad.Location = new System.Drawing.Point(565, 15);
+            this.pbDisponibilidad.Location = new System.Drawing.Point(577, 15);
             this.pbDisponibilidad.Name = "pbDisponibilidad";
             this.pbDisponibilidad.Size = new System.Drawing.Size(45, 45);
             this.pbDisponibilidad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -181,7 +181,7 @@
             // 
             this.pbMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.pbMenu.Image = global::Missushi.Properties.Resources.menu;
-            this.pbMenu.Location = new System.Drawing.Point(160, 15);
+            this.pbMenu.Location = new System.Drawing.Point(165, 15);
             this.pbMenu.Name = "pbMenu";
             this.pbMenu.Size = new System.Drawing.Size(45, 45);
             this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -257,9 +257,9 @@
             this.btnReseñas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReseñas.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnReseñas.ForeColor = System.Drawing.Color.White;
-            this.btnReseñas.Location = new System.Drawing.Point(454, 515);
+            this.btnReseñas.Location = new System.Drawing.Point(446, 521);
             this.btnReseñas.Name = "btnReseñas";
-            this.btnReseñas.Size = new System.Drawing.Size(116, 43);
+            this.btnReseñas.Size = new System.Drawing.Size(116, 44);
             this.btnReseñas.TabIndex = 1;
             this.btnReseñas.Text = "Reseñas";
             this.btnReseñas.UseVisualStyleBackColor = false;
@@ -283,6 +283,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.lblMenu);
             this.Controls.Add(this.pbSalir);
             this.Controls.Add(this.pbLetrasLogo);
             this.Controls.Add(this.lblBarra3);
@@ -297,12 +298,11 @@
             this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.lblIngresar);
             this.Controls.Add(this.lblBarra1);
-            this.Controls.Add(this.lblMenu);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lblBarraPrincipal);
             this.Controls.Add(this.btnReseñas);
             this.Controls.Add(this.pbImagenesRestaurante);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormDiseño";
