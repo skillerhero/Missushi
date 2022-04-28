@@ -90,6 +90,7 @@ namespace Missushi.Forms {
         private void lblIngresar_Click(object sender, EventArgs e) {
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
+
             Hide();
         }
         private void lblRegistro_Click(object sender, EventArgs e) {
@@ -136,12 +137,12 @@ namespace Missushi.Forms {
         }
 
         private void lblBarraPrincipal_DoubleClick(object sender, EventArgs e) {
-            this.FormBorderStyle = FormBorderStyle.Sizable;
-            this.WindowState = FormWindowState.Minimized;
+           // this.FormBorderStyle = FormBorderStyle.Sizable;
+           // this.WindowState = FormWindowState.Minimized;
         }
 
         private void FormDiseño_DoubleClick(object sender, EventArgs e) {
-            this.FormBorderStyle = FormBorderStyle.Sizable;
+            //this.FormBorderStyle = FormBorderStyle.Sizable;
             this.Close();
         }
 
@@ -154,6 +155,14 @@ namespace Missushi.Forms {
             FormMain formMain = new FormMain();
             formMain.Show();
             Close();
+        }
+
+        private void cerrarTodo() {
+            Closed += (s, args) => FormMain.instancia.Close();
+        }
+
+        private void cerrarUno() {
+            Closed -= (s, args) => FormMain.instancia.Close();
         }
 
         //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------

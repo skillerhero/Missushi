@@ -83,7 +83,7 @@
             this.lblMenu.Location = new System.Drawing.Point(87, 9);
             this.lblMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblMenu.Name = "lblMenu";
-            this.lblMenu.Size = new System.Drawing.Size(88, 63);
+            this.lblMenu.Size = new System.Drawing.Size(70, 50);
             this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "Menú";
             this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,7 +112,7 @@
             this.lblIngresar.Location = new System.Drawing.Point(911, 9);
             this.lblIngresar.Margin = new System.Windows.Forms.Padding(0);
             this.lblIngresar.Name = "lblIngresar";
-            this.lblIngresar.Size = new System.Drawing.Size(113, 63);
+            this.lblIngresar.Size = new System.Drawing.Size(91, 50);
             this.lblIngresar.TabIndex = 0;
             this.lblIngresar.Text = "Ingresar";
             this.lblIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,7 +127,7 @@
             this.lblRegistro.Location = new System.Drawing.Point(785, 9);
             this.lblRegistro.Margin = new System.Windows.Forms.Padding(0);
             this.lblRegistro.Name = "lblRegistro";
-            this.lblRegistro.Size = new System.Drawing.Size(112, 63);
+            this.lblRegistro.Size = new System.Drawing.Size(90, 50);
             this.lblRegistro.TabIndex = 0;
             this.lblRegistro.Text = "Registro";
             this.lblRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,7 +142,7 @@
             this.lblUbicacion.Location = new System.Drawing.Point(225, 9);
             this.lblUbicacion.Margin = new System.Windows.Forms.Padding(0);
             this.lblUbicacion.Name = "lblUbicacion";
-            this.lblUbicacion.Size = new System.Drawing.Size(133, 63);
+            this.lblUbicacion.Size = new System.Drawing.Size(106, 50);
             this.lblUbicacion.TabIndex = 0;
             this.lblUbicacion.Text = "Ubicación";
             this.lblUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,7 +157,7 @@
             this.lblDisponibilidad.Location = new System.Drawing.Point(409, 9);
             this.lblDisponibilidad.Margin = new System.Windows.Forms.Padding(0);
             this.lblDisponibilidad.Name = "lblDisponibilidad";
-            this.lblDisponibilidad.Size = new System.Drawing.Size(185, 63);
+            this.lblDisponibilidad.Size = new System.Drawing.Size(146, 50);
             this.lblDisponibilidad.TabIndex = 0;
             this.lblDisponibilidad.Text = "Disponibilidad";
             this.lblDisponibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,7 +302,7 @@
             this.Controls.Add(this.lblBarraPrincipal);
             this.Controls.Add(this.btnReseñas);
             this.Controls.Add(this.pbImagenesRestaurante);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormDiseño";
