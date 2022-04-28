@@ -59,7 +59,7 @@
             this.cbHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
             this.cbHora.FormattingEnabled = true;
-            this.cbHora.Location = new System.Drawing.Point(819, 92);
+            this.cbHora.Location = new System.Drawing.Point(758, 88);
             this.cbHora.Name = "cbHora";
             this.cbHora.Size = new System.Drawing.Size(143, 28);
             this.cbHora.TabIndex = 3;

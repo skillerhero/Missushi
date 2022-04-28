@@ -253,7 +253,7 @@ namespace Missushi.Forms {
         protected void cortarEsquinas(object sender, PaintEventArgs e) {
             if (sender.GetType().Name == "BotonPersonalizado") {
                 IntPtr ptr = CreateRoundRectRgn(0, 0, ((BotonPersonalizado)sender).Width, ((BotonPersonalizado)sender).Height, 15, 15);
-                btnReseñas.Region = Region.FromHrgn(ptr);
+                ((BotonPersonalizado)sender).Region = Region.FromHrgn(ptr);
                 DeleteObject(ptr);
             }
         }
@@ -388,7 +388,7 @@ namespace Missushi.Forms {
         public TextBoxPersonalizado() {
             BackColor = Globales.rosaTextBox;
             Size = new Size(70, 70);
-            Multiline = true;
+            Multiline = false;
         }
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(

@@ -3,7 +3,7 @@ using Missushi.Forms.Gerente;
 using Missushi.Funciones;
 
 namespace Missushi.Forms{
-    public partial class FormLogin{
+    public partial class FormLogin : FormDiseño {
         public Form owner;
         public FormLogin(){
             InitializeComponent();

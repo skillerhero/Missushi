@@ -2,7 +2,7 @@
 
 namespace Missushi.Forms
 {
-    partial class FormLogin : FormDiseño{
+    partial class FormLogin{
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -48,7 +48,7 @@ namespace Missushi.Forms
             this.lblCorreo.Location = new System.Drawing.Point(411, 301);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(43, 15);
-            this.lblCorreo.TabIndex = 3;
+            this.lblCorreo.TabIndex = 0;
             this.lblCorreo.Text = "Correo";
             // 
             // lblContraseña
@@ -57,7 +57,7 @@ namespace Missushi.Forms
             this.lblContraseña.Location = new System.Drawing.Point(411, 354);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(67, 15);
-            this.lblContraseña.TabIndex = 4;
+            this.lblContraseña.TabIndex = 0;
             this.lblContraseña.Text = "Contraseña";
             // 
             // menuStrip1
@@ -71,7 +71,7 @@ namespace Missushi.Forms
             this.menuStrip1.Location = new System.Drawing.Point(0, 75);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(179, 24);
-            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // clienteToolStripMenuItem
@@ -99,19 +99,17 @@ namespace Missushi.Forms
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtCorreo.Location = new System.Drawing.Point(476, 301);
-            this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(173, 31);
-            this.txtCorreo.TabIndex = 6;
+            this.txtCorreo.Size = new System.Drawing.Size(173, 23);
+            this.txtCorreo.TabIndex = 1;
             // 
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtContraseña.Location = new System.Drawing.Point(484, 351);
-            this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(165, 30);
-            this.txtContraseña.TabIndex = 7;
+            this.txtContraseña.Size = new System.Drawing.Size(165, 23);
+            this.txtContraseña.TabIndex = 2;
             // 
             // btnIngresar
             // 
@@ -123,12 +121,15 @@ namespace Missushi.Forms
             this.btnIngresar.Location = new System.Drawing.Point(493, 421);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(117, 40);
-            this.btnIngresar.TabIndex = 8;
+            this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Iniciar";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            this.btnIngresar.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
             // 
             // FormLogin
             // 
+            this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
