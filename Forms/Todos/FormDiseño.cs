@@ -2,7 +2,7 @@
 using Missushi.Forms.Gerente;
 using Missushi.Forms.Todos;
 using System.Runtime.InteropServices;
-
+using System.Text.RegularExpressions;
 
 namespace Missushi.Forms {
     public partial class FormDiseño : Form {
@@ -67,10 +67,31 @@ namespace Missushi.Forms {
         }
 
         protected void cargarPantallaMainCliente() {
+            cargarPantallaUsuario();
+
+        }
+
+        protected void cargarPantallaUsuario() {
             cargarPantallaPrincipal();
             pbSalir.Visible = true;
             lblIngresar.Visible = false;
-            lblRegistro.Visible = false;
+            lblRegistro.Visible = true;
+            lblMenu.Visible = false;
+            lblDisponibilidad.Visible = false;
+            lblUbicacion.Visible = false;
+            pbLogo.Visible = false;
+            pbMenu.Visible = false;
+            pbDisponibilidad.Visible = false;
+            pbUbicacion.Visible = false;
+            lblBarra1.Visible = false;
+            lblBarra2.Visible = false;
+            lblBarra3.Visible = false;
+            lblBarra4.Visible = false;
+            lblRegistro.Text = Regex.Match(Globales.usuarioActual.Nombres, @"^([\w\-]+)").Value;
+            lblRegistro.desactivarLabel();
+            lblRegistro.Location = new Point(lblBarra5.Location.X - 20 - lblRegistro.Width, lblRegistro.Location.Y);
+            pbMenuDesplegable.Visible = true;
+
         }
 
         protected void cargarPantallaRegistro() {
@@ -220,6 +241,10 @@ namespace Missushi.Forms {
             }
         }
 
+        private void pbMenuDesplegable_Click(object sender, EventArgs e) {
+
+        }
+
         private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {
             if (Globales.transicion) {
                 Globales.transicion = false;
@@ -325,6 +350,7 @@ namespace Missushi.Forms {
         }
 
         public void desactivarLabel() {
+            Cursor = Cursors.Default;
             MouseHover -= new EventHandler(this.hover);
             MouseLeave -= new EventHandler(this.leave);
         }

@@ -47,6 +47,7 @@ namespace Missushi.Forms {
             this.pbSalir = new Missushi.Forms.PictureBoxPersonalizado();
             this.lblTitulo = new Missushi.Forms.LabelPersonalizado();
             this.lblBarraTitulo = new System.Windows.Forms.Label();
+            this.pbMenuDesplegable = new Missushi.Forms.PictureBoxPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUbicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDisponibilidad)).BeginInit();
@@ -54,6 +55,7 @@ namespace Missushi.Forms {
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenuDesplegable)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBarraPrincipal
@@ -308,6 +310,19 @@ namespace Missushi.Forms {
             this.lblBarraTitulo.TabIndex = 0;
             this.lblBarraTitulo.Visible = false;
             // 
+            // pbMenuDesplegable
+            // 
+            this.pbMenuDesplegable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
+            this.pbMenuDesplegable.Image = global::Missushi.Properties.Resources.disponi1;
+            this.pbMenuDesplegable.Location = new System.Drawing.Point(0, 0);
+            this.pbMenuDesplegable.Name = "pbMenuDesplegable";
+            this.pbMenuDesplegable.Size = new System.Drawing.Size(75, 75);
+            this.pbMenuDesplegable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMenuDesplegable.TabIndex = 0;
+            this.pbMenuDesplegable.TabStop = false;
+            this.pbMenuDesplegable.Visible = false;
+            this.pbMenuDesplegable.Click += new System.EventHandler(this.pbMenuDesplegable_Click);
+            // 
             // FormDiseño
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -329,11 +344,12 @@ namespace Missushi.Forms {
             this.Controls.Add(this.lblIngresar);
             this.Controls.Add(this.lblBarra1);
             this.Controls.Add(this.pbLogo);
-            this.Controls.Add(this.lblBarraPrincipal);
             this.Controls.Add(this.btnReseñas);
             this.Controls.Add(this.pbImagenesRestaurante);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pbLetrasLogo);
+            this.Controls.Add(this.pbMenuDesplegable);
+            this.Controls.Add(this.lblBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -351,6 +367,7 @@ namespace Missushi.Forms {
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenuDesplegable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +396,6 @@ namespace Missushi.Forms {
         protected PictureBox pbImagenesRestaurante;
         protected PictureBox pbLetrasLogo;
         private BotonPersonalizado btnReseñas;
+        private PictureBoxPersonalizado pbMenuDesplegable;
     }
 }
