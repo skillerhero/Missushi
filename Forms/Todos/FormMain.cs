@@ -28,8 +28,7 @@ namespace Missushi{
                 gerente.Correo = "No registrado.";
             }
             lblInfoRestaurante.colorLetra = Color.Black;
-            lblInfoRestaurante.MouseHover -= lblInfoRestaurante.hover;
-            lblInfoRestaurante.MouseLeave -= lblInfoRestaurante.leave;
+            lblInfoRestaurante.desactivarLabel();
             lblInfoRestaurante.Text = "Correo: " + gerente.Correo + "    Teléfono: " + restaurante.Telefono;
         }
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {

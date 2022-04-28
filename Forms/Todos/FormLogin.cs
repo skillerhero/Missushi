@@ -4,14 +4,9 @@ using Missushi.Funciones;
 
 namespace Missushi.Forms{
     public partial class FormLogin : FormDiseño {
-        public Form owner;
         public FormLogin(){
             InitializeComponent();
             this.cargarPantallaIngresar();
-            lblCorreo.Enabled = false;
-            lblContraseña.Enabled = false;
-            lblTitulo.Enabled = false;
-            lblTitulo.Text = "INICIAR SESIÓN";
         }
 
         private void entrar() {

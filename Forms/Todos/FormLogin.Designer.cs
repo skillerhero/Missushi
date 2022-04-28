@@ -40,9 +40,12 @@ namespace Missushi.Forms
             this.txtContraseña = new Missushi.Forms.TextBoxPersonalizado();
             this.btnIngresar = new Missushi.Forms.BotonPersonalizado();
             this.pictureBoxPersonalizado1 = new Missushi.Forms.PictureBoxPersonalizado();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPersonalizado1)).BeginInit();
             this.SuspendLayout();
+            // 
             // 
             // lblCorreo
             // 
@@ -151,24 +154,30 @@ namespace Missushi.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.pictureBoxPersonalizado1);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pictureBoxPersonalizado1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLogin";
             this.Text = "Missushi - Login";
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.pictureBoxPersonalizado1, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.Controls.SetChildIndex(this.lblCorreo, 0);
             this.Controls.SetChildIndex(this.lblContraseña, 0);
             this.Controls.SetChildIndex(this.txtCorreo, 0);
             this.Controls.SetChildIndex(this.txtContraseña, 0);
             this.Controls.SetChildIndex(this.btnIngresar, 0);
-            this.Controls.SetChildIndex(this.pictureBoxPersonalizado1, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPersonalizado1)).EndInit();

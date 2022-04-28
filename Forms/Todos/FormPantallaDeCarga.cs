@@ -8,8 +8,7 @@ namespace Missushi.Forms.Todos {
         public FormPantallaDeCarga() {
             InitializeComponent();
             this.lblPorcentaje.Cursor = Cursors.Default;
-            this.lblPorcentaje.MouseHover -= lblPorcentaje.hover;
-            this.lblPorcentaje.MouseLeave -= lblPorcentaje.leave;
+            this.lblPorcentaje.desactivarLabel();
             progressBar1.Maximum = 100;
             progressBar1.Step = 1;
             progressBar1.Value = 0;

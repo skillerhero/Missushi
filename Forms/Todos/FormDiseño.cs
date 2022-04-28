@@ -13,10 +13,17 @@ namespace Missushi.Forms {
         private void FormDiseño_Load(object sender, EventArgs e) {
         }
 
+        public void centrarComponente(Control componente) {
+            componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
+        }
+
+
         protected void cargarPantallaPrincipal() {
             pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
             lblRegistro.Visible = true;
             lblIngresar.Visible = true;
+            btnReseñas.Visible = true;
+            pbLetrasLogo.Visible = true;
         }
 
         protected void noCargarPantallaPrincipal() {
@@ -28,8 +35,14 @@ namespace Missushi.Forms {
         protected void cargarPantallaIngresar() {
             noCargarPantallaPrincipal();
             lblIngresar.colorLetra = Globales.verdeFuerteLetra;
-            lblIngresar.Enabled = false;
+            lblTitulo.colorLetra = Globales.verdeFuerteLetra;
             lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "INICIAR SESIÓN";            
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            centrarComponente(lblTitulo);
+            centrarComponente(lblBarraTitulo);
         }
 
         protected void cargarPantallaUbicacion() {
@@ -54,7 +67,7 @@ namespace Missushi.Forms {
         }
 
         protected void cargarPantallaMainCliente() {
-            pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
+            cargarPantallaPrincipal();
             pbSalir.Visible = true;
             lblIngresar.Visible = false;
             lblRegistro.Visible = false;
@@ -64,6 +77,13 @@ namespace Missushi.Forms {
             noCargarPantallaPrincipal();
             lblRegistro.colorLetra = Globales.verdeFuerteLetra;
             lblRegistro.Enabled = false;
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "REGISTRO";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            centrarComponente(lblTitulo);
+            centrarComponente(lblBarraTitulo);
         }
 
 
@@ -186,12 +206,18 @@ namespace Missushi.Forms {
         }
 
         private void pbLogo_Click(object sender, EventArgs e) {
-            Globales.instancia.Show();
+            if(this is not FormMain) {
+                Globales.instancia.Show();
+                Close();
+            }
         }
         private void pbSalir_Click(object sender, EventArgs e) {
-            FormMain formMain = new FormMain();
-            formMain.Show();
-            Close();
+            if (this is not FormMain) {
+                Globales.instancia.Show();
+                Close();
+            } else {
+                Close();
+            }
         }
 
         private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {
@@ -298,6 +324,11 @@ namespace Missushi.Forms {
             this.ForeColor = colorLetra;
         }
 
+        public void desactivarLabel() {
+            MouseHover -= new EventHandler(this.hover);
+            MouseLeave -= new EventHandler(this.leave);
+        }
+
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
             int nLeftRect, // X-coordinate of upper-left corner or padding at start
@@ -381,7 +412,8 @@ namespace Missushi.Forms {
         public TextBoxPersonalizado() {
             BackColor = Globales.rosaTextBox;
             Size = new Size(70, 70);
-            Multiline = false;
+            Multiline = true;
+            KeyDown += new KeyEventHandler(TextBox_KeyDown);
         }
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
@@ -396,6 +428,11 @@ namespace Missushi.Forms {
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
             Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter)
+                e.SuppressKeyPress = true;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Missushi.Forms
+﻿using Missushi.Clases;
+
+namespace Missushi.Forms
 {
     partial class FormRegistro
     {
@@ -29,180 +31,219 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistro));
-            this.lblNombres = new System.Windows.Forms.Label();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.cbTipo = new System.Windows.Forms.ComboBox();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.lblApellidos = new System.Windows.Forms.Label();
-            this.lblContraseña = new System.Windows.Forms.Label();
-            this.lblCorreo = new System.Windows.Forms.Label();
+            this.panelRegistro = new System.Windows.Forms.Panel();
+            this.btnRegistrar = new Missushi.Forms.BotonPersonalizado();
+            this.cbTipo = new Missushi.Forms.ComboBoxPersonalizado();
+            this.txtCorreo = new Missushi.Forms.TextBoxPersonalizado();
+            this.txtConfirmarContra = new Missushi.Forms.TextBoxPersonalizado();
+            this.txtContraseña = new Missushi.Forms.TextBoxPersonalizado();
+            this.txtApellidos = new Missushi.Forms.TextBoxPersonalizado();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.mySqlCommandBuilder1 = new MySqlConnector.MySqlCommandBuilder();
             this.lblContraseña2 = new System.Windows.Forms.Label();
-            this.txtConfirmarContra = new System.Windows.Forms.TextBox();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblContraseña = new System.Windows.Forms.Label();
+            this.lblApellidos = new System.Windows.Forms.Label();
+            this.txtNombres = new Missushi.Forms.TextBoxPersonalizado();
+            this.lblNombres = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
+            this.panelRegistro.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblNombres
+            // panelRegistro
             // 
-            this.lblNombres.AutoSize = true;
-            this.lblNombres.Location = new System.Drawing.Point(336, 113);
-            this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(67, 15);
-            this.lblNombres.TabIndex = 0;
-            this.lblNombres.Text = "Nombre (s)";
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.Location = new System.Drawing.Point(451, 110);
-            this.txtNombres.MaxLength = 80;
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(100, 23);
-            this.txtNombres.TabIndex = 0;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Location = new System.Drawing.Point(451, 172);
-            this.txtApellidos.MaxLength = 80;
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(100, 23);
-            this.txtApellidos.TabIndex = 1;
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(441, 270);
-            this.txtContraseña.MaxLength = 50;
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(100, 23);
-            this.txtContraseña.TabIndex = 2;
-            this.txtContraseña.UseSystemPasswordChar = true;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(441, 375);
-            this.txtCorreo.MaxLength = 50;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(100, 23);
-            this.txtCorreo.TabIndex = 4;
-            // 
-            // cbTipo
-            // 
-            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Location = new System.Drawing.Point(441, 425);
-            this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(100, 23);
-            this.cbTipo.TabIndex = 5;
+            this.panelRegistro.Controls.Add(this.btnRegistrar);
+            this.panelRegistro.Controls.Add(this.cbTipo);
+            this.panelRegistro.Controls.Add(this.txtCorreo);
+            this.panelRegistro.Controls.Add(this.txtConfirmarContra);
+            this.panelRegistro.Controls.Add(this.txtContraseña);
+            this.panelRegistro.Controls.Add(this.txtApellidos);
+            this.panelRegistro.Controls.Add(this.lblTipo);
+            this.panelRegistro.Controls.Add(this.lblContraseña2);
+            this.panelRegistro.Controls.Add(this.lblCorreo);
+            this.panelRegistro.Controls.Add(this.lblContraseña);
+            this.panelRegistro.Controls.Add(this.lblApellidos);
+            this.panelRegistro.Controls.Add(this.txtNombres);
+            this.panelRegistro.Controls.Add(this.lblNombres);
+            this.panelRegistro.Location = new System.Drawing.Point(285, 146);
+            this.panelRegistro.Name = "panelRegistro";
+            this.panelRegistro.Size = new System.Drawing.Size(427, 351);
+            this.panelRegistro.TabIndex = 2;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(398, 488);
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(230)))), ((int)(((byte)(212)))));
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegistrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(3, 310);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistrar.TabIndex = 6;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Size = new System.Drawing.Size(413, 36);
+            this.btnRegistrar.TabIndex = 20;
+            this.btnRegistrar.Text = "Registrarse";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            this.btnRegistrar.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
             // 
-            // lblApellidos
+            // cbTipo
             // 
-            this.lblApellidos.AutoSize = true;
-            this.lblApellidos.Location = new System.Drawing.Point(336, 180);
-            this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(56, 15);
-            this.lblApellidos.TabIndex = 0;
-            this.lblApellidos.Text = "Apellidos";
+            this.cbTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.cbTipo.DisplayMember = "Text";
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Location = new System.Drawing.Point(207, 262);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbTipo.Size = new System.Drawing.Size(150, 28);
+            this.cbTipo.TabIndex = 19;
+            this.cbTipo.ValueMember = "Value";
             // 
-            // lblContraseña
+            // txtCorreo
             // 
-            this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(326, 270);
-            this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(67, 15);
-            this.lblContraseña.TabIndex = 0;
-            this.lblContraseña.Text = "Contraseña";
+            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCorreo.Location = new System.Drawing.Point(160, 199);
+            this.txtCorreo.Multiline = true;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(256, 30);
+            this.txtCorreo.TabIndex = 18;
+            this.txtCorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblCorreo
+            // txtConfirmarContra
             // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(335, 375);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(43, 15);
-            this.lblCorreo.TabIndex = 0;
-            this.lblCorreo.Text = "Correo";
+            this.txtConfirmarContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.txtConfirmarContra.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtConfirmarContra.Location = new System.Drawing.Point(160, 158);
+            this.txtConfirmarContra.Multiline = true;
+            this.txtConfirmarContra.Name = "txtConfirmarContra";
+            this.txtConfirmarContra.PasswordChar = '*';
+            this.txtConfirmarContra.Size = new System.Drawing.Size(256, 30);
+            this.txtConfirmarContra.TabIndex = 17;
+            this.txtConfirmarContra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtContraseña.Location = new System.Drawing.Point(160, 108);
+            this.txtContraseña.Multiline = true;
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(256, 30);
+            this.txtContraseña.TabIndex = 16;
+            this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.txtApellidos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtApellidos.Location = new System.Drawing.Point(160, 58);
+            this.txtApellidos.Multiline = true;
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(256, 30);
+            this.txtApellidos.TabIndex = 15;
+            this.txtApellidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(343, 428);
+            this.lblTipo.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.lblTipo.Location = new System.Drawing.Point(0, 249);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(30, 15);
-            this.lblTipo.TabIndex = 0;
+            this.lblTipo.Size = new System.Drawing.Size(59, 50);
+            this.lblTipo.TabIndex = 8;
             this.lblTipo.Text = "Tipo";
-            // 
-            // mySqlCommandBuilder1
-            // 
-            this.mySqlCommandBuilder1.DataAdapter = null;
-            this.mySqlCommandBuilder1.QuotePrefix = "`";
-            this.mySqlCommandBuilder1.QuoteSuffix = "`";
             // 
             // lblContraseña2
             // 
             this.lblContraseña2.AutoSize = true;
-            this.lblContraseña2.Location = new System.Drawing.Point(272, 325);
+            this.lblContraseña2.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblContraseña2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.lblContraseña2.Location = new System.Drawing.Point(0, 149);
             this.lblContraseña2.Name = "lblContraseña2";
-            this.lblContraseña2.Size = new System.Drawing.Size(131, 15);
-            this.lblContraseña2.TabIndex = 6;
-            this.lblContraseña2.Text = "Contraseña confirmada";
+            this.lblContraseña2.Size = new System.Drawing.Size(169, 50);
+            this.lblContraseña2.TabIndex = 9;
+            this.lblContraseña2.Text = "Confirmar contra";
             // 
-            // txtConfirmarContra
+            // lblCorreo
             // 
-            this.txtConfirmarContra.Location = new System.Drawing.Point(441, 322);
-            this.txtConfirmarContra.MaxLength = 50;
-            this.txtConfirmarContra.Name = "txtConfirmarContra";
-            this.txtConfirmarContra.Size = new System.Drawing.Size(100, 23);
-            this.txtConfirmarContra.TabIndex = 3;
-            this.txtConfirmarContra.UseSystemPasswordChar = true;
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.lblCorreo.Location = new System.Drawing.Point(0, 199);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(78, 50);
+            this.lblCorreo.TabIndex = 10;
+            this.lblCorreo.Text = "Correo";
+            // 
+            // lblContraseña
+            // 
+            this.lblContraseña.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.lblContraseña.Location = new System.Drawing.Point(-3, 99);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(120, 47);
+            this.lblContraseña.TabIndex = 11;
+            this.lblContraseña.Text = "Contraseña";
+            // 
+            // lblApellidos
+            // 
+            this.lblApellidos.AutoSize = true;
+            this.lblApellidos.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblApellidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.lblApellidos.Location = new System.Drawing.Point(0, 49);
+            this.lblApellidos.Name = "lblApellidos";
+            this.lblApellidos.Size = new System.Drawing.Size(98, 50);
+            this.lblApellidos.TabIndex = 12;
+            this.lblApellidos.Text = "Apellidos";
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.txtNombres.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombres.Location = new System.Drawing.Point(160, 8);
+            this.txtNombres.Multiline = true;
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(256, 30);
+            this.txtNombres.TabIndex = 14;
+            this.txtNombres.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblNombres
+            // 
+            this.lblNombres.AutoSize = true;
+            this.lblNombres.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.lblNombres.Location = new System.Drawing.Point(0, -1);
+            this.lblNombres.Name = "lblNombres";
+            this.lblNombres.Size = new System.Drawing.Size(117, 50);
+            this.lblNombres.TabIndex = 13;
+            this.lblNombres.Text = "Nombre (s)";
             // 
             // FormRegistro
             // 
-            this.AcceptButton = this.btnRegistrar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.lblTipo);
-            this.Controls.Add(this.lblContraseña2);
-            this.Controls.Add(this.txtConfirmarContra);
-            this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.lblContraseña);
-            this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.cbTipo);
-            this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.lblApellidos);
-            this.Controls.Add(this.txtApellidos);
-            this.Controls.Add(this.txtNombres);
-            this.Controls.Add(this.lblNombres);
+            this.Controls.Add(this.panelRegistro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegistro";
             this.Text = "Missushi - Registro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegistro_FormClosing);
             this.Load += new System.EventHandler(this.FormRegistro_Load);
-            this.Controls.SetChildIndex(this.lblNombres, 0);
-            this.Controls.SetChildIndex(this.txtNombres, 0);
-            this.Controls.SetChildIndex(this.txtApellidos, 0);
-            this.Controls.SetChildIndex(this.lblApellidos, 0);
-            this.Controls.SetChildIndex(this.txtContraseña, 0);
-            this.Controls.SetChildIndex(this.txtCorreo, 0);
-            this.Controls.SetChildIndex(this.cbTipo, 0);
-            this.Controls.SetChildIndex(this.btnRegistrar, 0);
-            this.Controls.SetChildIndex(this.lblContraseña, 0);
-            this.Controls.SetChildIndex(this.lblCorreo, 0);
-            this.Controls.SetChildIndex(this.txtConfirmarContra, 0);
-            this.Controls.SetChildIndex(this.lblContraseña2, 0);
-            this.Controls.SetChildIndex(this.lblTipo, 0);
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.panelRegistro, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
+            this.panelRegistro.ResumeLayout(false);
+            this.panelRegistro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,19 +251,19 @@
 
         #endregion
 
-        private Label lblNombres;
-        private TextBox txtNombres;
-        private TextBox txtApellidos;
-        private TextBox txtContraseña;
-        private TextBox txtCorreo;
-        private ComboBox cbTipo;
-        private Button btnRegistrar;
-        private Label lblApellidos;
-        private Label lblContraseña;
-        private Label lblCorreo;
+        private Panel panelRegistro;
+        private BotonPersonalizado btnRegistrar;
+        private ComboBoxPersonalizado cbTipo;
+        private TextBoxPersonalizado txtCorreo;
+        private TextBoxPersonalizado txtConfirmarContra;
+        private TextBoxPersonalizado txtContraseña;
+        private TextBoxPersonalizado txtApellidos;
         private Label lblTipo;
-        private MySqlConnector.MySqlCommandBuilder mySqlCommandBuilder1;
         private Label lblContraseña2;
-        private TextBox txtConfirmarContra;
+        private Label lblCorreo;
+        private Label lblContraseña;
+        private Label lblApellidos;
+        private TextBoxPersonalizado txtNombres;
+        private Label lblNombres;
     }
 }

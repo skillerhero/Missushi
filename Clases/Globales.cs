@@ -16,6 +16,7 @@ namespace Missushi.Clases {
         static public Color rosaTextBox = Color.FromArgb(255, 216, 196);
         static public Color rojoBoton = Color.FromArgb(143, 68, 60);
         static public Color grisClaro = Color.FromArgb(242, 230, 212);
+        static public Color verdeClaro = Color.FromArgb(184, 199, 183);
         static public Form instancia;
         static public bool transicion = false;
         public Globales(Form form) {

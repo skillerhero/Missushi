@@ -8,6 +8,7 @@ namespace Missushi.Forms{
             cbTipo.Items.Add("Gerente");
             cbTipo.Text = cbTipo.Items[0].ToString();
             cargarPantallaRegistro();
+            centrarComponente(panelRegistro);
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e){
@@ -71,7 +72,7 @@ namespace Missushi.Forms{
                     if (ConexionBD.insertarUsuario(nombres, apellidos, Validacion.encriptar(contraseña), correo, tipo))
                     {
                         MessageBox.Show("Registrado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
+                        Close();
                     }
                 }
                 else

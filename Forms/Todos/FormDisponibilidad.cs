@@ -98,10 +98,8 @@ namespace Missushi.Forms.Todos {
                 } catch (Exception ex) {
                     Debug.WriteLine("Error al cargar la foto.\n" + ex.Message);
                 }
-                lblIdZona.MouseHover -= lblIdZona.hover;
-                lblIdZona.MouseLeave -= lblIdZona.leave;
-                lblCupoDisponible.MouseHover -= lblCupoDisponible.hover;
-                lblCupoDisponible.MouseLeave -= lblCupoDisponible.leave;
+                lblIdZona.desactivarLabel();
+                lblCupoDisponible.desactivarLabel();
                 pictureBoxList.Add(picture);
                 labelList.Add(lblIdZona);
                 labelList.Add(lblCupoDisponible);
