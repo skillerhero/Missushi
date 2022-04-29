@@ -57,6 +57,7 @@
             this.btnAgregarPlatillo.TabIndex = 16;
             this.btnAgregarPlatillo.Text = "Agregar platillos";
             this.btnAgregarPlatillo.UseVisualStyleBackColor = false;
+            this.btnAgregarPlatillo.Click += new System.EventHandler(this.btnAgregarPlatillo_Click_1);
             // 
             // btnEliminarP
             // 
