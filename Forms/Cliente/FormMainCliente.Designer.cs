@@ -27,6 +27,7 @@
             this.hacerReseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hacerReservaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desplegableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -38,10 +39,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hacerReseñaToolStripMenuItem,
             this.hacerReservaciónToolStripMenuItem,
-            this.desplegableToolStripMenuItem});
+            this.desplegableToolStripMenuItem,
+            this.historialToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 80);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(411, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(474, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,6 +67,13 @@
             this.desplegableToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.desplegableToolStripMenuItem.Text = "Desplegable";
             this.desplegableToolStripMenuItem.Click += new System.EventHandler(this.desplegableToolStripMenuItem_Click);
+            // 
+            // historialToolStripMenuItem
+            // 
+            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.historialToolStripMenuItem.Text = "Historial";
+            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // FormMainCliente
             // 
@@ -93,5 +102,6 @@
         private ToolStripMenuItem hacerReseñaToolStripMenuItem;
         private ToolStripMenuItem hacerReservaciónToolStripMenuItem;
         private ToolStripMenuItem desplegableToolStripMenuItem;
+        private ToolStripMenuItem historialToolStripMenuItem;
     }
 }

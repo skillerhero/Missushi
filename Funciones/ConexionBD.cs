@@ -533,7 +533,7 @@ namespace Missushi.Funciones{
 
         static public MySqlDataAdapter consultarReservacionAdapter(int idUsuario) {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string sql = "SELECT fechaHoraInicio, fechaHoraFin, cantidadPersonas, idZona, estado FROM menu WHERE idUsuario = @0";
+            string sql = "SELECT idReservacion, fechaHoraInicio, fechaHoraFin, cantidadPersonas, idZona, estado FROM menu WHERE idUsuario = @0";
             if (connection != null) {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
