@@ -122,7 +122,6 @@
             this.pnlMissushi.Name = "pnlMissushi";
             this.pnlMissushi.Size = new System.Drawing.Size(240, 51);
             this.pnlMissushi.TabIndex = 0;
-            this.pnlMissushi.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMissushi_Paint);
             // 
             // lblMissushi
             // 
