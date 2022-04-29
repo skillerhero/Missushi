@@ -69,6 +69,7 @@
             this.btnEliminarP.TabIndex = 15;
             this.btnEliminarP.Text = "Eliminar platillos";
             this.btnEliminarP.UseVisualStyleBackColor = false;
+            this.btnEliminarP.Click += new System.EventHandler(this.btnEliminarP_Click_1);
             // 
             // btnModificarPlatillos
             // 
@@ -80,6 +81,7 @@
             this.btnModificarPlatillos.TabIndex = 14;
             this.btnModificarPlatillos.Text = "Modificar platillos";
             this.btnModificarPlatillos.UseVisualStyleBackColor = false;
+            this.btnModificarPlatillos.Click += new System.EventHandler(this.btnModificarPlatillos_Click_1);
             // 
             // btnAgregarZona
             // 
@@ -89,6 +91,7 @@
             this.btnAgregarZona.TabIndex = 13;
             this.btnAgregarZona.Text = "Agregar Zona";
             this.btnAgregarZona.UseVisualStyleBackColor = true;
+            this.btnAgregarZona.Click += new System.EventHandler(this.btnAgregarZona_Click);
             // 
             // btnModificarInfo
             // 
@@ -98,6 +101,7 @@
             this.btnModificarInfo.TabIndex = 12;
             this.btnModificarInfo.Text = "Modificar Info Restaurante";
             this.btnModificarInfo.UseVisualStyleBackColor = true;
+            this.btnModificarInfo.Click += new System.EventHandler(this.btnModificarInfo_Click);
             // 
             // btnModificarZona
             // 
@@ -107,6 +111,7 @@
             this.btnModificarZona.TabIndex = 11;
             this.btnModificarZona.Text = "Modificar Zona";
             this.btnModificarZona.UseVisualStyleBackColor = true;
+            this.btnModificarZona.Click += new System.EventHandler(this.btnModificarZona_Click);
             // 
             // FormMainGerente
             // 
