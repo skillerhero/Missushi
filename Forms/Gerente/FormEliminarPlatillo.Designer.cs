@@ -34,19 +34,21 @@
             // dgTablaEliminar
             // 
             this.dgTablaEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTablaEliminar.Location = new System.Drawing.Point(12, 21);
+            this.dgTablaEliminar.Location = new System.Drawing.Point(10, 16);
+            this.dgTablaEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgTablaEliminar.Name = "dgTablaEliminar";
             this.dgTablaEliminar.RowHeadersWidth = 51;
             this.dgTablaEliminar.RowTemplate.Height = 29;
-            this.dgTablaEliminar.Size = new System.Drawing.Size(647, 241);
+            this.dgTablaEliminar.Size = new System.Drawing.Size(566, 181);
             this.dgTablaEliminar.TabIndex = 0;
             this.dgTablaEliminar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTablaEliminar_CellContentDoubleClick);
             // 
             // btnEliminarPlatillo
             // 
-            this.btnEliminarPlatillo.Location = new System.Drawing.Point(256, 386);
+            this.btnEliminarPlatillo.Location = new System.Drawing.Point(224, 290);
+            this.btnEliminarPlatillo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarPlatillo.Name = "btnEliminarPlatillo";
-            this.btnEliminarPlatillo.Size = new System.Drawing.Size(154, 29);
+            this.btnEliminarPlatillo.Size = new System.Drawing.Size(135, 22);
             this.btnEliminarPlatillo.TabIndex = 1;
             this.btnEliminarPlatillo.Text = "Eliminar platillo";
             this.btnEliminarPlatillo.UseVisualStyleBackColor = true;
@@ -54,29 +56,32 @@
             // 
             // txtPlatilloEliminar
             // 
-            this.txtPlatilloEliminar.Location = new System.Drawing.Point(330, 324);
+            this.txtPlatilloEliminar.Location = new System.Drawing.Point(289, 243);
+            this.txtPlatilloEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPlatilloEliminar.Name = "txtPlatilloEliminar";
-            this.txtPlatilloEliminar.Size = new System.Drawing.Size(180, 27);
+            this.txtPlatilloEliminar.Size = new System.Drawing.Size(158, 23);
             this.txtPlatilloEliminar.TabIndex = 2;
             // 
             // lblPlatilloEliminar
             // 
             this.lblPlatilloEliminar.AutoSize = true;
-            this.lblPlatilloEliminar.Location = new System.Drawing.Point(190, 328);
+            this.lblPlatilloEliminar.Location = new System.Drawing.Point(166, 246);
             this.lblPlatilloEliminar.Name = "lblPlatilloEliminar";
-            this.lblPlatilloEliminar.Size = new System.Drawing.Size(115, 20);
+            this.lblPlatilloEliminar.Size = new System.Drawing.Size(90, 15);
             this.lblPlatilloEliminar.TabIndex = 3;
             this.lblPlatilloEliminar.Text = "Nombre platillo";
             // 
             // FormEliminarPlatillo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 459);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(598, 344);
             this.Controls.Add(this.lblPlatilloEliminar);
             this.Controls.Add(this.txtPlatilloEliminar);
             this.Controls.Add(this.btnEliminarPlatillo);
             this.Controls.Add(this.dgTablaEliminar);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormEliminarPlatillo";
             this.Text = "FormEliminarPlatillo";
             ((System.ComponentModel.ISupportInitialize)(this.dgTablaEliminar)).EndInit();

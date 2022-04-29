@@ -23,12 +23,14 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReservacionAdministrador));
             this.btnHacerReservacion = new System.Windows.Forms.Button();
             this.dgReservaciones = new System.Windows.Forms.DataGridView();
             this.btnCancelarReservacion = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,24 +53,24 @@
             this.dgReservaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgReservaciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgReservaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgReservaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgReservaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgReservaciones.ColumnHeadersHeight = 30;
             this.dgReservaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgReservaciones.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgReservaciones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgReservaciones.EnableHeadersVisualStyles = false;
             this.dgReservaciones.GridColor = System.Drawing.Color.DarkBlue;
             this.dgReservaciones.Location = new System.Drawing.Point(43, 61);
@@ -95,21 +97,29 @@
             // 
             // FormReservacionAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(840, 479);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.btnCancelarReservacion);
             this.Controls.Add(this.dgReservaciones);
             this.Controls.Add(this.btnHacerReservacion);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormReservacionAdministrador";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificacion de reservación";
             this.Load += new System.EventHandler(this.FormReservacionAdministrador_Load);
+            this.Controls.SetChildIndex(this.btnHacerReservacion, 0);
+            this.Controls.SetChildIndex(this.dgReservaciones, 0);
+            this.Controls.SetChildIndex(this.btnCancelarReservacion, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

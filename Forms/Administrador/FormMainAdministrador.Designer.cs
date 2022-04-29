@@ -27,6 +27,8 @@
             this.btnReservaciones = new System.Windows.Forms.Button();
             this.btnSuspenderUsuarios = new System.Windows.Forms.Button();
             this.btnBD = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,15 +75,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.btnBD);
             this.Controls.Add(this.btnSuspenderUsuarios);
             this.Controls.Add(this.btnReservaciones);
             this.Controls.Add(this.label1);
             this.Name = "FormMainAdministrador";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMainAdministrador";
             this.Load += new System.EventHandler(this.FormMainAdministrador_Load);
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.btnReservaciones, 0);
+            this.Controls.SetChildIndex(this.btnSuspenderUsuarios, 0);
+            this.Controls.SetChildIndex(this.btnBD, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -2,7 +2,7 @@
 using System.Globalization;
 
 namespace Missushi.Forms.Gerente {
-    public partial class FormAgregarPlatillo : Form {
+    public partial class FormAgregarPlatillo : FormDiseño {
         public FormAgregarPlatillo() {
             InitializeComponent();
             cbTipoMenu.Items.Add("Entradas");

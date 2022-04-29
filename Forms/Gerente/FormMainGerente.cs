@@ -1,5 +1,5 @@
 ﻿namespace Missushi.Forms.Gerente {
-    public partial class FormMainGerente : Form {
+    public partial class FormMainGerente : FormDiseño {
         public FormMainGerente() {
             InitializeComponent();
         }

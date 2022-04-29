@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Missushi.Forms.Administrador {
-    public partial class FormReservacionAdministrador : Form {
+    public partial class FormReservacionAdministrador : FormDiseño {
         public FormReservacionAdministrador() {
             InitializeComponent();
         }

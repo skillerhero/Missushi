@@ -11,7 +11,7 @@ using Missushi.Funciones;
 using MySqlConnector;
 
 namespace Missushi.Forms.Administrador {
-    public partial class FormSuspenderUsuario : Form {
+    public partial class FormSuspenderUsuario : FormDiseño {
         public FormSuspenderUsuario() {
             InitializeComponent();
             cargarDataGrid();
@@ -67,5 +67,6 @@ namespace Missushi.Forms.Administrador {
             var correo = selectedRow.Cells["correo"].Value;
             txtCorreoSuspender.Text = correo.ToString();
         }
+
     }
 }

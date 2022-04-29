@@ -24,13 +24,15 @@
         /// </summary>
         private void InitializeComponent() {
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // dgUsuarios
             // 
             this.dgUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsuarios.Location = new System.Drawing.Point(52, 33);
+            this.dgUsuarios.Location = new System.Drawing.Point(62, 128);
             this.dgUsuarios.Name = "dgUsuarios";
             this.dgUsuarios.RowTemplate.Height = 25;
             this.dgUsuarios.Size = new System.Drawing.Size(692, 321);
@@ -41,13 +43,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1008, 450);
             this.Controls.Add(this.dgUsuarios);
             this.Name = "FormElegirUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormElegirUsuario";
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            this.Controls.SetChildIndex(this.dgUsuarios, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

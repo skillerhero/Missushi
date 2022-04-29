@@ -82,7 +82,6 @@ namespace Missushi.Forms {
             // 
             // lblMenu
             // 
-            this.lblMenu.AutoSize = true;
             this.lblMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblMenu.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMenu.ForeColor = System.Drawing.Color.White;
@@ -111,7 +110,6 @@ namespace Missushi.Forms {
             // 
             // lblIngresar
             // 
-            this.lblIngresar.AutoSize = true;
             this.lblIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblIngresar.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblIngresar.ForeColor = System.Drawing.Color.White;
@@ -126,7 +124,6 @@ namespace Missushi.Forms {
             // 
             // lblRegistro
             // 
-            this.lblRegistro.AutoSize = true;
             this.lblRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblRegistro.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
@@ -141,7 +138,6 @@ namespace Missushi.Forms {
             // 
             // lblUbicacion
             // 
-            this.lblUbicacion.AutoSize = true;
             this.lblUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblUbicacion.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUbicacion.ForeColor = System.Drawing.Color.White;
@@ -156,7 +152,6 @@ namespace Missushi.Forms {
             // 
             // lblDisponibilidad
             // 
-            this.lblDisponibilidad.AutoSize = true;
             this.lblDisponibilidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblDisponibilidad.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDisponibilidad.ForeColor = System.Drawing.Color.White;

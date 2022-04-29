@@ -4,7 +4,7 @@ using Missushi.Funciones;
 using MySqlConnector;
 
 namespace Missushi.Forms.Administrador {
-    public partial class FormBDAdmin : Form {
+    public partial class FormBDAdmin : FormDiseño {
         public FormBDAdmin() {
             InitializeComponent();
         }

@@ -25,6 +25,8 @@
         private void InitializeComponent() {
             this.cbTablas = new System.Windows.Forms.ComboBox();
             this.dgUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,14 +54,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.cbTablas);
             this.Controls.Add(this.dgUsuarios);
             this.Name = "FormBDAdmin";
             this.Text = "FormBDAdmin";
             this.Load += new System.EventHandler(this.FormBDAdmin_Load);
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.dgUsuarios, 0);
+            this.Controls.SetChildIndex(this.cbTablas, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

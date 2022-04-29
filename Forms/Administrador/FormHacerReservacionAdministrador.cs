@@ -3,7 +3,7 @@ using Missushi.Forms.Cliente;
 using Missushi.Funciones;
 
 namespace Missushi.Forms.Administrador {
-    public partial class FormHacerReservacionAdministrador : Form {
+    public partial class FormHacerReservacionAdministrador : FormDiseño {
         public static int idUsuario = -1;
         public FormHacerReservacionAdministrador() {
             InitializeComponent();

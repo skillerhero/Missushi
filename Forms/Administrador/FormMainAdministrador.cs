@@ -2,7 +2,7 @@
 using Missushi.Forms.Administrador;
 
 namespace Missushi.Forms {
-    public partial class FormMainAdministrador : Form {
+    public partial class FormMainAdministrador : FormDiseño {
         public FormMainAdministrador() {
             InitializeComponent();
         }

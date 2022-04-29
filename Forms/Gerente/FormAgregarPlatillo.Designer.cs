@@ -34,13 +34,15 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombrePlatillo = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFotoMenu
             // 
             this.txtFotoMenu.Location = new System.Drawing.Point(330, 247);
             this.txtFotoMenu.Name = "txtFotoMenu";
-            this.txtFotoMenu.Size = new System.Drawing.Size(125, 27);
+            this.txtFotoMenu.Size = new System.Drawing.Size(125, 23);
             this.txtFotoMenu.TabIndex = 20;
             // 
             // cbTipoMenu
@@ -49,28 +51,28 @@
             this.cbTipoMenu.FormattingEnabled = true;
             this.cbTipoMenu.Location = new System.Drawing.Point(330, 319);
             this.cbTipoMenu.Name = "cbTipoMenu";
-            this.cbTipoMenu.Size = new System.Drawing.Size(151, 28);
+            this.cbTipoMenu.Size = new System.Drawing.Size(151, 23);
             this.cbTipoMenu.TabIndex = 21;
             // 
             // txtPrecioMenu
             // 
             this.txtPrecioMenu.Location = new System.Drawing.Point(330, 197);
             this.txtPrecioMenu.Name = "txtPrecioMenu";
-            this.txtPrecioMenu.Size = new System.Drawing.Size(125, 27);
+            this.txtPrecioMenu.Size = new System.Drawing.Size(125, 23);
             this.txtPrecioMenu.TabIndex = 19;
             // 
             // txtDescripcionMenu
             // 
             this.txtDescripcionMenu.Location = new System.Drawing.Point(330, 137);
             this.txtDescripcionMenu.Name = "txtDescripcionMenu";
-            this.txtDescripcionMenu.Size = new System.Drawing.Size(125, 27);
+            this.txtDescripcionMenu.Size = new System.Drawing.Size(125, 23);
             this.txtDescripcionMenu.TabIndex = 18;
             // 
             // txtNombrePlatillo
             // 
             this.txtNombrePlatillo.Location = new System.Drawing.Point(330, 87);
             this.txtNombrePlatillo.Name = "txtNombrePlatillo";
-            this.txtNombrePlatillo.Size = new System.Drawing.Size(125, 27);
+            this.txtNombrePlatillo.Size = new System.Drawing.Size(125, 23);
             this.txtNombrePlatillo.TabIndex = 17;
             // 
             // bntAceptarMenu
@@ -88,7 +90,7 @@
             this.lblTipoPlatillo.AutoSize = true;
             this.lblTipoPlatillo.Location = new System.Drawing.Point(150, 327);
             this.lblTipoPlatillo.Name = "lblTipoPlatillo";
-            this.lblTipoPlatillo.Size = new System.Drawing.Size(39, 20);
+            this.lblTipoPlatillo.Size = new System.Drawing.Size(30, 15);
             this.lblTipoPlatillo.TabIndex = 15;
             this.lblTipoPlatillo.Text = "Tipo";
             // 
@@ -97,7 +99,7 @@
             this.lblFotoPlatillo.AutoSize = true;
             this.lblFotoPlatillo.Location = new System.Drawing.Point(150, 255);
             this.lblFotoPlatillo.Name = "lblFotoPlatillo";
-            this.lblFotoPlatillo.Size = new System.Drawing.Size(39, 20);
+            this.lblFotoPlatillo.Size = new System.Drawing.Size(31, 15);
             this.lblFotoPlatillo.TabIndex = 14;
             this.lblFotoPlatillo.Text = "Foto";
             // 
@@ -106,7 +108,7 @@
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Location = new System.Drawing.Point(150, 208);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(150, 20);
+            this.lblPrecio.Size = new System.Drawing.Size(115, 15);
             this.lblPrecio.TabIndex = 13;
             this.lblPrecio.Text = "Precio                       $";
             // 
@@ -115,7 +117,7 @@
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Location = new System.Drawing.Point(150, 144);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(87, 20);
+            this.lblDescripcion.Size = new System.Drawing.Size(69, 15);
             this.lblDescripcion.TabIndex = 12;
             this.lblDescripcion.Text = "Descripcion";
             // 
@@ -124,15 +126,15 @@
             this.lblNombrePlatillo.AutoSize = true;
             this.lblNombrePlatillo.Location = new System.Drawing.Point(150, 87);
             this.lblNombrePlatillo.Name = "lblNombrePlatillo";
-            this.lblNombrePlatillo.Size = new System.Drawing.Size(64, 20);
+            this.lblNombrePlatillo.Size = new System.Drawing.Size(51, 15);
             this.lblNombrePlatillo.TabIndex = 11;
             this.lblNombrePlatillo.Text = "Nombre";
             // 
             // FormAgregarPlatillo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 536);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.txtFotoMenu);
             this.Controls.Add(this.cbTipoMenu);
             this.Controls.Add(this.txtPrecioMenu);
@@ -147,6 +149,23 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAgregarPlatillo";
             this.Text = "FormAgregarPlatillo";
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblNombrePlatillo, 0);
+            this.Controls.SetChildIndex(this.lblDescripcion, 0);
+            this.Controls.SetChildIndex(this.lblPrecio, 0);
+            this.Controls.SetChildIndex(this.lblFotoPlatillo, 0);
+            this.Controls.SetChildIndex(this.lblTipoPlatillo, 0);
+            this.Controls.SetChildIndex(this.bntAceptarMenu, 0);
+            this.Controls.SetChildIndex(this.txtNombrePlatillo, 0);
+            this.Controls.SetChildIndex(this.txtDescripcionMenu, 0);
+            this.Controls.SetChildIndex(this.txtPrecioMenu, 0);
+            this.Controls.SetChildIndex(this.cbTipoMenu, 0);
+            this.Controls.SetChildIndex(this.txtFotoMenu, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -33,6 +33,8 @@
             this.btnHacerReservacion = new System.Windows.Forms.Button();
             this.btnElegirUsuario = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadPersonas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +43,7 @@
             this.lblZona.AutoSize = true;
             this.lblZona.Location = new System.Drawing.Point(182, 223);
             this.lblZona.Name = "lblZona";
-            this.lblZona.Size = new System.Drawing.Size(43, 20);
+            this.lblZona.Size = new System.Drawing.Size(34, 15);
             this.lblZona.TabIndex = 0;
             this.lblZona.Text = "Zona";
             // 
@@ -61,7 +63,7 @@
             this.lblCantidadPersonas.AutoSize = true;
             this.lblCantidadPersonas.Location = new System.Drawing.Point(139, 300);
             this.lblCantidadPersonas.Name = "lblCantidadPersonas";
-            this.lblCantidadPersonas.Size = new System.Drawing.Size(153, 20);
+            this.lblCantidadPersonas.Size = new System.Drawing.Size(121, 15);
             this.lblCantidadPersonas.TabIndex = 0;
             this.lblCantidadPersonas.Text = "Cantidad de personas";
             // 
@@ -70,7 +72,7 @@
             this.lblFechaYHora.AutoSize = true;
             this.lblFechaYHora.Location = new System.Drawing.Point(121, 127);
             this.lblFechaYHora.Name = "lblFechaYHora";
-            this.lblFechaYHora.Size = new System.Drawing.Size(95, 20);
+            this.lblFechaYHora.Size = new System.Drawing.Size(76, 15);
             this.lblFechaYHora.TabIndex = 0;
             this.lblFechaYHora.Text = "Fecha y Hora";
             // 
@@ -84,7 +86,7 @@
             0,
             0});
             this.nudCantidadPersonas.Name = "nudCantidadPersonas";
-            this.nudCantidadPersonas.Size = new System.Drawing.Size(137, 27);
+            this.nudCantidadPersonas.Size = new System.Drawing.Size(137, 23);
             this.nudCantidadPersonas.TabIndex = 4;
             this.nudCantidadPersonas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCantidadPersonas.Value = new decimal(new int[] {
@@ -99,7 +101,7 @@
             this.cbHoraInicio.Location = new System.Drawing.Point(507, 123);
             this.cbHoraInicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbHoraInicio.Name = "cbHoraInicio";
-            this.cbHoraInicio.Size = new System.Drawing.Size(138, 28);
+            this.cbHoraInicio.Size = new System.Drawing.Size(138, 23);
             this.cbHoraInicio.TabIndex = 2;
             this.cbHoraInicio.SelectedIndexChanged += new System.EventHandler(this.cbHoraInicio_SelectedIndexChanged);
             // 
@@ -110,7 +112,7 @@
             this.dpFechaInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dpFechaInicio.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dpFechaInicio.Name = "dpFechaInicio";
-            this.dpFechaInicio.Size = new System.Drawing.Size(259, 27);
+            this.dpFechaInicio.Size = new System.Drawing.Size(259, 23);
             this.dpFechaInicio.TabIndex = 1;
             this.dpFechaInicio.ValueChanged += new System.EventHandler(this.dpFechaInicio_ValueChanged);
             // 
@@ -141,15 +143,15 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Location = new System.Drawing.Point(198, 376);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(59, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             // 
             // FormHacerReservacionAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 559);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnElegirUsuario);
             this.Controls.Add(this.lblZona);
@@ -162,9 +164,24 @@
             this.Controls.Add(this.btnHacerReservacion);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormHacerReservacionAdministrador";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHacerReservacionAdministrador";
             this.Load += new System.EventHandler(this.FormHacerReservacionAdministrador_Load);
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.btnHacerReservacion, 0);
+            this.Controls.SetChildIndex(this.dpFechaInicio, 0);
+            this.Controls.SetChildIndex(this.cbHoraInicio, 0);
+            this.Controls.SetChildIndex(this.nudCantidadPersonas, 0);
+            this.Controls.SetChildIndex(this.lblFechaYHora, 0);
+            this.Controls.SetChildIndex(this.lblCantidadPersonas, 0);
+            this.Controls.SetChildIndex(this.btnElegirZona, 0);
+            this.Controls.SetChildIndex(this.lblZona, 0);
+            this.Controls.SetChildIndex(this.btnElegirUsuario, 0);
+            this.Controls.SetChildIndex(this.lblUsuario, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadPersonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

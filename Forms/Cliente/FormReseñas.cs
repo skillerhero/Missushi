@@ -1,15 +1,11 @@
-﻿
-
-
-using System;
-using Missushi.Funciones;
+﻿using Missushi.Funciones;
 using Missushi.Clases;
 
 
 
 namespace Missushi.Forms.Cliente
 {
-    public partial class FormReseñas : Form
+    public partial class FormReseñas : FormDiseño
     {
         public FormReseñas()
         {

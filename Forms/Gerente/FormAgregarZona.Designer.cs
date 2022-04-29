@@ -33,10 +33,9 @@
             // 
             // btnAgregarZona
             // 
-            this.btnAgregarZona.Location = new System.Drawing.Point(165, 188);
-            this.btnAgregarZona.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregarZona.Location = new System.Drawing.Point(144, 141);
             this.btnAgregarZona.Name = "btnAgregarZona";
-            this.btnAgregarZona.Size = new System.Drawing.Size(86, 31);
+            this.btnAgregarZona.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarZona.TabIndex = 0;
             this.btnAgregarZona.Text = "Agregar";
             this.btnAgregarZona.UseVisualStyleBackColor = true;
@@ -44,49 +43,47 @@
             // 
             // udCupo
             // 
-            this.udCupo.Location = new System.Drawing.Point(141, 71);
-            this.udCupo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.udCupo.Location = new System.Drawing.Point(123, 53);
             this.udCupo.Name = "udCupo";
-            this.udCupo.Size = new System.Drawing.Size(137, 27);
+            this.udCupo.Size = new System.Drawing.Size(120, 23);
             this.udCupo.TabIndex = 1;
             // 
             // lblCupo
             // 
             this.lblCupo.AutoSize = true;
-            this.lblCupo.Location = new System.Drawing.Point(62, 73);
+            this.lblCupo.Location = new System.Drawing.Point(54, 55);
             this.lblCupo.Name = "lblCupo";
-            this.lblCupo.Size = new System.Drawing.Size(44, 20);
+            this.lblCupo.Size = new System.Drawing.Size(36, 15);
             this.lblCupo.TabIndex = 2;
             this.lblCupo.Text = "Cupo";
             // 
             // txtFoto
             // 
-            this.txtFoto.Location = new System.Drawing.Point(141, 123);
-            this.txtFoto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFoto.Location = new System.Drawing.Point(123, 92);
             this.txtFoto.Name = "txtFoto";
-            this.txtFoto.Size = new System.Drawing.Size(137, 27);
+            this.txtFoto.Size = new System.Drawing.Size(120, 23);
             this.txtFoto.TabIndex = 3;
             // 
             // lblFoto
             // 
             this.lblFoto.AutoSize = true;
-            this.lblFoto.Location = new System.Drawing.Point(69, 133);
+            this.lblFoto.Location = new System.Drawing.Point(60, 100);
             this.lblFoto.Name = "lblFoto";
-            this.lblFoto.Size = new System.Drawing.Size(39, 20);
+            this.lblFoto.Size = new System.Drawing.Size(31, 15);
             this.lblFoto.TabIndex = 4;
             this.lblFoto.Text = "Foto";
             // 
             // FormAgregarZona
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 389);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(540, 292);
             this.Controls.Add(this.lblFoto);
             this.Controls.Add(this.txtFoto);
             this.Controls.Add(this.lblCupo);
             this.Controls.Add(this.udCupo);
             this.Controls.Add(this.btnAgregarZona);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAgregarZona";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAgregarZona";
