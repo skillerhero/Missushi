@@ -1,5 +1,5 @@
 ﻿using Missushi.Properties;
-using System.Diagnostics;
+using Missushi.Forms.Todos;
 
 namespace Missushi.Forms.Todos {
     public partial class FormPantallaDeCarga : Form {
@@ -36,8 +36,7 @@ namespace Missushi.Forms.Todos {
 
         private void FormPantallaDeCarga_Shown(object sender, EventArgs e) {
             cargarGif();
-            cargarAudio();
-
+            //cargarAudio();
         }
 
         private void cargarGif() {
