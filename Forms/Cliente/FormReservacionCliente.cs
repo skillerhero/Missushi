@@ -6,7 +6,7 @@ using System.Net.Mail;
 using System.Net.Mime;
 
 namespace Missushi.Forms.Cliente {
-    public partial class FormReservacionCliente : Form {
+    public partial class FormReservacionCliente : FormDiseño {
         public FormReservacionCliente() {
             InitializeComponent();
         }

@@ -1,5 +1,5 @@
-﻿namespace Missushi.Forms.Administrador {
-    partial class FormReservacionAdministrador {
+﻿namespace Missushi.Forms.Cliente {
+    partial class FormHistorialReservaciones {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -25,25 +25,31 @@
         private void InitializeComponent() {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReservacionAdministrador));
-            this.btnHacerReservacion = new System.Windows.Forms.Button();
-            this.dgReservaciones = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancelarReservacion = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
+            this.dgReservaciones = new System.Windows.Forms.DataGridView();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnHacerReservacion
+            // panel1
             // 
-            this.btnHacerReservacion.Location = new System.Drawing.Point(202, 331);
-            this.btnHacerReservacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnHacerReservacion.Name = "btnHacerReservacion";
-            this.btnHacerReservacion.Size = new System.Drawing.Size(112, 55);
-            this.btnHacerReservacion.TabIndex = 0;
-            this.btnHacerReservacion.Text = "Hacer reservacion";
-            this.btnHacerReservacion.UseVisualStyleBackColor = true;
-            this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
+            this.panel1.Controls.Add(this.btnCancelarReservacion);
+            this.panel1.Controls.Add(this.dgReservaciones);
+            this.panel1.Location = new System.Drawing.Point(12, 191);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(789, 257);
+            this.panel1.TabIndex = 5;
+            // 
+            // btnCancelarReservacion
+            // 
+            this.btnCancelarReservacion.Location = new System.Drawing.Point(488, 212);
+            this.btnCancelarReservacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancelarReservacion.Name = "btnCancelarReservacion";
+            this.btnCancelarReservacion.Size = new System.Drawing.Size(113, 52);
+            this.btnCancelarReservacion.TabIndex = 6;
+            this.btnCancelarReservacion.Text = "Cancelar Reservacion";
+            this.btnCancelarReservacion.UseVisualStyleBackColor = true;
             // 
             // dgReservaciones
             // 
@@ -73,7 +79,7 @@
             this.dgReservaciones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgReservaciones.EnableHeadersVisualStyles = false;
             this.dgReservaciones.GridColor = System.Drawing.Color.DarkBlue;
-            this.dgReservaciones.Location = new System.Drawing.Point(43, 61);
+            this.dgReservaciones.Location = new System.Drawing.Point(16, 4);
             this.dgReservaciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgReservaciones.Name = "dgReservaciones";
             this.dgReservaciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -82,51 +88,26 @@
             this.dgReservaciones.RowTemplate.Height = 25;
             this.dgReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgReservaciones.Size = new System.Drawing.Size(760, 200);
-            this.dgReservaciones.TabIndex = 1;
+            this.dgReservaciones.TabIndex = 5;
             // 
-            // btnCancelarReservacion
-            // 
-            this.btnCancelarReservacion.Location = new System.Drawing.Point(515, 334);
-            this.btnCancelarReservacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCancelarReservacion.Name = "btnCancelarReservacion";
-            this.btnCancelarReservacion.Size = new System.Drawing.Size(113, 52);
-            this.btnCancelarReservacion.TabIndex = 2;
-            this.btnCancelarReservacion.Text = "Cancelar Reservacion";
-            this.btnCancelarReservacion.UseVisualStyleBackColor = true;
-            this.btnCancelarReservacion.Click += new System.EventHandler(this.btnCancelarReservacion_Click);
-            // 
-            // FormReservacionAdministrador
+            // FormHistorialReservaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.btnCancelarReservacion);
-            this.Controls.Add(this.dgReservaciones);
-            this.Controls.Add(this.btnHacerReservacion);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FormReservacionAdministrador";
-            this.Text = "Modificacion de reservación";
-            this.Load += new System.EventHandler(this.FormReservacionAdministrador_Load);
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
-            this.Controls.SetChildIndex(this.btnHacerReservacion, 0);
-            this.Controls.SetChildIndex(this.dgReservaciones, 0);
-            this.Controls.SetChildIndex(this.btnCancelarReservacion, 0);
-            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
-            this.Controls.SetChildIndex(this.lblTitulo, 0);
-            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
+            this.Name = "FormHistorialReservaciones";
+            this.Text = "FormHistorialReservaciones";
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Button btnHacerReservacion;
-        private DataGridView dgReservaciones;
+        private Panel panel1;
         private Button btnCancelarReservacion;
+        private DataGridView dgReservaciones;
     }
 }

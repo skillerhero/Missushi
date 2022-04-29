@@ -23,62 +23,75 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnHacerReservacion = new System.Windows.Forms.Button();
-            this.btnMensaje = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.hacerReseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hacerReservaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desplegableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // menuStrip1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hacerReseñaToolStripMenuItem,
+            this.hacerReservaciónToolStripMenuItem,
+            this.desplegableToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 80);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(411, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnHacerReservacion
+            // hacerReseñaToolStripMenuItem
             // 
-            this.btnHacerReservacion.Location = new System.Drawing.Point(129, 93);
-            this.btnHacerReservacion.Name = "btnHacerReservacion";
-            this.btnHacerReservacion.Size = new System.Drawing.Size(193, 23);
-            this.btnHacerReservacion.TabIndex = 1;
-            this.btnHacerReservacion.Text = "Hacer Reservación";
-            this.btnHacerReservacion.UseVisualStyleBackColor = true;
-            this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
+            this.hacerReseñaToolStripMenuItem.Name = "hacerReseñaToolStripMenuItem";
+            this.hacerReseñaToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.hacerReseñaToolStripMenuItem.Text = "Hacer reseña";
+            this.hacerReseñaToolStripMenuItem.Click += new System.EventHandler(this.hacerReseñaToolStripMenuItem_Click);
             // 
-            // btnMensaje
+            // hacerReservaciónToolStripMenuItem
             // 
-            this.btnMensaje.Location = new System.Drawing.Point(12, 93);
-            this.btnMensaje.Name = "btnMensaje";
-            this.btnMensaje.Size = new System.Drawing.Size(111, 23);
-            this.btnMensaje.TabIndex = 2;
-            this.btnMensaje.Text = "Crear Reseña";
-            this.btnMensaje.UseVisualStyleBackColor = true;
-            this.btnMensaje.Click += new System.EventHandler(this.btnMensaje_Click);
+            this.hacerReservaciónToolStripMenuItem.Name = "hacerReservaciónToolStripMenuItem";
+            this.hacerReservaciónToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.hacerReservaciónToolStripMenuItem.Text = "Hacer reservación";
+            this.hacerReservaciónToolStripMenuItem.Click += new System.EventHandler(this.hacerReservaciónToolStripMenuItem_Click);
+            // 
+            // desplegableToolStripMenuItem
+            // 
+            this.desplegableToolStripMenuItem.Name = "desplegableToolStripMenuItem";
+            this.desplegableToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.desplegableToolStripMenuItem.Text = "Desplegable";
+            this.desplegableToolStripMenuItem.Click += new System.EventHandler(this.desplegableToolStripMenuItem_Click);
             // 
             // FormMainCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.btnMensaje);
-            this.Controls.Add(this.btnHacerReservacion);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMainCliente";
             this.Text = "FormMainCliente";
             this.Load += new System.EventHandler(this.FormMainCliente_Load);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.btnHacerReservacion, 0);
-            this.Controls.SetChildIndex(this.btnMensaje, 0);
+            this.Controls.SetChildIndex(this.menuStrip1, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Label label1;
-        private Button btnHacerReservacion;
-        private Button btnMensaje;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem hacerReseñaToolStripMenuItem;
+        private ToolStripMenuItem hacerReservaciónToolStripMenuItem;
+        private ToolStripMenuItem desplegableToolStripMenuItem;
     }
 }

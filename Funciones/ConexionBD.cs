@@ -161,16 +161,6 @@ namespace Missushi.Funciones{
             }
             return usuario;
         }
-        static public MySqlDataAdapter consultarUsuariosAdapter() {
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string query = "SELECT * FROM usuario;";
-            if (connection != null) {
-                connection.Open();
-                adapter = new MySqlDataAdapter(query, connection);
-                connection.Close();
-            }
-            return adapter;
-        }
         static public bool insertarUsuario(string nombres, string apellidos, string contraseña, string correo, char tipo) {
             string sql = "INSERT INTO usuario(nombres, apellidos, contrasenia, correo, tipo, estado) VALUES(@0,@1,@2, @3, @4, 'a');";
             if (connection != null) {
@@ -539,6 +529,19 @@ namespace Missushi.Funciones{
                 connection.Close();
             }
             return reservacion;
+        }
+
+        static public MySqlDataAdapter consultarReservacionAdapter(int idUsuario) {
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            string sql = "SELECT fechaHoraInicio, fechaHoraFin, cantidadPersonas, idZona, estado FROM menu WHERE idUsuario = @0";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", idUsuario);
+                adapter = new MySqlDataAdapter(cmd.ToString(), connection);
+                connection.Close();
+            }
+            return adapter;
         }
 
 
