@@ -14,7 +14,7 @@ namespace Missushi.Forms {
         }
 
         private void hacerReseñaToolStripMenuItem_Click(object sender, EventArgs e) {
-            FormReseña formReseña = new FormReseña();
+            Cliente.FormReseña formReseña = new Cliente.FormReseña();
             Globales.transicion = true;
             formReseña.Show();
         }

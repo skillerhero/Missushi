@@ -33,10 +33,10 @@ namespace Missushi.Funciones{
         /*----------------------------------------General----------------------------------------*/
         static public MySqlDataAdapter consultarTablaAdapter(string? tabla) {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string query = "SELECT * FROM " + tabla;
+            string sql = "SELECT * FROM " + tabla;
             if (connection != null) {
                 connection.Open();
-                adapter = new MySqlDataAdapter(query, connection);
+                adapter = new MySqlDataAdapter(sql, connection);
                 connection.Close();
             }
             return adapter;
@@ -98,10 +98,10 @@ namespace Missushi.Funciones{
 
         static public bool consultarPrimerUsuario(char tipo) {
             bool existe = false;
-            string query = "SELECT * FROM usuario where tipo = @0;";
+            string sql = "SELECT * FROM usuario where tipo = @0;";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@0", tipo);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
@@ -134,10 +134,10 @@ namespace Missushi.Funciones{
         /*----------------------------------------Usuario----------------------------------------*/
         static public List<Usuario> consultarUsuarios() {
             List<Usuario> usuarios = new List<Usuario>();
-            string query = "SELECT * FROM usuario;";
+            string sql = "SELECT * FROM usuario;";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
                     usuarios.Add(new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6)));
@@ -148,10 +148,10 @@ namespace Missushi.Funciones{
         }
         static public Usuario consultarUsuario(int id) {
             Usuario usuario = new Usuario();
-            string query = "SELECT * FROM usuario where idUsuario = @0;";
+            string sql = "SELECT * FROM usuario where idUsuario = @0;";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@0", id);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
@@ -195,10 +195,10 @@ namespace Missushi.Funciones{
         }
         static public Usuario consultarGerente() {
             Usuario gerente = new Usuario();
-            string query = "SELECT * FROM usuario WHERE tipo = 'G';";
+            string sql = "SELECT * FROM usuario WHERE tipo = 'G';";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
                     gerente = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6));
@@ -337,10 +337,10 @@ namespace Missushi.Funciones{
 
         static public List<Zona> consultarZonas() {
             List<Zona> zonas = new List<Zona>();
-            string query = "SELECT * FROM zona;";
+            string sql = "SELECT * FROM zona;";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
                     zonas.Add(new Zona(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2)));
@@ -425,8 +425,7 @@ namespace Missushi.Funciones{
         }
 
         /*--------------------------------------Reseñas--------------------------------------*/
-        static public bool agregarResenia(DateTime Now, int cantidadEstrellas, int idUsuario,string comentario)
-        {
+        static public bool agregarResenia(DateTime Now, int cantidadEstrellas, int idUsuario,string comentario){
             string sql = "INSERT INTO resenia(fecha,cantidadEstrellas,idUsuario,comentario) VALUES(@0, @1, @2, @3);";
             if (connection != null)
             {
@@ -442,6 +441,21 @@ namespace Missushi.Funciones{
                 connection.Close();
             }
             return true;
+        }
+
+        static public List<Reseña> consultarReseñas() {
+            List<Reseña> reseñas = new List<Reseña>();
+            string sql = "SELECT * FROM resenia;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    reseñas.Add(new Reseña(reader.GetInt32(0),reader.GetInt32(1),reader.GetInt32(2),reader.GetString(3),reader.GetDateTime(4)));
+                }
+                connection.Close();
+            }
+            return reseñas;
         }
 
 
@@ -488,10 +502,10 @@ namespace Missushi.Funciones{
 
         static public List<Reservacion> consultarReservaciones() {
             List<Reservacion> reservaciones = new List<Reservacion>();
-            string query = "SELECT * FROM reservacion;";
+            string sql = "SELECT * FROM reservacion;";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
                     reservaciones.Add(new Reservacion(reader.GetInt32(0), reader.GetDateTime(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetInt32(4),reader.GetInt32(5), reader.GetString(6)));
@@ -554,10 +568,10 @@ namespace Missushi.Funciones{
 
         static public List<Menu> consultarMenu() {
             List<Menu> menu = new List<Menu>();
-            string query = "SELECT * FROM menu;";
+            string sql = "SELECT * FROM menu;";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -586,10 +600,10 @@ namespace Missushi.Funciones{
        
         static public List<string> consultarTiposMenu() {
             List<string> tipos = new List<string>();
-            string query = "SELECT DISTINCT tipo FROM menu;";
+            string sql = "SELECT DISTINCT tipo FROM menu;";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
                     tipos.Add(reader.GetString(0));
@@ -600,10 +614,10 @@ namespace Missushi.Funciones{
         }
         static public List<Menu> consultarMenu(string tipo) {
             List<Menu> menu = new List<Menu>();
-            string query = "SELECT * FROM menu WHERE tipo = @0;";
+            string sql = "SELECT * FROM menu WHERE tipo = @0;";
             if (connection != null) {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.Add("@0", MySqlDbType.VarChar).Value = tipo;
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
@@ -616,11 +630,11 @@ namespace Missushi.Funciones{
 
         static public MySqlDataAdapter consultarTablaMenu() {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string query = "SELECT nombre,descripcion,precio,tipo FROM menu";
+            string sql = "SELECT nombre,descripcion,precio,tipo FROM menu";
             if (connection != null)
             {
                 connection.Open();
-                adapter = new MySqlDataAdapter(query, connection);
+                adapter = new MySqlDataAdapter(sql, connection);
                 connection.Close();
             }
             return adapter;
