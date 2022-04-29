@@ -13,7 +13,7 @@ using Missushi.Funciones;
 using MySqlConnector;
 
 namespace Missushi.Forms.Gerente {
-    public partial class FormModificarPlatillo : Form {
+    public partial class FormModificarPlatillo : FormDiseño {
         public FormModificarPlatillo() {
             InitializeComponent();
             cargarDataGrid();
@@ -31,8 +31,7 @@ namespace Missushi.Forms.Gerente {
             {
                 MySqlDataAdapter dataAdapter;
 
-                dataAdapter = ConexionBD.consultarTablaMenu();
-                ConexionBD.consultarTablaMenu();
+                dataAdapter = ConexionBD.consultarTablaAdapter("menu");
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
                 DataSet ds = new DataSet();
                 dataAdapter.Fill(ds);

@@ -628,19 +628,6 @@ namespace Missushi.Funciones{
             return menu;
         }
 
-        static public MySqlDataAdapter consultarTablaMenu() {
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string sql = "SELECT nombre,descripcion,precio,tipo FROM menu";
-            if (connection != null)
-            {
-                connection.Open();
-                adapter = new MySqlDataAdapter(sql, connection);
-                connection.Close();
-            }
-            return adapter;
-        }
-
-
         static public bool modificarPlatillo(string nombre, string descripcion, float precio, string foto, string tipo) {
             string sql = "UPDATE menu SET descripcion=@1, precio=@2, foto=@3, tipo=@4 WHERE nombre = @0;";
             if (connection != null)
@@ -659,19 +646,16 @@ namespace Missushi.Funciones{
             return true;
         }
 
-        static public bool eliminarPlatillo(string nombre) {
-            string sql = "DELETE FROM menu WHERE nombre = @0;";
-
-            if (connection != null)
-            {
+        static public bool eliminarPlatillo(int idPlatillo) {
+            string sql = "DELETE FROM menu WHERE idPlatillo = @0;";
+            if (connection != null){
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
-                cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = nombre;
+                cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = idPlatillo;
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
-
             return true;
         }
     }

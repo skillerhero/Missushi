@@ -36,106 +36,114 @@
             this.cbTipoModi = new System.Windows.Forms.ComboBox();
             this.dgPlatillosModi = new System.Windows.Forms.DataGridView();
             this.btnModificarPlatillo = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlatillosModi)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDescripcionModificacion
             // 
             this.lblDescripcionModificacion.AutoSize = true;
-            this.lblDescripcionModificacion.Location = new System.Drawing.Point(189, 441);
+            this.lblDescripcionModificacion.Location = new System.Drawing.Point(158, 531);
             this.lblDescripcionModificacion.Name = "lblDescripcionModificacion";
-            this.lblDescripcionModificacion.Size = new System.Drawing.Size(87, 20);
+            this.lblDescripcionModificacion.Size = new System.Drawing.Size(69, 15);
             this.lblDescripcionModificacion.TabIndex = 1;
             this.lblDescripcionModificacion.Text = "Descripcion";
             // 
             // txtDescripcionModi
             // 
-            this.txtDescripcionModi.Location = new System.Drawing.Point(322, 434);
+            this.txtDescripcionModi.Location = new System.Drawing.Point(275, 526);
+            this.txtDescripcionModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcionModi.Name = "txtDescripcionModi";
-            this.txtDescripcionModi.Size = new System.Drawing.Size(125, 27);
+            this.txtDescripcionModi.Size = new System.Drawing.Size(110, 23);
             this.txtDescripcionModi.TabIndex = 2;
             // 
             // txtPrecioModi
             // 
-            this.txtPrecioModi.Location = new System.Drawing.Point(686, 298);
+            this.txtPrecioModi.Location = new System.Drawing.Point(593, 424);
+            this.txtPrecioModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecioModi.Name = "txtPrecioModi";
-            this.txtPrecioModi.Size = new System.Drawing.Size(125, 27);
+            this.txtPrecioModi.Size = new System.Drawing.Size(110, 23);
             this.txtPrecioModi.TabIndex = 4;
             // 
             // lblPrecioModificacion
             // 
             this.lblPrecioModificacion.AutoSize = true;
-            this.lblPrecioModificacion.Location = new System.Drawing.Point(553, 305);
+            this.lblPrecioModificacion.Location = new System.Drawing.Point(477, 429);
             this.lblPrecioModificacion.Name = "lblPrecioModificacion";
-            this.lblPrecioModificacion.Size = new System.Drawing.Size(50, 20);
+            this.lblPrecioModificacion.Size = new System.Drawing.Size(40, 15);
             this.lblPrecioModificacion.TabIndex = 3;
             this.lblPrecioModificacion.Text = "Precio";
             // 
             // txtImagenMod
             // 
-            this.txtImagenMod.Location = new System.Drawing.Point(686, 355);
+            this.txtImagenMod.Location = new System.Drawing.Point(593, 466);
+            this.txtImagenMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtImagenMod.Name = "txtImagenMod";
-            this.txtImagenMod.Size = new System.Drawing.Size(125, 27);
+            this.txtImagenMod.Size = new System.Drawing.Size(110, 23);
             this.txtImagenMod.TabIndex = 6;
             // 
             // lblImagenModificacion
             // 
             this.lblImagenModificacion.AutoSize = true;
-            this.lblImagenModificacion.Location = new System.Drawing.Point(553, 362);
+            this.lblImagenModificacion.Location = new System.Drawing.Point(477, 472);
             this.lblImagenModificacion.Name = "lblImagenModificacion";
-            this.lblImagenModificacion.Size = new System.Drawing.Size(59, 20);
+            this.lblImagenModificacion.Size = new System.Drawing.Size(47, 15);
             this.lblImagenModificacion.TabIndex = 5;
             this.lblImagenModificacion.Text = "Imagen";
             // 
             // txtNombreModi
             // 
-            this.txtNombreModi.Location = new System.Drawing.Point(323, 364);
+            this.txtNombreModi.Location = new System.Drawing.Point(276, 473);
+            this.txtNombreModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreModi.Name = "txtNombreModi";
-            this.txtNombreModi.Size = new System.Drawing.Size(125, 27);
+            this.txtNombreModi.Size = new System.Drawing.Size(110, 23);
             this.txtNombreModi.TabIndex = 8;
             // 
             // lblNombreModificacion
             // 
             this.lblNombreModificacion.AutoSize = true;
-            this.lblNombreModificacion.Location = new System.Drawing.Point(190, 371);
+            this.lblNombreModificacion.Location = new System.Drawing.Point(159, 478);
             this.lblNombreModificacion.Name = "lblNombreModificacion";
-            this.lblNombreModificacion.Size = new System.Drawing.Size(64, 20);
+            this.lblNombreModificacion.Size = new System.Drawing.Size(51, 15);
             this.lblNombreModificacion.TabIndex = 7;
             this.lblNombreModificacion.Text = "Nombre";
             // 
             // lblTipoModificacion
             // 
             this.lblTipoModificacion.AutoSize = true;
-            this.lblTipoModificacion.Location = new System.Drawing.Point(189, 306);
+            this.lblTipoModificacion.Location = new System.Drawing.Point(178, 436);
             this.lblTipoModificacion.Name = "lblTipoModificacion";
-            this.lblTipoModificacion.Size = new System.Drawing.Size(39, 20);
+            this.lblTipoModificacion.Size = new System.Drawing.Size(30, 15);
             this.lblTipoModificacion.TabIndex = 9;
             this.lblTipoModificacion.Text = "Tipo";
             // 
             // cbTipoModi
             // 
             this.cbTipoModi.FormattingEnabled = true;
-            this.cbTipoModi.Location = new System.Drawing.Point(323, 298);
+            this.cbTipoModi.Location = new System.Drawing.Point(276, 424);
+            this.cbTipoModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTipoModi.Name = "cbTipoModi";
-            this.cbTipoModi.Size = new System.Drawing.Size(125, 28);
+            this.cbTipoModi.Size = new System.Drawing.Size(110, 23);
             this.cbTipoModi.TabIndex = 10;
             // 
             // dgPlatillosModi
             // 
             this.dgPlatillosModi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPlatillosModi.Location = new System.Drawing.Point(22, 23);
+            this.dgPlatillosModi.Location = new System.Drawing.Point(12, 217);
+            this.dgPlatillosModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgPlatillosModi.Name = "dgPlatillosModi";
             this.dgPlatillosModi.RowHeadersWidth = 51;
             this.dgPlatillosModi.RowTemplate.Height = 29;
-            this.dgPlatillosModi.Size = new System.Drawing.Size(927, 231);
+            this.dgPlatillosModi.Size = new System.Drawing.Size(811, 173);
             this.dgPlatillosModi.TabIndex = 11;
             this.dgPlatillosModi.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPlatillosModi_CellDoubleClick);
             // 
             // btnModificarPlatillo
             // 
-            this.btnModificarPlatillo.Location = new System.Drawing.Point(553, 431);
+            this.btnModificarPlatillo.Location = new System.Drawing.Point(477, 523);
+            this.btnModificarPlatillo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificarPlatillo.Name = "btnModificarPlatillo";
-            this.btnModificarPlatillo.Size = new System.Drawing.Size(258, 30);
+            this.btnModificarPlatillo.Size = new System.Drawing.Size(226, 22);
             this.btnModificarPlatillo.TabIndex = 12;
             this.btnModificarPlatillo.Text = "Modificar";
             this.btnModificarPlatillo.UseVisualStyleBackColor = true;
@@ -143,11 +151,11 @@
             // 
             // FormModificarPlatillo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(961, 525);
-            this.Controls.Add(this.btnModificarPlatillo);
+            this.ClientSize = new System.Drawing.Size(841, 562);
             this.Controls.Add(this.dgPlatillosModi);
+            this.Controls.Add(this.btnModificarPlatillo);
             this.Controls.Add(this.cbTipoModi);
             this.Controls.Add(this.lblTipoModificacion);
             this.Controls.Add(this.txtNombreModi);
@@ -158,8 +166,25 @@
             this.Controls.Add(this.lblPrecioModificacion);
             this.Controls.Add(this.txtDescripcionModi);
             this.Controls.Add(this.lblDescripcionModificacion);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormModificarPlatillo";
             this.Text = "FormModificarPlatillo";
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            this.Controls.SetChildIndex(this.lblDescripcionModificacion, 0);
+            this.Controls.SetChildIndex(this.txtDescripcionModi, 0);
+            this.Controls.SetChildIndex(this.lblPrecioModificacion, 0);
+            this.Controls.SetChildIndex(this.txtPrecioModi, 0);
+            this.Controls.SetChildIndex(this.lblImagenModificacion, 0);
+            this.Controls.SetChildIndex(this.txtImagenMod, 0);
+            this.Controls.SetChildIndex(this.lblNombreModificacion, 0);
+            this.Controls.SetChildIndex(this.txtNombreModi, 0);
+            this.Controls.SetChildIndex(this.lblTipoModificacion, 0);
+            this.Controls.SetChildIndex(this.cbTipoModi, 0);
+            this.Controls.SetChildIndex(this.btnModificarPlatillo, 0);
+            this.Controls.SetChildIndex(this.dgPlatillosModi, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlatillosModi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

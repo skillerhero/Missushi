@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using Missushi.Funciones;
 using MySqlConnector;
 
 namespace Missushi.Forms.Gerente {
-    public partial class FormEliminarPlatillo : Form {
+    public partial class FormEliminarPlatillo : FormDiseño {
         public FormEliminarPlatillo() {
             InitializeComponent();
             cargarDataGridEliminar();
@@ -22,8 +14,7 @@ namespace Missushi.Forms.Gerente {
             {
                 MySqlDataAdapter dataAdapter;
 
-                dataAdapter = ConexionBD.consultarTablaMenu();
-                ConexionBD.consultarTablaMenu();
+                dataAdapter = ConexionBD.consultarTablaAdapter("menu");
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
                 DataSet ds = new DataSet();
                 dataAdapter.Fill(ds);
@@ -40,21 +31,17 @@ namespace Missushi.Forms.Gerente {
 
 
         private void btnEliminarPlatillo_Click(object sender, EventArgs e) {
-            string nombre = Validacion.ajustarEspacios(txtPlatilloEliminar.Text.Trim());
-            try
-            {
-                if (ConexionBD.eliminarPlatillo(nombre))
-                {
+            int idPlatillo = Convert.ToInt32(txtIdPlatillo.Text);
+            try{
+                if (ConexionBD.eliminarPlatillo(idPlatillo)){
                     MessageBox.Show("Eliminado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;
                 }
-                else
-                {
+                else{
                     MessageBox.Show("Ocurrio un error");
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 MessageBox.Show("Ocurrió un error");
                 MessageBox.Show(ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -64,8 +51,13 @@ namespace Missushi.Forms.Gerente {
         private void dgTablaEliminar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) {
             int selectedrowindex = dgTablaEliminar.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dgTablaEliminar.Rows[selectedrowindex];
+            var idPlatillo = selectedRow.Cells["idPlatillo"].Value;
             var nombre = selectedRow.Cells["nombre"].Value;
-            txtPlatilloEliminar.Text = nombre.ToString();
+            var descripcion = selectedRow.Cells["descripcion"].Value;
+            var precio = selectedRow.Cells["precio"].Value;
+            var foto = selectedRow.Cells["foto"].Value;
+
+            txtIdPlatillo.Text = idPlatillo.ToString();
         }
 
 
