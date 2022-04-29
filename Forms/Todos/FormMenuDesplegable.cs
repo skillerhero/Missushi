@@ -60,8 +60,7 @@ namespace Missushi.Forms.Todos {
         }
 
   
-
-        private void pnlMissushi_Paint(object sender, PaintEventArgs e) {
+        private void lblMissushi_Click(object sender, EventArgs e) {
             if (pnlPrincipal.Width == 240)
             {
                 lblMissushi.Width = 50;
