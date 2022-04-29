@@ -28,7 +28,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancelarReservacion = new System.Windows.Forms.Button();
             this.dgReservaciones = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).BeginInit();
@@ -102,12 +101,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormHistorialReservaciones";
             this.Text = "FormHistorialReservaciones";
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).EndInit();

@@ -240,6 +240,7 @@ namespace Missushi.Forms {
             this.pbImagenesRestaurante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagenesRestaurante.TabIndex = 0;
             this.pbImagenesRestaurante.TabStop = false;
+            this.pbImagenesRestaurante.Visible = false;
             this.pbImagenesRestaurante.WaitOnLoad = true;
             // 
             // pbLetrasLogo
@@ -389,9 +390,9 @@ namespace Missushi.Forms {
         private PictureBoxPersonalizado pbMenu;
         protected LabelPersonalizado lblTitulo;
         protected Label lblBarraTitulo;
-        protected PictureBox pbImagenesRestaurante;
         protected PictureBox pbLetrasLogo;
         private BotonPersonalizado btnReseñas;
         private PictureBoxPersonalizado pbMenuDesplegable;
+        private PictureBox pbImagenesRestaurante;
     }
 }

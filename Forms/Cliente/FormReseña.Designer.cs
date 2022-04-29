@@ -31,16 +31,10 @@ namespace Missushi.Forms.Cliente {
             this.lblBarraInferior = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.pbCantidadEstrellas = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panelReseñas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCantidadEstrellas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbImagenesRestaurante
-            // 
-            this.pbImagenesRestaurante.Visible = false;
             // 
             // panelReseñas
             // 
@@ -99,33 +93,19 @@ namespace Missushi.Forms.Cliente {
             this.pbCantidadEstrellas.TabIndex = 0;
             this.pbCantidadEstrellas.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(907, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormReseña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelReseñas);
             this.Name = "FormReseña";
             this.Text = "FormReseña";
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.Controls.SetChildIndex(this.panelReseñas, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.panelReseñas.ResumeLayout(false);
             this.panelReseñas.PerformLayout();
@@ -143,6 +123,5 @@ namespace Missushi.Forms.Cliente {
         private PictureBox pbCantidadEstrellas;
         private Label lblComentario;
         private Label lblFecha;
-        private Button button1;
     }
 }

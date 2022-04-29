@@ -29,7 +29,6 @@
             this.btnHacerReservacion = new System.Windows.Forms.Button();
             this.dgReservaciones = new System.Windows.Forms.DataGridView();
             this.btnCancelarReservacion = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).BeginInit();
             this.SuspendLayout();
@@ -108,14 +107,12 @@
             this.Name = "FormReservacionAdministrador";
             this.Text = "Modificacion de reservación";
             this.Load += new System.EventHandler(this.FormReservacionAdministrador_Load);
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.btnHacerReservacion, 0);
             this.Controls.SetChildIndex(this.dgReservaciones, 0);
             this.Controls.SetChildIndex(this.btnCancelarReservacion, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).EndInit();
             this.ResumeLayout(false);

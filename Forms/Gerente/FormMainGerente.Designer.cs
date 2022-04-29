@@ -30,7 +30,6 @@
             this.btnAgregarZona = new System.Windows.Forms.Button();
             this.btnModificarInfo = new System.Windows.Forms.Button();
             this.btnModificarZona = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -116,12 +115,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormMainGerente";
             this.Text = "FormMainGrerente";
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

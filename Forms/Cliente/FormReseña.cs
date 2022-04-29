@@ -61,17 +61,6 @@ namespace Missushi.Forms.Cliente {
             
         }
 
-        private void button1_Click(object sender, EventArgs e) {
- 
-            foreach (var x in Controls) { 
-                if (x is Panel) {
-                    Panel panel = (Panel)x;
-                    var a =panel.Location;
-                    var b = 2 + 2;
-                }
-            }
-        }
-
         private class PanelReseña : Panel {
             private Label lblBarraInferior;
             private Label lblNombre;

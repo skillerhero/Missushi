@@ -45,7 +45,6 @@ namespace Missushi.Forms
             this.lblApellidos = new System.Windows.Forms.Label();
             this.txtNombres = new Missushi.Forms.TextBoxPersonalizado();
             this.lblNombres = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panelRegistro.SuspendLayout();
             this.SuspendLayout();
@@ -235,12 +234,10 @@ namespace Missushi.Forms
             this.Text = "Missushi - Registro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegistro_FormClosing);
             this.Load += new System.EventHandler(this.FormRegistro_Load);
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.panelRegistro, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.panelRegistro.ResumeLayout(false);
             this.panelRegistro.PerformLayout();

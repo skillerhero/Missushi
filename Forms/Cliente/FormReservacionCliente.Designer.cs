@@ -32,7 +32,6 @@
             this.lblFechaYHora = new System.Windows.Forms.Label();
             this.dpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.cbHoraInicio = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadPersonas)).BeginInit();
@@ -145,10 +144,8 @@
             this.Load += new System.EventHandler(this.FormReservacionCliente_Load);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

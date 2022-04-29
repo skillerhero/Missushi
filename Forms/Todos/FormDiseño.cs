@@ -24,6 +24,7 @@ namespace Missushi.Forms {
             lblIngresar.Visible = true;
             btnReseñas.Visible = true;
             pbLetrasLogo.Visible = true;
+            pbImagenesRestaurante.Visible = true;
         }
 
         protected void noCargarPantallaPrincipal() {
@@ -241,6 +242,7 @@ namespace Missushi.Forms {
             }
         }
         private void pbSalir_Click(object sender, EventArgs e) {
+            Globales.usuarioActual = new Usuario();
             if (this is not FormMain) {
                 Globales.instancia.Show();
                 Close();

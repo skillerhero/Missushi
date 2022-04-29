@@ -33,7 +33,6 @@
             this.btnHacerReservacion = new System.Windows.Forms.Button();
             this.btnElegirUsuario = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadPersonas)).BeginInit();
             this.SuspendLayout();
@@ -166,7 +165,6 @@
             this.Name = "FormHacerReservacionAdministrador";
             this.Text = "FormHacerReservacionAdministrador";
             this.Load += new System.EventHandler(this.FormHacerReservacionAdministrador_Load);
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.btnHacerReservacion, 0);
             this.Controls.SetChildIndex(this.dpFechaInicio, 0);
             this.Controls.SetChildIndex(this.cbHoraInicio, 0);
@@ -180,7 +178,6 @@
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadPersonas)).EndInit();
             this.ResumeLayout(false);

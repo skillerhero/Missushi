@@ -27,7 +27,6 @@
             this.btnReservaciones = new System.Windows.Forms.Button();
             this.btnSuspenderUsuarios = new System.Windows.Forms.Button();
             this.btnBD = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +82,6 @@
             this.Name = "FormMainAdministrador";
             this.Text = "FormMainAdministrador";
             this.Load += new System.EventHandler(this.FormMainAdministrador_Load);
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.btnReservaciones, 0);
             this.Controls.SetChildIndex(this.btnSuspenderUsuarios, 0);
@@ -91,7 +89,6 @@
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,7 +28,6 @@
             this.btnCambios = new System.Windows.Forms.Button();
             this.txtCorreoSuspender = new System.Windows.Forms.TextBox();
             this.lblSuspenderU = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgTablaUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +82,6 @@
             this.Controls.Add(this.dgTablaUsuarios);
             this.Name = "FormSuspenderUsuario";
             this.Text = "FormSuspenderUsuario";
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.dgTablaUsuarios, 0);
             this.Controls.SetChildIndex(this.btnCambios, 0);
             this.Controls.SetChildIndex(this.txtCorreoSuspender, 0);
@@ -91,7 +89,6 @@
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgTablaUsuarios)).EndInit();
             this.ResumeLayout(false);

@@ -40,7 +40,6 @@ namespace Missushi.Forms
             this.txtContraseña = new Missushi.Forms.TextBoxPersonalizado();
             this.btnIngresar = new Missushi.Forms.BotonPersonalizado();
             this.pictureBoxPersonalizado1 = new Missushi.Forms.PictureBoxPersonalizado();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPersonalizado1)).BeginInit();
@@ -165,7 +164,6 @@ namespace Missushi.Forms
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLogin";
             this.Text = "Missushi - Login";
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.pictureBoxPersonalizado1, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
@@ -176,7 +174,6 @@ namespace Missushi.Forms
             this.Controls.SetChildIndex(this.txtContraseña, 0);
             this.Controls.SetChildIndex(this.btnIngresar, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -34,7 +34,6 @@
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombrePlatillo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,7 +148,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAgregarPlatillo";
             this.Text = "FormAgregarPlatillo";
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
@@ -164,7 +162,6 @@
             this.Controls.SetChildIndex(this.txtPrecioMenu, 0);
             this.Controls.SetChildIndex(this.cbTipoMenu, 0);
             this.Controls.SetChildIndex(this.txtFotoMenu, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImagenesRestaurante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
