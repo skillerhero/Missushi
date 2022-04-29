@@ -32,12 +32,24 @@ namespace Missushi.Forms.Cliente {
                 if (id > 0) {
                     ConexionBD.cancelarReservacion(id);
                     MessageBox.Show("Cancelación hecha con éxito.");
-                    cargarDataGrid();
                 }
+                cargarDataGrid();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
         }
 
+        private void dgReservaciones_SelectionChanged(object sender, EventArgs e) {
+            if(dgReservaciones.SelectedCells.Count > 0) {
+                int selectedrowindex = dgReservaciones.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgReservaciones.Rows[selectedrowindex];
+                if (selectedRow.Cells["estado"].Value.Equals("En espera")) {
+                    btnCancelarReservacion.Enabled = true;
+                } else {
+                    btnCancelarReservacion.Enabled = false;
+                }
+            }
+
+        }
     }
 }

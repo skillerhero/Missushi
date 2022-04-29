@@ -2,7 +2,7 @@
 
 namespace Missushi.Clases {
     internal class Globales {
-        static public Usuario? usuarioActual;
+        static public Usuario usuarioActual;
         static public Usuario? usuarioSeleccionado;
         static public Usuario? gerente;
         static public Menu? platilloSeleccionado;

@@ -19,7 +19,7 @@
         }
 
         public Usuario() {
-            idUsuario = 0;
+            idUsuario = -1;
             nombres = "";
             apellidos = "";
             contraseña = "";

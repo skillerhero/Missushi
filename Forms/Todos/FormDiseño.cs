@@ -50,6 +50,9 @@ namespace Missushi.Forms {
             lblUbicacion.colorLetra = Globales.verdeFuerteLetra;
             lblUbicacion.Enabled = false;
             pbUbicacion.Enabled = false;
+            if(Globales.usuarioActual.IdUsuario != -1) {
+                cargarPantallaUsuario();
+            }
         }
 
         protected void cargarPantallaDisponibilidad() {
@@ -67,12 +70,17 @@ namespace Missushi.Forms {
         }
 
         protected void cargarPantallaMainCliente() {
+            cargarPantallaPrincipal();
             cargarPantallaUsuario();
+        }
 
+        protected void cargarPantallaReseña() {
+            if (Globales.usuarioActual.IdUsuario != -1) {
+                cargarPantallaUsuario();
+            }
         }
 
         protected void cargarPantallaUsuario() {
-            cargarPantallaPrincipal();
             pbSalir.Visible = true;
             lblIngresar.Visible = false;
             lblRegistro.Visible = true;
