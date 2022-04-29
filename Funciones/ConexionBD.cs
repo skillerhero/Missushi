@@ -628,8 +628,8 @@ namespace Missushi.Funciones{
             return menu;
         }
 
-        static public bool modificarPlatillo(string nombre, string descripcion, float precio, string foto, string tipo) {
-            string sql = "UPDATE menu SET descripcion=@1, precio=@2, foto=@3, tipo=@4 WHERE nombre = @0;";
+        static public bool modificarPlatillo(int idPlatillo, string nombre, string descripcion, float precio, string foto, string tipo) {
+            string sql = "UPDATE menu SET nombre = @0, descripcion=@1, precio=@2, foto=@3, tipo=@4 WHERE idPlatillo = @5;";
             if (connection != null)
             {
                 connection.Open();
@@ -639,6 +639,7 @@ namespace Missushi.Funciones{
                 cmd.Parameters.Add("@2", MySqlDbType.Float).Value = precio;
                 cmd.Parameters.Add("@3", MySqlDbType.String).Value = foto;
                 cmd.Parameters.Add("@4", MySqlDbType.VarChar, 20).Value = tipo;
+                cmd.Parameters.Add("@5", MySqlDbType.Int32).Value = idPlatillo;
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();
                 connection.Close();

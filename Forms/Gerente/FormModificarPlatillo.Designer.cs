@@ -24,107 +24,108 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.lblDescripcionModificacion = new System.Windows.Forms.Label();
-            this.txtDescripcionModi = new System.Windows.Forms.TextBox();
-            this.txtPrecioModi = new System.Windows.Forms.TextBox();
-            this.lblPrecioModificacion = new System.Windows.Forms.Label();
-            this.txtImagenMod = new System.Windows.Forms.TextBox();
-            this.lblImagenModificacion = new System.Windows.Forms.Label();
-            this.txtNombreModi = new System.Windows.Forms.TextBox();
-            this.lblNombreModificacion = new System.Windows.Forms.Label();
-            this.lblTipoModificacion = new System.Windows.Forms.Label();
-            this.cbTipoModi = new System.Windows.Forms.ComboBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.txtFoto = new System.Windows.Forms.TextBox();
+            this.lblFoto = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.dgPlatillosModi = new System.Windows.Forms.DataGridView();
             this.btnModificarPlatillo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlatillosModi)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblDescripcionModificacion
+            // lblDescripcion
             // 
-            this.lblDescripcionModificacion.AutoSize = true;
-            this.lblDescripcionModificacion.Location = new System.Drawing.Point(158, 531);
-            this.lblDescripcionModificacion.Name = "lblDescripcionModificacion";
-            this.lblDescripcionModificacion.Size = new System.Drawing.Size(69, 15);
-            this.lblDescripcionModificacion.TabIndex = 1;
-            this.lblDescripcionModificacion.Text = "Descripcion";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(158, 531);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(69, 15);
+            this.lblDescripcion.TabIndex = 1;
+            this.lblDescripcion.Text = "Descripcion";
             // 
-            // txtDescripcionModi
+            // txtDescripcion
             // 
-            this.txtDescripcionModi.Location = new System.Drawing.Point(275, 526);
-            this.txtDescripcionModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDescripcionModi.Name = "txtDescripcionModi";
-            this.txtDescripcionModi.Size = new System.Drawing.Size(110, 23);
-            this.txtDescripcionModi.TabIndex = 2;
+            this.txtDescripcion.Location = new System.Drawing.Point(275, 526);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(110, 23);
+            this.txtDescripcion.TabIndex = 2;
             // 
-            // txtPrecioModi
+            // txtPrecio
             // 
-            this.txtPrecioModi.Location = new System.Drawing.Point(593, 424);
-            this.txtPrecioModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPrecioModi.Name = "txtPrecioModi";
-            this.txtPrecioModi.Size = new System.Drawing.Size(110, 23);
-            this.txtPrecioModi.TabIndex = 4;
+            this.txtPrecio.Location = new System.Drawing.Point(593, 424);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(110, 23);
+            this.txtPrecio.TabIndex = 4;
             // 
-            // lblPrecioModificacion
+            // lblPrecio
             // 
-            this.lblPrecioModificacion.AutoSize = true;
-            this.lblPrecioModificacion.Location = new System.Drawing.Point(477, 429);
-            this.lblPrecioModificacion.Name = "lblPrecioModificacion";
-            this.lblPrecioModificacion.Size = new System.Drawing.Size(40, 15);
-            this.lblPrecioModificacion.TabIndex = 3;
-            this.lblPrecioModificacion.Text = "Precio";
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(477, 429);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(40, 15);
+            this.lblPrecio.TabIndex = 3;
+            this.lblPrecio.Text = "Precio";
             // 
-            // txtImagenMod
+            // txtFoto
             // 
-            this.txtImagenMod.Location = new System.Drawing.Point(593, 466);
-            this.txtImagenMod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtImagenMod.Name = "txtImagenMod";
-            this.txtImagenMod.Size = new System.Drawing.Size(110, 23);
-            this.txtImagenMod.TabIndex = 6;
+            this.txtFoto.Location = new System.Drawing.Point(593, 466);
+            this.txtFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFoto.Name = "txtFoto";
+            this.txtFoto.Size = new System.Drawing.Size(110, 23);
+            this.txtFoto.TabIndex = 6;
             // 
-            // lblImagenModificacion
+            // lblFoto
             // 
-            this.lblImagenModificacion.AutoSize = true;
-            this.lblImagenModificacion.Location = new System.Drawing.Point(477, 472);
-            this.lblImagenModificacion.Name = "lblImagenModificacion";
-            this.lblImagenModificacion.Size = new System.Drawing.Size(47, 15);
-            this.lblImagenModificacion.TabIndex = 5;
-            this.lblImagenModificacion.Text = "Imagen";
+            this.lblFoto.AutoSize = true;
+            this.lblFoto.Location = new System.Drawing.Point(477, 472);
+            this.lblFoto.Name = "lblFoto";
+            this.lblFoto.Size = new System.Drawing.Size(31, 15);
+            this.lblFoto.TabIndex = 5;
+            this.lblFoto.Text = "Foto";
             // 
-            // txtNombreModi
+            // txtNombre
             // 
-            this.txtNombreModi.Location = new System.Drawing.Point(276, 473);
-            this.txtNombreModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNombreModi.Name = "txtNombreModi";
-            this.txtNombreModi.Size = new System.Drawing.Size(110, 23);
-            this.txtNombreModi.TabIndex = 8;
+            this.txtNombre.Location = new System.Drawing.Point(276, 473);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(110, 23);
+            this.txtNombre.TabIndex = 8;
             // 
-            // lblNombreModificacion
+            // lblNombre
             // 
-            this.lblNombreModificacion.AutoSize = true;
-            this.lblNombreModificacion.Location = new System.Drawing.Point(159, 478);
-            this.lblNombreModificacion.Name = "lblNombreModificacion";
-            this.lblNombreModificacion.Size = new System.Drawing.Size(51, 15);
-            this.lblNombreModificacion.TabIndex = 7;
-            this.lblNombreModificacion.Text = "Nombre";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(159, 478);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(51, 15);
+            this.lblNombre.TabIndex = 7;
+            this.lblNombre.Text = "Nombre";
             // 
-            // lblTipoModificacion
+            // lblTipo
             // 
-            this.lblTipoModificacion.AutoSize = true;
-            this.lblTipoModificacion.Location = new System.Drawing.Point(178, 436);
-            this.lblTipoModificacion.Name = "lblTipoModificacion";
-            this.lblTipoModificacion.Size = new System.Drawing.Size(30, 15);
-            this.lblTipoModificacion.TabIndex = 9;
-            this.lblTipoModificacion.Text = "Tipo";
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(178, 436);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(30, 15);
+            this.lblTipo.TabIndex = 9;
+            this.lblTipo.Text = "Tipo";
             // 
-            // cbTipoModi
+            // cbTipo
             // 
-            this.cbTipoModi.FormattingEnabled = true;
-            this.cbTipoModi.Location = new System.Drawing.Point(276, 424);
-            this.cbTipoModi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbTipoModi.Name = "cbTipoModi";
-            this.cbTipoModi.Size = new System.Drawing.Size(110, 23);
-            this.cbTipoModi.TabIndex = 10;
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Location = new System.Drawing.Point(276, 424);
+            this.cbTipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(110, 23);
+            this.cbTipo.TabIndex = 10;
             // 
             // dgPlatillosModi
             // 
@@ -134,9 +135,10 @@
             this.dgPlatillosModi.Name = "dgPlatillosModi";
             this.dgPlatillosModi.RowHeadersWidth = 51;
             this.dgPlatillosModi.RowTemplate.Height = 29;
+            this.dgPlatillosModi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgPlatillosModi.Size = new System.Drawing.Size(811, 173);
             this.dgPlatillosModi.TabIndex = 11;
-            this.dgPlatillosModi.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPlatillosModi_CellDoubleClick);
+            this.dgPlatillosModi.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPlatillosModi_CellDoubleClick);
             // 
             // btnModificarPlatillo
             // 
@@ -153,35 +155,35 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 562);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.dgPlatillosModi);
             this.Controls.Add(this.btnModificarPlatillo);
-            this.Controls.Add(this.cbTipoModi);
-            this.Controls.Add(this.lblTipoModificacion);
-            this.Controls.Add(this.txtNombreModi);
-            this.Controls.Add(this.lblNombreModificacion);
-            this.Controls.Add(this.txtImagenMod);
-            this.Controls.Add(this.lblImagenModificacion);
-            this.Controls.Add(this.txtPrecioModi);
-            this.Controls.Add(this.lblPrecioModificacion);
-            this.Controls.Add(this.txtDescripcionModi);
-            this.Controls.Add(this.lblDescripcionModificacion);
+            this.Controls.Add(this.cbTipo);
+            this.Controls.Add(this.lblTipo);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtFoto);
+            this.Controls.Add(this.lblFoto);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.lblDescripcion);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormModificarPlatillo";
             this.Text = "FormModificarPlatillo";
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            this.Controls.SetChildIndex(this.lblDescripcionModificacion, 0);
-            this.Controls.SetChildIndex(this.txtDescripcionModi, 0);
-            this.Controls.SetChildIndex(this.lblPrecioModificacion, 0);
-            this.Controls.SetChildIndex(this.txtPrecioModi, 0);
-            this.Controls.SetChildIndex(this.lblImagenModificacion, 0);
-            this.Controls.SetChildIndex(this.txtImagenMod, 0);
-            this.Controls.SetChildIndex(this.lblNombreModificacion, 0);
-            this.Controls.SetChildIndex(this.txtNombreModi, 0);
-            this.Controls.SetChildIndex(this.lblTipoModificacion, 0);
-            this.Controls.SetChildIndex(this.cbTipoModi, 0);
+            this.Controls.SetChildIndex(this.lblDescripcion, 0);
+            this.Controls.SetChildIndex(this.txtDescripcion, 0);
+            this.Controls.SetChildIndex(this.lblPrecio, 0);
+            this.Controls.SetChildIndex(this.txtPrecio, 0);
+            this.Controls.SetChildIndex(this.lblFoto, 0);
+            this.Controls.SetChildIndex(this.txtFoto, 0);
+            this.Controls.SetChildIndex(this.lblNombre, 0);
+            this.Controls.SetChildIndex(this.txtNombre, 0);
+            this.Controls.SetChildIndex(this.lblTipo, 0);
+            this.Controls.SetChildIndex(this.cbTipo, 0);
             this.Controls.SetChildIndex(this.btnModificarPlatillo, 0);
             this.Controls.SetChildIndex(this.dgPlatillosModi, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
@@ -192,16 +194,16 @@
         }
 
         #endregion
-        private Label lblDescripcionModificacion;
-        private TextBox txtDescripcionModi;
-        private TextBox txtPrecioModi;
-        private Label lblPrecioModificacion;
-        private TextBox txtImagenMod;
-        private Label lblImagenModificacion;
-        private TextBox txtNombreModi;
-        private Label lblNombreModificacion;
-        private Label lblTipoModificacion;
-        private ComboBox cbTipoModi;
+        private Label lblDescripcion;
+        private TextBox txtDescripcion;
+        private TextBox txtPrecio;
+        private Label lblPrecio;
+        private TextBox txtFoto;
+        private Label lblFoto;
+        private TextBox txtNombre;
+        private Label lblNombre;
+        private Label lblTipo;
+        private ComboBox cbTipo;
         private DataGridView dgPlatillosModi;
         private Button btnModificarPlatillo;
     }

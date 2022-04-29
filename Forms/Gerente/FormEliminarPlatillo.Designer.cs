@@ -40,9 +40,10 @@
             this.dgTablaEliminar.Name = "dgTablaEliminar";
             this.dgTablaEliminar.RowHeadersWidth = 51;
             this.dgTablaEliminar.RowTemplate.Height = 29;
+            this.dgTablaEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgTablaEliminar.Size = new System.Drawing.Size(566, 181);
             this.dgTablaEliminar.TabIndex = 0;
-            this.dgTablaEliminar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTablaEliminar_CellContentDoubleClick);
+            this.dgTablaEliminar.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTablaEliminar_CellContentDoubleClick);
             // 
             // btnEliminarPlatillo
             // 
@@ -77,7 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(803, 605);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.lblPlatilloEliminar);
             this.Controls.Add(this.txtIdPlatillo);
             this.Controls.Add(this.btnEliminarPlatillo);

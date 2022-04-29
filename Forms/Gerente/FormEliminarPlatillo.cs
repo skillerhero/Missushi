@@ -10,8 +10,7 @@ namespace Missushi.Forms.Gerente {
         }
 
         private void cargarDataGridEliminar() {
-            try
-            {
+            try{
                 MySqlDataAdapter dataAdapter;
 
                 dataAdapter = ConexionBD.consultarTablaAdapter("menu");
@@ -21,8 +20,7 @@ namespace Missushi.Forms.Gerente {
                 dgTablaEliminar.ReadOnly = true;
                 dgTablaEliminar.DataSource = ds.Tables[0];
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 MessageBox.Show("No se pudo conectar con la base de datos.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dgTablaEliminar.Visible = false;
 
@@ -31,11 +29,11 @@ namespace Missushi.Forms.Gerente {
 
 
         private void btnEliminarPlatillo_Click(object sender, EventArgs e) {
-            int idPlatillo = Convert.ToInt32(txtIdPlatillo.Text);
             try{
+                int idPlatillo = Convert.ToInt32(txtIdPlatillo.Text);
                 if (ConexionBD.eliminarPlatillo(idPlatillo)){
                     MessageBox.Show("Eliminado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
+                    cargarDataGridEliminar();
                 }
                 else{
                     MessageBox.Show("Ocurrio un error");
