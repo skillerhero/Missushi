@@ -74,7 +74,7 @@ namespace Missushi.Forms {
             cargarPantallaUsuario();
         }
 
-        protected void cargarPantallaReseña() {
+        protected void cargarPantallaReseñas() {
             if (Globales.usuarioActual.IdUsuario != -1) {
                 cargarPantallaUsuario();
             }
@@ -141,7 +141,7 @@ namespace Missushi.Forms {
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
             if (this is not FormMain) {
-                Globales.transicion = true;
+                Globales.transition();
                 Close();
             } else {
                 Hide();
@@ -151,7 +151,7 @@ namespace Missushi.Forms {
             FormRegistro formRegistro = new FormRegistro();
             formRegistro.Show();
             if (this is not FormMain) {
-                Globales.transicion = true;
+                Globales.transition();
                 Close();
             } else {
                 Hide();
@@ -162,7 +162,7 @@ namespace Missushi.Forms {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
             if (this is not FormMain) {
-                Globales.transicion = true;
+                Globales.transition();
                 Close();
             } else {
                 Hide();
@@ -173,7 +173,7 @@ namespace Missushi.Forms {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
             if (this is not FormMain) {
-                Globales.transicion = true;
+                Globales.transition();
                 Close();
             } else {
                 Hide();
@@ -184,7 +184,7 @@ namespace Missushi.Forms {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Show();
             if (this is not FormMain) {
-                Globales.transicion = true;
+                Globales.transition();
                 Close();
             } else {
                 Hide();
@@ -195,7 +195,7 @@ namespace Missushi.Forms {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Show();
             if (this is not FormMain) {
-                Globales.transicion = true;
+                Globales.transition();
                 Close();
             } else {
                 Hide();
@@ -206,7 +206,7 @@ namespace Missushi.Forms {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Show();
             if (this is not FormMain) {
-                Globales.transicion = true;
+                Globales.transition();
                 Close();
             } else {
                 Hide();
@@ -217,7 +217,7 @@ namespace Missushi.Forms {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Show();
             if (this is not FormMain) {
-                Globales.transicion = true;
+                Globales.transition();
                 Close();
             } else {
                 Hide();
@@ -307,6 +307,17 @@ namespace Missushi.Forms {
                 IntPtr ptr = CreateRoundRectRgn(2, 3, ((BotonPersonalizado)sender).Width, ((BotonPersonalizado)sender).Height, 15, 15);
                 ((BotonPersonalizado)sender).Region = Region.FromHrgn(ptr);
                 DeleteObject(ptr);
+            }
+        }
+
+        private void btnReseñas_Click(object sender, EventArgs e) {
+            Cliente.FormReseña formReseña = new Cliente.FormReseña();
+            formReseña.Show();
+            if (this is not FormMain) {
+                Globales.transition();
+                Close();
+            } else {
+                Hide();
             }
         }
     }

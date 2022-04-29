@@ -15,14 +15,14 @@ namespace Missushi.Forms {
 
         private void hacerReseñaToolStripMenuItem_Click(object sender, EventArgs e) {
             Cliente.FormReseña formReseña = new Cliente.FormReseña();
-            Globales.transicion = true;
+            Globales.transition();
             formReseña.Show();
         }
 
         private void hacerReservaciónToolStripMenuItem_Click(object sender, EventArgs e) {
             Globales.zonaSeleccionada.IdZona = -1;
             FormReservacionCliente formReservacion = new FormReservacionCliente();
-            Globales.transicion = true;
+            Globales.transition();
             formReservacion.ShowDialog();
         }
 
@@ -33,7 +33,7 @@ namespace Missushi.Forms {
 
         private void historialToolStripMenuItem_Click(object sender, EventArgs e) {
             FormHistorialReservaciones formHistorialReservaciones = new FormHistorialReservaciones();
-            Globales.transicion = true;
+            Globales.transition();
             formHistorialReservaciones.Show();
         }
     }

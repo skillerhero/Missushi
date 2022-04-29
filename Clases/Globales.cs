@@ -32,5 +32,9 @@ namespace Missushi.Clases {
             instancia = form;
         }
 
+        public static void transition() {
+            transicion = true;
+        }
+
     }
 }

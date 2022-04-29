@@ -13,19 +13,15 @@ namespace Missushi.Forms{
             if (Globales.usuarioActual.Tipo == 'C') {
                 FormMainCliente formMainCliente = new FormMainCliente();
                 formMainCliente.Show();
-                Globales.transicion = true;
-                Close();
             } else if (Globales.usuarioActual.Tipo == 'A') {
                 FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
                 formMainAdministrador.Show();
-                Globales.transicion = true;
-                Close();
             } else if (Globales.usuarioActual.Tipo == 'G') {
                 FormMainGerente formMainGerente = new FormMainGerente();
                 formMainGerente.Show();
-                Globales.transicion = true;
-                Close();
             }
+            Globales.transition();
+            Close();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e) {

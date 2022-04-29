@@ -15,7 +15,7 @@ namespace Missushi.Forms.Cliente {
     public partial class FormReseña : FormDiseño {
         public FormReseña() {
             InitializeComponent();
-            cargarPantallaReseña();
+            cargarPantallaReseñas();
             cargarReseñas();
         }
 

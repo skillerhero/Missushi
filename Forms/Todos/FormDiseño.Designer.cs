@@ -266,6 +266,7 @@ namespace Missushi.Forms {
             this.btnReseñas.Text = "Reseñas";
             this.btnReseñas.UseVisualStyleBackColor = false;
             this.btnReseñas.Visible = false;
+            this.btnReseñas.Click += new System.EventHandler(this.btnReseñas_Click);
             this.btnReseñas.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
             // 
             // pbSalir
