@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Data;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Missushi.Clases;
 using Missushi.Funciones;
 using MySqlConnector;
 
@@ -17,13 +8,13 @@ namespace Missushi.Forms.Gerente {
         public FormModificarPlatillo() {
             InitializeComponent();
             cargarDataGrid();
-            cbTipoModi.Items.Add("Entradas");
-            cbTipoModi.Items.Add("Rollos");
-            cbTipoModi.Items.Add("Platillos");
-            cbTipoModi.Items.Add("Paquetes");
-            cbTipoModi.Items.Add("Postres");
-            cbTipoModi.Items.Add("Bebidas");
-            cbTipoModi.Text = cbTipoModi.Items[0].ToString();
+            cbTipo.Items.Add("Entradas");
+            cbTipo.Items.Add("Rollos");
+            cbTipo.Items.Add("Platillos");
+            cbTipo.Items.Add("Paquetes");
+            cbTipo.Items.Add("Postres");
+            cbTipo.Items.Add("Bebidas");
+            cbTipo.Text = cbTipo.Items[0].ToString();
         }
 
         private void cargarDataGrid() {
@@ -47,16 +38,19 @@ namespace Missushi.Forms.Gerente {
         }
 
         private void btnModificarPlatillo_Click(object sender, EventArgs e) {
-            try { 
-                string nombre = Validacion.ajustarEspacios(txtNombreModi.Text.Trim()),
-                   descripcion = Validacion.ajustarEspacios(txtDescripcionModi.Text.Trim()),
-                   foto = Validacion.ajustarEspacios(txtImagenMod.Text.Trim()),
-                   tipo = Validacion.ajustarEspacios(cbTipoModi.Text.Trim());
-                string x = txtPrecioModi.Text;
-                float precio = float.Parse(txtPrecioModi.Text.Trim(), CultureInfo.InvariantCulture.NumberFormat);
+            try {
+                int selectedrowindex = dgPlatillosModi.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgPlatillosModi.Rows[selectedrowindex];
+                var idPlatillo = selectedRow.Cells["idPlatillo"].Value;
+                string nombre = Validacion.ajustarEspacios(txtNombre.Text.Trim()),
+                   descripcion = Validacion.ajustarEspacios(txtDescripcion.Text.Trim()),
+                   foto = Validacion.ajustarEspacios(txtFoto.Text.Trim()),
+                   tipo = Validacion.ajustarEspacios(cbTipo.Text.Trim());
+                string x = txtPrecio.Text;
+                float precio = float.Parse(txtPrecio.Text.Trim(), CultureInfo.InvariantCulture.NumberFormat);
 
 
-                switch (cbTipoModi.SelectedIndex)
+                switch (cbTipo.SelectedIndex)
                 {
                     case 0:
                         tipo = "Entradas";
@@ -78,30 +72,23 @@ namespace Missushi.Forms.Gerente {
                         break;
                 }
 
-                if (!Validacion.esAlfabetico(nombre))
-                {
+                if (!Validacion.esAlfabetico(nombre)){
                     MessageBox.Show("El nombre tiene caracteres no válidos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                if (!Validacion.esMenor(descripcion, 200))
-                {
+                if (!Validacion.esMenor(descripcion, 200)) {
                     MessageBox.Show("La descripcion es demasiado larga", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                if (!Validacion.IsNumeric(txtPrecioModi.Text))
-                {
+                if (!Validacion.IsNumeric(txtPrecio.Text)){
                     MessageBox.Show("El precio contiene caracteres no validos", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                else if (ConexionBD.modificarPlatillo(nombre, descripcion, precio, foto, tipo))
-                {
+                else if (ConexionBD.modificarPlatillo(Convert.ToInt32(idPlatillo), nombre, descripcion, precio, foto, tipo)){
                     MessageBox.Show("Modificado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK;
+                    cargarDataGrid();
                 }
-                else
-                {
+                else{
                     MessageBox.Show("Ocurrio un error");
                 }
             } 
@@ -114,8 +101,17 @@ namespace Missushi.Forms.Gerente {
         private void dgPlatillosModi_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             int selectedrowindex = dgPlatillosModi.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dgPlatillosModi.Rows[selectedrowindex];
+            var idPlatillo = selectedRow.Cells["idPlatillo"].Value;
             var nombre = selectedRow.Cells["nombre"].Value;
-            txtNombreModi.Text = nombre.ToString();
+            var descripcion = selectedRow.Cells["descripcion"].Value;
+            var precio = selectedRow.Cells["precio"].Value;
+            var foto = selectedRow.Cells["foto"].Value;
+            var tipo = selectedRow.Cells["tipo"].Value;
+            txtNombre.Text = nombre.ToString();
+            txtDescripcion.Text = descripcion.ToString();
+            txtPrecio.Text = precio.ToString();
+            txtFoto.Text = foto.ToString();
+            cbTipo.SelectedIndex = cbTipo.FindStringExact(tipo.ToString());
         }
 
        
