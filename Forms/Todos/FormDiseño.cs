@@ -17,6 +17,10 @@ namespace Missushi.Forms {
             componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
         }
 
+        public void centrarComponenteHorizontal(Control componente) {
+            componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
+        }
+
 
         protected void cargarPantallaPrincipal() {
             pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
@@ -79,6 +83,13 @@ namespace Missushi.Forms {
             if (Globales.usuarioActual.IdUsuario != -1) {
                 cargarPantallaUsuario();
             }
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "RESEÑAS";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            centrarComponente(lblTitulo);
+            centrarComponente(lblBarraTitulo);
         }
 
         protected void cargarPantallaUsuario() {

@@ -22,7 +22,7 @@ namespace Missushi.Forms.Cliente {
                 panel.Name = "panel" + i;
                 panel.LblNombre.Text = Regex.Match(usuarios[i].Nombres, @"^([\w\-]+)").Value;
                 panel.LblComentario.Text = reseñas[i].Comentario;
-                panel.Location = new Point(100, 100 + i * 196);
+                panel.Location = new Point(256, 100 + 135 + i * 196);
                 panel.LblFecha.Text = reseñas[i].Fecha.ToString("dd/MM/yyyy");
                 switch (reseñas[i].CantidadEstrellas) {
                     case 1:
@@ -41,11 +41,15 @@ namespace Missushi.Forms.Cliente {
                         panel.PbCantidadEstrellas.Image = Properties.Resources._5_estrellas;
                         break;
                 }
-
+                panel.Controls.SetChildIndex(panel.LblBarraInferior2, 1);
+                panel.LblBarraInferior2.BringToFront();
+                panel.Controls.SetChildIndex(panel.LblNombre, 2);
+                panel.LblNombre.SendToBack();
                 paneles.Add(panel);
             }
 
             foreach (PanelReseña panel in paneles) {
+                centrarComponente(panel);
                 this.Controls.Add(panel);
             }
         }
@@ -56,6 +60,7 @@ namespace Missushi.Forms.Cliente {
             private PictureBox pbCantidadEstrellas;
             private Label lblComentario;
             private Label lblFecha;
+            private Label lblBarraInferior2;
 
             public PanelReseña() {
                 lblComentario = new Label();
@@ -63,55 +68,73 @@ namespace Missushi.Forms.Cliente {
                 lblBarraInferior = new Label();
                 lblNombre = new Label();
                 pbCantidadEstrellas = new PictureBox();
+                lblBarraInferior2 = new Label();
 
-                this.lblComentario.Location = new Point(26, 153);
-                this.lblComentario.Name = "lblComentario";
-                this.lblComentario.Size = new Size(852, 31);
-                this.lblComentario.TabIndex = 0;
-                this.lblComentario.Text = "Comentario";
+
+                // pbCantidadEstrellas
                 // 
-                // lblFecha
-                // 
-                this.lblFecha.AutoSize = true;
-                this.lblFecha.Location = new Point(146, 122);
-                this.lblFecha.Name = "lblFecha";
-                this.lblFecha.Size = new Size(38, 15);
-                this.lblFecha.TabIndex = 0;
-                this.lblFecha.Text = "Fecha";
-                // 
-                // lblBarraInferior
-                // 
-                this.lblBarraInferior.BackColor = Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(199)))), ((int)(((byte)(183)))));
-                this.lblBarraInferior.Location = new Point(31, 138);
-                this.lblBarraInferior.Name = "lblBarraInferior";
-                this.lblBarraInferior.Size = new Size(100, 5);
-                this.lblBarraInferior.TabIndex = 0;
+                this.pbCantidadEstrellas.Image = Properties.Resources._0_estrellas;
+                this.pbCantidadEstrellas.Location = new Point(0, 0);
+                this.pbCantidadEstrellas.Name = "pbCantidadEstrellas";
+                this.pbCantidadEstrellas.Size = new Size(83, 25);
+                this.pbCantidadEstrellas.SizeMode = PictureBoxSizeMode.Normal;
+                this.pbCantidadEstrellas.TabIndex = 0;
+                this.pbCantidadEstrellas.TabStop = false;
                 // 
                 // lblNombre
                 // 
                 this.lblNombre.AutoSize = true;
-                this.lblNombre.Location = new Point(26, 122);
+                this.lblNombre.ForeColor = Globales.verdeFuerteLetra;
+                this.lblNombre.Font = new Font("Gabriola", 18F, FontStyle.Regular, GraphicsUnit.Point);
+                this.lblNombre.Location = new Point(0, pbCantidadEstrellas.Height);
                 this.lblNombre.Name = "lblNombre";
-                this.lblNombre.Size = new Size(51, 15);
+                this.lblNombre.Size = new Size(122, 36);
                 this.lblNombre.TabIndex = 0;
                 this.lblNombre.Text = "Nombre";
                 // 
-                // pbCantidadEstrellas
+                // lblFecha
                 // 
-                this.pbCantidadEstrellas.Image = Properties.Resources._0_estrellas;
-                this.pbCantidadEstrellas.Location = new Point(17, 53);
-                this.pbCantidadEstrellas.Name = "pbCantidadEstrellas";
-                this.pbCantidadEstrellas.Size = new Size(126, 106);
-                this.pbCantidadEstrellas.SizeMode = PictureBoxSizeMode.StretchImage;
-                this.pbCantidadEstrellas.TabIndex = 0;
-                this.pbCantidadEstrellas.TabStop = false;
+                this.lblFecha.AutoSize = true;
+                this.lblFecha.ForeColor = Color.Gray;
+                this.lblFecha.Size = new Size(38, 15);
+                this.lblFecha.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+                this.lblFecha.Location = new Point(lblNombre.Width+5, pbCantidadEstrellas.Height+(lblNombre.Height-lblFecha.Height)/2);
+                this.lblFecha.Name = "lblFecha";
+          
+                this.lblFecha.TabIndex = 0;
+                this.lblFecha.Text = "Fecha";
 
-                this.Controls.Add(this.lblComentario);
+                // lblBarraInferior
+                // 
+                this.lblBarraInferior.BackColor = Globales.grisClaro;
+                this.lblBarraInferior.Location = new Point(0, lblNombre.Location.Y+lblNombre.Height);
+                this.lblBarraInferior.Name = "lblBarraInferior";
+                this.lblBarraInferior.Size = new Size(lblNombre.Width, 1);
+                this.lblBarraInferior.TabIndex = 0;
+
+                // 
+                //lblComentario
+                this.lblComentario.Location = new Point(0, lblNombre.Location.Y+lblNombre.Height+5);
+                this.lblComentario.Name = "lblComentario";
+                this.lblComentario.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+                this.lblComentario.Size = new Size(512, 60);
+                this.lblComentario.TabIndex = 0;
+                this.lblComentario.Text = "Comentario";
+
+
+                this.lblBarraInferior2.BackColor = Globales.grisClaro;
+                this.lblBarraInferior2.Location = new Point(0, lblComentario.Location.Y+lblComentario.Height);
+                this.lblBarraInferior2.Name = "lblBarraInferior2";
+                this.lblBarraInferior2.Size = new Size(512, 4);
+
+
+                this.Controls.Add(this.pbCantidadEstrellas);
+                this.Controls.Add(this.lblNombre);
                 this.Controls.Add(this.lblFecha);
                 this.Controls.Add(this.lblBarraInferior);
-                this.Controls.Add(this.lblNombre);
-                this.Controls.Add(this.pbCantidadEstrellas);
-                this.Size = new Size(900, 196);
+                this.Controls.Add(this.lblComentario);
+                this.Controls.Add(this.lblBarraInferior2);
+                this.Size = new Size(512, 196);
                 this.Visible = true;
             }
 
@@ -120,6 +143,7 @@ namespace Missushi.Forms.Cliente {
             public PictureBox PbCantidadEstrellas { get => pbCantidadEstrellas; set => pbCantidadEstrellas = value; }
             public Label LblComentario { get => lblComentario; set => lblComentario = value; }
             public Label LblFecha { get => lblFecha; set => lblFecha = value; }
+            public Label LblBarraInferior2 { get => lblBarraInferior2; set => lblBarraInferior2 = value; }
         }
     }
 }

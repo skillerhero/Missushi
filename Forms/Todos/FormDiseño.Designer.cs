@@ -310,7 +310,8 @@ namespace Missushi.Forms {
             // pbMenuDesplegable
             // 
             this.pbMenuDesplegable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.pbMenuDesplegable.Image = global::Missushi.Properties.Resources.disponi1;
+            this.pbMenuDesplegable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbMenuDesplegable.Image = global::Missushi.Properties.Resources.menu_desplegable;
             this.pbMenuDesplegable.Location = new System.Drawing.Point(0, 0);
             this.pbMenuDesplegable.Name = "pbMenuDesplegable";
             this.pbMenuDesplegable.Size = new System.Drawing.Size(75, 75);
@@ -340,11 +341,11 @@ namespace Missushi.Forms {
             this.Controls.Add(this.lblRegistro);
             this.Controls.Add(this.lblIngresar);
             this.Controls.Add(this.lblBarra1);
-            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.btnReseñas);
             this.Controls.Add(this.pbImagenesRestaurante);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pbLetrasLogo);
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pbMenuDesplegable);
             this.Controls.Add(this.lblBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

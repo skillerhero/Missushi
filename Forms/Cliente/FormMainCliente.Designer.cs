@@ -38,7 +38,7 @@
             this.hacerReservaciónToolStripMenuItem,
             this.desplegableToolStripMenuItem,
             this.historialToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 80);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 78);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(267, 24);
             this.menuStrip1.TabIndex = 3;
