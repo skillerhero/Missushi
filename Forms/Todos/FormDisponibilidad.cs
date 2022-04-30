@@ -62,7 +62,7 @@ namespace Missushi.Forms.Todos {
                 desplazamientoX = x * 250;
                 if (i % 2 == 0 && i > 0) {
                     y++;
-                    desplazamientoY = y * 303 + y*20;
+                    desplazamientoY = y * 250;
                 }
                 LabelPersonalizado lblIdZona = new LabelPersonalizado() {
                     Name = "lblIdZona" + i,
@@ -88,8 +88,8 @@ namespace Missushi.Forms.Todos {
                 };
                 PictureBox picture = new PictureBox {
                     Name = "pbZona" + i,
-                    Size = new Size(246, 246),
-                    Location = new Point(475 + desplazamientoX, 195 + desplazamientoY),
+                    Size = new Size(225, 185),
+                    Location = new Point(475 + desplazamientoX +3, 195 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };

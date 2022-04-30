@@ -54,7 +54,7 @@ namespace Missushi.Forms{
                         Size = new Size(420, 47),
                         Location = new Point(297, 190 + desplazamiento),
                         Text = platillos[j].Descripcion,
-                        TextAlign = ContentAlignment.MiddleLeft
+                        TextAlign = ContentAlignment.MiddleCenter
                     };
                     Label lblPrecio = new Label() {
                         Name = "lblPrecio" + j,
