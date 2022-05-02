@@ -8,6 +8,7 @@ namespace Missushi.Clases {
         static public Menu? platilloSeleccionado;
         static public Zona? zonaSeleccionada;
         static public Restaurante? restaurante;
+        static public Reseña reseñaSeleccionada;
         static public Color rojoTinto = Color.FromArgb(159, 84, 76);
         static public Color gris = Color.FromArgb(234, 234, 234);
         static public Color verdeFuerteLetra = Color.FromArgb(57, 74, 44);
@@ -27,6 +28,7 @@ namespace Missushi.Clases {
             usuarioSeleccionado = new Usuario();
             platilloSeleccionado = new Menu();
             zonaSeleccionada = new Zona();
+            reseñaSeleccionada = new Reseña();
             restaurante = ConexionBD.consultarRestaurante();
             gerente = ConexionBD.consultarGerente();
             instancia = form;

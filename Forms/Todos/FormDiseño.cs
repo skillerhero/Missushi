@@ -1,5 +1,4 @@
 ﻿using Missushi.Clases;
-using Missushi.Forms.Gerente;
 using Missushi.Forms.Todos;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
@@ -491,6 +490,27 @@ namespace Missushi.Forms {
         private void TextBox_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter)
                 e.SuppressKeyPress = true;
+        }
+    }
+    public class SelectableLabel : Label {
+        public SelectableLabel() {
+            SetStyle(ControlStyles.Selectable, true);
+            TabStop = true;
+        }
+
+        protected override void OnEnter(EventArgs e) {
+            BackColor = Globales.grisClaro;
+            base.OnEnter(e);
+        }
+
+        protected override void OnLeave(EventArgs e) {
+            BackColor = Color.Black;
+            base.OnLeave(e);
+        }
+
+        protected override void OnMouseDown(MouseEventArgs e) {
+            this.Focus();
+            base.OnMouseDown(e);
         }
     }
 }

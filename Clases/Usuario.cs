@@ -27,6 +27,13 @@
             tipo = '\x0';
             estado = 'a';
         }
+        public bool usuarioLogeado() {
+            if(idUsuario == -1 || idUsuario == null) {
+                return false;
+            } else {
+                return true;
+            }
+        }
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
         public string Nombres { get => nombres; set => nombres = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }

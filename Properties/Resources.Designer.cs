@@ -133,6 +133,16 @@ namespace Missushi.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Cerrar1 {
+            get {
+                object obj = ResourceManager.GetObject("Cerrar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap disponi {
             get {
                 object obj = ResourceManager.GetObject("disponi", resourceCulture);
@@ -146,6 +156,36 @@ namespace Missushi.Properties {
         public static System.Drawing.Bitmap disponi1 {
             get {
                 object obj = ResourceManager.GetObject("disponi1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap estrella_rellena {
+            get {
+                object obj = ResourceManager.GetObject("estrella_rellena", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap estrella_rellena1 {
+            get {
+                object obj = ResourceManager.GetObject("estrella_rellena1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap estrella_vacia {
+            get {
+                object obj = ResourceManager.GetObject("estrella_vacia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +366,16 @@ namespace Missushi.Properties {
         public static System.Drawing.Bitmap sushi_6 {
             get {
                 object obj = ResourceManager.GetObject("sushi-6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap triangulo {
+            get {
+                object obj = ResourceManager.GetObject("triangulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

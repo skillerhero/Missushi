@@ -353,6 +353,10 @@ namespace Missushi.Forms {
             this.Name = "FormDiseño";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiseño";
+            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDiseño_FormClosing);
             this.Load += new System.EventHandler(this.FormDiseño_Load);
             this.DoubleClick += new System.EventHandler(this.FormDiseño_DoubleClick);

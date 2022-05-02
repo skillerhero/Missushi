@@ -8,6 +8,9 @@ namespace Missushi.Forms.Cliente {
             InitializeComponent();
             cargarPantallaReseñas();
             cargarReseñas();
+            if (!Globales.usuarioActual.usuarioLogeado()) {
+                panelHacerReseña.Visible = false;
+            }
         }
         private void cargarReseñas() {
             List<Reseña> reseñas = ConexionBD.consultarReseñas();
@@ -22,7 +25,7 @@ namespace Missushi.Forms.Cliente {
                 panel.Name = "panel" + i;
                 panel.LblNombre.Text = Regex.Match(usuarios[i].Nombres, @"^([\w\-]+)").Value;
                 panel.LblComentario.Text = reseñas[i].Comentario;
-                panel.Location = new Point(256, 100 + 135 + i * 196);
+                panel.Location = new Point(256, 0 + i * 196);
                 panel.LblFecha.Text = reseñas[i].Fecha.ToString("dd/MM/yyyy");
                 switch (reseñas[i].CantidadEstrellas) {
                     case 1:
@@ -41,17 +44,29 @@ namespace Missushi.Forms.Cliente {
                         panel.PbCantidadEstrellas.Image = Properties.Resources._5_estrellas;
                         break;
                 }
-                panel.Controls.SetChildIndex(panel.LblBarraInferior2, 1);
-                panel.LblBarraInferior2.BringToFront();
-                panel.Controls.SetChildIndex(panel.LblNombre, 2);
-                panel.LblNombre.SendToBack();
+
+                panel.Location = new Point((panelPadre.Width-panel.Width)/2, panel.Location.Y);
                 paneles.Add(panel);
             }
 
             foreach (PanelReseña panel in paneles) {
-                centrarComponente(panel);
-                this.Controls.Add(panel);
+                panel.Controls.SetChildIndex(panel.LblBarraInferior, 0);
+                panel.Controls.SetChildIndex(panel.LblNombre, 1);
+                panel.Controls.SetChildIndex(panel.LblComentario, 0);
+                panel.LblComentario.SendToBack();
+                panel.LblNombre.SendToBack();
+                panel.LblBarraInferior.BringToFront();
+                panel.LblBarraInferior2.BringToFront();
+                panelPadre.Controls.Add(panel);
+
             }
+
+            panelPadre.HorizontalScroll.Maximum = 0;
+            panelPadre.AutoScroll = false;
+            panelPadre.VerticalScroll.Visible = false;
+            panelPadre.AutoScroll = true;
+            centrarComponente(panelHacerReseña);
+
         }
 
         private class PanelReseña : Panel {
@@ -100,7 +115,6 @@ namespace Missushi.Forms.Cliente {
                 this.lblFecha.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
                 this.lblFecha.Location = new Point(lblNombre.Width+5, pbCantidadEstrellas.Height+(lblNombre.Height-lblFecha.Height)/2);
                 this.lblFecha.Name = "lblFecha";
-          
                 this.lblFecha.TabIndex = 0;
                 this.lblFecha.Text = "Fecha";
 
@@ -134,7 +148,8 @@ namespace Missushi.Forms.Cliente {
                 this.Controls.Add(this.lblBarraInferior);
                 this.Controls.Add(this.lblComentario);
                 this.Controls.Add(this.lblBarraInferior2);
-                this.Size = new Size(512, 196);
+                this.Location = new Point(0, 0);
+                this.Size = new Size(512, 200);
                 this.Visible = true;
             }
 
@@ -144,6 +159,18 @@ namespace Missushi.Forms.Cliente {
             public Label LblComentario { get => lblComentario; set => lblComentario = value; }
             public Label LblFecha { get => lblFecha; set => lblFecha = value; }
             public Label LblBarraInferior2 { get => lblBarraInferior2; set => lblBarraInferior2 = value; }
+        }
+
+        private void pbHacerReseña_Click(object sender, EventArgs e) {
+            FormValoracion formValoracion = new FormValoracion();
+            Globales.reseñaSeleccionada = new Reseña();
+            Globales.reseñaSeleccionada.Comentario = txtReseña.Text;
+            Globales.reseñaSeleccionada.CantidadEstrellas = 1;
+            if (formValoracion.ShowDialog() == DialogResult.OK) {
+                cargarReseñas();
+                txtReseña.Text = "";
+                lblBarraInferiorReseña.Focus();
+            }
         }
     }
 }
