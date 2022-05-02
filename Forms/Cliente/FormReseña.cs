@@ -161,7 +161,7 @@ namespace Missushi.Forms.Cliente {
             public Label LblBarraInferior2 { get => lblBarraInferior2; set => lblBarraInferior2 = value; }
         }
 
-        private void pbHacerReseña_Click(object sender, EventArgs e) {
+        private void btnHacerReseña_Click(object sender, EventArgs e) {
             FormValoracion formValoracion = new FormValoracion();
             Globales.reseñaSeleccionada = new Reseña();
             Globales.reseñaSeleccionada.Comentario = txtReseña.Text;

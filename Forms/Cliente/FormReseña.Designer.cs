@@ -34,15 +34,14 @@ namespace Missushi.Forms.Cliente {
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblComentario = new System.Windows.Forms.Label();
             this.panelHacerReseña = new System.Windows.Forms.Panel();
+            this.btnHacerReseña = new System.Windows.Forms.Button();
             this.lblBarraInferiorReseña = new Missushi.Forms.SelectableLabel();
-            this.pbHacerReseña = new System.Windows.Forms.PictureBox();
             this.txtReseña = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panelPadre.SuspendLayout();
             this.panelReseñas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCantidadEstrellas)).BeginInit();
             this.panelHacerReseña.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHacerReseña)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPadre
@@ -119,16 +118,32 @@ namespace Missushi.Forms.Cliente {
             this.lblComentario.Size = new System.Drawing.Size(852, 31);
             this.lblComentario.TabIndex = 0;
             this.lblComentario.Text = "Comentario";
+
+            // btnHacerReseña
+            // 
+
+            this.btnHacerReseña.BackColor = System.Drawing.SystemColors.Window;
+            this.btnHacerReseña.BackgroundImage = global::Missushi.Properties.Resources.Cerrar;
+            this.btnHacerReseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHacerReseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHacerReseña.FlatAppearance.BorderSize = 0;
+            this.btnHacerReseña.Location = new System.Drawing.Point(494, 8);
+            this.btnHacerReseña.Name = "btnHacerReseña";
+            this.btnHacerReseña.Size = new System.Drawing.Size(15, 15);
+            this.btnHacerReseña.TabIndex = 3;
+            this.btnHacerReseña.Click += new System.EventHandler(this.btnHacerReseña_Click);
             // 
             // panelHacerReseña
             // 
+            this.panelHacerReseña.Controls.Add(this.btnHacerReseña);
             this.panelHacerReseña.Controls.Add(this.lblBarraInferiorReseña);
-            this.panelHacerReseña.Controls.Add(this.pbHacerReseña);
             this.panelHacerReseña.Controls.Add(this.txtReseña);
             this.panelHacerReseña.Location = new System.Drawing.Point(0, 521);
             this.panelHacerReseña.Name = "panelHacerReseña";
             this.panelHacerReseña.Size = new System.Drawing.Size(512, 44);
             this.panelHacerReseña.TabIndex = 0;
+            // 
+
             // 
             // lblBarraInferiorReseña
             // 
@@ -138,19 +153,6 @@ namespace Missushi.Forms.Cliente {
             this.lblBarraInferiorReseña.Size = new System.Drawing.Size(512, 1);
             this.lblBarraInferiorReseña.TabIndex = 1;
             this.lblBarraInferiorReseña.TabStop = true;
-            // 
-            // pbHacerReseña
-            // 
-            this.pbHacerReseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbHacerReseña.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbHacerReseña.Image = global::Missushi.Properties.Resources.Cerrar;
-            this.pbHacerReseña.Location = new System.Drawing.Point(494, 8);
-            this.pbHacerReseña.Name = "pbHacerReseña";
-            this.pbHacerReseña.Size = new System.Drawing.Size(15, 15);
-            this.pbHacerReseña.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbHacerReseña.TabIndex = 0;
-            this.pbHacerReseña.TabStop = false;
-            this.pbHacerReseña.Click += new System.EventHandler(this.pbHacerReseña_Click);
             // 
             // txtReseña
             // 
@@ -164,6 +166,7 @@ namespace Missushi.Forms.Cliente {
             // 
             // FormReseña
             // 
+            this.AcceptButton = this.btnHacerReseña;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
@@ -183,7 +186,6 @@ namespace Missushi.Forms.Cliente {
             ((System.ComponentModel.ISupportInitialize)(this.pbCantidadEstrellas)).EndInit();
             this.panelHacerReseña.ResumeLayout(false);
             this.panelHacerReseña.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHacerReseña)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,7 +203,7 @@ namespace Missushi.Forms.Cliente {
         private Label lblNombre;
         private Panel panelHacerReseña;
         private TextBox txtReseña;
-        private PictureBox pbHacerReseña;
         private SelectableLabel lblBarraInferiorReseña;
+        private Button btnHacerReseña;
     }
 }

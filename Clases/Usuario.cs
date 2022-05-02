@@ -28,7 +28,7 @@
             estado = 'a';
         }
         public bool usuarioLogeado() {
-            if(idUsuario == -1 || idUsuario == null) {
+            if(idUsuario == -1) {
                 return false;
             } else {
                 return true;
