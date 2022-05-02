@@ -292,7 +292,7 @@ namespace Missushi.Forms {
             this.lblTitulo.Location = new System.Drawing.Point(402, 75);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(95, 68);
+            this.lblTitulo.Size = new System.Drawing.Size(120, 87);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Titulo";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -311,6 +311,7 @@ namespace Missushi.Forms {
             // 
             this.pbMenuDesplegable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.pbMenuDesplegable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pbMenuDesplegable.Image = global::Missushi.Properties.Resources.menu_desplegable;
             this.pbMenuDesplegable.Location = new System.Drawing.Point(0, 0);
             this.pbMenuDesplegable.Name = "pbMenuDesplegable";
             this.pbMenuDesplegable.Size = new System.Drawing.Size(75, 75);
@@ -326,6 +327,9 @@ namespace Missushi.Forms {
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.lblBarraTitulo);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.pbLetrasLogo);
+            this.Controls.Add(this.pbImagenesRestaurante);
             this.Controls.Add(this.lblMenu);
             this.Controls.Add(this.pbSalir);
             this.Controls.Add(this.lblBarra3);
@@ -341,9 +345,6 @@ namespace Missushi.Forms {
             this.Controls.Add(this.lblIngresar);
             this.Controls.Add(this.lblBarra1);
             this.Controls.Add(this.btnReseñas);
-            this.Controls.Add(this.pbImagenesRestaurante);
-            this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.pbLetrasLogo);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pbMenuDesplegable);
             this.Controls.Add(this.lblBarraPrincipal);
@@ -353,10 +354,6 @@ namespace Missushi.Forms {
             this.Name = "FormDiseño";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiseño";
-            this.Controls.SetChildIndex(this.pbImagenesRestaurante, 0);
-            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
-            this.Controls.SetChildIndex(this.lblTitulo, 0);
-            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDiseño_FormClosing);
             this.Load += new System.EventHandler(this.FormDiseño_Load);
             this.DoubleClick += new System.EventHandler(this.FormDiseño_DoubleClick);
