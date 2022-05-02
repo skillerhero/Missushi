@@ -311,7 +311,6 @@ namespace Missushi.Forms {
             // 
             this.pbMenuDesplegable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.pbMenuDesplegable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pbMenuDesplegable.Image = global::Missushi.Properties.Resources.menu_desplegable;
             this.pbMenuDesplegable.Location = new System.Drawing.Point(0, 0);
             this.pbMenuDesplegable.Name = "pbMenuDesplegable";
             this.pbMenuDesplegable.Size = new System.Drawing.Size(75, 75);
