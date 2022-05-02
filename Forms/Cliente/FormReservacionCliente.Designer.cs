@@ -69,6 +69,7 @@
             this.btnElegirZona.TabIndex = 26;
             this.btnElegirZona.Text = "Elegir Zona";
             this.btnElegirZona.UseVisualStyleBackColor = true;
+            this.btnElegirZona.Click += new System.EventHandler(this.btnElegirZona_Click);
             // 
             // nudCantidadPersonas
             // 
@@ -105,6 +106,7 @@
             this.btnHacerReservacion.TabIndex = 28;
             this.btnHacerReservacion.Text = "Hacer reservación";
             this.btnHacerReservacion.UseVisualStyleBackColor = true;
+            this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
             // 
             // lblFechaYHora
             // 
@@ -123,6 +125,7 @@
             this.dpFechaInicio.Name = "dpFechaInicio";
             this.dpFechaInicio.Size = new System.Drawing.Size(227, 23);
             this.dpFechaInicio.TabIndex = 24;
+            this.dpFechaInicio.ValueChanged += new System.EventHandler(this.dpFechaInicio_ValueChanged);
             // 
             // cbHoraInicio
             // 
@@ -131,6 +134,7 @@
             this.cbHoraInicio.Name = "cbHoraInicio";
             this.cbHoraInicio.Size = new System.Drawing.Size(121, 23);
             this.cbHoraInicio.TabIndex = 25;
+            this.cbHoraInicio.SelectedIndexChanged += new System.EventHandler(this.cbHoraInicio_SelectedIndexChanged);
             // 
             // FormReservacionCliente
             // 
