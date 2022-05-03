@@ -340,7 +340,6 @@ namespace Missushi.Forms {
             FlatAppearance.BorderSize = 0;
             FlatStyle = FlatStyle.Flat;
             Font = Globales.letraGabriola;
-            Font.
             Cursor = Cursors.Hand;
             BackColor = Globales.rojoBoton;
         }
