@@ -1,4 +1,5 @@
 ﻿using Missushi.Funciones;
+using System.Drawing.Text;
 
 namespace Missushi.Clases {
     internal class Globales {
@@ -20,6 +21,9 @@ namespace Missushi.Clases {
         static public Color verdeClaro = Color.FromArgb(184, 199, 183);
         static public Form instancia;
         static public bool transicion = false;
+
+        static public Font letraGabriola;
+        static public Font letraCenturyGothic;
         public Globales(Form form) {
             System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
             customCulture.NumberFormat.NumberDecimalSeparator = ".";
@@ -32,6 +36,17 @@ namespace Missushi.Clases {
             restaurante = ConexionBD.consultarRestaurante();
             gerente = ConexionBD.consultarGerente();
             instancia = form;
+
+            var pfc = new PrivateFontCollection();
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            pfc.AddFontFile(FileName);
+            letraGabriola = new Font(pfc.Families[0], 20.25F, FontStyle.Regular);
+
+            pfc = new PrivateFontCollection();
+            FileName = string.Format("{0}Resources\\CenturyGothic.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            pfc.AddFontFile(FileName);
+            letraCenturyGothic = new Font(pfc.Families[0], 12F, FontStyle.Regular, GraphicsUnit.Point);
         }
 
         public static void transition() {

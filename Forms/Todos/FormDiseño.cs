@@ -1,5 +1,6 @@
 ﻿using Missushi.Clases;
 using Missushi.Forms.Todos;
+using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
@@ -10,6 +11,7 @@ namespace Missushi.Forms {
         }
 
         private void FormDiseño_Load(object sender, EventArgs e) {
+
         }
 
         public void centrarComponente(Control componente) {
@@ -337,7 +339,8 @@ namespace Missushi.Forms {
         public BotonPersonalizado() {
             FlatAppearance.BorderSize = 0;
             FlatStyle = FlatStyle.Flat;
-            Font = new Font("Gabriola", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = Globales.letraGabriola;
+            Font.
             Cursor = Cursors.Hand;
             BackColor = Globales.rojoBoton;
         }
@@ -362,7 +365,7 @@ namespace Missushi.Forms {
             colorLetra = Color.White;
             colorLetraSeleccionada = Globales.verdeFuerteLetra;
             BackColor = Globales.verdeBarra;
-            Font = new Font("Gabriola", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = Globales.letraGabriola;
             ForeColor = colorLetra;
             TabIndex = 0;
             TextAlign = ContentAlignment.MiddleCenter;
@@ -407,7 +410,7 @@ namespace Missushi.Forms {
             DropDownStyle = ComboBoxStyle.DropDownList;
             //DrawMode = DrawMode.OwnerDrawFixed;
             FlatStyle = FlatStyle.Flat;
-            Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = Globales.letraCenturyGothic;
             ForeColor = Globales.verdeFuerteLetra;
             DisplayMember = "Text";
             ValueMember = "Value";
