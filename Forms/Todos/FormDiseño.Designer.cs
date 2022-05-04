@@ -83,7 +83,6 @@ namespace Missushi.Forms {
             // lblMenu
             // 
             this.lblMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.lblMenu.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMenu.ForeColor = System.Drawing.Color.White;
             this.lblMenu.Location = new System.Drawing.Point(95, 12);
             this.lblMenu.Margin = new System.Windows.Forms.Padding(0);
@@ -111,7 +110,6 @@ namespace Missushi.Forms {
             // lblIngresar
             // 
             this.lblIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.lblIngresar.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblIngresar.ForeColor = System.Drawing.Color.White;
             this.lblIngresar.Location = new System.Drawing.Point(920, 12);
             this.lblIngresar.Margin = new System.Windows.Forms.Padding(0);
@@ -125,7 +123,6 @@ namespace Missushi.Forms {
             // lblRegistro
             // 
             this.lblRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.lblRegistro.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRegistro.ForeColor = System.Drawing.Color.White;
             this.lblRegistro.Location = new System.Drawing.Point(790, 12);
             this.lblRegistro.Margin = new System.Windows.Forms.Padding(0);
@@ -139,7 +136,6 @@ namespace Missushi.Forms {
             // lblUbicacion
             // 
             this.lblUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.lblUbicacion.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUbicacion.ForeColor = System.Drawing.Color.White;
             this.lblUbicacion.Location = new System.Drawing.Point(240, 12);
             this.lblUbicacion.Margin = new System.Windows.Forms.Padding(0);
@@ -153,7 +149,6 @@ namespace Missushi.Forms {
             // lblDisponibilidad
             // 
             this.lblDisponibilidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.lblDisponibilidad.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDisponibilidad.ForeColor = System.Drawing.Color.White;
             this.lblDisponibilidad.Location = new System.Drawing.Point(425, 15);
             this.lblDisponibilidad.Margin = new System.Windows.Forms.Padding(0);
