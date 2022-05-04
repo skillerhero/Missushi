@@ -287,7 +287,7 @@ namespace Missushi.Forms {
             this.lblTitulo.Location = new System.Drawing.Point(402, 75);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(95, 68);
+            this.lblTitulo.Size = new System.Drawing.Size(120, 87);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Titulo";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -269,7 +269,8 @@ namespace Missushi.Forms {
         }
 
         private void pbMenuDesplegable_Click(object sender, EventArgs e) {
-
+            FormMenuDesplegable formMenuDesplegable = new FormMenuDesplegable();
+            formMenuDesplegable.Show();
         }
 
         private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {

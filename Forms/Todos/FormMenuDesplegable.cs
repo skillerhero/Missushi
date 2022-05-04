@@ -9,81 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Missushi.Forms.Todos {
-    public partial class FormMenuDesplegable : Form {
+    public partial class FormMenuDesplegable : FormDiseño {
         public FormMenuDesplegable() {
             InitializeComponent();
-            Personalizar();
+            inicializar();
+            cargarPantallaMainCliente();
         }
 
-        private void Personalizar() {
-            pnlMenuSub.Visible = false;
-        }
 
-        private void ocultar() {
-            if (pnlMenuSub.Visible == true)
+        private void inicializar() {
+            if (pnlPrincipalMenu.Visible == true)
             {
-                pnlMenuSub.Visible = false;
+                pnlPrincipalMenu.Visible = false;
             }
         }
-
-        private void mostrar(Panel subMenu) {
-            
-            if (pnlMenuSub.Visible == false)
+        private void pictureBoxPersonalizado1_Click(object sender, EventArgs e) {
+            if(pnlPrincipalMenu.Visible == true)
             {
-                ocultar();
-                pnlMenuSub.Visible = true;
+                pnlPrincipalMenu.Visible = false;
             }
             else
             {
-                pnlMenuSub.Visible = false;
-            }
-        }
-
-        private void btnDesplegar_Click(object sender, EventArgs e) {
-            mostrar(pnlMenuSub);
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e) {
-            MessageBox.Show("Agregar platillo");
-            
-            ocultar();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e) {
-            MessageBox.Show("Modificar platillo");
-            ocultar();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e) {
-            MessageBox.Show("Eliminar platillo");
-            ocultar();
-        }
-
-  
-        private void lblMissushi_Click(object sender, EventArgs e) {
-            if (pnlPrincipal.Width == 240)
-            {
-                lblMissushi.Width = 50;
-                lblMissushi.Height = 74;
-                pnlPrincipal.AutoScroll = false;
-                AutoScroll = false;
-                pnlPrincipal.Width = 90;
-                pnlPrincipal.Height = 74;
-                btnAgregar.Visible = false;
-                btnModificar.Visible = false;
-                btnEliminar.Visible = false;
-                btnDesplegar.Visible = false;
-            }
-            else
-            {
-                pnlPrincipal.Width = 240;
-                pnlPrincipal.Height = 585;
-                lblMissushi.Width = 225;
-                lblMissushi.Height = 74;
-                btnDesplegar.Visible = true;
-                btnAgregar.Visible = true;
-                btnModificar.Visible = true;
-                btnEliminar.Visible = true;
+                pnlPrincipalMenu.Visible = true;
             }
         }
     }
