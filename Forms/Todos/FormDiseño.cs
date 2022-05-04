@@ -34,7 +34,7 @@ namespace Missushi.Forms {
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
             pfc.AddFontFile(FileName);
-            lblMenu.Font = new Font(pfc.Families[0], 17.25F, FontStyle.Regular);
+            lblMenu.Font = new Font(pfc.Families[0], 15.25F, FontStyle.Regular);
         }
 
         protected void noCargarPantallaPrincipal() {
