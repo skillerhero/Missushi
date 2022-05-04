@@ -24,7 +24,7 @@ namespace Missushi.Clases {
 
         static public Font letraGabriola;
         static public Font letraCenturyGothic;
-        public Globales(Form form) {
+        public Globales() {
             System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
             customCulture.NumberFormat.NumberDecimalSeparator = ".";
             Thread.CurrentThread.CurrentCulture = customCulture;
@@ -35,7 +35,18 @@ namespace Missushi.Clases {
             reseñaSeleccionada = new Reseña();
             restaurante = ConexionBD.consultarRestaurante();
             gerente = ConexionBD.consultarGerente();
-            instancia = form;
+        }
+        static public void constructor() {
+            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
+            customCulture.NumberFormat.NumberDecimalSeparator = ".";
+            Thread.CurrentThread.CurrentCulture = customCulture;
+            usuarioActual = new Usuario();
+            usuarioSeleccionado = new Usuario();
+            platilloSeleccionado = new Menu();
+            zonaSeleccionada = new Zona();
+            reseñaSeleccionada = new Reseña();
+            restaurante = ConexionBD.consultarRestaurante();
+            gerente = ConexionBD.consultarGerente();
 
             var pfc = new PrivateFontCollection();
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;

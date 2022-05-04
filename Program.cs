@@ -1,3 +1,4 @@
+using Missushi.Clases;
 using Missushi.Funciones;
 
 namespace Missushi

@@ -1,5 +1,6 @@
 ﻿using Missushi.Clases;
 using Missushi.Forms.Todos;
+using Missushi.Properties;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
@@ -11,7 +12,6 @@ namespace Missushi.Forms {
         }
 
         private void FormDiseño_Load(object sender, EventArgs e) {
-
         }
 
         public void centrarComponente(Control componente) {
@@ -30,6 +30,11 @@ namespace Missushi.Forms {
             btnReseñas.Visible = true;
             pbLetrasLogo.Visible = true;
             pbImagenesRestaurante.Visible = true;
+            var pfc = new PrivateFontCollection();
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
+            pfc.AddFontFile(FileName);
+            lblMenu.Font = new Font(pfc.Families[0], 17.25F, FontStyle.Regular);
         }
 
         protected void noCargarPantallaPrincipal() {
@@ -364,7 +369,6 @@ namespace Missushi.Forms {
             colorLetra = Color.White;
             colorLetraSeleccionada = Globales.verdeFuerteLetra;
             BackColor = Globales.verdeBarra;
-            Font = Globales.letraGabriola;
             ForeColor = colorLetra;
             TabIndex = 0;
             TextAlign = ContentAlignment.MiddleCenter;
@@ -388,6 +392,14 @@ namespace Missushi.Forms {
             MouseLeave -= new EventHandler(this.leave);
         }
 
+        public void cambiarLetra() {
+            var pfc = new PrivateFontCollection();
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
+            pfc.AddFontFile(FileName);
+            Font = new Font(pfc.Families[0], 15.25F, FontStyle.Regular);
+        }
+
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
             int nLeftRect, // X-coordinate of upper-left corner or padding at start
@@ -409,7 +421,6 @@ namespace Missushi.Forms {
             DropDownStyle = ComboBoxStyle.DropDownList;
             //DrawMode = DrawMode.OwnerDrawFixed;
             FlatStyle = FlatStyle.Flat;
-            Font = Globales.letraCenturyGothic;
             ForeColor = Globales.verdeFuerteLetra;
             DisplayMember = "Text";
             ValueMember = "Value";

@@ -4,12 +4,13 @@ using Missushi.Forms.Todos;
 
 namespace Missushi{
     public partial class FormMain{
-        private Globales globales;
         public FormMain(){
-            globales = new Globales(this);
             InitializeComponent();
+            Globales globales = new Globales();
+            Globales.instancia = this;
             cargarPantallaPrincipal();
             cargarInfoRestaurante();
+            
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e){
