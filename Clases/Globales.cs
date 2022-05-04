@@ -39,14 +39,14 @@ namespace Missushi.Clases {
 
             var pfc = new PrivateFontCollection();
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-            //pfc.AddFontFile(FileName);
-            //letraGabriola = new Font(pfc.Families[0], 20.25F, FontStyle.Regular);
+            string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
+            pfc.AddFontFile(FileName);
+            letraGabriola = new Font(pfc.Families[0], 20.25F, FontStyle.Regular);
             letraGabriola = new Font("Gabriola", 20.25F, FontStyle.Regular);
             pfc = new PrivateFontCollection();
-            FileName = string.Format("{0}Resources\\CenturyGothic.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-            //pfc.AddFontFile(FileName);
-            //letraCenturyGothic = new Font(pfc.Families[0], 12F, FontStyle.Regular, GraphicsUnit.Point);
+            FileName = string.Format("{0}Resources\\CenturyGothic.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
+            pfc.AddFontFile(FileName);
+            letraCenturyGothic = new Font(pfc.Families[0], 12F, FontStyle.Regular, GraphicsUnit.Point);
             letraCenturyGothic = new Font("Century Gothic", 20.25F, FontStyle.Regular);
         }
 
