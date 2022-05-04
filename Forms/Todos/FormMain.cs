@@ -10,7 +10,6 @@ namespace Missushi{
             Globales.instancia = this;
             cargarPantallaPrincipal();
             cargarInfoRestaurante();
-            
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e){

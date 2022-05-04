@@ -13,7 +13,10 @@ namespace Missushi.Forms {
 
         private void FormDiseño_Load(object sender, EventArgs e) {
         }
+        protected void cargarFuentes() {
+            lblMenu.cambiarLetra();
 
+        }
         public void centrarComponente(Control componente) {
             componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
         }
@@ -24,20 +27,17 @@ namespace Missushi.Forms {
 
 
         protected void cargarPantallaPrincipal() {
+            //cargarFuentes();
             pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
             lblRegistro.Visible = true;
             lblIngresar.Visible = true;
             btnReseñas.Visible = true;
             pbLetrasLogo.Visible = true;
             pbImagenesRestaurante.Visible = true;
-            var pfc = new PrivateFontCollection();
-            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
-            pfc.AddFontFile(FileName);
-            lblMenu.Font = new Font(pfc.Families[0], 15.25F, FontStyle.Regular);
-        }
+            }
 
         protected void noCargarPantallaPrincipal() {
+            //cargarFuentes();
             pbImagenesRestaurante.Visible = false;
             btnReseñas.Visible = false;
             pbLetrasLogo.Visible = false;
@@ -398,7 +398,7 @@ namespace Missushi.Forms {
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
             pfc.AddFontFile(FileName);
-            Font = new Font(pfc.Families[0], 15.25F, FontStyle.Regular);
+            Font = new Font(pfc.Families[0], 20F, FontStyle.Regular);
         }
 
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]

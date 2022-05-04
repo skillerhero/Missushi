@@ -52,11 +52,13 @@ namespace Missushi.Clases {
             string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
             pfc.AddFontFile(FileName);
-            letraGabriola = new Font(pfc.Families[0], 15.25F, FontStyle.Regular);
-            pfc = new PrivateFontCollection();
-            FileName = string.Format("{0}Resources\\CenturyGothic.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
-            pfc.AddFontFile(FileName);
-            letraCenturyGothic = new Font(pfc.Families[0], 8F, FontStyle.Regular, GraphicsUnit.Point);
+            //letraGabriola = new Font(pfc.Families[0], 15.25F, FontStyle.Regular);
+            letraGabriola = new Font("Gabriola", 15.25F, FontStyle.Regular);
+            //pfc = new PrivateFontCollection();
+            //FileName = string.Format("{0}Resources\\CenturyGothic.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
+            //pfc.AddFontFile(FileName);
+            //letraCenturyGothic = new Font(pfc.Families[0], 8F, FontStyle.Regular, GraphicsUnit.Point);
+            letraCenturyGothic = new Font("Century Gothic", 8F, FontStyle.Regular);
         }
 
         public static void transition() {

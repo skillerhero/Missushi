@@ -15,6 +15,7 @@ namespace Missushi
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             ConexionBD.conectarBD();
+            Globales.constructor();
             Application.Run(new FormMain());
             if(ConexionBD.connection != null) {
                 ConexionBD.connection.Close();
