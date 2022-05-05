@@ -59,7 +59,7 @@ namespace Missushi.Forms.Cliente {
                 //message.Bcc.Add(copiaA);
                 message.AlternateViews.Add(GetEmbeddedImage());
                 message.Subject = asunto;
-                message.Body = body;    
+                message.Body = body;
                 message.IsBodyHtml = true;
                 smtp.Send(message);
             } catch (Exception ex) {
@@ -83,10 +83,10 @@ namespace Missushi.Forms.Cliente {
             LinkedResource res = new LinkedResource(memoryStream);
             res.ContentId = Guid.NewGuid().ToString();
             res.ContentType.Name = "reservacion.jpg";
-            string htmlBody = 
-                "<h2>Aquí están los datos de tu reservación.<h2/>"+
-                "<h3><b>Nombre:</b> "+usuario.Nombres+" "+usuario.Apellidos+ ".<h3>" +
-                "<h3><b>Personas:</b> "+reservacion.CantidadPersonas+ ".<h3>" +
+            string htmlBody =
+                "<h2>Aquí están los datos de tu reservación.<h2/>" +
+                "<h3><b>Nombre:</b> " + usuario.Nombres + " " + usuario.Apellidos + ".<h3>" +
+                "<h3><b>Personas:</b> " + reservacion.CantidadPersonas + ".<h3>" +
                 "<h3><b>Fecha y hora inicio:</b> " + reservacion.FechaHoraInicio + "<h3>" +
                 "<h3><b>Fecha y hora fin:</b> " + reservacion.FechaHoraFin + "<h3>" +
                 "<h3><b>Zona:</b> " + reservacion.IdZona + ".<h3><br>" +
@@ -164,7 +164,7 @@ namespace Missushi.Forms.Cliente {
                 MessageBox.Show("No hay cupos en esta zona y horario.\nPuede seleccionar otra zona u horario.");
                 return;
             }
-            if(cbHoraInicio.Enabled == true) {
+            if (cbHoraInicio.Enabled == true) {
                 nudCantidadPersonas.Maximum = cupoZona;
                 btnHacerReservacion.Enabled = true;
                 nudCantidadPersonas.Enabled = true;
@@ -194,48 +194,48 @@ namespace Missushi.Forms.Cliente {
             TimeSpan horario6 = new TimeSpan(18, 0, 0);
             TimeSpan horario7 = new TimeSpan(20, 0, 0);
 
-            if (DateTime.Now.TimeOfDay > horario1) {
+            if (DateTime.Now.TimeOfDay > horario7) {
+                horarios = null;
+                cbHoraInicio.Enabled = false;
+            } else if (DateTime.Now.TimeOfDay > horario6) {
                 horarios = new[] {
-                 new { Text = "10:00-12:00", Value = 1 },
-                 new { Text = "12:00-14:00", Value = 2 },
-                 new { Text = "14:00-16:00", Value = 3 },
-                 new { Text = "16:00-18:00", Value = 4 },
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
-            };
-            } else if (DateTime.Now.TimeOfDay > horario2) {
-                horarios = new[] {
-                 new { Text = "12:00-14:00", Value = 2 },
-                 new { Text = "14:00-16:00", Value = 3 },
-                 new { Text = "16:00-18:00", Value = 4 },
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
-            };
-            } else if (DateTime.Now.TimeOfDay > horario3) {
-                horarios = new[] {
-                 new { Text = "14:00-16:00", Value = 3 },
-                 new { Text = "16:00-18:00", Value = 4 },
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
-            };
-            } else if (DateTime.Now.TimeOfDay > horario4) {
-                horarios = new[] {
-                 new { Text = "16:00-18:00", Value = 4 },
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
+                    new { Text = "20:00-22:00", Value = 6}
                 };
             } else if (DateTime.Now.TimeOfDay > horario5) {
                 horarios = new[] {
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
                 };
-            } else if (DateTime.Now.TimeOfDay > horario6) {
+            } else if (DateTime.Now.TimeOfDay > horario4) {
                 horarios = new[] {
-                 new { Text = "20:00-22:00", Value = 6}
+                     new { Text = "16:00-18:00", Value = 4 },
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
                 };
-            } else if (DateTime.Now.TimeOfDay > horario7) {
-                horarios = null;
-                cbHoraInicio.Enabled = false;
+            } else if (DateTime.Now.TimeOfDay > horario3) {
+                horarios = new[] {
+                     new { Text = "14:00-16:00", Value = 3 },
+                     new { Text = "16:00-18:00", Value = 4 },
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
+                };
+            } else if (DateTime.Now.TimeOfDay > horario2) {
+                horarios = new[] {
+                     new { Text = "12:00-14:00", Value = 2 },
+                     new { Text = "14:00-16:00", Value = 3 },
+                     new { Text = "16:00-18:00", Value = 4 },
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
+            };
+            } else if (DateTime.Now.TimeOfDay > horario1) {
+                horarios = new[] {
+                     new { Text = "10:00-12:00", Value = 1 },
+                     new { Text = "12:00-14:00", Value = 2 },
+                     new { Text = "14:00-16:00", Value = 3 },
+                     new { Text = "16:00-18:00", Value = 4 },
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
+            };
             } else {
                 cbHoraInicio.Enabled = true;
             }

@@ -130,48 +130,48 @@ namespace Missushi.Forms.Administrador {
             TimeSpan horario6 = new TimeSpan(18, 0, 0);
             TimeSpan horario7 = new TimeSpan(20, 0, 0);
 
-            if (DateTime.Now.TimeOfDay > horario1) {
+            if (DateTime.Now.TimeOfDay > horario7) {
+                horarios = null;
+                cbHoraInicio.Enabled = false;
+            } else if (DateTime.Now.TimeOfDay > horario6) {
                 horarios = new[] {
-                 new { Text = "10:00-12:00", Value = 1 },
-                 new { Text = "12:00-14:00", Value = 2 },
-                 new { Text = "14:00-16:00", Value = 3 },
-                 new { Text = "16:00-18:00", Value = 4 },
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
-            };
-            } else if (DateTime.Now.TimeOfDay > horario2) {
-                horarios = new[] {
-                 new { Text = "12:00-14:00", Value = 2 },
-                 new { Text = "14:00-16:00", Value = 3 },
-                 new { Text = "16:00-18:00", Value = 4 },
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
-            };
-            } else if (DateTime.Now.TimeOfDay > horario3) {
-                horarios = new[] {
-                 new { Text = "14:00-16:00", Value = 3 },
-                 new { Text = "16:00-18:00", Value = 4 },
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
-            };
-            } else if (DateTime.Now.TimeOfDay > horario4) {
-                horarios = new[] {
-                 new { Text = "16:00-18:00", Value = 4 },
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
+                    new { Text = "20:00-22:00", Value = 6}
                 };
             } else if (DateTime.Now.TimeOfDay > horario5) {
                 horarios = new[] {
-                 new { Text = "18:00-20:00", Value = 5},
-                 new { Text = "20:00-22:00", Value = 6}
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
                 };
-            } else if (DateTime.Now.TimeOfDay > horario6) {
+            } else if (DateTime.Now.TimeOfDay > horario4) {
                 horarios = new[] {
-                 new { Text = "20:00-22:00", Value = 6}
+                     new { Text = "16:00-18:00", Value = 4 },
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
                 };
-            } else if (DateTime.Now.TimeOfDay > horario7) {
-                horarios = null;
-                cbHoraInicio.Enabled = false;
+            } else if (DateTime.Now.TimeOfDay > horario3) {
+                horarios = new[] {
+                     new { Text = "14:00-16:00", Value = 3 },
+                     new { Text = "16:00-18:00", Value = 4 },
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
+                };
+            } else if (DateTime.Now.TimeOfDay > horario2) {
+                horarios = new[] {
+                     new { Text = "12:00-14:00", Value = 2 },
+                     new { Text = "14:00-16:00", Value = 3 },
+                     new { Text = "16:00-18:00", Value = 4 },
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
+            };
+            } else if (DateTime.Now.TimeOfDay > horario1) {
+                horarios = new[] {
+                     new { Text = "10:00-12:00", Value = 1 },
+                     new { Text = "12:00-14:00", Value = 2 },
+                     new { Text = "14:00-16:00", Value = 3 },
+                     new { Text = "16:00-18:00", Value = 4 },
+                     new { Text = "18:00-20:00", Value = 5},
+                     new { Text = "20:00-22:00", Value = 6}
+            };
             } else {
                 cbHoraInicio.Enabled = true;
             }
