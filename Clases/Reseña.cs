@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Missushi.Clases {
+﻿namespace Missushi.Clases {
     internal class Reseña {
         private int idResenia;
         private int idUsuario;

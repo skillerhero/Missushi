@@ -1,5 +1,4 @@
-﻿
-using Missushi.Clases;
+﻿using Missushi.Clases;
 using Missushi.Funciones;
 using MySqlConnector;
 using System.Data;

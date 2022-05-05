@@ -20,47 +20,49 @@ namespace Missushi.Forms.Gerente{
             this.DoubleBuffered = true;
             this.fechaInicio = fechaInicio;
         }
-
         private void FormElegirZona_Load(object sender, EventArgs e){
             int x = 0, y = 0, desplazamientoX = 0, desplazamientoY = 0;
             rectangulo = new Rectangle();
             for (int i = 0; i < zonas.Count; i++){
                 zonas[i].CupoDisponible = ConexionBD.consultarCupoZona(zonas[i].IdZona, fechaInicio);
-                x = i % 3;
-                desplazamientoX = x * 320;
-                if (i % 3 == 0 && i > 0){
+                x = i % 2;
+                desplazamientoX = x * 250;
+                if (i % 2 == 0 && i > 0) {
                     y++;
-                    desplazamientoY = y * 400;
+                    desplazamientoY = y * 250;
                 }
-                LabelPersonalizado lblIdZona = new LabelPersonalizado(){
+                LabelPersonalizado lblIdZona = new LabelPersonalizado() {
                     Name = "lblIdZona" + i,
-                    Size = new Size(160, 20),
-                    Location = new Point(80 + desplazamientoX, 10 + desplazamientoY),
-                    BorderStyle = BorderStyle.FixedSingle,
+                    Size = new Size(103, 37),
+                    Location = new Point(485 + desplazamientoX, 148 + desplazamientoY),
                     Text = "Zona " + zonas[i].IdZona.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Gabriola", 10F, FontStyle.Regular, GraphicsUnit.Point),
-                    BackColor = Globales.rojoBoton,
+                    Font = new Font("Century gothic", 10F, FontStyle.Regular, GraphicsUnit.Point),
+                    BackColor = Globales.rojoTinto,
                     Cursor = Cursors.Default
                 };
-                LabelPersonalizado lblCupoDisponible = new LabelPersonalizado(){
+                LabelPersonalizado lblCupoDisponible = new LabelPersonalizado() {
                     Name = "lblIdZona" + i,
-                    Size = new Size(160, 20),
-                    Location = new Point(80 + desplazamientoX, 40 + desplazamientoY),
+                    Size = new Size(103, 37),
+                    Location = new Point(597 + desplazamientoX, 148 + desplazamientoY),
                     Text = "Cupo " + zonas[i].CupoDisponible.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter,
-                    BackColor = Color.LightGray,
-                    Font = new Font("Gabriola", 10F, FontStyle.Regular, GraphicsUnit.Point),
+                    BackColor = Globales.gris,
+                    Font = new Font("Century gothic", 10F, FontStyle.Regular, GraphicsUnit.Point),
                     ForeColor = Color.Black,
                     Cursor = Cursors.Default
+
                 };
-                PictureBox picture = new PictureBox{
+                PictureBox picture = new PictureBox {
                     Name = "pbZona" + i,
-                    Size = new Size(320, 320),
-                    Location = new Point(desplazamientoX, 70 + desplazamientoY),
+                    Size = new Size(225, 185),
+                    Location = new Point(475 + desplazamientoX + 3, 195 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
                     SizeMode = PictureBoxSizeMode.Normal
                 };
+
+
+
                 rectangulo.Size = picture.Size;
                 rectangulo.Location = new Point(0, 0);
                 picture.MouseDown += new MouseEventHandler(pictureBox_MouseDown);
@@ -89,9 +91,16 @@ namespace Missushi.Forms.Gerente{
             try{
                 if (sender != null && sender is PictureBox){
                     PictureBox pb = (PictureBox)sender;
+
                     for (int i = 0; i < pictureBoxList.Count; i++){
                         if (pictureBoxList[i] == pb){
                             if (e.Clicks == 2){
+                                if (Globales.usuarioActual.Tipo == 'C' || Globales.usuarioActual.Tipo=='A') {
+                                    if (zonas[i].CupoDisponible == 0) {
+                                        MessageBox.Show("Esta zona está llena en este horario.");
+                                        return;
+                                    }
+                                }
                                 Globales.zonaSeleccionada = zonas[i];
                                 this.DialogResult = DialogResult.OK;
                                 return;

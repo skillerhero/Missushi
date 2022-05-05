@@ -1,5 +1,5 @@
 ﻿using Missushi.Clases;
-using Missushi.Forms.Cliente;
+using Missushi.Forms.Gerente;
 using Missushi.Funciones;
 
 namespace Missushi.Forms.Administrador {

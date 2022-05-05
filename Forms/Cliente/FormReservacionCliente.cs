@@ -1,4 +1,5 @@
 ﻿using Missushi.Clases;
+using Missushi.Forms.Gerente;
 using Missushi.Funciones;
 using QRCoder;
 using System.Net;
