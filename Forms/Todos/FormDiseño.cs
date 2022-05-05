@@ -1,7 +1,5 @@
 ﻿using Missushi.Clases;
 using Missushi.Forms.Todos;
-using Missushi.Properties;
-using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
@@ -13,10 +11,6 @@ namespace Missushi.Forms {
 
         private void FormDiseño_Load(object sender, EventArgs e) {
         }
-        protected void cargarFuentes() {
-            lblMenu.cambiarLetra();
-
-        }
         public void centrarComponente(Control componente) {
             componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
         }
@@ -27,7 +21,6 @@ namespace Missushi.Forms {
 
 
         protected void cargarPantallaPrincipal() {
-            //cargarFuentes();
             pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
             lblRegistro.Visible = true;
             lblIngresar.Visible = true;
@@ -37,7 +30,6 @@ namespace Missushi.Forms {
             }
 
         protected void noCargarPantallaPrincipal() {
-            //cargarFuentes();
             pbImagenesRestaurante.Visible = false;
             btnReseñas.Visible = false;
             pbLetrasLogo.Visible = false;
@@ -345,7 +337,7 @@ namespace Missushi.Forms {
         public BotonPersonalizado() {
             FlatAppearance.BorderSize = 0;
             FlatStyle = FlatStyle.Flat;
-            Font = Globales.letraGabriola;
+            Font = Globales.letraCenturyGothic;
             Cursor = Cursors.Hand;
             BackColor = Globales.rojoBoton;
         }
@@ -356,7 +348,7 @@ namespace Missushi.Forms {
     public class PictureBoxPersonalizado : PictureBox {
         public PictureBoxPersonalizado() {
             this.BackColor = Globales.verdeBarra;
-            this.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.SizeMode = PictureBoxSizeMode.Normal;
             this.TabIndex = 0;
             this.Cursor = Cursors.Hand;
             this.WaitOnLoad = false;
@@ -377,6 +369,7 @@ namespace Missushi.Forms {
             Margin = new Padding(0);
             MouseHover += new EventHandler(this.hover);
             MouseLeave += new EventHandler(this.leave);
+            Font = new Font("Gabriola", 15.25F, FontStyle.Regular);
         }
 
         public void hover(object? sender, EventArgs e) {
@@ -391,14 +384,6 @@ namespace Missushi.Forms {
             Cursor = Cursors.Default;
             MouseHover -= new EventHandler(this.hover);
             MouseLeave -= new EventHandler(this.leave);
-        }
-
-        public void cambiarLetra() {
-            var pfc = new PrivateFontCollection();
-            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string FileName = string.Format("{0}Resources\\Gabriola.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\..\")));
-            pfc.AddFontFile(FileName);
-            Font = new Font(pfc.Families[0], 20F, FontStyle.Regular);
         }
 
         [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]

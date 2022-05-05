@@ -118,20 +118,6 @@ namespace Missushi.Forms.Cliente {
             this.lblComentario.Size = new System.Drawing.Size(852, 31);
             this.lblComentario.TabIndex = 0;
             this.lblComentario.Text = "Comentario";
-
-            // btnHacerReseña
-            // 
-
-            this.btnHacerReseña.BackColor = System.Drawing.SystemColors.Window;
-            this.btnHacerReseña.BackgroundImage = global::Missushi.Properties.Resources.Cerrar;
-            this.btnHacerReseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHacerReseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHacerReseña.FlatAppearance.BorderSize = 0;
-            this.btnHacerReseña.Location = new System.Drawing.Point(494, 8);
-            this.btnHacerReseña.Name = "btnHacerReseña";
-            this.btnHacerReseña.Size = new System.Drawing.Size(15, 15);
-            this.btnHacerReseña.TabIndex = 3;
-            this.btnHacerReseña.Click += new System.EventHandler(this.btnHacerReseña_Click);
             // 
             // panelHacerReseña
             // 
@@ -143,7 +129,19 @@ namespace Missushi.Forms.Cliente {
             this.panelHacerReseña.Size = new System.Drawing.Size(512, 44);
             this.panelHacerReseña.TabIndex = 0;
             // 
-
+            // btnHacerReseña
+            // 
+            this.btnHacerReseña.BackColor = System.Drawing.SystemColors.Window;
+            this.btnHacerReseña.BackgroundImage = global::Missushi.Properties.Resources.flechareseña;
+            this.btnHacerReseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHacerReseña.FlatAppearance.BorderSize = 0;
+            this.btnHacerReseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHacerReseña.Location = new System.Drawing.Point(494, 8);
+            this.btnHacerReseña.Name = "btnHacerReseña";
+            this.btnHacerReseña.Size = new System.Drawing.Size(15, 15);
+            this.btnHacerReseña.TabIndex = 3;
+            this.btnHacerReseña.UseVisualStyleBackColor = false;
+            this.btnHacerReseña.Click += new System.EventHandler(this.btnHacerReseña_Click);
             // 
             // lblBarraInferiorReseña
             // 

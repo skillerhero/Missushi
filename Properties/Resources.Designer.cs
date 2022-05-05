@@ -191,12 +191,12 @@ namespace Missushi.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Byte[].
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        public static byte[] Gabriola {
+        public static System.Drawing.Bitmap flechareseña {
             get {
-                object obj = ResourceManager.GetObject("Gabriola", resourceCulture);
-                return ((byte[])(obj));
+                object obj = ResourceManager.GetObject("flechareseña", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

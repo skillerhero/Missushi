@@ -59,7 +59,7 @@ namespace Missushi.Forms.Gerente{
                     Size = new Size(320, 320),
                     Location = new Point(desplazamientoX, 70 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
-                    SizeMode = PictureBoxSizeMode.StretchImage
+                    SizeMode = PictureBoxSizeMode.Normal
                 };
                 rectangulo.Size = picture.Size;
                 rectangulo.Location = new Point(0, 0);

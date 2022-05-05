@@ -167,9 +167,10 @@ namespace Missushi.Forms.Cliente {
             Globales.reseñaSeleccionada.Comentario = txtReseña.Text;
             Globales.reseñaSeleccionada.CantidadEstrellas = 1;
             if (formValoracion.ShowDialog() == DialogResult.OK) {
-                cargarReseñas();
-                txtReseña.Text = "";
-                lblBarraInferiorReseña.Focus();
+                FormReseña formReseña = new FormReseña();
+                Globales.transition();
+                this.Close();
+                formReseña.Show();
             }
         }
     }

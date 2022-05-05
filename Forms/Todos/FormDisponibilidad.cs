@@ -91,7 +91,7 @@ namespace Missushi.Forms.Todos {
                     Size = new Size(225, 185),
                     Location = new Point(475 + desplazamientoX +3, 195 + desplazamientoY),
                     BorderStyle = BorderStyle.FixedSingle,
-                    SizeMode = PictureBoxSizeMode.StretchImage
+                    SizeMode = PictureBoxSizeMode.Normal
                 };
                 try {
                     picture.LoadAsync(zonas[i].Foto);
@@ -216,9 +216,9 @@ namespace Missushi.Forms.Todos {
         }
 
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
-            Thread t = new Thread(new ThreadStart(hilo));
-            t.SetApartmentState(ApartmentState.STA); // THIS IS REQUIRED!
-            t.Start();
+            //Thread t = new Thread(new ThreadStart(hilo));
+            //t.SetApartmentState(ApartmentState.STA); // THIS IS REQUIRED!
+            //t.Start();
         }
         public void hilo() {
             formPantallaDeCarga = new FormPantallaDeCarga();

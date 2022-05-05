@@ -39,7 +39,7 @@ namespace Missushi.Forms{
                         Name = "pbPlatillo" + j,
                         Size = new Size(75, 75),
                         Location = new Point(207, 160 + desplazamiento),
-                        SizeMode = PictureBoxSizeMode.StretchImage
+                        SizeMode = PictureBoxSizeMode.Normal
                     };
                     Label lblNombre = new Label() {
                         Name = "lblNombre" + j,
