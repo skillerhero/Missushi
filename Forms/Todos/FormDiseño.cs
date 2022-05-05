@@ -8,9 +8,6 @@ namespace Missushi.Forms {
         public FormDiseño() {
             InitializeComponent();
         }
-
-        private void FormDiseño_Load(object sender, EventArgs e) {
-        }
         public void centrarComponente(Control componente) {
             componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
         }

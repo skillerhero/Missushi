@@ -28,22 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panelZonas = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panelZonas
+            // 
+            this.panelZonas.Location = new System.Drawing.Point(0, 100);
+            this.panelZonas.Name = "panelZonas";
+            this.panelZonas.Size = new System.Drawing.Size(1024, 500);
+            this.panelZonas.TabIndex = 0;
             // 
             // FormElegirZona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.panelZonas);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormElegirZona";
             this.Text = "FormElegirZona";
             this.Load += new System.EventHandler(this.FormElegirZona_Load);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            this.Controls.SetChildIndex(this.panelZonas, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private Panel panelZonas;
     }
 }
