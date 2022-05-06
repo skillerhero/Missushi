@@ -63,7 +63,7 @@
             this.pnlPrincipalMenu.Controls.Add(this.pnlMissushiMenu);
             this.pnlPrincipalMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlPrincipalMenu.Name = "pnlPrincipalMenu";
-            this.pnlPrincipalMenu.Size = new System.Drawing.Size(247, 602);
+            this.pnlPrincipalMenu.Size = new System.Drawing.Size(237, 602);
             this.pnlPrincipalMenu.TabIndex = 0;
             // 
             // pnlHistorialC
@@ -72,7 +72,7 @@
             this.pnlHistorialC.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHistorialC.Location = new System.Drawing.Point(0, 464);
             this.pnlHistorialC.Name = "pnlHistorialC";
-            this.pnlHistorialC.Size = new System.Drawing.Size(247, 80);
+            this.pnlHistorialC.Size = new System.Drawing.Size(237, 80);
             this.pnlHistorialC.TabIndex = 5;
             // 
             // lblHistorialMenu
@@ -84,7 +84,7 @@
             this.lblHistorialMenu.Location = new System.Drawing.Point(0, 0);
             this.lblHistorialMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblHistorialMenu.Name = "lblHistorialMenu";
-            this.lblHistorialMenu.Size = new System.Drawing.Size(247, 80);
+            this.lblHistorialMenu.Size = new System.Drawing.Size(237, 80);
             this.lblHistorialMenu.TabIndex = 5;
             this.lblHistorialMenu.Text = "Historial";
             this.lblHistorialMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,7 +95,7 @@
             this.pnlResenaC.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlResenaC.Location = new System.Drawing.Point(0, 384);
             this.pnlResenaC.Name = "pnlResenaC";
-            this.pnlResenaC.Size = new System.Drawing.Size(247, 80);
+            this.pnlResenaC.Size = new System.Drawing.Size(237, 80);
             this.pnlResenaC.TabIndex = 4;
             // 
             // lblResenaMenu
@@ -109,7 +109,7 @@
             this.lblResenaMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblResenaMenu.Name = "lblResenaMenu";
             this.lblResenaMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblResenaMenu.Size = new System.Drawing.Size(247, 80);
+            this.lblResenaMenu.Size = new System.Drawing.Size(237, 80);
             this.lblResenaMenu.TabIndex = 4;
             this.lblResenaMenu.Text = "Reseña";
             this.lblResenaMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,7 +120,7 @@
             this.pnlMenuCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenuCliente.Location = new System.Drawing.Point(0, 304);
             this.pnlMenuCliente.Name = "pnlMenuCliente";
-            this.pnlMenuCliente.Size = new System.Drawing.Size(247, 80);
+            this.pnlMenuCliente.Size = new System.Drawing.Size(237, 80);
             this.pnlMenuCliente.TabIndex = 3;
             // 
             // lblMenuOpcion
@@ -132,7 +132,7 @@
             this.lblMenuOpcion.Location = new System.Drawing.Point(0, 0);
             this.lblMenuOpcion.Margin = new System.Windows.Forms.Padding(0);
             this.lblMenuOpcion.Name = "lblMenuOpcion";
-            this.lblMenuOpcion.Size = new System.Drawing.Size(247, 80);
+            this.lblMenuOpcion.Size = new System.Drawing.Size(237, 80);
             this.lblMenuOpcion.TabIndex = 3;
             this.lblMenuOpcion.Text = "Menú";
             this.lblMenuOpcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,7 +143,7 @@
             this.pnlUbicacionC.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUbicacionC.Location = new System.Drawing.Point(0, 224);
             this.pnlUbicacionC.Name = "pnlUbicacionC";
-            this.pnlUbicacionC.Size = new System.Drawing.Size(247, 80);
+            this.pnlUbicacionC.Size = new System.Drawing.Size(237, 80);
             this.pnlUbicacionC.TabIndex = 5;
             // 
             // lblUbicacionMenu
@@ -155,7 +155,7 @@
             this.lblUbicacionMenu.Location = new System.Drawing.Point(0, 0);
             this.lblUbicacionMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblUbicacionMenu.Name = "lblUbicacionMenu";
-            this.lblUbicacionMenu.Size = new System.Drawing.Size(247, 80);
+            this.lblUbicacionMenu.Size = new System.Drawing.Size(237, 80);
             this.lblUbicacionMenu.TabIndex = 2;
             this.lblUbicacionMenu.Text = "Ubicación";
             this.lblUbicacionMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -166,7 +166,7 @@
             this.pnlDisponibilidadC.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDisponibilidadC.Location = new System.Drawing.Point(0, 144);
             this.pnlDisponibilidadC.Name = "pnlDisponibilidadC";
-            this.pnlDisponibilidadC.Size = new System.Drawing.Size(247, 80);
+            this.pnlDisponibilidadC.Size = new System.Drawing.Size(237, 80);
             this.pnlDisponibilidadC.TabIndex = 2;
             // 
             // lblDisponibilidadMenu
@@ -178,7 +178,7 @@
             this.lblDisponibilidadMenu.Location = new System.Drawing.Point(0, 0);
             this.lblDisponibilidadMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblDisponibilidadMenu.Name = "lblDisponibilidadMenu";
-            this.lblDisponibilidadMenu.Size = new System.Drawing.Size(247, 80);
+            this.lblDisponibilidadMenu.Size = new System.Drawing.Size(237, 80);
             this.lblDisponibilidadMenu.TabIndex = 1;
             this.lblDisponibilidadMenu.Text = "Disponibilidad";
             this.lblDisponibilidadMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -189,7 +189,7 @@
             this.pnlReservacionesC.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlReservacionesC.Location = new System.Drawing.Point(0, 64);
             this.pnlReservacionesC.Name = "pnlReservacionesC";
-            this.pnlReservacionesC.Size = new System.Drawing.Size(247, 80);
+            this.pnlReservacionesC.Size = new System.Drawing.Size(237, 80);
             this.pnlReservacionesC.TabIndex = 1;
             // 
             // lblReservacionesMenu
@@ -201,7 +201,7 @@
             this.lblReservacionesMenu.Location = new System.Drawing.Point(0, 0);
             this.lblReservacionesMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblReservacionesMenu.Name = "lblReservacionesMenu";
-            this.lblReservacionesMenu.Size = new System.Drawing.Size(247, 80);
+            this.lblReservacionesMenu.Size = new System.Drawing.Size(237, 80);
             this.lblReservacionesMenu.TabIndex = 0;
             this.lblReservacionesMenu.Text = "Reservaciones";
             this.lblReservacionesMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,7 +212,7 @@
             this.pnlMissushiMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMissushiMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMissushiMenu.Name = "pnlMissushiMenu";
-            this.pnlMissushiMenu.Size = new System.Drawing.Size(247, 64);
+            this.pnlMissushiMenu.Size = new System.Drawing.Size(237, 64);
             this.pnlMissushiMenu.TabIndex = 0;
             // 
             // pictureBoxPersonalizado1
@@ -222,7 +222,7 @@
             this.pictureBoxPersonalizado1.Image = global::Missushi.Properties.Resources.miss;
             this.pictureBoxPersonalizado1.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxPersonalizado1.Name = "pictureBoxPersonalizado1";
-            this.pictureBoxPersonalizado1.Size = new System.Drawing.Size(247, 64);
+            this.pictureBoxPersonalizado1.Size = new System.Drawing.Size(237, 64);
             this.pictureBoxPersonalizado1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPersonalizado1.TabIndex = 0;
             this.pictureBoxPersonalizado1.TabStop = false;
@@ -231,7 +231,7 @@
             // 
             // FormMenuDesplegable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.pnlPrincipalMenu);
@@ -261,7 +261,6 @@
 
         private Panel pnlPrincipalMenu;
         private Panel pnlReservacionesC;
-        private LabelPersonalizado lblReservacionesMenu;
         private Panel pnlMissushiMenu;
         private PictureBoxPersonalizado pictureBoxPersonalizado1;
         private Panel pnlHistorialC;
@@ -274,5 +273,6 @@
         private LabelPersonalizado lblMenuOpcion;
         private LabelPersonalizado lblUbicacionMenu;
         private LabelPersonalizado lblDisponibilidadMenu;
+        private LabelPersonalizado lblReservacionesMenu;
     }
 }
