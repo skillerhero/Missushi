@@ -65,7 +65,7 @@ namespace Missushi.Forms.Administrador {
         private DateTime obtenerFechaFin() {
             DateTime fechaInicio = obtenerFechaInicio();
             DateTime fechaFin = fechaInicio;
-            fechaFin = fechaFin.AddHours(3);
+            fechaFin = fechaFin.AddHours(2);
             return fechaFin;
         }
 

@@ -16,6 +16,38 @@ namespace Missushi.Forms {
             componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
         }
 
+        protected void inicializarMenuDesplegable(List<string> nombres) {
+            PictureBoxPersonalizado pbLogoLetrasAux = pbLogoLetras;
+            pnlPrincipalMenu.Controls.Clear();
+            pnlPrincipalMenu.Controls.Add(pbLogoLetrasAux);
+            
+            for (int i = 0; i < nombres.Count; i++) {
+                LabelPersonalizado lbl = new LabelPersonalizado();
+                lbl.Dock = DockStyle.Fill;
+                lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+                lbl.ForeColor = Color.White;
+                lbl.Location = new Point(0, 0);
+                lbl.Margin = new Padding(0);
+                lbl.Name = "lblPanel" + i;
+                lbl.TabIndex = 0;
+                lbl.Text = nombres[i];
+                lbl.TextAlign = ContentAlignment.MiddleCenter;
+
+                Panel pnl = new Panel();
+                pnl.Controls.Add(lbl);
+                pnl.Dock = DockStyle.Top;
+                pnl.Location = new Point(0, 75);
+                pnl.Name = "pnlMenu"+i;
+                pnl.Size = new Size(205, 80);
+
+                pnlPrincipalMenu.Controls.Add(pnl);
+                pnlPrincipalMenu.Visible = true;
+                pnlPrincipalMenu.BringToFront();
+            }
+
+        }
+
+
 
         protected void cargarPantallaPrincipal() {
             pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
@@ -258,8 +290,9 @@ namespace Missushi.Forms {
         }
 
         private void pbMenuDesplegable_Click(object sender, EventArgs e) {
-            FormMenuDesplegable formMenuDesplegable = new FormMenuDesplegable();
-            formMenuDesplegable.Show();
+            if (pnlMuestraMenuDesplegable.Visible == false) {
+                inicializarMenuDesplegable(new List<string> { "Reservaciones", "Disponibilidad", "Ubicación", "Menú", "Reseñas", "Historial" });
+            }
         }
 
         private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {
@@ -328,6 +361,10 @@ namespace Missushi.Forms {
             } else {
                 Hide();
             }
+        }
+
+        private void pbLogoLetras_Click(object sender, EventArgs e) {
+            pnlPrincipalMenu.Visible = false;
         }
     }
     public class BotonPersonalizado : Button {
