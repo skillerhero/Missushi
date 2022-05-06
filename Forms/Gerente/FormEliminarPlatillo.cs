@@ -19,6 +19,12 @@ namespace Missushi.Forms.Gerente {
                 dataAdapter.Fill(ds);
                 dgTablaEliminar.ReadOnly = true;
                 dgTablaEliminar.DataSource = ds.Tables[0];
+                dgTablaEliminar.Columns["descripcion"].HeaderText = "Descripcion";
+                dgTablaEliminar.Columns["idPlatillo"].HeaderText = "ID Platillo";
+                dgTablaEliminar.Columns["nombre"].HeaderText = "Nombre";
+                dgTablaEliminar.Columns["precio"].HeaderText = "Precio";
+                dgTablaEliminar.Columns["foto"].HeaderText = "Foto";
+                dgTablaEliminar.Columns["tipo"].HeaderText = "Tipo";
             }
             catch (Exception ex){
                 MessageBox.Show("No se pudo conectar con la base de datos.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

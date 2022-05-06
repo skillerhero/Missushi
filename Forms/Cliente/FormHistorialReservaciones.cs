@@ -8,6 +8,7 @@ namespace Missushi.Forms.Cliente {
         public FormHistorialReservaciones() {
             InitializeComponent();
             cargarDataGrid();
+            centrarComponente(dgReservaciones);
         }
         private void cargarDataGrid() {
             try {
@@ -18,7 +19,14 @@ namespace Missushi.Forms.Cliente {
                 dataAdapter.Fill(ds);
                 dgReservaciones.ReadOnly = true;
                 dgReservaciones.DataSource = ds.Tables[0];
-            } catch (Exception ex) {
+                dgReservaciones.Columns["idReservacion"].Visible = false;
+                dgReservaciones.Columns["fechaHoraInicio"].HeaderText = "Inicio";
+                dgReservaciones.Columns["fechaHoraFin"].HeaderText = "Fin";
+                dgReservaciones.Columns["cantidadPersonas"].HeaderText = "No. Personas";
+                dgReservaciones.Columns["idZona"].HeaderText = "Zona";
+                dgReservaciones.Columns["estado"].HeaderText = "Estado";
+            }
+            catch (Exception ex) {
                 MessageBox.Show("No se pudo conectar con la base de datos.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dgReservaciones.Visible = false;
             }
@@ -48,6 +56,11 @@ namespace Missushi.Forms.Cliente {
                     btnCancelarReservacion.Enabled = false;
                 }
             }
+
+        }
+
+        private void dgReservaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

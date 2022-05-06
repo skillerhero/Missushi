@@ -28,6 +28,12 @@ namespace Missushi.Forms.Gerente {
                 dataAdapter.Fill(ds);
                 dgPlatillosModi.ReadOnly = true;
                 dgPlatillosModi.DataSource = ds.Tables[0];
+                dgPlatillosModi.Columns["idPlatillo"].HeaderText = "ID Platillo";
+                dgPlatillosModi.Columns["nombre"].HeaderText = "Nombre";
+                dgPlatillosModi.Columns["descripcion"].HeaderText = "Descripción";
+                dgPlatillosModi.Columns["precio"].HeaderText = "Precio";
+                dgPlatillosModi.Columns["foto"].HeaderText = "Foto";
+                dgPlatillosModi.Columns["tipo"].HeaderText = "Tipo";
             }
             catch (Exception ex)
             {

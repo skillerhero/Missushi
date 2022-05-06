@@ -22,6 +22,13 @@ namespace Missushi.Forms.Administrador {
                 dataAdapter.Fill(ds);
                 dgTablaUsuarios.ReadOnly = true;
                 dgTablaUsuarios.DataSource = ds.Tables[0];
+                dgTablaUsuarios.Columns["contrasenia"].Visible = false;
+                dgTablaUsuarios.Columns["idUsuario"].HeaderText = "ID";
+                dgTablaUsuarios.Columns["nombres"].HeaderText = "Nombres";
+                dgTablaUsuarios.Columns["apellidos"].HeaderText = "Apellidos";
+                dgTablaUsuarios.Columns["correo"].HeaderText = "Correo";
+                dgTablaUsuarios.Columns["tipo"].HeaderText = "Tipo";
+                dgTablaUsuarios.Columns["estado"].HeaderText = "Estado";
             }
             catch (Exception ex)
             {
