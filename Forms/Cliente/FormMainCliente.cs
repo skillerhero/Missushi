@@ -9,25 +9,10 @@ namespace Missushi.Forms {
             cargarPantallaMainCliente();
         }
 
-        private void FormMainCliente_Load(object sender, EventArgs e) {
-            
-        }
-
         private void hacerReseñaToolStripMenuItem_Click(object sender, EventArgs e) {
             Cliente.FormReseña formReseña = new Cliente.FormReseña();
             Globales.transition();
             formReseña.Show();
-        }
-
-        private void hacerReservaciónToolStripMenuItem_Click(object sender, EventArgs e) {
-            Globales.zonaSeleccionada.IdZona = -1;
-            FormReservacionCliente formReservacion = new FormReservacionCliente();
-            Globales.transition();
-            formReservacion.ShowDialog();
-        }
-
-        private void desplegableToolStripMenuItem_Click(object sender, EventArgs e) {
-            
         }
     }
 }

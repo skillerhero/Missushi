@@ -47,9 +47,9 @@
             this.pbMapaZonas.Location = new System.Drawing.Point(43, 148);
             this.pbMapaZonas.Name = "pbMapaZonas";
             this.pbMapaZonas.Size = new System.Drawing.Size(387, 494);
-            this.pbMapaZonas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapaZonas.TabIndex = 0;
             this.pbMapaZonas.TabStop = false;
+            this.pbMapaZonas.WaitOnLoad = true;
             // 
             // cbHora
             // 
