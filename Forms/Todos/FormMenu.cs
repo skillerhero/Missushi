@@ -75,11 +75,9 @@ namespace Missushi.Forms{
                     this.Controls.Add(lblDescripcion);
                     this.Controls.Add(lblPrecio);
                     y++;
-                    desplazamiento = y * 200;
+                    desplazamiento = y * 190;
                 }
             }
         }
-
-        
     }
 }
