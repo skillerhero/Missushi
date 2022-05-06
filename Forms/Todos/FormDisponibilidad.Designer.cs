@@ -26,6 +26,7 @@
             this.dtFecha = new Missushi.Forms.DateTimePickerPersonalizado();
             this.pbMapaZonas = new Missushi.Forms.PictureBoxPersonalizado();
             this.cbHora = new Missushi.Forms.ComboBoxPersonalizado();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMapaZonas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,6 @@
             this.pbMapaZonas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMapaZonas.TabIndex = 0;
             this.pbMapaZonas.TabStop = false;
-            this.pbMapaZonas.WaitOnLoad = true;
             // 
             // cbHora
             // 
@@ -78,9 +78,13 @@
             this.Load += new System.EventHandler(this.FormDisponibilidad_Load);
             this.Shown += new System.EventHandler(this.FormDisponibilidad_Shown);
             this.HandleCreated += new System.EventHandler(this.mostrarPantallaDeCarga);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.Controls.SetChildIndex(this.pbMapaZonas, 0);
             this.Controls.SetChildIndex(this.dtFecha, 0);
             this.Controls.SetChildIndex(this.cbHora, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMapaZonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

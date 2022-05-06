@@ -27,13 +27,7 @@ namespace Missushi.Forms {
         }
 
         private void desplegableToolStripMenuItem_Click(object sender, EventArgs e) {
-            inicializarMenuDesplegable(new List<string> { "Reservaciones", "Disponibilidad", "Ubicación", "Menú", "Reseñas", "Historial" });
-        }
-
-        private void historialToolStripMenuItem_Click(object sender, EventArgs e) {
-            FormHistorialReservaciones formHistorialReservaciones = new FormHistorialReservaciones();
-            Globales.transition();
-            formHistorialReservaciones.Show();
+            
         }
     }
 }

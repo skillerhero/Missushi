@@ -216,9 +216,9 @@ namespace Missushi.Forms.Todos {
         }
 
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
-            //Thread t = new Thread(new ThreadStart(hilo));
-            //t.SetApartmentState(ApartmentState.STA); // THIS IS REQUIRED!
-            //t.Start();
+            Thread t = new Thread(new ThreadStart(hilo));
+            t.SetApartmentState(ApartmentState.STA); // THIS IS REQUIRED!
+            t.Start();
         }
         public void hilo() {
             formPantallaDeCarga = new FormPantallaDeCarga();

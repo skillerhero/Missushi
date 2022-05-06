@@ -63,7 +63,7 @@
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
             this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.historialToolStripMenuItem.Text = "Historial";
-            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
+            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historial_Click);
             // 
             // FormMainCliente
             // 

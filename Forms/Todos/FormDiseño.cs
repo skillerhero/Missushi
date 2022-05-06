@@ -1,5 +1,6 @@
 ﻿using Missushi.Clases;
 using Missushi.Forms.Todos;
+using Missushi.Forms.Cliente;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 
@@ -16,7 +17,7 @@ namespace Missushi.Forms {
             componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
         }
 
-        protected void inicializarMenuDesplegable(List<string> nombres) {
+        protected void inicializarMenuDesplegable(List<(string, EventHandler)> nombres) {
             PictureBoxPersonalizado pbLogoLetrasAux = pbLogoLetras;
             pnlPrincipalMenu.Controls.Clear();
             
@@ -29,8 +30,9 @@ namespace Missushi.Forms {
                 lbl.Margin = new Padding(0);
                 lbl.Name = "lblPanel" + i;
                 lbl.TabIndex = 0;
-                lbl.Text = nombres[i];
+                lbl.Text = nombres[i].Item1;
                 lbl.TextAlign = ContentAlignment.MiddleCenter;
+                lbl.Click += nombres[i].Item2;
 
                 Panel pnl = new Panel();
                 pnl.Controls.Add(lbl);
@@ -92,6 +94,9 @@ namespace Missushi.Forms {
             lblDisponibilidad.colorLetra = Globales.verdeFuerteLetra;
             lblDisponibilidad.Enabled = false;
             pbDisponibilidad.Enabled = false;
+            if (Globales.usuarioActual.IdUsuario != -1) {
+                cargarPantallaUsuario();
+            }
         }
 
         protected void cargarPantallaMenu() {
@@ -99,6 +104,9 @@ namespace Missushi.Forms {
             lblMenu.colorLetra = Globales.verdeFuerteLetra;
             lblMenu.Enabled = false;
             pbMenu.Enabled = false;
+            if (Globales.usuarioActual.IdUsuario != -1) {
+                cargarPantallaUsuario();
+            }
         }
 
         protected void cargarPantallaMainCliente() {
@@ -197,7 +205,7 @@ namespace Missushi.Forms {
             }
         }
 
-        private void lblMenu_Click(object sender, EventArgs e) {
+        private void Menu_Click(object sender, EventArgs e) {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
             if (this is not FormMain) {
@@ -207,19 +215,7 @@ namespace Missushi.Forms {
                 Hide();
             }
         }
-
-        private void pbMenu_Click(object sender, EventArgs e) {
-            FormMenu formMenu = new FormMenu();
-            formMenu.Show();
-            if (this is not FormMain) {
-                Globales.transition();
-                Close();
-            } else {
-                Hide();
-            }
-        }
-
-        private void pbUbicacion_Click(object sender, EventArgs e) {
+        private void Ubicacion_Click(object sender, EventArgs e) {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Show();
             if (this is not FormMain) {
@@ -230,18 +226,7 @@ namespace Missushi.Forms {
             }
         }
 
-        private void lblUbicacion_Click(object sender, EventArgs e) {
-            FormUbicacion formUbicacion = new FormUbicacion();
-            formUbicacion.Show();
-            if (this is not FormMain) {
-                Globales.transition();
-                Close();
-            } else {
-                Hide();
-            }
-        }
-
-        private void lblDisponibilidad_Click(object sender, EventArgs e) {
+        private void Disponibilidad_Click(object sender, EventArgs e) {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Show();
             if (this is not FormMain) {
@@ -251,18 +236,6 @@ namespace Missushi.Forms {
                 Hide();
             }
         }
-
-        private void pbDisponibilidad_Click(object sender, EventArgs e) {
-            FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
-            formDisponibilidad.Show();
-            if (this is not FormMain) {
-                Globales.transition();
-                Close();
-            } else {
-                Hide();
-            }
-        }
-
         private void lblBarraPrincipal_DoubleClick(object sender, EventArgs e) {
            // this.FormBorderStyle = FormBorderStyle.Sizable;
            // this.WindowState = FormWindowState.Minimized;
@@ -288,10 +261,27 @@ namespace Missushi.Forms {
                 Close();
             }
         }
-
+        protected void historial_Click(object sender, EventArgs e) {
+            FormHistorialReservaciones formHistorialReservaciones = new FormHistorialReservaciones();
+            Globales.transition();
+            formHistorialReservaciones.Show();
+        }
+        protected void hacerReservación_Click(object sender, EventArgs e) {
+            Globales.zonaSeleccionada.IdZona = -1;
+            FormReservacionCliente formReservacion = new FormReservacionCliente();
+            Globales.transition();
+            formReservacion.ShowDialog();
+        }
         private void pbMenuDesplegable_Click(object sender, EventArgs e) {
             if (pnlMuestraMenuDesplegable.Visible == false) {
-                inicializarMenuDesplegable(new List<string> { "Reservaciones", "Disponibilidad", "Ubicación", "Menú", "Reseñas", "Historial" });
+                inicializarMenuDesplegable(new List<(string, EventHandler)> {
+                      ("Historial",historial_Click),
+                      ("Reseñas", Reseñas_Click),
+                      ("Menú", Menu_Click),
+                      ("Ubicación", Ubicacion_Click),
+                      ("Disponibilidad", Disponibilidad_Click),
+                      ("Reservaciones", hacerReservación_Click)
+                 });
             }
         }
 
@@ -352,7 +342,7 @@ namespace Missushi.Forms {
             }
         }
 
-        private void btnReseñas_Click(object sender, EventArgs e) {
+        private void Reseñas_Click(object sender, EventArgs e) {
             Cliente.FormReseña formReseña = new Cliente.FormReseña();
             formReseña.Show();
             if (this is not FormMain) {

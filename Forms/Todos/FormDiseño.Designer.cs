@@ -99,7 +99,7 @@ namespace Missushi.Forms {
             this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "Menú";
             this.lblMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMenu.Click += new System.EventHandler(this.lblMenu_Click);
+            this.lblMenu.Click += new System.EventHandler(this.Menu_Click);
             // 
             // pbUbicacion
             // 
@@ -111,7 +111,7 @@ namespace Missushi.Forms {
             this.pbUbicacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUbicacion.TabIndex = 0;
             this.pbUbicacion.TabStop = false;
-            this.pbUbicacion.Click += new System.EventHandler(this.pbUbicacion_Click);
+            this.pbUbicacion.Click += new System.EventHandler(this.Ubicacion_Click);
             this.pbUbicacion.MouseLeave += new System.EventHandler(this.leave);
             this.pbUbicacion.MouseHover += new System.EventHandler(this.hover);
             // 
@@ -155,7 +155,7 @@ namespace Missushi.Forms {
             this.lblUbicacion.TabIndex = 0;
             this.lblUbicacion.Text = "Ubicación";
             this.lblUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblUbicacion.Click += new System.EventHandler(this.lblUbicacion_Click);
+            this.lblUbicacion.Click += new System.EventHandler(Ubicacion_Click);
             // 
             // lblDisponibilidad
             // 
@@ -169,7 +169,7 @@ namespace Missushi.Forms {
             this.lblDisponibilidad.TabIndex = 0;
             this.lblDisponibilidad.Text = "Disponibilidad";
             this.lblDisponibilidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDisponibilidad.Click += new System.EventHandler(this.lblDisponibilidad_Click);
+            this.lblDisponibilidad.Click += new System.EventHandler(this.Disponibilidad_Click);
             // 
             // pbDisponibilidad
             // 
@@ -181,7 +181,7 @@ namespace Missushi.Forms {
             this.pbDisponibilidad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDisponibilidad.TabIndex = 0;
             this.pbDisponibilidad.TabStop = false;
-            this.pbDisponibilidad.Click += new System.EventHandler(this.pbDisponibilidad_Click);
+            this.pbDisponibilidad.Click += new System.EventHandler(this.Disponibilidad_Click);
             this.pbDisponibilidad.MouseLeave += new System.EventHandler(this.leave);
             this.pbDisponibilidad.MouseHover += new System.EventHandler(this.hover);
             // 
@@ -195,7 +195,7 @@ namespace Missushi.Forms {
             this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMenu.TabIndex = 0;
             this.pbMenu.TabStop = false;
-            this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click);
+            this.pbMenu.Click += new System.EventHandler(this.Menu_Click);
             this.pbMenu.MouseLeave += new System.EventHandler(this.leave);
             this.pbMenu.MouseHover += new System.EventHandler(this.hover);
             // 
@@ -274,7 +274,7 @@ namespace Missushi.Forms {
             this.btnReseñas.Text = "Reseñas";
             this.btnReseñas.UseVisualStyleBackColor = false;
             this.btnReseñas.Visible = false;
-            this.btnReseñas.Click += new System.EventHandler(this.btnReseñas_Click);
+            this.btnReseñas.Click += new System.EventHandler(this.Reseñas_Click);
             this.btnReseñas.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
             // 
             // pbSalir
