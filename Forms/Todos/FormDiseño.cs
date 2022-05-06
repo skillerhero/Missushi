@@ -19,7 +19,6 @@ namespace Missushi.Forms {
         protected void inicializarMenuDesplegable(List<string> nombres) {
             PictureBoxPersonalizado pbLogoLetrasAux = pbLogoLetras;
             pnlPrincipalMenu.Controls.Clear();
-            pnlPrincipalMenu.Controls.Add(pbLogoLetrasAux);
             
             for (int i = 0; i < nombres.Count; i++) {
                 LabelPersonalizado lbl = new LabelPersonalizado();
@@ -40,11 +39,12 @@ namespace Missushi.Forms {
                 pnl.Name = "pnlMenu"+i;
                 pnl.Size = new Size(205, 80);
 
-                pnlPrincipalMenu.Controls.Add(pnl);
-                pnlPrincipalMenu.Visible = true;
-                pnlPrincipalMenu.BringToFront();
-            }
 
+                pnlPrincipalMenu.Controls.Add(pnl);
+            }
+            pnlPrincipalMenu.Controls.Add(pbLogoLetrasAux);
+            pnlPrincipalMenu.Visible = true;
+            pnlPrincipalMenu.BringToFront();
         }
 
 
