@@ -17,40 +17,6 @@ namespace Missushi.Forms {
             componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
         }
 
-        protected void inicializarMenuDesplegable(List<(string, EventHandler)> nombres) {
-            PictureBoxPersonalizado pbLogoLetrasAux = pbLogoLetras;
-            pnlPrincipalMenu.Controls.Clear();
-            
-            for (int i = 0; i < nombres.Count; i++) {
-                LabelPersonalizado lbl = new LabelPersonalizado();
-                lbl.Dock = DockStyle.Fill;
-                lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-                lbl.ForeColor = Color.White;
-                lbl.Location = new Point(0, 0);
-                lbl.Margin = new Padding(0);
-                lbl.Name = "lblPanel" + i;
-                lbl.TabIndex = 0;
-                lbl.Text = nombres[i].Item1;
-                lbl.TextAlign = ContentAlignment.MiddleCenter;
-                lbl.Click += nombres[i].Item2;
-
-                Panel pnl = new Panel();
-                pnl.Controls.Add(lbl);
-                pnl.Dock = DockStyle.Top;
-                pnl.Location = new Point(0, 75);
-                pnl.Name = "pnlMenu"+i;
-                pnl.Size = new Size(205, 80);
-
-
-                pnlPrincipalMenu.Controls.Add(pnl);
-            }
-            pnlPrincipalMenu.Controls.Add(pbLogoLetrasAux);
-            pnlPrincipalMenu.Visible = true;
-            pnlPrincipalMenu.BringToFront();
-        }
-
-
-
         protected void cargarPantallaPrincipal() {
             pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
             lblRegistro.Visible = true;
@@ -109,11 +75,6 @@ namespace Missushi.Forms {
             }
         }
 
-        protected void cargarPantallaMainCliente() {
-            cargarPantallaPrincipal();
-            cargarPantallaUsuario();
-        }
-
         protected void cargarPantallaReseñas() {
             if (Globales.usuarioActual.IdUsuario != -1) {
                 cargarPantallaUsuario();
@@ -127,6 +88,23 @@ namespace Missushi.Forms {
             centrarComponente(lblBarraTitulo);
         }
 
+        protected void cargarPantallaRegistro() {
+            noCargarPantallaPrincipal();
+            lblRegistro.colorLetra = Globales.verdeFuerteLetra;
+            lblRegistro.Enabled = false;
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "REGISTRO";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            centrarComponente(lblTitulo);
+            centrarComponente(lblBarraTitulo);
+        }
+        //-------------------------------------------------------------Usuario------------------------------------------------
+        protected void cargarPantallaMainCliente() {
+            cargarPantallaPrincipal();
+            cargarPantallaUsuario();
+        }
         protected void cargarPantallaUsuario() {
             pbSalir.Visible = true;
             lblIngresar.Visible = false;
@@ -146,22 +124,39 @@ namespace Missushi.Forms {
             lblRegistro.desactivarLabel();
             lblRegistro.Location = new Point(lblBarra5.Location.X - 20 - lblRegistro.Width, lblRegistro.Location.Y);
             pbMenuDesplegable.Visible = true;
-
         }
 
-        protected void cargarPantallaRegistro() {
-            noCargarPantallaPrincipal();
-            lblRegistro.colorLetra = Globales.verdeFuerteLetra;
-            lblRegistro.Enabled = false;
-            lblTitulo.Visible = true;
-            lblTitulo.desactivarLabel();
-            lblTitulo.Text = "REGISTRO";
-            lblBarraTitulo.Visible = true;
-            lblBarraTitulo.Width = lblTitulo.Width;
-            centrarComponente(lblTitulo);
-            centrarComponente(lblBarraTitulo);
-        }
+        protected void inicializarMenuDesplegable(List<(string, EventHandler)> nombres) {
+            PictureBoxPersonalizado pbLogoLetrasAux = pbLogoLetras;
+            pnlPrincipalMenu.Controls.Clear();
 
+            for (int i = 0; i < nombres.Count; i++) {
+                LabelPersonalizado lbl = new LabelPersonalizado();
+                lbl.Dock = DockStyle.Fill;
+                lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+                lbl.ForeColor = Color.White;
+                lbl.Location = new Point(0, 0);
+                lbl.Margin = new Padding(0);
+                lbl.Name = "lblPanel" + i;
+                lbl.TabIndex = 0;
+                lbl.Text = nombres[i].Item1;
+                lbl.TextAlign = ContentAlignment.MiddleCenter;
+                lbl.Click += nombres[i].Item2;
+
+                Panel pnl = new Panel();
+                pnl.Controls.Add(lbl);
+                pnl.Dock = DockStyle.Top;
+                pnl.Location = new Point(0, 75);
+                pnl.Name = "pnlMenu" + i;
+                pnl.Size = new Size(205, 80);
+
+
+                pnlPrincipalMenu.Controls.Add(pnl);
+            }
+            pnlPrincipalMenu.Controls.Add(pbLogoLetrasAux);
+            pnlPrincipalMenu.Visible = true;
+            pnlPrincipalMenu.BringToFront();
+        }
 
         //----------------------------Eventos----------------------------------------------
         private void hover(object sender, EventArgs e) {
@@ -422,7 +417,7 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
+            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); 
         }
     }
 
@@ -447,7 +442,7 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); 
         }
 
     }
@@ -466,7 +461,7 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height+3, 15, 15)); //play with these values till you are happy
+            this.Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height+3, 15, 15)); 
         }
     }
 
@@ -485,10 +480,10 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
+            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); 
         }
     }
-    class TextBoxPersonalizado : TextBox {
+    public class TextBoxPersonalizado : TextBox {
         public TextBoxPersonalizado() {
             BackColor = Globales.rosaTextBox;
             Size = new Size(70, 70);
@@ -507,7 +502,7 @@ namespace Missushi.Forms {
         );
         protected override void OnResize(EventArgs e) {
             base.OnResize(e);
-            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); //play with these values till you are happy
+            Region = Region.FromHrgn(CreateRoundRectRgn(2, 3, Width, Height, 15, 15)); 
         }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e) {
