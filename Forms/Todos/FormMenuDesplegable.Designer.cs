@@ -70,7 +70,7 @@
             // 
             this.pnlHistorialC.Controls.Add(this.lblHistorialMenu);
             this.pnlHistorialC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHistorialC.Location = new System.Drawing.Point(0, 464);
+            this.pnlHistorialC.Location = new System.Drawing.Point(0, 501);
             this.pnlHistorialC.Name = "pnlHistorialC";
             this.pnlHistorialC.Size = new System.Drawing.Size(237, 80);
             this.pnlHistorialC.TabIndex = 5;
@@ -79,7 +79,7 @@
             // 
             this.lblHistorialMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblHistorialMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHistorialMenu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHistorialMenu.Font = new System.Drawing.Font("Gabriola", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblHistorialMenu.ForeColor = System.Drawing.Color.White;
             this.lblHistorialMenu.Location = new System.Drawing.Point(0, 0);
             this.lblHistorialMenu.Margin = new System.Windows.Forms.Padding(0);
@@ -93,7 +93,7 @@
             // 
             this.pnlResenaC.Controls.Add(this.lblResenaMenu);
             this.pnlResenaC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlResenaC.Location = new System.Drawing.Point(0, 384);
+            this.pnlResenaC.Location = new System.Drawing.Point(0, 421);
             this.pnlResenaC.Name = "pnlResenaC";
             this.pnlResenaC.Size = new System.Drawing.Size(237, 80);
             this.pnlResenaC.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             this.lblResenaMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblResenaMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblResenaMenu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblResenaMenu.Font = new System.Drawing.Font("Gabriola", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblResenaMenu.ForeColor = System.Drawing.Color.White;
             this.lblResenaMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblResenaMenu.Location = new System.Drawing.Point(0, 0);
@@ -118,7 +118,7 @@
             // 
             this.pnlMenuCliente.Controls.Add(this.lblMenuOpcion);
             this.pnlMenuCliente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMenuCliente.Location = new System.Drawing.Point(0, 304);
+            this.pnlMenuCliente.Location = new System.Drawing.Point(0, 341);
             this.pnlMenuCliente.Name = "pnlMenuCliente";
             this.pnlMenuCliente.Size = new System.Drawing.Size(237, 80);
             this.pnlMenuCliente.TabIndex = 3;
@@ -127,7 +127,7 @@
             // 
             this.lblMenuOpcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblMenuOpcion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMenuOpcion.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMenuOpcion.Font = new System.Drawing.Font("Gabriola", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblMenuOpcion.ForeColor = System.Drawing.Color.White;
             this.lblMenuOpcion.Location = new System.Drawing.Point(0, 0);
             this.lblMenuOpcion.Margin = new System.Windows.Forms.Padding(0);
@@ -141,7 +141,7 @@
             // 
             this.pnlUbicacionC.Controls.Add(this.lblUbicacionMenu);
             this.pnlUbicacionC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUbicacionC.Location = new System.Drawing.Point(0, 224);
+            this.pnlUbicacionC.Location = new System.Drawing.Point(0, 261);
             this.pnlUbicacionC.Name = "pnlUbicacionC";
             this.pnlUbicacionC.Size = new System.Drawing.Size(237, 80);
             this.pnlUbicacionC.TabIndex = 5;
@@ -150,7 +150,7 @@
             // 
             this.lblUbicacionMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblUbicacionMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUbicacionMenu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUbicacionMenu.Font = new System.Drawing.Font("Gabriola", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUbicacionMenu.ForeColor = System.Drawing.Color.White;
             this.lblUbicacionMenu.Location = new System.Drawing.Point(0, 0);
             this.lblUbicacionMenu.Margin = new System.Windows.Forms.Padding(0);
@@ -164,7 +164,7 @@
             // 
             this.pnlDisponibilidadC.Controls.Add(this.lblDisponibilidadMenu);
             this.pnlDisponibilidadC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDisponibilidadC.Location = new System.Drawing.Point(0, 144);
+            this.pnlDisponibilidadC.Location = new System.Drawing.Point(0, 181);
             this.pnlDisponibilidadC.Name = "pnlDisponibilidadC";
             this.pnlDisponibilidadC.Size = new System.Drawing.Size(237, 80);
             this.pnlDisponibilidadC.TabIndex = 2;
@@ -173,7 +173,7 @@
             // 
             this.lblDisponibilidadMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
             this.lblDisponibilidadMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDisponibilidadMenu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDisponibilidadMenu.Font = new System.Drawing.Font("Gabriola", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDisponibilidadMenu.ForeColor = System.Drawing.Color.White;
             this.lblDisponibilidadMenu.Location = new System.Drawing.Point(0, 0);
             this.lblDisponibilidadMenu.Margin = new System.Windows.Forms.Padding(0);
@@ -187,18 +187,18 @@
             // 
             this.pnlReservacionesC.Controls.Add(this.lblReservacionesMenu);
             this.pnlReservacionesC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReservacionesC.Location = new System.Drawing.Point(0, 64);
+            this.pnlReservacionesC.Location = new System.Drawing.Point(0, 75);
             this.pnlReservacionesC.Name = "pnlReservacionesC";
-            this.pnlReservacionesC.Size = new System.Drawing.Size(237, 80);
+            this.pnlReservacionesC.Size = new System.Drawing.Size(237, 106);
             this.pnlReservacionesC.TabIndex = 1;
             // 
             // lblReservacionesMenu
             // 
             this.lblReservacionesMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(120)))), ((int)(((byte)(79)))));
-            this.lblReservacionesMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblReservacionesMenu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReservacionesMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblReservacionesMenu.Font = new System.Drawing.Font("Gabriola", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblReservacionesMenu.ForeColor = System.Drawing.Color.White;
-            this.lblReservacionesMenu.Location = new System.Drawing.Point(0, 0);
+            this.lblReservacionesMenu.Location = new System.Drawing.Point(0, 26);
             this.lblReservacionesMenu.Margin = new System.Windows.Forms.Padding(0);
             this.lblReservacionesMenu.Name = "lblReservacionesMenu";
             this.lblReservacionesMenu.Size = new System.Drawing.Size(237, 80);
@@ -212,7 +212,7 @@
             this.pnlMissushiMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMissushiMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMissushiMenu.Name = "pnlMissushiMenu";
-            this.pnlMissushiMenu.Size = new System.Drawing.Size(237, 64);
+            this.pnlMissushiMenu.Size = new System.Drawing.Size(237, 75);
             this.pnlMissushiMenu.TabIndex = 0;
             // 
             // pictureBoxPersonalizado1
@@ -222,7 +222,7 @@
             this.pictureBoxPersonalizado1.Image = global::Missushi.Properties.Resources.miss;
             this.pictureBoxPersonalizado1.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxPersonalizado1.Name = "pictureBoxPersonalizado1";
-            this.pictureBoxPersonalizado1.Size = new System.Drawing.Size(237, 64);
+            this.pictureBoxPersonalizado1.Size = new System.Drawing.Size(237, 75);
             this.pictureBoxPersonalizado1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPersonalizado1.TabIndex = 0;
             this.pictureBoxPersonalizado1.TabStop = false;
@@ -231,7 +231,7 @@
             // 
             // FormMenuDesplegable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.pnlPrincipalMenu);

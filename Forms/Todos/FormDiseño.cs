@@ -133,7 +133,7 @@ namespace Missushi.Forms {
             for (int i = 0; i < nombres.Count; i++) {
                 LabelPersonalizado lbl = new LabelPersonalizado();
                 lbl.Dock = DockStyle.Fill;
-                lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+                lbl.Font = new Font("Gabriola", 19.8F, FontStyle.Regular, GraphicsUnit.Point);
                 lbl.ForeColor = Color.White;
                 lbl.Location = new Point(0, 0);
                 lbl.Margin = new Padding(0);
@@ -148,7 +148,7 @@ namespace Missushi.Forms {
                 pnl.Dock = DockStyle.Top;
                 pnl.Location = new Point(0, 75);
                 pnl.Name = "pnlMenu" + i;
-                pnl.Size = new Size(205, 80);
+                pnl.Size = new Size(230, 80);
 
 
                 pnlPrincipalMenu.Controls.Add(pnl);

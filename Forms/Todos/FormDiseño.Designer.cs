@@ -155,7 +155,7 @@ namespace Missushi.Forms {
             this.lblUbicacion.TabIndex = 0;
             this.lblUbicacion.Text = "Ubicación";
             this.lblUbicacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblUbicacion.Click += new System.EventHandler(Ubicacion_Click);
+            this.lblUbicacion.Click += new System.EventHandler(this.Ubicacion_Click);
             // 
             // lblDisponibilidad
             // 
@@ -299,7 +299,7 @@ namespace Missushi.Forms {
             this.lblTitulo.Location = new System.Drawing.Point(402, 75);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(95, 68);
+            this.lblTitulo.Size = new System.Drawing.Size(120, 87);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Titulo";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -335,7 +335,7 @@ namespace Missushi.Forms {
             this.pnlPrincipalMenu.Controls.Add(this.pbLogoLetras);
             this.pnlPrincipalMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlPrincipalMenu.Name = "pnlPrincipalMenu";
-            this.pnlPrincipalMenu.Size = new System.Drawing.Size(205, 600);
+            this.pnlPrincipalMenu.Size = new System.Drawing.Size(237, 600);
             this.pnlPrincipalMenu.TabIndex = 0;
             this.pnlPrincipalMenu.Visible = false;
             // 
@@ -345,7 +345,7 @@ namespace Missushi.Forms {
             this.pnlMuestraMenuDesplegable.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMuestraMenuDesplegable.Location = new System.Drawing.Point(0, 75);
             this.pnlMuestraMenuDesplegable.Name = "pnlMuestraMenuDesplegable";
-            this.pnlMuestraMenuDesplegable.Size = new System.Drawing.Size(205, 80);
+            this.pnlMuestraMenuDesplegable.Size = new System.Drawing.Size(237, 80);
             this.pnlMuestraMenuDesplegable.TabIndex = 2;
             this.pnlMuestraMenuDesplegable.Visible = false;
             // 
@@ -356,7 +356,7 @@ namespace Missushi.Forms {
             this.lblPruebaMenuDesplegable.ForeColor = System.Drawing.Color.White;
             this.lblPruebaMenuDesplegable.Location = new System.Drawing.Point(0, 0);
             this.lblPruebaMenuDesplegable.Name = "lblPruebaMenuDesplegable";
-            this.lblPruebaMenuDesplegable.Size = new System.Drawing.Size(205, 80);
+            this.lblPruebaMenuDesplegable.Size = new System.Drawing.Size(237, 80);
             this.lblPruebaMenuDesplegable.TabIndex = 2;
             this.lblPruebaMenuDesplegable.Text = "Reservaciones";
             this.lblPruebaMenuDesplegable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -368,7 +368,7 @@ namespace Missushi.Forms {
             this.pbLogoLetras.Image = global::Missushi.Properties.Resources.miss;
             this.pbLogoLetras.Location = new System.Drawing.Point(0, 0);
             this.pbLogoLetras.Name = "pbLogoLetras";
-            this.pbLogoLetras.Size = new System.Drawing.Size(205, 75);
+            this.pbLogoLetras.Size = new System.Drawing.Size(237, 75);
             this.pbLogoLetras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogoLetras.TabIndex = 0;
             this.pbLogoLetras.TabStop = false;
@@ -379,6 +379,7 @@ namespace Missushi.Forms {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.pnlPrincipalMenu);
             this.Controls.Add(this.lblBarraTitulo);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pbLetrasLogo);
@@ -401,7 +402,6 @@ namespace Missushi.Forms {
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.pbMenuDesplegable);
             this.Controls.Add(this.lblBarraPrincipal);
-            this.Controls.Add(this.pnlPrincipalMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
