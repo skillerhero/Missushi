@@ -2,7 +2,7 @@
     public partial class FormMainAdministrador : FormDiseño {
         public FormMainAdministrador() {
             InitializeComponent();
-            cargarPantallaUsuario();
+            cargarPantallaMain();
         }
 
         private void FormMainAdministrador_Load(object sender, EventArgs e) {

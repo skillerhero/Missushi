@@ -1,5 +1,4 @@
-﻿using Missushi.Clases;
-using Missushi.Funciones;
+﻿using Missushi.Funciones;
 using MySqlConnector;
 using System.Data;
 
@@ -26,6 +25,10 @@ namespace Missushi.Forms.Gerente {
                 dgReservaciones.Columns["idZona"].HeaderText = "Zona";
                 dgReservaciones.Columns["estado"].HeaderText = "Estado";
                 dgReservaciones.Columns["idUsuario"].HeaderText = "ID usuario";
+                foreach (DataGridViewColumn col in dgReservaciones.Columns) {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+                dgReservaciones.Refresh();
             } catch (Exception ex) {
                 ConexionBD.manejarErrores(ex);
                 dgReservaciones.Visible = false;

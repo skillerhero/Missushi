@@ -35,6 +35,7 @@
             // 
             // dgReservaciones
             // 
+            this.dgReservaciones.AllowUserToAddRows = false;
             this.dgReservaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgReservaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgReservaciones.BackgroundColor = System.Drawing.Color.White;

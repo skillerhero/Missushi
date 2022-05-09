@@ -6,7 +6,7 @@ namespace Missushi.Forms {
     public partial class FormMainCliente : FormDiseño {
         public FormMainCliente() {
             InitializeComponent();
-            cargarPantallaMainCliente();
+            cargarPantallaMain();
         }
 
         private void hacerReseñaToolStripMenuItem_Click(object sender, EventArgs e) {

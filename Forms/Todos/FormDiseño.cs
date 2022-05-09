@@ -103,11 +103,11 @@ namespace Missushi.Forms {
             centrarComponente(lblBarraTitulo);
         }
         //-------------------------------------------------------------Usuario------------------------------------------------
-        protected void cargarPantallaMainCliente() {
+        protected void cargarPantallaMain() {
+            cargarPantallaPrincipal();
             cargarPantallaUsuario();
         }
         protected void cargarPantallaUsuario() {
-            cargarPantallaPrincipal();
             pbSalir.Visible = true;
             lblIngresar.Visible = false;
             lblRegistro.Visible = true;
