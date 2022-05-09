@@ -562,6 +562,19 @@ namespace Missushi.Funciones{
             return adapter;
         }
 
+        static public MySqlDataAdapter consultarReservacionDiaAdapter(DateTime dia) {
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            string sql = "SELECT idReservacion, fechaHoraInicio, fechaHoraFin, cantidadPersonas, idZona, estado FROM reservacion WHERE fechaHoraInicio BETWEEN @0 AND @1";
+            if (connection != null) {
+                connection.Open();
+                adapter = new MySqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.Add("@0",MySqlDbType.DateTime).Value = dia.Date;
+                adapter.SelectCommand.Parameters.Add("@1", MySqlDbType.DateTime).Value = dia.Date.AddDays(1);
+                connection.Close();
+            }
+            return adapter;
+        }
+
 
         /*--------------------------------------Menu--------------------------------------*/
 

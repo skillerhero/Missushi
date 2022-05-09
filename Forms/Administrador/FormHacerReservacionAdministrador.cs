@@ -4,15 +4,15 @@ using Missushi.Funciones;
 
 namespace Missushi.Forms.Administrador {
     public partial class FormHacerReservacionAdministrador : FormDiseño {
-        public static int idUsuario = -1;
         public FormHacerReservacionAdministrador() {
             InitializeComponent();
         }
 
         private void btnElegirUsuario_Click(object sender, EventArgs e) {
             FormElegirUsuario formElegirUsuario = new FormElegirUsuario();
+            Globales.transition();
             if(formElegirUsuario.ShowDialog() == DialogResult.OK) {
-                Usuario usuario = ConexionBD.consultarUsuario(idUsuario);
+                Usuario usuario = ConexionBD.consultarUsuario(Globales.usuarioSeleccionado.IdUsuario);
                 btnElegirUsuario.Text = usuario.Nombres + " " + usuario.Apellidos;
                 comprobaciones();
             }
@@ -42,21 +42,26 @@ namespace Missushi.Forms.Administrador {
         private DateTime obtenerFechaInicio() {
             DateTime fechaInicio;
             fechaInicio = dpFechaInicio.Value.Date;
-            ;
             switch (cbHoraInicio.SelectedValue) {
                 case 0:
                     fechaInicio = fechaInicio.AddHours(8);
                     break;
                 case 1:
-                    fechaInicio = fechaInicio.AddHours(11);
+                    fechaInicio = fechaInicio.AddHours(10);
                     break;
                 case 2:
-                    fechaInicio = fechaInicio.AddHours(14);
+                    fechaInicio = fechaInicio.AddHours(12);
                     break;
                 case 3:
-                    fechaInicio = fechaInicio.AddHours(17);
+                    fechaInicio = fechaInicio.AddHours(14);
                     break;
                 case 4:
+                    fechaInicio = fechaInicio.AddHours(16);
+                    break;
+                case 5:
+                    fechaInicio = fechaInicio.AddHours(18);
+                    break;
+                case 6:
                     fechaInicio = fechaInicio.AddHours(20);
                     break;
             }
@@ -95,7 +100,7 @@ namespace Missushi.Forms.Administrador {
         }
 
         private bool comprobarId() {
-            if(idUsuario == -1) {
+            if(Globales.usuarioSeleccionado.IdUsuario == -1) {
                 return false;
             }
             return true;
@@ -186,12 +191,12 @@ namespace Missushi.Forms.Administrador {
                 int idZona = Globales.zonaSeleccionada.IdZona;
                 string estado = "En espera";
 
-                if (ConexionBD.usuarioTieneReservacionesEnEspera(idUsuario)) {
+                if (ConexionBD.usuarioTieneReservacionesEnEspera(Globales.usuarioSeleccionado.IdUsuario)) {
                     MessageBox.Show("Tiene una reservación en espera. Cáncelela o asista a la reservación.");
                     this.DialogResult = DialogResult.Cancel;
                     return;
                 }
-                ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, idUsuario, idZona, estado);
+                ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, Globales.usuarioSeleccionado.IdUsuario, idZona, estado);
 
                 MessageBox.Show("Reservacion creada");
                 this.DialogResult = DialogResult.OK;
