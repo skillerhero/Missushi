@@ -92,6 +92,7 @@
             this.dpDia.Name = "dpDia";
             this.dpDia.Size = new System.Drawing.Size(200, 23);
             this.dpDia.TabIndex = 9;
+            this.dpDia.ValueChanged += new System.EventHandler(this.dpDia_ValueChanged);
             // 
             // FormReservacionGerente
             // 

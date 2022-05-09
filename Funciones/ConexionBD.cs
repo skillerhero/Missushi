@@ -564,7 +564,7 @@ namespace Missushi.Funciones{
 
         static public MySqlDataAdapter consultarReservacionDiaAdapter(DateTime dia) {
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string sql = "SELECT idReservacion, fechaHoraInicio, fechaHoraFin, cantidadPersonas, idZona, estado FROM reservacion WHERE fechaHoraInicio BETWEEN @0 AND @1";
+            string sql = "SELECT idReservacion, idUsuario, fechaHoraInicio, fechaHoraFin, cantidadPersonas, idZona, estado FROM reservacion WHERE fechaHoraInicio BETWEEN @0 AND @1";
             if (connection != null) {
                 connection.Open();
                 adapter = new MySqlDataAdapter(sql, connection);

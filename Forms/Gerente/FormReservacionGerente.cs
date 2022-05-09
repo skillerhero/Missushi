@@ -25,10 +25,15 @@ namespace Missushi.Forms.Gerente {
                 dgReservaciones.Columns["cantidadPersonas"].HeaderText = "No. Personas";
                 dgReservaciones.Columns["idZona"].HeaderText = "Zona";
                 dgReservaciones.Columns["estado"].HeaderText = "Estado";
+                dgReservaciones.Columns["idUsuario"].HeaderText = "ID usuario";
             } catch (Exception ex) {
                 ConexionBD.manejarErrores(ex);
                 dgReservaciones.Visible = false;
             }
+        }
+
+        private void dpDia_ValueChanged(object sender, EventArgs e) {
+            cargarDataGrid();
         }
     }
 }
