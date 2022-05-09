@@ -17,6 +17,7 @@ namespace Missushi.Forms.Cliente {
             List<Usuario> usuarios = new List<Usuario>();
             List<Panel> paneles = new List<Panel>();
 
+
             foreach (Reseña reseña in reseñas) {
                 usuarios.Add(ConexionBD.consultarUsuario(reseña.IdUsuario));
             }
@@ -27,6 +28,7 @@ namespace Missushi.Forms.Cliente {
                 panel.LblComentario.Text = reseñas[i].Comentario;
                 panel.Location = new Point(256, 0 + i * 196);
                 panel.LblFecha.Text = reseñas[i].Fecha.ToString("dd/MM/yyyy");
+                panel.IdResenia = reseñas[i].IdResenia;
                 switch (reseñas[i].CantidadEstrellas) {
                     case 1:
                         panel.PbCantidadEstrellas.Image = Properties.Resources._1_estrellas;
@@ -43,6 +45,9 @@ namespace Missushi.Forms.Cliente {
                     case 5:
                         panel.PbCantidadEstrellas.Image = Properties.Resources._5_estrellas;
                         break;
+                }
+                if(Globales.usuarioActual.Tipo != 'A') {
+                    panel.BtnEliminar.Visible = false;
                 }
 
                 panel.Location = new Point((panelPadre.Width-panel.Width)/2, panel.Location.Y);
@@ -76,7 +81,8 @@ namespace Missushi.Forms.Cliente {
             private Label lblComentario;
             private Label lblFecha;
             private Label lblBarraInferior2;
-
+            private BotonPersonalizado btnEliminar;
+            private int idResenia = -1;
             public PanelReseña() {
                 lblComentario = new Label();
                 lblFecha = new Label();
@@ -84,6 +90,7 @@ namespace Missushi.Forms.Cliente {
                 lblNombre = new Label();
                 pbCantidadEstrellas = new PictureBox();
                 lblBarraInferior2 = new Label();
+                btnEliminar = new BotonPersonalizado();
 
 
                 // pbCantidadEstrellas
@@ -141,6 +148,20 @@ namespace Missushi.Forms.Cliente {
                 this.lblBarraInferior2.Name = "lblBarraInferior2";
                 this.lblBarraInferior2.Size = new Size(512, 4);
 
+                // btnEliminar
+                // 
+                this.btnEliminar.BackColor =Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
+                this.btnEliminar.FlatAppearance.BorderSize = 0;
+                this.btnEliminar.FlatStyle = FlatStyle.Flat;
+                this.btnEliminar.ForeColor = Color.White;
+                this.btnEliminar.Location = new Point(lblComentario.Location.X + lblComentario.Width - btnEliminar.Width, lblComentario.Location.Y);
+                this.btnEliminar.Name = "btnEliminar";
+                this.btnEliminar.Size = new Size(75, 23);
+                this.btnEliminar.TabIndex = 0;
+                this.btnEliminar.Text = "Eliminar";
+                this.btnEliminar.UseVisualStyleBackColor = false;
+                this.btnEliminar.Click += new EventHandler(btnEliminarReseña_Click);
+
 
                 this.Controls.Add(this.pbCantidadEstrellas);
                 this.Controls.Add(this.lblNombre);
@@ -148,17 +169,28 @@ namespace Missushi.Forms.Cliente {
                 this.Controls.Add(this.lblBarraInferior);
                 this.Controls.Add(this.lblComentario);
                 this.Controls.Add(this.lblBarraInferior2);
+                this.Controls.Add(this.btnEliminar);
                 this.Location = new Point(0, 0);
                 this.Size = new Size(512, 200);
                 this.Visible = true;
             }
+            private void btnEliminarReseña_Click(object sender, EventArgs e) {
+                try { 
+                    ConexionBD.eliminarReseña(idResenia);
+                    MessageBox.Show("Eliminado con éxito");
+                } catch (Exception ex) {
+                    ConexionBD.manejarErrores(ex);
+                }
 
+            }
             public Label LblBarraInferior { get => lblBarraInferior; set => lblBarraInferior = value; }
             public Label LblNombre { get => lblNombre; set => lblNombre = value; }
             public PictureBox PbCantidadEstrellas { get => pbCantidadEstrellas; set => pbCantidadEstrellas = value; }
             public Label LblComentario { get => lblComentario; set => lblComentario = value; }
             public Label LblFecha { get => lblFecha; set => lblFecha = value; }
             public Label LblBarraInferior2 { get => lblBarraInferior2; set => lblBarraInferior2 = value; }
+            public BotonPersonalizado BtnEliminar { get => btnEliminar; set => btnEliminar = value; }
+            public int IdResenia { get => idResenia; set => idResenia = value; }
         }
 
         private void btnHacerReseña_Click(object sender, EventArgs e) {
@@ -173,5 +205,6 @@ namespace Missushi.Forms.Cliente {
                 formReseña.Show();
             }
         }
+
     }
 }

@@ -457,6 +457,18 @@ namespace Missushi.Funciones{
             return reseñas;
         }
 
+        static public bool eliminarReseña(int idReseña) {
+            string sql = "DELETE FROM resenia WHERE idResenia = @0;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.Int32).Value = idReseña;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            return true;
+        }
 
         /*--------------------------------------Reservacion--------------------------------------*/
         static public bool agregarReservacion(DateTime fechaHoraInicio, DateTime fechaHoraFin, int cantidadPersonas, int idUsuario, int idZona, string estado) {
