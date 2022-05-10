@@ -212,6 +212,7 @@ namespace Missushi.Forms {
             formMenu.Show();
             if (this is not FormMain) {
                 Globales.transition();
+                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -222,6 +223,7 @@ namespace Missushi.Forms {
             formUbicacion.Show();
             if (this is not FormMain) {
                 Globales.transition();
+                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -233,6 +235,7 @@ namespace Missushi.Forms {
             formDisponibilidad.Show();
             if (this is not FormMain) {
                 Globales.transition();
+                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -269,7 +272,7 @@ namespace Missushi.Forms {
         }
         protected void hacerReservación_Click(object sender, EventArgs e) {
             Globales.zonaSeleccionada.IdZona = -1;
-            FormReservacionCliente formReservacion = new FormReservacionCliente();
+            FormHacerReservacion formReservacion = new FormHacerReservacion();
             Globales.transition();
             formReservacion.ShowDialog();
         }

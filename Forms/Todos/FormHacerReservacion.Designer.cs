@@ -1,5 +1,5 @@
 ﻿namespace Missushi.Forms.Cliente {
-    partial class FormReservacionCliente {
+    partial class FormHacerReservacion {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -32,6 +32,8 @@
             this.lblFechaYHora = new System.Windows.Forms.Label();
             this.dpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.cbHoraInicio = new System.Windows.Forms.ComboBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.btnElegirUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadPersonas)).BeginInit();
@@ -39,6 +41,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblUsuario);
+            this.panel1.Controls.Add(this.btnElegirUsuario);
             this.panel1.Controls.Add(this.lblZona);
             this.panel1.Controls.Add(this.btnElegirZona);
             this.panel1.Controls.Add(this.nudCantidadPersonas);
@@ -57,7 +61,7 @@
             this.lblZona.AutoSize = true;
             this.lblZona.Location = new System.Drawing.Point(153, 167);
             this.lblZona.Name = "lblZona";
-            this.lblZona.Size = new System.Drawing.Size(43, 20);
+            this.lblZona.Size = new System.Drawing.Size(34, 15);
             this.lblZona.TabIndex = 21;
             this.lblZona.Text = "Zona";
             // 
@@ -80,7 +84,7 @@
             0,
             0});
             this.nudCantidadPersonas.Name = "nudCantidadPersonas";
-            this.nudCantidadPersonas.Size = new System.Drawing.Size(120, 27);
+            this.nudCantidadPersonas.Size = new System.Drawing.Size(120, 23);
             this.nudCantidadPersonas.TabIndex = 27;
             this.nudCantidadPersonas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCantidadPersonas.Value = new decimal(new int[] {
@@ -94,7 +98,7 @@
             this.lblCantidadPersonas.AutoSize = true;
             this.lblCantidadPersonas.Location = new System.Drawing.Point(116, 225);
             this.lblCantidadPersonas.Name = "lblCantidadPersonas";
-            this.lblCantidadPersonas.Size = new System.Drawing.Size(153, 20);
+            this.lblCantidadPersonas.Size = new System.Drawing.Size(121, 15);
             this.lblCantidadPersonas.TabIndex = 22;
             this.lblCantidadPersonas.Text = "Cantidad de personas";
             // 
@@ -113,7 +117,7 @@
             this.lblFechaYHora.AutoSize = true;
             this.lblFechaYHora.Location = new System.Drawing.Point(100, 95);
             this.lblFechaYHora.Name = "lblFechaYHora";
-            this.lblFechaYHora.Size = new System.Drawing.Size(95, 20);
+            this.lblFechaYHora.Size = new System.Drawing.Size(76, 15);
             this.lblFechaYHora.TabIndex = 23;
             this.lblFechaYHora.Text = "Fecha y Hora";
             // 
@@ -123,7 +127,7 @@
             this.dpFechaInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dpFechaInicio.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dpFechaInicio.Name = "dpFechaInicio";
-            this.dpFechaInicio.Size = new System.Drawing.Size(227, 27);
+            this.dpFechaInicio.Size = new System.Drawing.Size(227, 23);
             this.dpFechaInicio.TabIndex = 24;
             this.dpFechaInicio.ValueChanged += new System.EventHandler(this.dpFechaInicio_ValueChanged);
             // 
@@ -132,13 +136,33 @@
             this.cbHoraInicio.FormattingEnabled = true;
             this.cbHoraInicio.Location = new System.Drawing.Point(438, 92);
             this.cbHoraInicio.Name = "cbHoraInicio";
-            this.cbHoraInicio.Size = new System.Drawing.Size(121, 28);
+            this.cbHoraInicio.Size = new System.Drawing.Size(121, 23);
             this.cbHoraInicio.TabIndex = 25;
             this.cbHoraInicio.SelectedIndexChanged += new System.EventHandler(this.cbHoraInicio_SelectedIndexChanged);
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(153, 276);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
+            this.lblUsuario.TabIndex = 29;
+            this.lblUsuario.Text = "Usuario";
+            // 
+            // btnElegirUsuario
+            // 
+            this.btnElegirUsuario.Location = new System.Drawing.Point(310, 260);
+            this.btnElegirUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnElegirUsuario.Name = "btnElegirUsuario";
+            this.btnElegirUsuario.Size = new System.Drawing.Size(121, 31);
+            this.btnElegirUsuario.TabIndex = 30;
+            this.btnElegirUsuario.Text = "Elegir Usuario";
+            this.btnElegirUsuario.UseVisualStyleBackColor = true;
+            this.btnElegirUsuario.Click += new System.EventHandler(this.btnElegirUsuario_Click);
+            // 
             // FormReservacionCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
@@ -170,5 +194,7 @@
         private Label lblFechaYHora;
         private DateTimePicker dpFechaInicio;
         private ComboBox cbHoraInicio;
+        private Label lblUsuario;
+        private Button btnElegirUsuario;
     }
 }

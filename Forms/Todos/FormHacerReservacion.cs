@@ -1,4 +1,5 @@
 ﻿using Missushi.Clases;
+using Missushi.Forms.Administrador;
 using Missushi.Forms.Gerente;
 using Missushi.Funciones;
 using QRCoder;
@@ -7,9 +8,10 @@ using System.Net.Mail;
 using System.Net.Mime;
 
 namespace Missushi.Forms.Cliente {
-    public partial class FormReservacionCliente : FormDiseño {
-        public FormReservacionCliente() {
+    public partial class FormHacerReservacion : FormDiseño {
+        public FormHacerReservacion() {
             InitializeComponent();
+            cargarPantallaUsuario();
         }
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
@@ -17,16 +19,16 @@ namespace Missushi.Forms.Cliente {
                 DateTime fechaInicio = obtenerFechaInicio();
                 DateTime fechaFin = obtenerFechaFin();
                 int cantidadPersonas = (int)nudCantidadPersonas.Value;
-                int idUsuario = Globales.usuarioActual.IdUsuario;
+                int idUsuario = Globales.usuarioSeleccionado.IdUsuario;
                 int idZona = Globales.zonaSeleccionada.IdZona;
                 string estado = "En espera";
 
-                if (ConexionBD.usuarioTieneReservacionesEnEspera(idUsuario)) {
+                if (ConexionBD.usuarioTieneReservacionesEnEspera(Globales.usuarioSeleccionado.IdUsuario)) {
                     MessageBox.Show("Tiene una reservación en espera. Cáncelela o asista a la reservación.");
                     this.DialogResult = DialogResult.Cancel;
                     return;
                 }
-                ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, idUsuario, idZona, estado);
+                ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, Globales.usuarioSeleccionado.IdUsuario, idZona, estado);
                 mandarCorreo();
                 MessageBox.Show("Reservacion creada");
                 this.DialogResult = DialogResult.OK;
@@ -35,13 +37,34 @@ namespace Missushi.Forms.Cliente {
             }
         }
 
+        private void btnElegirUsuario_Click(object sender, EventArgs e) {
+            FormElegirUsuario formElegirUsuario = new FormElegirUsuario();
+            Globales.transition();
+            if (formElegirUsuario.ShowDialog() == DialogResult.OK) {
+                Globales.usuarioSeleccionado = ConexionBD.consultarUsuario(Globales.usuarioSeleccionado.IdUsuario);
+                btnElegirUsuario.Text = Globales.usuarioSeleccionado.Nombres + " " + Globales.usuarioSeleccionado.Apellidos;
+                comprobaciones();
+            }
+        }
+        private void comprobaciones() {
+            if (comprobarCupo() && comprobarId()) {
+                btnHacerReservacion.Enabled = true;
+            }
+        }
+        private bool comprobarId() {
+            if (Globales.usuarioSeleccionado.IdUsuario == -1) {
+                return false;
+            }
+            return true;
+        }
+
         private void mandarCorreo() {
             try {
                 string remitente = "missushi.contacto@gmail.com";
                 string destinatario = "skillerhero@gmail.com";
                 //string copiaA = "danna.medina2869@alumnos.udg.mx";
 
-                Usuario usuario = Globales.usuarioActual;
+                Usuario usuario = Globales.usuarioSeleccionado;
                 var dirRemitente = new MailAddress(remitente, "Missushi");
                 var dirDestinatario = new MailAddress(destinatario, usuario.Nombres);
                 const string contra = "frribGLDb7D2mf";
@@ -69,8 +92,8 @@ namespace Missushi.Forms.Cliente {
         }
 
         private AlternateView GetEmbeddedImage() {
-            Reservacion reservacion = ConexionBD.consultarReservacion(Globales.usuarioActual.IdUsuario);
-            Usuario usuario = Globales.usuarioActual;
+            Reservacion reservacion = ConexionBD.consultarReservacion(Globales.usuarioSeleccionado.IdUsuario);
+            Usuario usuario = Globales.usuarioSeleccionado;
             QRCodeGenerator qr = new QRCodeGenerator();
             string url = "http://" + ConexionBD.ipServidor + "/modificarReservacion.php?idReservacion=" + reservacion.IdReservacion;
             QRCodeData data = qr.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
@@ -105,9 +128,17 @@ namespace Missushi.Forms.Cliente {
             nudCantidadPersonas.Enabled = false;
             dpFechaInicio.MinDate = DateTime.Today;
             dpFechaInicio.MaxDate = DateTime.Today.AddDays(7);
+            if(Globales.usuarioActual.Tipo == 'C') {
+                Globales.usuarioSeleccionado = Globales.usuarioActual;
+                btnElegirUsuario.Text = Globales.usuarioSeleccionado.Nombres + " " + Globales.usuarioSeleccionado.Apellidos;
+                btnElegirUsuario.Enabled = false;
+            } else {
+                Globales.usuarioSeleccionado = new Usuario();
+            }
         }
         private void btnElegirZona_Click(object sender, EventArgs e) {
             FormElegirZona formElegirZona = new FormElegirZona(obtenerFechaInicio());
+            Globales.transition();
             if (formElegirZona.ShowDialog() == DialogResult.OK) {
                 this.btnElegirZona.Text = "Zona " + Globales.zonaSeleccionada.IdZona;
                 this.nudCantidadPersonas.Focus();
@@ -160,22 +191,23 @@ namespace Missushi.Forms.Cliente {
             comprobarCupo();
         }
 
-        private void comprobarCupo() {
+        private bool comprobarCupo() {
             if (Globales.zonaSeleccionada.IdZona == -1) {
-                return;
+                return false;
             }
             int cupoZona = ConexionBD.consultarCupoZona(Globales.zonaSeleccionada.IdZona, obtenerFechaInicio());
             if (cupoZona == 0) {
                 btnHacerReservacion.Enabled = false;
                 nudCantidadPersonas.Enabled = false;
                 MessageBox.Show("No hay cupos en esta zona y horario.\nPuede seleccionar otra zona u horario.");
-                return;
+                return false;
             }
             if (cbHoraInicio.Enabled == true) {
                 nudCantidadPersonas.Maximum = cupoZona;
                 btnHacerReservacion.Enabled = true;
                 nudCantidadPersonas.Enabled = true;
             }
+            return true;
         }
 
         private void comprobarHoraHoy() {

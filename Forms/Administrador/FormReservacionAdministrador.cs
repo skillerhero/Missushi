@@ -1,7 +1,7 @@
 ﻿using Missushi.Funciones;
 using MySqlConnector;
 using System.Data;
-
+using Missushi.Forms.Cliente;
 namespace Missushi.Forms.Administrador {
     public partial class FormReservacionAdministrador : FormDiseño {
         public FormReservacionAdministrador() {
@@ -28,7 +28,7 @@ namespace Missushi.Forms.Administrador {
         }
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
-            FormHacerReservacionAdministrador formHacerReservacionAdministrador = new FormHacerReservacionAdministrador();
+            FormHacerReservacion formHacerReservacionAdministrador = new FormHacerReservacion();
             if(formHacerReservacionAdministrador.ShowDialog() == DialogResult.OK) {
                 cargarDataGrid();
             }

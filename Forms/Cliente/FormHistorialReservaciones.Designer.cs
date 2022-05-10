@@ -110,6 +110,7 @@
             this.btnCancelarReservacion.TabIndex = 6;
             this.btnCancelarReservacion.Text = "Cancelar Reservacion";
             this.btnCancelarReservacion.UseVisualStyleBackColor = true;
+            this.btnCancelarReservacion.Click += new System.EventHandler(this.btnCancelarReservacion_Click);
             // 
             // FormHistorialReservaciones
             // 
