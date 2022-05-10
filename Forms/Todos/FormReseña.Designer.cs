@@ -27,6 +27,7 @@ namespace Missushi.Forms.Cliente {
         private void InitializeComponent() {
             this.panelPadre = new System.Windows.Forms.Panel();
             this.panelReseñas = new System.Windows.Forms.Panel();
+            this.btnEliminar = new Missushi.Forms.BotonPersonalizado();
             this.lblBarraInferior2 = new System.Windows.Forms.Label();
             this.lblBarraInferior = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@ namespace Missushi.Forms.Cliente {
             this.btnHacerReseña = new System.Windows.Forms.Button();
             this.lblBarraInferiorReseña = new Missushi.Forms.SelectableLabel();
             this.txtReseña = new System.Windows.Forms.TextBox();
-            this.btnEliminar = new Missushi.Forms.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panelPadre.SuspendLayout();
             this.panelReseñas.SuspendLayout();
@@ -67,6 +67,20 @@ namespace Missushi.Forms.Cliente {
             this.panelReseñas.Size = new System.Drawing.Size(1024, 472);
             this.panelReseñas.TabIndex = 0;
             this.panelReseñas.Visible = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(770, 155);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
             // 
             // lblBarraInferior2
             // 
@@ -163,19 +177,6 @@ namespace Missushi.Forms.Cliente {
             this.txtReseña.PlaceholderText = "Escribe tu reseña...";
             this.txtReseña.Size = new System.Drawing.Size(512, 19);
             this.txtReseña.TabIndex = 2;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(770, 155);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // FormReseña
             // 

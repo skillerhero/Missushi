@@ -12,7 +12,9 @@ namespace Missushi.Forms.Cliente {
                 panelHacerReseña.Visible = false;
             }
         }
-        private void cargarReseñas() {
+
+        public void cargarReseñas() {
+            panelPadre.Controls.Clear();
             List<Reseña> reseñas = ConexionBD.consultarReseñas();
             List<Usuario> usuarios = new List<Usuario>();
             List<Panel> paneles = new List<Panel>();
@@ -46,8 +48,11 @@ namespace Missushi.Forms.Cliente {
                         panel.PbCantidadEstrellas.Image = Properties.Resources._5_estrellas;
                         break;
                 }
-                if(Globales.usuarioActual.Tipo != 'A') {
+                if(Globales.usuarioActual.Tipo != 'A') {     
                     panel.BtnEliminar.Visible = false;
+                } else {
+                    panel.Form = this;
+                    panel.BtnEliminar.Paint += new PaintEventHandler(cortarEsquinas);
                 }
 
                 panel.Location = new Point((panelPadre.Width-panel.Width)/2, panel.Location.Y);
@@ -83,6 +88,7 @@ namespace Missushi.Forms.Cliente {
             private Label lblBarraInferior2;
             private BotonPersonalizado btnEliminar;
             private int idResenia = -1;
+            private FormReseña form;
             public PanelReseña() {
                 lblComentario = new Label();
                 lblFecha = new Label();
@@ -178,6 +184,9 @@ namespace Missushi.Forms.Cliente {
                 try { 
                     ConexionBD.eliminarReseña(idResenia);
                     MessageBox.Show("Eliminado con éxito");
+                    if(form is not null) {
+                        form.cargarReseñas();
+                    }
                 } catch (Exception ex) {
                     ConexionBD.manejarErrores(ex);
                 }
@@ -191,6 +200,7 @@ namespace Missushi.Forms.Cliente {
             public Label LblBarraInferior2 { get => lblBarraInferior2; set => lblBarraInferior2 = value; }
             public BotonPersonalizado BtnEliminar { get => btnEliminar; set => btnEliminar = value; }
             public int IdResenia { get => idResenia; set => idResenia = value; }
+            public FormReseña Form { get => form; set => form = value; }
         }
 
         private void btnHacerReseña_Click(object sender, EventArgs e) {
