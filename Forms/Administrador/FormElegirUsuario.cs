@@ -1,4 +1,5 @@
-﻿using Missushi.Funciones;
+﻿using Missushi.Clases;
+using Missushi.Funciones;
 using MySqlConnector;
 using System.Data;
 
@@ -29,7 +30,7 @@ namespace Missushi.Forms.Administrador {
             DataGridViewRow selectedRow = dgUsuarios.Rows[selectedrowindex];
             var id = selectedRow.Cells["idUsuario"].Value;
             if (id != null) {
-                FormHacerReservacionAdministrador.idUsuario = Convert.ToInt32(id);
+                Globales.usuarioSeleccionado.IdUsuario = Convert.ToInt32(id);
             }
             this.DialogResult = DialogResult.OK;
         }

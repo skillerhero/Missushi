@@ -457,6 +457,18 @@ namespace Missushi.Funciones{
             return reseñas;
         }
 
+        static public bool eliminarReseña(int idReseña) {
+            string sql = "DELETE FROM resenia WHERE idResenia = @0;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.Int32).Value = idReseña;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            return true;
+        }
 
         /*--------------------------------------Reservacion--------------------------------------*/
         static public bool agregarReservacion(DateTime fechaHoraInicio, DateTime fechaHoraFin, int cantidadPersonas, int idUsuario, int idZona, string estado) {
@@ -557,6 +569,19 @@ namespace Missushi.Funciones{
                         MySqlDbType = MySqlDbType.Int32
                     }
                     );
+                connection.Close();
+            }
+            return adapter;
+        }
+
+        static public MySqlDataAdapter consultarReservacionDiaAdapter(DateTime dia) {
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            string sql = "SELECT idReservacion, idUsuario, fechaHoraInicio, fechaHoraFin, cantidadPersonas, idZona, estado FROM reservacion WHERE fechaHoraInicio BETWEEN @0 AND @1";
+            if (connection != null) {
+                connection.Open();
+                adapter = new MySqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.Add("@0",MySqlDbType.DateTime).Value = dia.Date;
+                adapter.SelectCommand.Parameters.Add("@1", MySqlDbType.DateTime).Value = dia.Date.AddDays(1);
                 connection.Close();
             }
             return adapter;

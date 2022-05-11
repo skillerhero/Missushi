@@ -1,5 +1,5 @@
-﻿namespace Missushi.Forms.Cliente {
-    partial class FormHistorialReservaciones {
+﻿namespace Missushi.Forms.Gerente {
+    partial class FormReservacionGerente {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -27,22 +27,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dgReservaciones = new System.Windows.Forms.DataGridView();
-            this.btnCancelarReservacion = new System.Windows.Forms.Button();
+            this.dpDia = new Missushi.Forms.DateTimePickerPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dgReservaciones);
-            this.panel1.Controls.Add(this.btnCancelarReservacion);
-            this.panel1.Location = new System.Drawing.Point(0, 78);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 522);
-            this.panel1.TabIndex = 5;
             // 
             // dgReservaciones
             // 
@@ -72,7 +61,7 @@
             this.dgReservaciones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgReservaciones.EnableHeadersVisualStyles = false;
             this.dgReservaciones.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
-            this.dgReservaciones.Location = new System.Drawing.Point(62, 101);
+            this.dgReservaciones.Location = new System.Drawing.Point(64, 172);
             this.dgReservaciones.Name = "dgReservaciones";
             this.dgReservaciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -96,37 +85,31 @@
             this.dgReservaciones.RowTemplate.Height = 29;
             this.dgReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgReservaciones.Size = new System.Drawing.Size(897, 257);
-            this.dgReservaciones.TabIndex = 7;
-            this.dgReservaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgReservaciones_CellContentClick);
-            this.dgReservaciones.SelectionChanged += new System.EventHandler(this.dgReservaciones_SelectionChanged);
+            this.dgReservaciones.TabIndex = 8;
             // 
-            // btnCancelarReservacion
+            // dpDia
             // 
-            this.btnCancelarReservacion.Enabled = false;
-            this.btnCancelarReservacion.Location = new System.Drawing.Point(449, 384);
-            this.btnCancelarReservacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCancelarReservacion.Name = "btnCancelarReservacion";
-            this.btnCancelarReservacion.Size = new System.Drawing.Size(113, 52);
-            this.btnCancelarReservacion.TabIndex = 6;
-            this.btnCancelarReservacion.Text = "Cancelar Reservacion";
-            this.btnCancelarReservacion.UseVisualStyleBackColor = true;
-            this.btnCancelarReservacion.Click += new System.EventHandler(this.btnCancelarReservacion_Click);
+            this.dpDia.Location = new System.Drawing.Point(707, 93);
+            this.dpDia.Name = "dpDia";
+            this.dpDia.Size = new System.Drawing.Size(200, 23);
+            this.dpDia.TabIndex = 9;
+            this.dpDia.ValueChanged += new System.EventHandler(this.dpDia_ValueChanged);
             // 
-            // FormHistorialReservaciones
+            // FormReservacionGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.panel1);
-            this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "FormHistorialReservaciones";
-            this.Text = "FormHistorialReservaciones";
-            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.Add(this.dpDia);
+            this.Controls.Add(this.dgReservaciones);
+            this.Name = "FormReservacionGerente";
+            this.Text = "FormReservacionGerente";
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            this.Controls.SetChildIndex(this.dgReservaciones, 0);
+            this.Controls.SetChildIndex(this.dpDia, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,8 +118,7 @@
 
         #endregion
 
-        private Panel panel1;
-        private Button btnCancelarReservacion;
         private DataGridView dgReservaciones;
+        private DateTimePickerPersonalizado dpDia;
     }
 }

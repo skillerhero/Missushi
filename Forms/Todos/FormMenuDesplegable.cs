@@ -3,7 +3,7 @@
         public FormMenuDesplegable() {
             InitializeComponent();
             inicializar();
-            cargarPantallaMainCliente();
+            cargarPantallaMain();
         }
 
 

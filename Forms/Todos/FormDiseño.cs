@@ -3,6 +3,8 @@ using Missushi.Forms.Todos;
 using Missushi.Forms.Cliente;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using Missushi.Forms.Administrador;
+using Missushi.Forms.Gerente;
 
 namespace Missushi.Forms {
     public partial class FormDiseño : Form {
@@ -101,7 +103,7 @@ namespace Missushi.Forms {
             centrarComponente(lblBarraTitulo);
         }
         //-------------------------------------------------------------Usuario------------------------------------------------
-        protected void cargarPantallaMainCliente() {
+        protected void cargarPantallaMain() {
             cargarPantallaPrincipal();
             cargarPantallaUsuario();
         }
@@ -155,6 +157,11 @@ namespace Missushi.Forms {
             }
             pnlPrincipalMenu.Controls.Add(pbLogoLetrasAux);
             pnlPrincipalMenu.Visible = true;
+            pnlPrincipalMenu.AutoScroll = false;
+            pnlPrincipalMenu.HorizontalScroll.Enabled = false;
+            pnlPrincipalMenu.HorizontalScroll.Visible = false;
+            pnlPrincipalMenu.HorizontalScroll.Maximum = 0;
+            pnlPrincipalMenu.AutoScroll = true;
             pnlPrincipalMenu.BringToFront();
         }
 
@@ -205,6 +212,7 @@ namespace Missushi.Forms {
             formMenu.Show();
             if (this is not FormMain) {
                 Globales.transition();
+                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -215,6 +223,7 @@ namespace Missushi.Forms {
             formUbicacion.Show();
             if (this is not FormMain) {
                 Globales.transition();
+                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -226,6 +235,7 @@ namespace Missushi.Forms {
             formDisponibilidad.Show();
             if (this is not FormMain) {
                 Globales.transition();
+                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -258,18 +268,67 @@ namespace Missushi.Forms {
         }
         protected void historial_Click(object sender, EventArgs e) {
             FormHistorialReservaciones formHistorialReservaciones = new FormHistorialReservaciones();
-            Globales.transition();
             formHistorialReservaciones.Show();
         }
         protected void hacerReservación_Click(object sender, EventArgs e) {
             Globales.zonaSeleccionada.IdZona = -1;
-            FormReservacionCliente formReservacion = new FormReservacionCliente();
+            FormHacerReservacion formReservacion = new FormHacerReservacion();
             Globales.transition();
             formReservacion.ShowDialog();
         }
+
+        protected void modificarInfoRestaurante_Click(object sender, EventArgs e) {
+            FormModificarInfoRestaurante formModificarInfo = new FormModificarInfoRestaurante();
+            formModificarInfo.Show();
+            Globales.transition();
+            Close();
+        }
+
+        protected void modificarZona_Click(object sender, EventArgs e) {
+            FormModificarZona formModificarZona = new FormModificarZona();
+            formModificarZona.Show();
+            Globales.transition();
+            Close();
+        }
+
+        protected void agregarZona_Click(object sender, EventArgs e) {
+            FormAgregarZona formAgregarZona = new FormAgregarZona();
+            formAgregarZona.Show();
+            Globales.transition();
+            Close();
+        }
+
+        protected void agregarPlatillo_Click(object sender, EventArgs e) {
+            FormAgregarPlatillo formAgregarPlatillo = new FormAgregarPlatillo();
+            formAgregarPlatillo.Show();
+            Globales.transition();
+            Close();
+        }
+
+        protected void modificarPlatillo_Click(object sender, EventArgs e) {
+            FormModificarPlatillo formModificarPlatillo = new FormModificarPlatillo();
+            formModificarPlatillo.Show();
+            Globales.transition();
+            Close();
+        }
+
+        protected void eliminarPlatillo_Click(object sender, EventArgs e) {
+            FormEliminarPlatillo formEliminarPlatillo = new FormEliminarPlatillo();
+            formEliminarPlatillo.Show();
+            Globales.transition();
+            Close();
+        }
+
+        protected void reservacionGerente_Click(object sender, EventArgs e) {
+            FormReservacionGerente formReservacionGerente = new FormReservacionGerente();
+            formReservacionGerente.Show();
+            Globales.transition();
+            Close();
+        }
         private void pbMenuDesplegable_Click(object sender, EventArgs e) {
             if (pnlMuestraMenuDesplegable.Visible == false) {
-                inicializarMenuDesplegable(new List<(string, EventHandler)> {
+                if (Globales.usuarioActual.Tipo == 'C') {
+                    inicializarMenuDesplegable(new List<(string, EventHandler)> {
                       ("Historial",historial_Click),
                       ("Reseñas", Reseñas_Click),
                       ("Menú", Menu_Click),
@@ -277,17 +336,64 @@ namespace Missushi.Forms {
                       ("Disponibilidad", Disponibilidad_Click),
                       ("Reservaciones", hacerReservación_Click)
                  });
+                } else if(Globales.usuarioActual.Tipo == 'A') {
+                    inicializarMenuDesplegable(new List<(string, EventHandler)> {
+                      ("Base de datos",verBD_Click),
+                      ("Reseñas", Reseñas_Click),
+                      ("Reservaciones", ReservacionesAdmin_Click),
+                      ("Usuarios", suspenderUsuarios_Click)
+                 });
+
+                } else if(Globales.usuarioActual.Tipo == 'G') {
+                    inicializarMenuDesplegable(new List<(string, EventHandler)> {
+                        ("Modificar platillos",modificarPlatillo_Click),
+                        ("Eliminar Platillos",eliminarPlatillo_Click),
+                        ("Agregar Platillos",agregarPlatillo_Click),
+                        ("Modificar info del restaurante",modificarInfoRestaurante_Click),
+                        ("Modificar zona",modificarZona_Click),
+                        ("Agregar zona",agregarZona_Click),
+                      ("Consultar reservaciones",reservacionGerente_Click),
+                      ("Disponibilidad", Disponibilidad_Click)
+                 });
+                }
+               
             }
         }
 
         private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {
             if (Globales.transicion) {
                 Globales.transicion = false;
+            } else if (Globales.usuarioActual.Tipo == 'C') {
+                FormMainCliente formMainCliente = new FormMainCliente();
+                formMainCliente.Show();
+            } else if (Globales.usuarioActual.Tipo == 'A') {
+                FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
+                formMainAdministrador.Show();
+            } else if (Globales.usuarioActual.Tipo == 'G') {
+                FormMainGerente formMainGerente = new FormMainGerente();
+                formMainGerente.Show();
             } else {
                 Globales.instancia.Show();
             }
         }
 
+        protected void verBD_Click(object sender, EventArgs e) {
+            FormBDAdmin formBDAdmin = new FormBDAdmin();
+            formBDAdmin.Show();
+            Globales.transition();
+            Close();
+        }
+
+        protected void suspenderUsuarios_Click(object sender, EventArgs e) {
+            FormSuspenderUsuario formSuspenderUsuario = new FormSuspenderUsuario();
+            Globales.transition();
+            formSuspenderUsuario.ShowDialog();
+        }
+        protected void ReservacionesAdmin_Click(object sender, EventArgs e) {
+            FormReservacionAdministrador formReservacionAdministrador = new FormReservacionAdministrador();
+            Globales.transition();
+            formReservacionAdministrador.ShowDialog();
+        }
         //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------
         protected override void WndProc(ref Message m) {
             const int WM_SYSCOMMAND = 0x0112;
@@ -338,7 +444,7 @@ namespace Missushi.Forms {
         }
 
         private void Reseñas_Click(object sender, EventArgs e) {
-            Cliente.FormReseña formReseña = new Cliente.FormReseña();
+            FormReseña formReseña = new FormReseña();
             formReseña.Show();
             if (this is not FormMain) {
                 Globales.transition();

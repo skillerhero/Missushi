@@ -25,6 +25,9 @@ namespace Missushi.Forms.Cliente {
                 dgReservaciones.Columns["cantidadPersonas"].HeaderText = "No. Personas";
                 dgReservaciones.Columns["idZona"].HeaderText = "Zona";
                 dgReservaciones.Columns["estado"].HeaderText = "Estado";
+                foreach (DataGridViewColumn col in dgReservaciones.Columns) {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             }
             catch (Exception ex) {
                 MessageBox.Show("No se pudo conectar con la base de datos.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
