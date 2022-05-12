@@ -2,6 +2,8 @@
 using MySqlConnector;
 using System.Data;
 using Missushi.Forms.Cliente;
+using Missushi.Clases;
+
 namespace Missushi.Forms.Administrador {
     public partial class FormReservacionAdministrador : FormDiseño {
         public FormReservacionAdministrador() {
@@ -9,6 +11,15 @@ namespace Missushi.Forms.Administrador {
         }
 
         private void FormReservacionAdministrador_Load(object sender, EventArgs e) {
+            lblTitulo.colorLetra = Globales.verdeFuerteLetra;
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "RESERVACIONES";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            lblBarraTitulo.BringToFront();
+            centrarComponente(lblTitulo);
+            centrarComponente(lblBarraTitulo);
             cargarDataGrid();
         }
 
@@ -46,6 +57,18 @@ namespace Missushi.Forms.Administrador {
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgReservaciones_SelectionChanged(object sender, EventArgs e) {
+            if (dgReservaciones.SelectedCells.Count > 0) {
+                int selectedrowindex = dgReservaciones.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgReservaciones.Rows[selectedrowindex];
+                if (selectedRow.Cells["estado"].Value.Equals("En espera")) {
+                    btnCancelarReservacion.Enabled = true;
+                } else {
+                    btnCancelarReservacion.Enabled = false;
+                }
             }
         }
     }

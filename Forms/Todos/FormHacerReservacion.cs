@@ -131,7 +131,8 @@ namespace Missushi.Forms.Cliente {
             if(Globales.usuarioActual.Tipo == 'C') {
                 Globales.usuarioSeleccionado = Globales.usuarioActual;
                 btnElegirUsuario.Text = Globales.usuarioSeleccionado.Nombres + " " + Globales.usuarioSeleccionado.Apellidos;
-                btnElegirUsuario.Enabled = false;
+                btnElegirUsuario.Click -= new EventHandler(btnElegirUsuario_Click);
+                btnElegirUsuario.Cursor = Cursors.Default;
             } else {
                 Globales.usuarioSeleccionado = new Usuario();
             }

@@ -123,6 +123,16 @@ namespace Missushi.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap cancelar {
+            get {
+                object obj = ResourceManager.GetObject("cancelar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Cerrar {
             get {
                 object obj = ResourceManager.GetObject("Cerrar", resourceCulture);
@@ -296,6 +306,26 @@ namespace Missushi.Properties {
         public static System.Drawing.Bitmap principal {
             get {
                 object obj = ResourceManager.GetObject("principal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap reservar {
+            get {
+                object obj = ResourceManager.GetObject("reservar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap reservar1 {
+            get {
+                object obj = ResourceManager.GetObject("reservar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

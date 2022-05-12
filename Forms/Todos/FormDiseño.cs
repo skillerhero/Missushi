@@ -450,6 +450,7 @@ namespace Missushi.Forms {
                 IntPtr ptr = CreateRoundRectRgn(2, 3, ((BotonPersonalizado)sender).Width, ((BotonPersonalizado)sender).Height, 15, 15);
                 ((BotonPersonalizado)sender).Region = Region.FromHrgn(ptr);
                 DeleteObject(ptr);
+
             }
         }
 

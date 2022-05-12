@@ -1,4 +1,6 @@
-﻿namespace Missushi.Forms.Cliente {
+﻿using Missushi.Clases;
+
+namespace Missushi.Forms.Cliente {
     partial class FormHacerReservacion {
         /// <summary>
         /// Required designer variable.
@@ -24,16 +26,16 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dpFechaInicio = new Missushi.Forms.DateTimePickerPersonalizado();
+            this.cbHoraInicio = new Missushi.Forms.ComboBoxPersonalizado();
+            this.btnElegirZona = new Missushi.Forms.BotonPersonalizado();
+            this.btnElegirUsuario = new Missushi.Forms.BotonPersonalizado();
+            this.btnHacerReservacion = new Missushi.Forms.BotonPersonalizado();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.lblZona = new System.Windows.Forms.Label();
-            this.btnElegirZona = new System.Windows.Forms.Button();
             this.nudCantidadPersonas = new System.Windows.Forms.NumericUpDown();
             this.lblCantidadPersonas = new System.Windows.Forms.Label();
-            this.btnHacerReservacion = new System.Windows.Forms.Button();
             this.lblFechaYHora = new System.Windows.Forms.Label();
-            this.dpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.cbHoraInicio = new System.Windows.Forms.ComboBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.btnElegirUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidadPersonas)).BeginInit();
@@ -41,20 +43,97 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblUsuario);
-            this.panel1.Controls.Add(this.btnElegirUsuario);
-            this.panel1.Controls.Add(this.lblZona);
-            this.panel1.Controls.Add(this.btnElegirZona);
-            this.panel1.Controls.Add(this.nudCantidadPersonas);
-            this.panel1.Controls.Add(this.lblCantidadPersonas);
-            this.panel1.Controls.Add(this.btnHacerReservacion);
-            this.panel1.Controls.Add(this.lblFechaYHora);
             this.panel1.Controls.Add(this.dpFechaInicio);
             this.panel1.Controls.Add(this.cbHoraInicio);
-            this.panel1.Location = new System.Drawing.Point(95, 111);
+            this.panel1.Controls.Add(this.btnElegirZona);
+            this.panel1.Controls.Add(this.btnElegirUsuario);
+            this.panel1.Controls.Add(this.btnHacerReservacion);
+            this.panel1.Controls.Add(this.lblUsuario);
+            this.panel1.Controls.Add(this.lblZona);
+            this.panel1.Controls.Add(this.nudCantidadPersonas);
+            this.panel1.Controls.Add(this.lblCantidadPersonas);
+            this.panel1.Controls.Add(this.lblFechaYHora);
+            this.panel1.Location = new System.Drawing.Point(243, 128);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(660, 365);
             this.panel1.TabIndex = 6;
+            // 
+            // dpFechaInicio
+            // 
+            this.dpFechaInicio.Location = new System.Drawing.Point(202, 92);
+            this.dpFechaInicio.Name = "dpFechaInicio";
+            this.dpFechaInicio.Size = new System.Drawing.Size(200, 23);
+            this.dpFechaInicio.TabIndex = 35;
+            this.dpFechaInicio.ValueChanged += new System.EventHandler(this.dpFechaInicio_ValueChanged);
+            // 
+            // cbHoraInicio
+            // 
+            this.cbHoraInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
+            this.cbHoraInicio.DisplayMember = "Text";
+            this.cbHoraInicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHoraInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbHoraInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.cbHoraInicio.FormattingEnabled = true;
+            this.cbHoraInicio.Location = new System.Drawing.Point(455, 87);
+            this.cbHoraInicio.Name = "cbHoraInicio";
+            this.cbHoraInicio.Size = new System.Drawing.Size(121, 23);
+            this.cbHoraInicio.TabIndex = 34;
+            this.cbHoraInicio.ValueMember = "Value";
+            this.cbHoraInicio.SelectedIndexChanged += new System.EventHandler(this.cbHoraInicio_SelectedIndexChanged);
+            // 
+            // btnElegirZona
+            // 
+            this.btnElegirZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
+            this.btnElegirZona.FlatAppearance.BorderSize = 0;
+            this.btnElegirZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElegirZona.ForeColor = System.Drawing.Color.White;
+            this.btnElegirZona.Location = new System.Drawing.Point(295, 163);
+            this.btnElegirZona.Name = "btnElegirZona";
+            this.btnElegirZona.Size = new System.Drawing.Size(95, 30);
+            this.btnElegirZona.TabIndex = 33;
+            this.btnElegirZona.Text = "Elegir zona";
+            this.btnElegirZona.UseVisualStyleBackColor = false;
+            this.btnElegirZona.Click += new System.EventHandler(this.btnElegirZona_Click);
+            this.btnElegirZona.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
+            // 
+            // btnElegirUsuario
+            // 
+            this.btnElegirUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
+            this.btnElegirUsuario.FlatAppearance.BorderSize = 0;
+            this.btnElegirUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElegirUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnElegirUsuario.Location = new System.Drawing.Point(295, 35);
+            this.btnElegirUsuario.Name = "btnElegirUsuario";
+            this.btnElegirUsuario.Size = new System.Drawing.Size(135, 36);
+            this.btnElegirUsuario.TabIndex = 32;
+            this.btnElegirUsuario.Text = "Elegir usuario";
+            this.btnElegirUsuario.UseVisualStyleBackColor = false;
+            this.btnElegirUsuario.Click += new System.EventHandler(this.btnElegirUsuario_Click);
+            this.btnElegirUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
+            // 
+            // btnHacerReservacion
+            // 
+            this.btnHacerReservacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(230)))), ((int)(((byte)(212)))));
+            this.btnHacerReservacion.FlatAppearance.BorderSize = 0;
+            this.btnHacerReservacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHacerReservacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.btnHacerReservacion.Location = new System.Drawing.Point(278, 308);
+            this.btnHacerReservacion.Name = "btnHacerReservacion";
+            this.btnHacerReservacion.Size = new System.Drawing.Size(135, 39);
+            this.btnHacerReservacion.TabIndex = 31;
+            this.btnHacerReservacion.Text = "Hacer reservación";
+            this.btnHacerReservacion.UseVisualStyleBackColor = false;
+            this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
+            this.btnHacerReservacion.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(170, 39);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
+            this.lblUsuario.TabIndex = 29;
+            this.lblUsuario.Text = "Usuario";
             // 
             // lblZona
             // 
@@ -65,19 +144,9 @@
             this.lblZona.TabIndex = 21;
             this.lblZona.Text = "Zona";
             // 
-            // btnElegirZona
-            // 
-            this.btnElegirZona.Location = new System.Drawing.Point(328, 163);
-            this.btnElegirZona.Name = "btnElegirZona";
-            this.btnElegirZona.Size = new System.Drawing.Size(75, 23);
-            this.btnElegirZona.TabIndex = 26;
-            this.btnElegirZona.Text = "Elegir Zona";
-            this.btnElegirZona.UseVisualStyleBackColor = true;
-            this.btnElegirZona.Click += new System.EventHandler(this.btnElegirZona_Click);
-            // 
             // nudCantidadPersonas
             // 
-            this.nudCantidadPersonas.Location = new System.Drawing.Point(314, 217);
+            this.nudCantidadPersonas.Location = new System.Drawing.Point(278, 223);
             this.nudCantidadPersonas.Minimum = new decimal(new int[] {
             1,
             0,
@@ -102,16 +171,6 @@
             this.lblCantidadPersonas.TabIndex = 22;
             this.lblCantidadPersonas.Text = "Cantidad de personas";
             // 
-            // btnHacerReservacion
-            // 
-            this.btnHacerReservacion.Location = new System.Drawing.Point(298, 311);
-            this.btnHacerReservacion.Name = "btnHacerReservacion";
-            this.btnHacerReservacion.Size = new System.Drawing.Size(205, 23);
-            this.btnHacerReservacion.TabIndex = 28;
-            this.btnHacerReservacion.Text = "Hacer reservación";
-            this.btnHacerReservacion.UseVisualStyleBackColor = true;
-            this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
-            // 
             // lblFechaYHora
             // 
             this.lblFechaYHora.AutoSize = true;
@@ -121,53 +180,14 @@
             this.lblFechaYHora.TabIndex = 23;
             this.lblFechaYHora.Text = "Fecha y Hora";
             // 
-            // dpFechaInicio
-            // 
-            this.dpFechaInicio.Location = new System.Drawing.Point(191, 92);
-            this.dpFechaInicio.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dpFechaInicio.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
-            this.dpFechaInicio.Name = "dpFechaInicio";
-            this.dpFechaInicio.Size = new System.Drawing.Size(227, 23);
-            this.dpFechaInicio.TabIndex = 24;
-            this.dpFechaInicio.ValueChanged += new System.EventHandler(this.dpFechaInicio_ValueChanged);
-            // 
-            // cbHoraInicio
-            // 
-            this.cbHoraInicio.FormattingEnabled = true;
-            this.cbHoraInicio.Location = new System.Drawing.Point(438, 92);
-            this.cbHoraInicio.Name = "cbHoraInicio";
-            this.cbHoraInicio.Size = new System.Drawing.Size(121, 23);
-            this.cbHoraInicio.TabIndex = 25;
-            this.cbHoraInicio.SelectedIndexChanged += new System.EventHandler(this.cbHoraInicio_SelectedIndexChanged);
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(153, 276);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
-            this.lblUsuario.TabIndex = 29;
-            this.lblUsuario.Text = "Usuario";
-            // 
-            // btnElegirUsuario
-            // 
-            this.btnElegirUsuario.Location = new System.Drawing.Point(310, 260);
-            this.btnElegirUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnElegirUsuario.Name = "btnElegirUsuario";
-            this.btnElegirUsuario.Size = new System.Drawing.Size(121, 31);
-            this.btnElegirUsuario.TabIndex = 30;
-            this.btnElegirUsuario.Text = "Elegir Usuario";
-            this.btnElegirUsuario.UseVisualStyleBackColor = true;
-            this.btnElegirUsuario.Click += new System.EventHandler(this.btnElegirUsuario_Click);
-            // 
-            // FormReservacionCliente
+            // FormHacerReservacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.panel1);
-            this.Name = "FormReservacionCliente";
+            this.Name = "FormHacerReservacion";
             this.Text = "FormReservacionCliente";
             this.Load += new System.EventHandler(this.FormReservacionCliente_Load);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
@@ -187,14 +207,14 @@
 
         private Panel panel1;
         private Label lblZona;
-        private Button btnElegirZona;
         private NumericUpDown nudCantidadPersonas;
         private Label lblCantidadPersonas;
-        private Button btnHacerReservacion;
         private Label lblFechaYHora;
-        private DateTimePicker dpFechaInicio;
-        private ComboBox cbHoraInicio;
         private Label lblUsuario;
-        private Button btnElegirUsuario;
+        private DateTimePickerPersonalizado dpFechaInicio;
+        private ComboBoxPersonalizado cbHoraInicio;
+        private BotonPersonalizado btnElegirZona;
+        private BotonPersonalizado btnElegirUsuario;
+        private BotonPersonalizado btnHacerReservacion;
     }
 }
