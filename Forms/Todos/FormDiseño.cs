@@ -148,13 +148,18 @@ namespace Missushi.Forms {
                 Panel pnl = new Panel();
                 pnl.Controls.Add(lbl);
                 pnl.Dock = DockStyle.Top;
-                pnl.Location = new Point(0, 75);
+                pnl.Location = new Point(0, 0);
                 pnl.Name = "pnlMenu" + i;
                 pnl.Size = new Size(230, 80);
 
-
                 pnlPrincipalMenu.Controls.Add(pnl);
             }
+            if(Globales.usuarioActual.Tipo == 'G') {
+                pnlPrincipalMenu.Width = 300;
+            } else {
+                pnlPrincipalMenu.Width = 230;
+            }
+            
             pnlPrincipalMenu.Controls.Add(pbLogoLetrasAux);
             pnlPrincipalMenu.Visible = true;
             pnlPrincipalMenu.AutoScroll = false;
@@ -325,6 +330,10 @@ namespace Missushi.Forms {
             Globales.transition();
             Close();
         }
+
+        protected void nada_Click(object sender, EventArgs e) {
+
+        }
         private void pbMenuDesplegable_Click(object sender, EventArgs e) {
             if (pnlMuestraMenuDesplegable.Visible == false) {
                 if (Globales.usuarioActual.Tipo == 'C') {
@@ -346,6 +355,7 @@ namespace Missushi.Forms {
 
                 } else if(Globales.usuarioActual.Tipo == 'G') {
                     inicializarMenuDesplegable(new List<(string, EventHandler)> {
+                        ("",nada_Click),
                         ("Modificar platillos",modificarPlatillo_Click),
                         ("Eliminar Platillos",eliminarPlatillo_Click),
                         ("Agregar Platillos",agregarPlatillo_Click),
