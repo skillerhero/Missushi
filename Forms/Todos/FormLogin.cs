@@ -28,7 +28,6 @@ namespace Missushi.Forms{
             try {
                 string correo = txtCorreo.Text.Trim();
                 string contraseña = txtContraseña.Text.Trim();
-                contraseña = Validacion.encriptar(contraseña);
                 if (contraseña.Length > 200) {
                     contraseña = contraseña[..200];
                 }

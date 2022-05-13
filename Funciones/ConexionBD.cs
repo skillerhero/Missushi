@@ -51,7 +51,7 @@ namespace Missushi.Funciones{
                 cmd.Parameters.AddWithValue("@0", correo);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read()) {
-                    if (reader.GetString(3) == contraseña) {
+                    if (Validacion.verificarEncriptacion(contraseña,reader.GetString(3))) {
                         exito = true;
                         Globales.usuarioActual = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6));
                     }
@@ -122,7 +122,7 @@ namespace Missushi.Funciones{
                 cmd.Parameters.AddWithValue("@0", correo);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
-                    if (reader.GetString(1) == contraseña) {
+                    if (Validacion.verificarEncriptacion(contraseña, reader.GetString(1))) {
                         suspendido = true;
                     }
                 }

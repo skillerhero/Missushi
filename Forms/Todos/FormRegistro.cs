@@ -1,4 +1,7 @@
 ﻿using Missushi.Funciones;
+using System.Diagnostics;
+using System.Net;
+
 namespace Missushi.Forms{
     public partial class FormRegistro : FormDiseño{
         public FormRegistro(){
@@ -92,6 +95,12 @@ namespace Missushi.Forms{
 
         private void FormRegistro_Load(object sender, EventArgs e) {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            var client = new WebClient();
+            var result = client.DownloadString(string.Format("http://localhost/encriptar.php?cadena="+txtContraseña.Text));
+            Debug.WriteLine(result);
         }
     }
 }
