@@ -25,13 +25,13 @@ namespace Missushi.Forms.Cliente {
 
                 if (ConexionBD.usuarioTieneReservacionesEnEspera(Globales.usuarioSeleccionado.IdUsuario)) {
                     MessageBox.Show("Tiene una reservación en espera. Cáncelela o asista a la reservación.");
-                    this.DialogResult = DialogResult.Cancel;
+                    Close();
                     return;
                 }
                 ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, Globales.usuarioSeleccionado.IdUsuario, idZona, estado);
                 mandarCorreo();
                 MessageBox.Show("Reservacion creada");
-                this.DialogResult = DialogResult.OK;
+                Close();
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
@@ -39,7 +39,6 @@ namespace Missushi.Forms.Cliente {
 
         private void btnElegirUsuario_Click(object sender, EventArgs e) {
             FormElegirUsuario formElegirUsuario = new FormElegirUsuario();
-            Globales.transition();
             if (formElegirUsuario.ShowDialog() == DialogResult.OK) {
                 Globales.usuarioSeleccionado = ConexionBD.consultarUsuario(Globales.usuarioSeleccionado.IdUsuario);
                 btnElegirUsuario.Text = Globales.usuarioSeleccionado.Nombres + " " + Globales.usuarioSeleccionado.Apellidos;
@@ -139,7 +138,6 @@ namespace Missushi.Forms.Cliente {
         }
         private void btnElegirZona_Click(object sender, EventArgs e) {
             FormElegirZona formElegirZona = new FormElegirZona(obtenerFechaInicio());
-            Globales.transition();
             if (formElegirZona.ShowDialog() == DialogResult.OK) {
                 this.btnElegirZona.Text = "Zona " + Globales.zonaSeleccionada.IdZona;
                 this.nudCantidadPersonas.Focus();
