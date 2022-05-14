@@ -131,6 +131,24 @@ namespace Missushi.Funciones{
             return suspendido;
         }
 
+        static public bool usuarioEnEspera(string correo, string contraseña) {
+            bool espera = false;
+            string sql = "SELECT idUsuario, contrasenia, tipo FROM usuario WHERE correo = @0 and estado = 'i';";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", correo);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    if (Validacion.verificarEncriptacion(contraseña, reader.GetString(1))) {
+                        espera = true;
+                    }
+                }
+                connection.Close();
+            }
+            return espera;
+        }
+
         /*----------------------------------------Usuario----------------------------------------*/
         static public List<Usuario> consultarUsuarios() {
             List<Usuario> usuarios = new List<Usuario>();
@@ -161,8 +179,24 @@ namespace Missushi.Funciones{
             }
             return usuario;
         }
+
+        static public Usuario consultarUsuario(string correo) {
+            Usuario usuario = new Usuario();
+            string sql = "SELECT * FROM usuario where correo = @0;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", correo);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    usuario = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetChar(5), reader.GetChar(6));
+                }
+                connection.Close();
+            }
+            return usuario;
+        }
         static public bool insertarUsuario(string nombres, string apellidos, string contraseña, string correo, char tipo) {
-            string sql = "INSERT INTO usuario(nombres, apellidos, contrasenia, correo, tipo, estado) VALUES(@0,@1,@2, @3, @4, 'a');";
+            string sql = "INSERT INTO usuario(nombres, apellidos, contrasenia, correo, tipo, estado) VALUES(@0,@1,@2, @3, @4, 'i');";
             if (connection != null) {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);

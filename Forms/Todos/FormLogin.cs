@@ -34,11 +34,13 @@ namespace Missushi.Forms{
                 if (ConexionBD.usuarioSuspendido(correo, contraseña)) {
                     MessageBox.Show("Este usuario ha sido suspendido.");
                     Close();
-                } else
-                if (ConexionBD.login(correo, contraseña)) {
+                }else if(ConexionBD.usuarioEnEspera(correo, contraseña)) {
+                    MessageBox.Show("Confirme su cuenta desde el correo que le mandamos.");
+                    Close();
+                } else if (ConexionBD.login(correo, contraseña)) {
                     MessageBox.Show("Bienvenido/a");
                     entrar();
-                    
+
                 } else {
                     MessageBox.Show("Correo o contraseña incorrectos.");
                 }

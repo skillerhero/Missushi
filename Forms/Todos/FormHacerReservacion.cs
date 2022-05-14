@@ -59,11 +59,12 @@ namespace Missushi.Forms.Cliente {
 
         private void mandarCorreo() {
             try {
+                Usuario usuario = Globales.usuarioSeleccionado;
                 string remitente = "missushi.contacto@gmail.com";
-                string destinatario = "skillerhero@gmail.com";
+                string destinatario = usuario.Correo;
                 //string copiaA = "danna.medina2869@alumnos.udg.mx";
 
-                Usuario usuario = Globales.usuarioSeleccionado;
+               
                 var dirRemitente = new MailAddress(remitente, "Missushi");
                 var dirDestinatario = new MailAddress(destinatario, usuario.Nombres);
                 const string contra = "frribGLDb7D2mf";

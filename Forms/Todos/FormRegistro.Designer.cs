@@ -232,7 +232,6 @@ namespace Missushi.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegistro";
             this.Text = "Missushi - Registro";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegistro_FormClosing);
             this.Load += new System.EventHandler(this.FormRegistro_Load);
             this.Controls.SetChildIndex(this.panelRegistro, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);

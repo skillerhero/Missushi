@@ -1,5 +1,7 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
+using System.Net;
+using System.Net.Mail;
 
 namespace Missushi.Forms{
     public partial class FormRegistro : FormDiseño{
@@ -79,7 +81,8 @@ namespace Missushi.Forms{
                     }
                     if (ConexionBD.insertarUsuario(nombres, apellidos, Validacion.encriptar(contraseña), correo, tipo))
                     {
-                        MessageBox.Show("Registrado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mandarCorreo();
+                        MessageBox.Show("Le enviamos un correo de confirmación a su email.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Close();
                     }
                 }
@@ -92,9 +95,36 @@ namespace Missushi.Forms{
                 MessageBox.Show(ex.Message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }  
         }
-        private void FormRegistro_FormClosing(object sender, FormClosingEventArgs e){
-            if (ConexionBD.connection != null) {
-                ConexionBD.connection.Close();
+        private void mandarCorreo() {
+            try {
+                Usuario usuario = ConexionBD.consultarUsuario(txtCorreo.Text.Trim());
+                string remitente = "missushi.contacto@gmail.com";
+                string destinatario = usuario.Correo;
+                //string copiaA = "danna.medina2869@alumnos.udg.mx";
+
+                var dirRemitente = new MailAddress(remitente, "Missushi");
+                var dirDestinatario = new MailAddress(destinatario, usuario.Nombres);
+                const string contra = "frribGLDb7D2mf";
+                const string asunto = "Confirmación de registro";
+                string url = "http://" + ConexionBD.ipServidor + "/confirmarCuenta.php?idUsuario=" + usuario.IdUsuario;
+                string body = "<h4>Para confirmar su registro haga click en el siguiente enlace: </h4><br><a href='"+url+"'>Confirmar registro</a>";
+
+                var smtp = new SmtpClient {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(dirRemitente.Address, contra)
+                };
+                var message = new MailMessage(dirRemitente, dirDestinatario);
+                //message.Bcc.Add(copiaA);
+                message.Subject = asunto;
+                message.Body = body;
+                message.IsBodyHtml = true;
+                smtp.Send(message);
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
             }
         }
 
