@@ -7,6 +7,7 @@ namespace Missushi.Forms.Cliente {
     public partial class FormHistorialReservaciones : FormDiseño {
         public FormHistorialReservaciones() {
             InitializeComponent();
+            cargarBarraUsuario();
             cargarDataGrid();
             centrarComponente(dgReservaciones);
         }

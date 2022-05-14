@@ -3,7 +3,7 @@ using Missushi.Clases;
 using Missushi.Funciones;
 
 namespace Missushi.Forms.Gerente {
-    public partial class FormElegirZona : FormDiseño {
+    public partial class FormElegirZona : Form {
         private DateTime fechaInicio;
         private List<Zona> zonas = ConexionBD.consultarZonas();
         private List<PictureBox> pictureBoxList = new List<PictureBox>();

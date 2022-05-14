@@ -6,6 +6,7 @@ namespace Missushi.Forms.Administrador {
     public partial class FormBDAdmin : FormDiseño {
         public FormBDAdmin() {
             InitializeComponent();
+            cargarBarraUsuario();
         }
 
         private void FormBDAdmin_Load(object sender, EventArgs e) {

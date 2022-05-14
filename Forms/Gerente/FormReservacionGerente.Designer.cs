@@ -29,6 +29,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgReservaciones = new System.Windows.Forms.DataGridView();
             this.dpDia = new Missushi.Forms.DateTimePickerPersonalizado();
+            this.btnRecargar = new Missushi.Forms.BotonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).BeginInit();
             this.SuspendLayout();
@@ -95,11 +96,27 @@
             this.dpDia.TabIndex = 9;
             this.dpDia.ValueChanged += new System.EventHandler(this.dpDia_ValueChanged);
             // 
+            // btnRecargar
+            // 
+            this.btnRecargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
+            this.btnRecargar.FlatAppearance.BorderSize = 0;
+            this.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecargar.ForeColor = System.Drawing.Color.White;
+            this.btnRecargar.Location = new System.Drawing.Point(338, 448);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(88, 32);
+            this.btnRecargar.TabIndex = 10;
+            this.btnRecargar.Text = "Recargar";
+            this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            this.btnRecargar.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
+            // 
             // FormReservacionGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.btnRecargar);
             this.Controls.Add(this.dpDia);
             this.Controls.Add(this.dgReservaciones);
             this.Name = "FormReservacionGerente";
@@ -109,6 +126,7 @@
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.Controls.SetChildIndex(this.dgReservaciones, 0);
             this.Controls.SetChildIndex(this.dpDia, 0);
+            this.Controls.SetChildIndex(this.btnRecargar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgReservaciones)).EndInit();
             this.ResumeLayout(false);
@@ -120,5 +138,6 @@
 
         private DataGridView dgReservaciones;
         private DateTimePickerPersonalizado dpDia;
+        private BotonPersonalizado btnRecargar;
     }
 }

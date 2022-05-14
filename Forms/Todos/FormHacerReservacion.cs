@@ -11,7 +11,7 @@ namespace Missushi.Forms.Cliente {
     public partial class FormHacerReservacion : FormDiseño {
         public FormHacerReservacion() {
             InitializeComponent();
-            cargarPantallaUsuario();
+            cargarBarraUsuario();
         }
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
@@ -95,7 +95,7 @@ namespace Missushi.Forms.Cliente {
             Reservacion reservacion = ConexionBD.consultarReservacion(Globales.usuarioSeleccionado.IdUsuario);
             Usuario usuario = Globales.usuarioSeleccionado;
             QRCodeGenerator qr = new QRCodeGenerator();
-            string url = "http://" + ConexionBD.ipServidor + "/modificarReservacion.php?idReservacion=" + reservacion.IdReservacion;
+            string url = "http://" + ConexionBD.ipServidor + "/login/login.php?idReservacion=" + reservacion.IdReservacion;
             QRCodeData data = qr.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
             QRCode code = new QRCode(data);
 

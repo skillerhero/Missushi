@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelZonas = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelZonas
@@ -50,11 +49,7 @@
             this.Name = "FormElegirZona";
             this.Text = "FormElegirZona";
             this.Load += new System.EventHandler(this.FormElegirZona_Load);
-            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
-            this.Controls.SetChildIndex(this.lblTitulo, 0);
-            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.Controls.SetChildIndex(this.panelZonas, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,6 +8,7 @@ namespace Missushi.Forms.Administrador {
     public partial class FormReservacionAdministrador : FormDiseño {
         public FormReservacionAdministrador() {
             InitializeComponent();
+            cargarBarraUsuario();
         }
 
         private void FormReservacionAdministrador_Load(object sender, EventArgs e) {
@@ -40,9 +41,9 @@ namespace Missushi.Forms.Administrador {
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
             FormHacerReservacion formHacerReservacionAdministrador = new FormHacerReservacion();
-            if(formHacerReservacionAdministrador.ShowDialog() == DialogResult.OK) {
-                cargarDataGrid();
-            }
+            formHacerReservacionAdministrador.Show();
+            Globales.transition();
+            Close();
         }
 
         private void btnCancelarReservacion_Click(object sender, EventArgs e) {

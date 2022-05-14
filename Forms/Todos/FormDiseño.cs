@@ -53,7 +53,7 @@ namespace Missushi.Forms {
             lblUbicacion.Enabled = false;
             pbUbicacion.Enabled = false;
             if(Globales.usuarioActual.IdUsuario != -1) {
-                cargarPantallaUsuario();
+                cargarBarraUsuario();
             }
         }
 
@@ -63,7 +63,7 @@ namespace Missushi.Forms {
             lblDisponibilidad.Enabled = false;
             pbDisponibilidad.Enabled = false;
             if (Globales.usuarioActual.IdUsuario != -1) {
-                cargarPantallaUsuario();
+                cargarBarraUsuario();
             }
         }
 
@@ -73,13 +73,13 @@ namespace Missushi.Forms {
             lblMenu.Enabled = false;
             pbMenu.Enabled = false;
             if (Globales.usuarioActual.IdUsuario != -1) {
-                cargarPantallaUsuario();
+                cargarBarraUsuario();
             }
         }
 
         protected void cargarPantallaReseñas() {
             if (Globales.usuarioActual.IdUsuario != -1) {
-                cargarPantallaUsuario();
+                cargarBarraUsuario();
             }
             lblTitulo.Visible = true;
             lblTitulo.desactivarLabel();
@@ -105,9 +105,9 @@ namespace Missushi.Forms {
         //-------------------------------------------------------------Usuario------------------------------------------------
         protected void cargarPantallaMain() {
             cargarPantallaPrincipal();
-            cargarPantallaUsuario();
+            cargarBarraUsuario();
         }
-        protected void cargarPantallaUsuario() {
+        protected void cargarBarraUsuario() {
             pbSalir.Visible = true;
             lblIngresar.Visible = false;
             lblRegistro.Visible = true;
@@ -273,13 +273,16 @@ namespace Missushi.Forms {
         }
         protected void historial_Click(object sender, EventArgs e) {
             FormHistorialReservaciones formHistorialReservaciones = new FormHistorialReservaciones();
+            Globales.transition();
+            Close();
             formHistorialReservaciones.Show();
         }
         protected void hacerReservación_Click(object sender, EventArgs e) {
             Globales.zonaSeleccionada.IdZona = -1;
             FormHacerReservacion formReservacion = new FormHacerReservacion();
             Globales.transition();
-            formReservacion.ShowDialog();
+            formReservacion.Show();
+            Close();
         }
 
         protected void modificarInfoRestaurante_Click(object sender, EventArgs e) {
@@ -373,13 +376,13 @@ namespace Missushi.Forms {
         private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {
             if (Globales.transicion) {
                 Globales.transicion = false;
-            } else if (Globales.usuarioActual.Tipo == 'C') {
+            } else if (Globales.usuarioActual.Tipo == 'C' && this is not FormMainCliente) {
                 FormMainCliente formMainCliente = new FormMainCliente();
                 formMainCliente.Show();
-            } else if (Globales.usuarioActual.Tipo == 'A') {
+            } else if (Globales.usuarioActual.Tipo == 'A' && this is not FormMainAdministrador) {
                 FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
                 formMainAdministrador.Show();
-            } else if (Globales.usuarioActual.Tipo == 'G') {
+            } else if (Globales.usuarioActual.Tipo == 'G' && this is not FormMainGerente) {
                 FormMainGerente formMainGerente = new FormMainGerente();
                 formMainGerente.Show();
             } else {
@@ -397,7 +400,8 @@ namespace Missushi.Forms {
         protected void suspenderUsuarios_Click(object sender, EventArgs e) {
             FormSuspenderUsuario formSuspenderUsuario = new FormSuspenderUsuario();
             Globales.transition();
-            formSuspenderUsuario.ShowDialog();
+            formSuspenderUsuario.Show();
+            Close();
         }
         protected void ReservacionesAdmin_Click(object sender, EventArgs e) {
             FormReservacionAdministrador formReservacionAdministrador = new FormReservacionAdministrador();

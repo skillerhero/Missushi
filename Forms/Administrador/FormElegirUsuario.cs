@@ -5,7 +5,7 @@ using System.Data;
 
 
 namespace Missushi.Forms.Administrador {
-    public partial class FormElegirUsuario : FormDiseño {
+    public partial class FormElegirUsuario : Form {
         public FormElegirUsuario() {
             InitializeComponent();
             cargarDataGrid();

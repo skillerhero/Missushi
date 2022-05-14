@@ -6,6 +6,7 @@ namespace Missushi.Forms.Administrador {
     public partial class FormSuspenderUsuario : FormDiseño {
         public FormSuspenderUsuario() {
             InitializeComponent();
+            cargarBarraUsuario();
             cargarDataGrid();
         }
 

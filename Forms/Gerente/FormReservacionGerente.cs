@@ -7,6 +7,7 @@ namespace Missushi.Forms.Gerente {
         public FormReservacionGerente() {
             InitializeComponent();
             cargarDataGrid();
+            cargarBarraUsuario();
         }
 
         private void cargarDataGrid() {
@@ -36,6 +37,10 @@ namespace Missushi.Forms.Gerente {
         }
 
         private void dpDia_ValueChanged(object sender, EventArgs e) {
+            cargarDataGrid();
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e) {
             cargarDataGrid();
         }
     }
