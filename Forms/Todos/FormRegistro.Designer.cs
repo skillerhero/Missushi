@@ -45,14 +45,12 @@ namespace Missushi.Forms
             this.lblApellidos = new System.Windows.Forms.Label();
             this.txtNombres = new Missushi.Forms.TextBoxPersonalizado();
             this.lblNombres = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.panelRegistro.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelRegistro
             // 
-            this.panelRegistro.Controls.Add(this.button1);
             this.panelRegistro.Controls.Add(this.btnRegistrar);
             this.panelRegistro.Controls.Add(this.cbTipo);
             this.panelRegistro.Controls.Add(this.txtCorreo);
@@ -225,16 +223,6 @@ namespace Missushi.Forms
             this.lblNombres.TabIndex = 13;
             this.lblNombres.Text = "Nombre (s)";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(76, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -274,6 +262,5 @@ namespace Missushi.Forms
         private Label lblApellidos;
         private TextBoxPersonalizado txtNombres;
         private Label lblNombres;
-        private Button button1;
     }
 }

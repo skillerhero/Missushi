@@ -1,11 +1,16 @@
-﻿using Missushi.Funciones;
-using System.Diagnostics;
-using System.Net;
+﻿using Missushi.Clases;
+using Missushi.Funciones;
 
 namespace Missushi.Forms{
     public partial class FormRegistro : FormDiseño{
         public FormRegistro(){
             InitializeComponent();
+            if (Globales.usuarioActual.Tipo != 'A') {
+                lblTipo.Visible = false;
+                cbTipo.Visible = false;
+            } else {
+                cargarBarraUsuario();
+            }
             cbTipo.Items.Add("Cliente");
             cbTipo.Items.Add("Administrador");
             cbTipo.Items.Add("Gerente");
@@ -95,12 +100,6 @@ namespace Missushi.Forms{
 
         private void FormRegistro_Load(object sender, EventArgs e) {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e) {
-            var client = new WebClient();
-            var result = client.DownloadString(string.Format("http://localhost/encriptar.php?cadena="+txtContraseña.Text));
-            Debug.WriteLine(result);
         }
     }
 }

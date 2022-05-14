@@ -350,6 +350,7 @@ namespace Missushi.Forms {
                  });
                 } else if(Globales.usuarioActual.Tipo == 'A') {
                     inicializarMenuDesplegable(new List<(string, EventHandler)> {
+                      ("Registrar usuarios", lblRegistro_Click),
                       ("Base de datos",verBD_Click),
                       ("Reseñas", Reseñas_Click),
                       ("Reservaciones", ReservacionesAdmin_Click),
