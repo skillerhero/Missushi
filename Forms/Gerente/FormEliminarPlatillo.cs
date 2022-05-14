@@ -6,6 +6,7 @@ namespace Missushi.Forms.Gerente {
     public partial class FormEliminarPlatillo : FormDiseño {
         public FormEliminarPlatillo() {
             InitializeComponent();
+            cargarBarraUsuario();
             cargarDataGridEliminar();
         }
 

@@ -7,6 +7,7 @@ namespace Missushi.Forms.Gerente {
     public partial class FormModificarPlatillo : FormDiseño {
         public FormModificarPlatillo() {
             InitializeComponent();
+            cargarBarraUsuario();
             cargarDataGrid();
             cbTipo.Items.Add("Entradas");
             cbTipo.Items.Add("Rollos");

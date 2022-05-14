@@ -406,7 +406,8 @@ namespace Missushi.Forms {
         protected void ReservacionesAdmin_Click(object sender, EventArgs e) {
             FormReservacionAdministrador formReservacionAdministrador = new FormReservacionAdministrador();
             Globales.transition();
-            formReservacionAdministrador.ShowDialog();
+            formReservacionAdministrador.Show();
+            Close();
         }
         //-------------Código para que se vea la animación al restaurar la ventana sin bordes-----------
         protected override void WndProc(ref Message m) {

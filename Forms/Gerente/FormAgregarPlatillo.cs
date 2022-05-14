@@ -5,6 +5,7 @@ namespace Missushi.Forms.Gerente {
     public partial class FormAgregarPlatillo : FormDiseño {
         public FormAgregarPlatillo() {
             InitializeComponent();
+            cargarBarraUsuario();
             cbTipoMenu.Items.Add("Entradas");
             cbTipoMenu.Items.Add("Rollos");
             cbTipoMenu.Items.Add("Platillos");
