@@ -57,7 +57,7 @@ namespace Missushi.Forms.Gerente {
             this.pnlAgregarPlatillo.Location = new System.Drawing.Point(359, 187);
             this.pnlAgregarPlatillo.Name = "pnlAgregarPlatillo";
             this.pnlAgregarPlatillo.Size = new System.Drawing.Size(355, 301);
-            this.pnlAgregarPlatillo.TabIndex = 22;
+            this.pnlAgregarPlatillo.TabIndex = 0;
             // 
             // bntAceptarMenu
             // 
@@ -68,7 +68,7 @@ namespace Missushi.Forms.Gerente {
             this.bntAceptarMenu.Location = new System.Drawing.Point(0, 264);
             this.bntAceptarMenu.Name = "bntAceptarMenu";
             this.bntAceptarMenu.Size = new System.Drawing.Size(350, 34);
-            this.bntAceptarMenu.TabIndex = 10;
+            this.bntAceptarMenu.TabIndex = 6;
             this.bntAceptarMenu.Text = "Agregar";
             this.bntAceptarMenu.UseVisualStyleBackColor = false;
             this.bntAceptarMenu.Click += new System.EventHandler(this.bntAceptarMenu_Click);
@@ -86,7 +86,7 @@ namespace Missushi.Forms.Gerente {
             this.cbTipoMenu.Location = new System.Drawing.Point(150, 216);
             this.cbTipoMenu.Name = "cbTipoMenu";
             this.cbTipoMenu.Size = new System.Drawing.Size(200, 28);
-            this.cbTipoMenu.TabIndex = 9;
+            this.cbTipoMenu.TabIndex = 5;
             this.cbTipoMenu.ValueMember = "Value";
             // 
             // txtNombrePlatillo
@@ -96,7 +96,7 @@ namespace Missushi.Forms.Gerente {
             this.txtNombrePlatillo.Location = new System.Drawing.Point(150, 10);
             this.txtNombrePlatillo.Name = "txtNombrePlatillo";
             this.txtNombrePlatillo.Size = new System.Drawing.Size(200, 30);
-            this.txtNombrePlatillo.TabIndex = 5;
+            this.txtNombrePlatillo.TabIndex = 1;
             // 
             // lblTipo
             // 
@@ -106,7 +106,7 @@ namespace Missushi.Forms.Gerente {
             this.lblTipo.Location = new System.Drawing.Point(0, 200);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(59, 50);
-            this.lblTipo.TabIndex = 4;
+            this.lblTipo.TabIndex = 0;
             this.lblTipo.Text = "Tipo";
             // 
             // lblFoto
@@ -117,7 +117,7 @@ namespace Missushi.Forms.Gerente {
             this.lblFoto.Location = new System.Drawing.Point(0, 150);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(59, 50);
-            this.lblFoto.TabIndex = 3;
+            this.lblFoto.TabIndex = 0;
             this.lblFoto.Text = "Foto";
             // 
             // lblPrecio
@@ -128,7 +128,7 @@ namespace Missushi.Forms.Gerente {
             this.lblPrecio.Location = new System.Drawing.Point(0, 100);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(72, 50);
-            this.lblPrecio.TabIndex = 2;
+            this.lblPrecio.TabIndex = 0;
             this.lblPrecio.Text = "Precio";
             // 
             // lblDescripcion
@@ -139,7 +139,7 @@ namespace Missushi.Forms.Gerente {
             this.lblDescripcion.Location = new System.Drawing.Point(0, 50);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(120, 50);
-            this.lblDescripcion.TabIndex = 1;
+            this.lblDescripcion.TabIndex = 0;
             this.lblDescripcion.Text = "Descripción";
             // 
             // lblNombre
@@ -160,7 +160,7 @@ namespace Missushi.Forms.Gerente {
             this.txtDescripcionMenu.Location = new System.Drawing.Point(150, 60);
             this.txtDescripcionMenu.Name = "txtDescripcionMenu";
             this.txtDescripcionMenu.Size = new System.Drawing.Size(200, 30);
-            this.txtDescripcionMenu.TabIndex = 11;
+            this.txtDescripcionMenu.TabIndex = 2;
             // 
             // txtPrecioMenu
             // 
@@ -169,7 +169,7 @@ namespace Missushi.Forms.Gerente {
             this.txtPrecioMenu.Location = new System.Drawing.Point(150, 110);
             this.txtPrecioMenu.Name = "txtPrecioMenu";
             this.txtPrecioMenu.Size = new System.Drawing.Size(200, 30);
-            this.txtPrecioMenu.TabIndex = 12;
+            this.txtPrecioMenu.TabIndex = 3;
             // 
             // txtFotoMenu
             // 
@@ -178,7 +178,7 @@ namespace Missushi.Forms.Gerente {
             this.txtFotoMenu.Location = new System.Drawing.Point(150, 160);
             this.txtFotoMenu.Name = "txtFotoMenu";
             this.txtFotoMenu.Size = new System.Drawing.Size(200, 30);
-            this.txtFotoMenu.TabIndex = 13;
+            this.txtFotoMenu.TabIndex = 4;
             // 
             // FormAgregarPlatillo
             // 
