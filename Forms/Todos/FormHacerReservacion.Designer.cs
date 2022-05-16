@@ -53,17 +53,18 @@ namespace Missushi.Forms.Cliente {
             this.panel1.Controls.Add(this.nudCantidadPersonas);
             this.panel1.Controls.Add(this.lblCantidadPersonas);
             this.panel1.Controls.Add(this.lblFechaYHora);
-            this.panel1.Location = new System.Drawing.Point(243, 128);
+            this.panel1.Location = new System.Drawing.Point(222, 170);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 365);
-            this.panel1.TabIndex = 6;
+            this.panel1.Size = new System.Drawing.Size(580, 296);
+            this.panel1.TabIndex = 0;
             // 
             // dpFechaInicio
             // 
-            this.dpFechaInicio.Location = new System.Drawing.Point(202, 92);
+            this.dpFechaInicio.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dpFechaInicio.Location = new System.Drawing.Point(200, 65);
             this.dpFechaInicio.Name = "dpFechaInicio";
-            this.dpFechaInicio.Size = new System.Drawing.Size(200, 23);
-            this.dpFechaInicio.TabIndex = 35;
+            this.dpFechaInicio.Size = new System.Drawing.Size(250, 25);
+            this.dpFechaInicio.TabIndex = 2;
             this.dpFechaInicio.ValueChanged += new System.EventHandler(this.dpFechaInicio_ValueChanged);
             // 
             // cbHoraInicio
@@ -72,12 +73,13 @@ namespace Missushi.Forms.Cliente {
             this.cbHoraInicio.DisplayMember = "Text";
             this.cbHoraInicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHoraInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbHoraInicio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbHoraInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
             this.cbHoraInicio.FormattingEnabled = true;
-            this.cbHoraInicio.Location = new System.Drawing.Point(455, 87);
+            this.cbHoraInicio.Location = new System.Drawing.Point(455, 63);
             this.cbHoraInicio.Name = "cbHoraInicio";
-            this.cbHoraInicio.Size = new System.Drawing.Size(121, 23);
-            this.cbHoraInicio.TabIndex = 34;
+            this.cbHoraInicio.Size = new System.Drawing.Size(121, 28);
+            this.cbHoraInicio.TabIndex = 3;
             this.cbHoraInicio.ValueMember = "Value";
             this.cbHoraInicio.SelectedIndexChanged += new System.EventHandler(this.cbHoraInicio_SelectedIndexChanged);
             // 
@@ -86,11 +88,12 @@ namespace Missushi.Forms.Cliente {
             this.btnElegirZona.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
             this.btnElegirZona.FlatAppearance.BorderSize = 0;
             this.btnElegirZona.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElegirZona.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnElegirZona.ForeColor = System.Drawing.Color.White;
-            this.btnElegirZona.Location = new System.Drawing.Point(295, 163);
+            this.btnElegirZona.Location = new System.Drawing.Point(200, 122);
             this.btnElegirZona.Name = "btnElegirZona";
-            this.btnElegirZona.Size = new System.Drawing.Size(95, 30);
-            this.btnElegirZona.TabIndex = 33;
+            this.btnElegirZona.Size = new System.Drawing.Size(250, 30);
+            this.btnElegirZona.TabIndex = 4;
             this.btnElegirZona.Text = "Elegir zona";
             this.btnElegirZona.UseVisualStyleBackColor = false;
             this.btnElegirZona.Click += new System.EventHandler(this.btnElegirZona_Click);
@@ -101,11 +104,12 @@ namespace Missushi.Forms.Cliente {
             this.btnElegirUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(68)))), ((int)(((byte)(60)))));
             this.btnElegirUsuario.FlatAppearance.BorderSize = 0;
             this.btnElegirUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnElegirUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnElegirUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnElegirUsuario.Location = new System.Drawing.Point(295, 35);
+            this.btnElegirUsuario.Location = new System.Drawing.Point(200, 2);
             this.btnElegirUsuario.Name = "btnElegirUsuario";
-            this.btnElegirUsuario.Size = new System.Drawing.Size(135, 36);
-            this.btnElegirUsuario.TabIndex = 32;
+            this.btnElegirUsuario.Size = new System.Drawing.Size(250, 30);
+            this.btnElegirUsuario.TabIndex = 1;
             this.btnElegirUsuario.Text = "Elegir usuario";
             this.btnElegirUsuario.UseVisualStyleBackColor = false;
             this.btnElegirUsuario.Click += new System.EventHandler(this.btnElegirUsuario_Click);
@@ -117,10 +121,10 @@ namespace Missushi.Forms.Cliente {
             this.btnHacerReservacion.FlatAppearance.BorderSize = 0;
             this.btnHacerReservacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHacerReservacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.btnHacerReservacion.Location = new System.Drawing.Point(278, 308);
+            this.btnHacerReservacion.Location = new System.Drawing.Point(240, 240);
             this.btnHacerReservacion.Name = "btnHacerReservacion";
-            this.btnHacerReservacion.Size = new System.Drawing.Size(135, 39);
-            this.btnHacerReservacion.TabIndex = 31;
+            this.btnHacerReservacion.Size = new System.Drawing.Size(100, 50);
+            this.btnHacerReservacion.TabIndex = 6;
             this.btnHacerReservacion.Text = "Hacer reservación";
             this.btnHacerReservacion.UseVisualStyleBackColor = false;
             this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
@@ -129,32 +133,34 @@ namespace Missushi.Forms.Cliente {
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(170, 39);
+            this.lblUsuario.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(0, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
-            this.lblUsuario.TabIndex = 29;
+            this.lblUsuario.Size = new System.Drawing.Size(64, 35);
+            this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             // 
             // lblZona
             // 
             this.lblZona.AutoSize = true;
-            this.lblZona.Location = new System.Drawing.Point(153, 167);
+            this.lblZona.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblZona.Location = new System.Drawing.Point(0, 120);
             this.lblZona.Name = "lblZona";
-            this.lblZona.Size = new System.Drawing.Size(34, 15);
-            this.lblZona.TabIndex = 21;
+            this.lblZona.Size = new System.Drawing.Size(45, 35);
+            this.lblZona.TabIndex = 0;
             this.lblZona.Text = "Zona";
             // 
             // nudCantidadPersonas
             // 
-            this.nudCantidadPersonas.Location = new System.Drawing.Point(278, 223);
+            this.nudCantidadPersonas.Location = new System.Drawing.Point(200, 188);
             this.nudCantidadPersonas.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudCantidadPersonas.Name = "nudCantidadPersonas";
-            this.nudCantidadPersonas.Size = new System.Drawing.Size(120, 23);
-            this.nudCantidadPersonas.TabIndex = 27;
+            this.nudCantidadPersonas.Size = new System.Drawing.Size(250, 23);
+            this.nudCantidadPersonas.TabIndex = 5;
             this.nudCantidadPersonas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCantidadPersonas.Value = new decimal(new int[] {
             1,
@@ -165,23 +171,26 @@ namespace Missushi.Forms.Cliente {
             // lblCantidadPersonas
             // 
             this.lblCantidadPersonas.AutoSize = true;
-            this.lblCantidadPersonas.Location = new System.Drawing.Point(116, 225);
+            this.lblCantidadPersonas.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCantidadPersonas.Location = new System.Drawing.Point(0, 180);
             this.lblCantidadPersonas.Name = "lblCantidadPersonas";
-            this.lblCantidadPersonas.Size = new System.Drawing.Size(121, 15);
-            this.lblCantidadPersonas.TabIndex = 22;
+            this.lblCantidadPersonas.Size = new System.Drawing.Size(145, 35);
+            this.lblCantidadPersonas.TabIndex = 0;
             this.lblCantidadPersonas.Text = "Cantidad de personas";
             // 
             // lblFechaYHora
             // 
             this.lblFechaYHora.AutoSize = true;
-            this.lblFechaYHora.Location = new System.Drawing.Point(100, 95);
+            this.lblFechaYHora.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFechaYHora.Location = new System.Drawing.Point(0, 60);
             this.lblFechaYHora.Name = "lblFechaYHora";
-            this.lblFechaYHora.Size = new System.Drawing.Size(76, 15);
-            this.lblFechaYHora.TabIndex = 23;
+            this.lblFechaYHora.Size = new System.Drawing.Size(91, 35);
+            this.lblFechaYHora.TabIndex = 0;
             this.lblFechaYHora.Text = "Fecha y Hora";
             // 
             // FormHacerReservacion
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);

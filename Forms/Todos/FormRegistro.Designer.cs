@@ -94,10 +94,10 @@ namespace Missushi.Forms
             this.cbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
             this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Location = new System.Drawing.Point(207, 262);
+            this.cbTipo.Location = new System.Drawing.Point(161, 262);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbTipo.Size = new System.Drawing.Size(150, 28);
+            this.cbTipo.Size = new System.Drawing.Size(255, 28);
             this.cbTipo.TabIndex = 19;
             this.cbTipo.ValueMember = "Value";
             // 
@@ -105,7 +105,7 @@ namespace Missushi.Forms
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCorreo.Location = new System.Drawing.Point(160, 199);
+            this.txtCorreo.Location = new System.Drawing.Point(160, 210);
             this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(256, 30);
@@ -116,7 +116,7 @@ namespace Missushi.Forms
             // 
             this.txtConfirmarContra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtConfirmarContra.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtConfirmarContra.Location = new System.Drawing.Point(160, 158);
+            this.txtConfirmarContra.Location = new System.Drawing.Point(160, 160);
             this.txtConfirmarContra.Multiline = true;
             this.txtConfirmarContra.Name = "txtConfirmarContra";
             this.txtConfirmarContra.PasswordChar = '*';
@@ -128,7 +128,7 @@ namespace Missushi.Forms
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtContraseña.Location = new System.Drawing.Point(160, 108);
+            this.txtContraseña.Location = new System.Drawing.Point(160, 110);
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
@@ -140,7 +140,7 @@ namespace Missushi.Forms
             // 
             this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtApellidos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtApellidos.Location = new System.Drawing.Point(160, 58);
+            this.txtApellidos.Location = new System.Drawing.Point(160, 60);
             this.txtApellidos.Multiline = true;
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(256, 30);
@@ -152,7 +152,7 @@ namespace Missushi.Forms
             this.lblTipo.AutoSize = true;
             this.lblTipo.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblTipo.Location = new System.Drawing.Point(0, 249);
+            this.lblTipo.Location = new System.Drawing.Point(0, 250);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(59, 50);
             this.lblTipo.TabIndex = 8;
@@ -163,7 +163,7 @@ namespace Missushi.Forms
             this.lblContraseña2.AutoSize = true;
             this.lblContraseña2.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblContraseña2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblContraseña2.Location = new System.Drawing.Point(0, 149);
+            this.lblContraseña2.Location = new System.Drawing.Point(0, 150);
             this.lblContraseña2.Name = "lblContraseña2";
             this.lblContraseña2.Size = new System.Drawing.Size(169, 50);
             this.lblContraseña2.TabIndex = 9;
@@ -174,7 +174,7 @@ namespace Missushi.Forms
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblCorreo.Location = new System.Drawing.Point(0, 199);
+            this.lblCorreo.Location = new System.Drawing.Point(0, 200);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(78, 50);
             this.lblCorreo.TabIndex = 10;
@@ -184,7 +184,7 @@ namespace Missushi.Forms
             // 
             this.lblContraseña.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblContraseña.Location = new System.Drawing.Point(-3, 99);
+            this.lblContraseña.Location = new System.Drawing.Point(0, 100);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(120, 47);
             this.lblContraseña.TabIndex = 11;
@@ -195,7 +195,7 @@ namespace Missushi.Forms
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblApellidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblApellidos.Location = new System.Drawing.Point(0, 49);
+            this.lblApellidos.Location = new System.Drawing.Point(0, 50);
             this.lblApellidos.Name = "lblApellidos";
             this.lblApellidos.Size = new System.Drawing.Size(98, 50);
             this.lblApellidos.TabIndex = 12;
@@ -205,7 +205,7 @@ namespace Missushi.Forms
             // 
             this.txtNombres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtNombres.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombres.Location = new System.Drawing.Point(160, 8);
+            this.txtNombres.Location = new System.Drawing.Point(160, 10);
             this.txtNombres.Multiline = true;
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(256, 30);
@@ -217,7 +217,7 @@ namespace Missushi.Forms
             this.lblNombres.AutoSize = true;
             this.lblNombres.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblNombres.Location = new System.Drawing.Point(0, -1);
+            this.lblNombres.Location = new System.Drawing.Point(0, 0);
             this.lblNombres.Name = "lblNombres";
             this.lblNombres.Size = new System.Drawing.Size(117, 50);
             this.lblNombres.TabIndex = 13;
@@ -225,6 +225,7 @@ namespace Missushi.Forms
             // 
             // FormRegistro
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.panelRegistro);

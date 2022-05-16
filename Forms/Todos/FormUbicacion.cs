@@ -13,6 +13,9 @@ namespace Missushi.Forms.Todos {
             pbFotoMaps.ImageLocation = Globales.restaurante.FotoMaps;
             lblDescripcion.Text = Globales.restaurante.Descripcion;
             lblDireccion.Text = Globales.restaurante.Direccion;
+            pbFotoMaps.Location = centrarComponente(pbFotoMaps);
+            lblDescripcion.Location = centrarComponente(lblDescripcion);
+            lblDireccion.Location = centrarComponente(lblDireccion);
         }
 
         private void pbFotoMaps_Click(object sender, EventArgs e) {

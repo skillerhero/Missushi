@@ -10,6 +10,7 @@ namespace Missushi.Forms{
             if (Globales.usuarioActual.Tipo != 'A') {
                 lblTipo.Visible = false;
                 cbTipo.Visible = false;
+                btnRegistrar.Location = new Point(lblTipo.Location.X,lblTipo.Location.Y+20);
             } else {
                 cargarBarraUsuario();
             }
