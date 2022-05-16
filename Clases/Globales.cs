@@ -22,7 +22,7 @@ namespace Missushi.Clases {
         static public Form instancia;
         static public bool transicion = false;
 
-        static public Font letraGabriola;
+        static public Font letraGabriola = new Font("Gabriola", 15.25F, FontStyle.Regular);
         static public Font letraCenturyGothic;
         public Globales() {
             System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();

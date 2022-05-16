@@ -1,4 +1,5 @@
-﻿using Missushi.Funciones;
+﻿using Missushi.Clases;
+using Missushi.Funciones;
 using System.Globalization;
 
 namespace Missushi.Forms.Gerente {
@@ -13,6 +14,17 @@ namespace Missushi.Forms.Gerente {
             cbTipoMenu.Items.Add("Postres");
             cbTipoMenu.Items.Add("Bebidas");
             cbTipoMenu.Text = cbTipoMenu.Items[0].ToString();
+
+            lblTitulo.colorLetra = Globales.verdeFuerteLetra;
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "Agregar Platillo";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
+            this.pnlAgregarPlatillo.Location = centrarComponente(pnlAgregarPlatillo);
+            lblBarraTitulo.BringToFront();
         }
         private void bntAceptarMenu_Click(object sender, EventArgs e) {
             try {
