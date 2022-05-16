@@ -278,7 +278,7 @@ namespace Missushi.Forms {
             formHistorialReservaciones.Show();
         }
         protected void hacerReservación_Click(object sender, EventArgs e) {
-            Globales.zonaSeleccionada.IdZona = -1;
+            Globales.zonaSeleccionada = new Zona();
             FormHacerReservacion formReservacion = new FormHacerReservacion();
             Globales.transition();
             formReservacion.Show();

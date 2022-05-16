@@ -40,6 +40,7 @@ namespace Missushi.Forms.Administrador {
         }
 
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
+            Globales.zonaSeleccionada = new Zona();
             FormHacerReservacion formHacerReservacionAdministrador = new FormHacerReservacion();
             formHacerReservacionAdministrador.Show();
             Globales.transition();

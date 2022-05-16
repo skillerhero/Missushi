@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.lblPlatilloEliminar);
             this.Controls.Add(this.txtIdPlatillo);
             this.Controls.Add(this.btnEliminarPlatillo);
