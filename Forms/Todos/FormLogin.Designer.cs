@@ -45,13 +45,12 @@ namespace Missushi.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPersonalizado1)).BeginInit();
             this.SuspendLayout();
             // 
-            // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblCorreo.Location = new System.Drawing.Point(373, 284);
+            this.lblCorreo.Location = new System.Drawing.Point(371, 309);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(78, 50);
             this.lblCorreo.TabIndex = 0;
@@ -62,7 +61,7 @@ namespace Missushi.Forms
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblContraseña.Location = new System.Drawing.Point(343, 351);
+            this.lblContraseña.Location = new System.Drawing.Point(330, 372);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(119, 50);
             this.lblContraseña.TabIndex = 0;
@@ -106,18 +105,20 @@ namespace Missushi.Forms
             // txtCorreo
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
-            this.txtCorreo.Location = new System.Drawing.Point(476, 301);
+            this.txtCorreo.Location = new System.Drawing.Point(477, 321);
+            this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(173, 23);
+            this.txtCorreo.Size = new System.Drawing.Size(175, 26);
             this.txtCorreo.TabIndex = 1;
             // 
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
-            this.txtContraseña.Location = new System.Drawing.Point(484, 351);
+            this.txtContraseña.Location = new System.Drawing.Point(476, 384);
+            this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(165, 23);
+            this.txtContraseña.Size = new System.Drawing.Size(175, 26);
             this.txtContraseña.TabIndex = 2;
             // 
             // btnIngresar
@@ -127,7 +128,7 @@ namespace Missushi.Forms
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.btnIngresar.Location = new System.Drawing.Point(493, 421);
+            this.btnIngresar.Location = new System.Drawing.Point(453, 448);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(117, 40);
             this.btnIngresar.TabIndex = 3;
@@ -140,9 +141,9 @@ namespace Missushi.Forms
             // 
             this.pictureBoxPersonalizado1.BackColor = System.Drawing.Color.White;
             this.pictureBoxPersonalizado1.Image = global::Missushi.Properties.Resources.login;
-            this.pictureBoxPersonalizado1.Location = new System.Drawing.Point(444, 141);
+            this.pictureBoxPersonalizado1.Location = new System.Drawing.Point(402, 141);
             this.pictureBoxPersonalizado1.Name = "pictureBoxPersonalizado1";
-            this.pictureBoxPersonalizado1.Size = new System.Drawing.Size(205, 134);
+            this.pictureBoxPersonalizado1.Size = new System.Drawing.Size(220, 165);
             this.pictureBoxPersonalizado1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPersonalizado1.TabIndex = 0;
             this.pictureBoxPersonalizado1.TabStop = false;
@@ -158,22 +159,22 @@ namespace Missushi.Forms
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBoxPersonalizado1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLogin";
             this.Text = "Missushi - Login";
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
-            this.Controls.SetChildIndex(this.pictureBoxPersonalizado1, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.menuStrip1, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            this.Controls.SetChildIndex(this.pictureBoxPersonalizado1, 0);
             this.Controls.SetChildIndex(this.lblCorreo, 0);
             this.Controls.SetChildIndex(this.lblContraseña, 0);
             this.Controls.SetChildIndex(this.txtCorreo, 0);
             this.Controls.SetChildIndex(this.txtContraseña, 0);
             this.Controls.SetChildIndex(this.btnIngresar, 0);
-            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
