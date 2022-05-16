@@ -102,6 +102,26 @@ namespace Missushi.Forms {
             centrarComponente(lblTitulo);
             centrarComponente(lblBarraTitulo);
         }
+
+        protected void cargarFormBDAdmin() {
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "BASE DE DATOS";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            centrarComponente(lblTitulo);
+            centrarComponente(lblBarraTitulo);
+        }
+
+        protected void cargarSuspenderUsuario() {
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "USUARIOS";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            centrarComponente(lblTitulo);
+            centrarComponente(lblBarraTitulo);
+        }
         //-------------------------------------------------------------Usuario------------------------------------------------
         protected void cargarPantallaMain() {
             cargarPantallaPrincipal();
@@ -348,7 +368,7 @@ namespace Missushi.Forms {
                       ("Base de datos",verBD_Click),
                       ("Reseñas", Reseñas_Click),
                       ("Reservaciones", ReservacionesAdmin_Click),
-                      ("Usuarios", suspenderUsuarios_Click)
+                      ("Suspender usuarios", suspenderUsuarios_Click)
                  });
 
                 } else if(Globales.usuarioActual.Tipo == 'G') {

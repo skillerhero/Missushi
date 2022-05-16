@@ -43,23 +43,27 @@ namespace Missushi.Forms.Administrador {
             // 
             // pbHacerReservacion
             // 
+            this.pbHacerReservacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbHacerReservacion.Image = global::Missushi.Properties.Resources.reservar1;
-            this.pbHacerReservacion.Location = new System.Drawing.Point(340, 436);
+            this.pbHacerReservacion.Location = new System.Drawing.Point(337, 435);
             this.pbHacerReservacion.Name = "pbHacerReservacion";
-            this.pbHacerReservacion.Size = new System.Drawing.Size(106, 100);
+            this.pbHacerReservacion.Size = new System.Drawing.Size(100, 100);
             this.pbHacerReservacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbHacerReservacion.TabIndex = 3;
+            this.pbHacerReservacion.TabIndex = 0;
             this.pbHacerReservacion.TabStop = false;
+            this.pbHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
             // 
             // pbCancelarReservacion
             // 
+            this.pbCancelarReservacion.Enabled = false;
             this.pbCancelarReservacion.Image = global::Missushi.Properties.Resources.cancelar;
-            this.pbCancelarReservacion.Location = new System.Drawing.Point(630, 443);
+            this.pbCancelarReservacion.Location = new System.Drawing.Point(587, 435);
             this.pbCancelarReservacion.Name = "pbCancelarReservacion";
-            this.pbCancelarReservacion.Size = new System.Drawing.Size(108, 93);
+            this.pbCancelarReservacion.Size = new System.Drawing.Size(100, 100);
             this.pbCancelarReservacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCancelarReservacion.TabIndex = 4;
+            this.pbCancelarReservacion.TabIndex = 0;
             this.pbCancelarReservacion.TabStop = false;
+            this.pbCancelarReservacion.Click += new System.EventHandler(this.btnCancelarReservacion_Click);
             // 
             // btnHacerReservacion
             // 
@@ -67,10 +71,10 @@ namespace Missushi.Forms.Administrador {
             this.btnHacerReservacion.FlatAppearance.BorderSize = 0;
             this.btnHacerReservacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHacerReservacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.btnHacerReservacion.Location = new System.Drawing.Point(340, 542);
+            this.btnHacerReservacion.Location = new System.Drawing.Point(336, 545);
             this.btnHacerReservacion.Name = "btnHacerReservacion";
-            this.btnHacerReservacion.Size = new System.Drawing.Size(106, 45);
-            this.btnHacerReservacion.TabIndex = 5;
+            this.btnHacerReservacion.Size = new System.Drawing.Size(100, 45);
+            this.btnHacerReservacion.TabIndex = 0;
             this.btnHacerReservacion.Text = "Hacer Reservación";
             this.btnHacerReservacion.UseVisualStyleBackColor = false;
             this.btnHacerReservacion.Click += new System.EventHandler(this.btnHacerReservacion_Click);
@@ -79,13 +83,14 @@ namespace Missushi.Forms.Administrador {
             // btnCancelarReservacion
             // 
             this.btnCancelarReservacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(230)))), ((int)(((byte)(212)))));
+            this.btnCancelarReservacion.Enabled = false;
             this.btnCancelarReservacion.FlatAppearance.BorderSize = 0;
             this.btnCancelarReservacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarReservacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.btnCancelarReservacion.Location = new System.Drawing.Point(632, 542);
+            this.btnCancelarReservacion.Location = new System.Drawing.Point(587, 545);
             this.btnCancelarReservacion.Name = "btnCancelarReservacion";
-            this.btnCancelarReservacion.Size = new System.Drawing.Size(106, 45);
-            this.btnCancelarReservacion.TabIndex = 6;
+            this.btnCancelarReservacion.Size = new System.Drawing.Size(100, 45);
+            this.btnCancelarReservacion.TabIndex = 0;
             this.btnCancelarReservacion.Text = "Cancelar Reservación";
             this.btnCancelarReservacion.UseVisualStyleBackColor = false;
             this.btnCancelarReservacion.Click += new System.EventHandler(this.btnCancelarReservacion_Click);
@@ -119,7 +124,7 @@ namespace Missushi.Forms.Administrador {
             this.dgReservaciones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgReservaciones.EnableHeadersVisualStyles = false;
             this.dgReservaciones.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
-            this.dgReservaciones.Location = new System.Drawing.Point(62, 173);
+            this.dgReservaciones.Location = new System.Drawing.Point(57, 173);
             this.dgReservaciones.Name = "dgReservaciones";
             this.dgReservaciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -142,12 +147,13 @@ namespace Missushi.Forms.Administrador {
             this.dgReservaciones.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgReservaciones.RowTemplate.Height = 29;
             this.dgReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgReservaciones.Size = new System.Drawing.Size(897, 257);
-            this.dgReservaciones.TabIndex = 8;
+            this.dgReservaciones.Size = new System.Drawing.Size(910, 255);
+            this.dgReservaciones.TabIndex = 0;
             this.dgReservaciones.SelectionChanged += new System.EventHandler(this.dgReservaciones_SelectionChanged);
             // 
             // FormReservacionAdministrador
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.dgReservaciones);
@@ -158,7 +164,7 @@ namespace Missushi.Forms.Administrador {
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormReservacionAdministrador";
-            this.Text = "Modificacion de reservación";
+            this.Text = "Missushi - Modificacion de reservación";
             this.Load += new System.EventHandler(this.FormReservacionAdministrador_Load);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);

@@ -1,4 +1,6 @@
-﻿namespace Missushi.Forms.Administrador {
+﻿using Missushi.Clases;
+
+namespace Missushi.Forms.Administrador {
     partial class FormSuspenderUsuario {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +30,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgTablaUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnCambios = new System.Windows.Forms.Button();
-            this.txtCorreoSuspender = new System.Windows.Forms.TextBox();
             this.lblSuspenderU = new System.Windows.Forms.Label();
+            this.btnCambios = new Missushi.Forms.BotonPersonalizado();
+            this.txtCorreoSuspender = new Missushi.Forms.TextBoxPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgTablaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // dgTablaUsuarios
             // 
+            this.dgTablaUsuarios.AllowUserToAddRows = false;
             this.dgTablaUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgTablaUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgTablaUsuarios.BackgroundColor = System.Drawing.Color.White;
@@ -54,7 +57,7 @@
             this.dgTablaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgTablaUsuarios.EnableHeadersVisualStyles = false;
             this.dgTablaUsuarios.GridColor = System.Drawing.Color.White;
-            this.dgTablaUsuarios.Location = new System.Drawing.Point(33, 128);
+            this.dgTablaUsuarios.Location = new System.Drawing.Point(147, 158);
             this.dgTablaUsuarios.Name = "dgTablaUsuarios";
             this.dgTablaUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -76,53 +79,62 @@
             this.dgTablaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgTablaUsuarios.RowTemplate.Height = 29;
             this.dgTablaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgTablaUsuarios.Size = new System.Drawing.Size(952, 274);
+            this.dgTablaUsuarios.Size = new System.Drawing.Size(730, 280);
             this.dgTablaUsuarios.TabIndex = 0;
             this.dgTablaUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTablaUsuarios_CellDoubleClick);
-            // 
-            // btnCambios
-            // 
-            this.btnCambios.Location = new System.Drawing.Point(443, 439);
-            this.btnCambios.Name = "btnCambios";
-            this.btnCambios.Size = new System.Drawing.Size(94, 29);
-            this.btnCambios.TabIndex = 1;
-            this.btnCambios.Text = "Aceptar";
-            this.btnCambios.UseVisualStyleBackColor = true;
-            this.btnCambios.Click += new System.EventHandler(this.btnCambios_Click);
-            // 
-            // txtCorreoSuspender
-            // 
-            this.txtCorreoSuspender.Location = new System.Drawing.Point(447, 415);
-            this.txtCorreoSuspender.Name = "txtCorreoSuspender";
-            this.txtCorreoSuspender.Size = new System.Drawing.Size(125, 27);
-            this.txtCorreoSuspender.TabIndex = 2;
             // 
             // lblSuspenderU
             // 
             this.lblSuspenderU.AutoSize = true;
-            this.lblSuspenderU.Location = new System.Drawing.Point(340, 415);
+            this.lblSuspenderU.Font = new System.Drawing.Font("Gabriola", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSuspenderU.Location = new System.Drawing.Point(364, 465);
             this.lblSuspenderU.Name = "lblSuspenderU";
-            this.lblSuspenderU.Size = new System.Drawing.Size(127, 20);
+            this.lblSuspenderU.Size = new System.Drawing.Size(135, 39);
             this.lblSuspenderU.TabIndex = 3;
-            this.lblSuspenderU.Text = "Correo de usuario";
+            this.lblSuspenderU.Text = "Correo de usuario:";
+            // 
+            // btnCambios
+            // 
+            this.btnCambios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(230)))), ((int)(((byte)(212)))));
+            this.btnCambios.FlatAppearance.BorderSize = 0;
+            this.btnCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
+            this.btnCambios.Location = new System.Drawing.Point(420, 528);
+            this.btnCambios.Name = "btnCambios";
+            this.btnCambios.Size = new System.Drawing.Size(185, 29);
+            this.btnCambios.TabIndex = 4;
+            this.btnCambios.Text = "Suspender Usuario";
+            this.btnCambios.UseVisualStyleBackColor = false;
+            this.btnCambios.Click += new System.EventHandler(this.btnCambios_Click);
+            this.btnCambios.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
+            // 
+            // txtCorreoSuspender
+            // 
+            this.txtCorreoSuspender.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtCorreoSuspender.Location = new System.Drawing.Point(505, 473);
+            this.txtCorreoSuspender.Multiline = true;
+            this.txtCorreoSuspender.Name = "txtCorreoSuspender";
+            this.txtCorreoSuspender.Size = new System.Drawing.Size(155, 23);
+            this.txtCorreoSuspender.TabIndex = 5;
             // 
             // FormSuspenderUsuario
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.lblSuspenderU);
             this.Controls.Add(this.txtCorreoSuspender);
             this.Controls.Add(this.btnCambios);
+            this.Controls.Add(this.lblSuspenderU);
             this.Controls.Add(this.dgTablaUsuarios);
             this.Name = "FormSuspenderUsuario";
-            this.Text = "FormSuspenderUsuario";
+            this.Text = "Missushi - Suspender usuario";
             this.Controls.SetChildIndex(this.dgTablaUsuarios, 0);
-            this.Controls.SetChildIndex(this.btnCambios, 0);
-            this.Controls.SetChildIndex(this.txtCorreoSuspender, 0);
             this.Controls.SetChildIndex(this.lblSuspenderU, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
+            this.Controls.SetChildIndex(this.btnCambios, 0);
+            this.Controls.SetChildIndex(this.txtCorreoSuspender, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgTablaUsuarios)).EndInit();
             this.ResumeLayout(false);
@@ -133,8 +145,8 @@
         #endregion
 
         private DataGridView dgTablaUsuarios;
-        private Button btnCambios;
-        private TextBox txtCorreoSuspender;
         private Label lblSuspenderU;
+        private BotonPersonalizado btnCambios;
+        private TextBoxPersonalizado txtCorreoSuspender;
     }
 }

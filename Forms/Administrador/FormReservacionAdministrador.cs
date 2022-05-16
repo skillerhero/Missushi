@@ -68,8 +68,12 @@ namespace Missushi.Forms.Administrador {
                 DataGridViewRow selectedRow = dgReservaciones.Rows[selectedrowindex];
                 if (selectedRow.Cells["estado"].Value.Equals("En espera")) {
                     btnCancelarReservacion.Enabled = true;
+                    pbCancelarReservacion.Enabled = true;
+                    pbCancelarReservacion.Cursor = Cursors.Hand;
                 } else {
                     btnCancelarReservacion.Enabled = false;
+                    pbCancelarReservacion.Enabled = false;
+                    pbCancelarReservacion.Cursor = Cursors.Default;
                 }
             }
         }

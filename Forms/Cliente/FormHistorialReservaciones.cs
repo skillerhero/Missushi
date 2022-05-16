@@ -63,9 +63,5 @@ namespace Missushi.Forms.Cliente {
 
         }
 
-        private void dgReservaciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

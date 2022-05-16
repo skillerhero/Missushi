@@ -50,7 +50,7 @@ namespace Missushi.Forms
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.lblCorreo.Location = new System.Drawing.Point(371, 309);
+            this.lblCorreo.Location = new System.Drawing.Point(330, 309);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(78, 50);
             this.lblCorreo.TabIndex = 0;
@@ -126,11 +126,11 @@ namespace Missushi.Forms
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(230)))), ((int)(((byte)(212)))));
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnIngresar.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(74)))), ((int)(((byte)(44)))));
-            this.btnIngresar.Location = new System.Drawing.Point(453, 448);
+            this.btnIngresar.Location = new System.Drawing.Point(330, 448);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(117, 40);
+            this.btnIngresar.Size = new System.Drawing.Size(321, 38);
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Iniciar";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -151,6 +151,7 @@ namespace Missushi.Forms
             // FormLogin
             // 
             this.AcceptButton = this.btnIngresar;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.btnIngresar);

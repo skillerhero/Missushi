@@ -46,12 +46,11 @@ namespace Missushi.Forms.Administrador {
                 if (ConexionBD.existeCorreo(correoSuspendido)){
                     if (ConexionBD.VerificarEstado(correoSuspendido)){
                         MessageBox.Show("El usuario está suspendido actualmente");
-                        this.DialogResult = DialogResult.Abort;
                     }
                     else {
                         ConexionBD.SuspenderUsuario(correoSuspendido);
                         MessageBox.Show("Usuario suspendido con exito");
-                        this.DialogResult = DialogResult.OK;
+                        cargarDataGrid();
                     }
                 }
             }

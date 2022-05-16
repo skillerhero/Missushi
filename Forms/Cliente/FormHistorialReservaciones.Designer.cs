@@ -97,7 +97,6 @@
             this.dgReservaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgReservaciones.Size = new System.Drawing.Size(897, 257);
             this.dgReservaciones.TabIndex = 7;
-            this.dgReservaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgReservaciones_CellContentClick);
             this.dgReservaciones.SelectionChanged += new System.EventHandler(this.dgReservaciones_SelectionChanged);
             // 
             // btnCancelarReservacion
