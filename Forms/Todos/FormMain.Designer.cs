@@ -48,7 +48,6 @@ namespace Missushi
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.lblInfoRestaurante);
             this.Name = "FormMain";

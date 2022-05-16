@@ -287,23 +287,17 @@ namespace Missushi.Forms {
 
         protected void modificarInfoRestaurante_Click(object sender, EventArgs e) {
             FormModificarInfoRestaurante formModificarInfo = new FormModificarInfoRestaurante();
-            formModificarInfo.Show();
-            Globales.transition();
-            Close();
+            formModificarInfo.ShowDialog();
         }
 
         protected void modificarZona_Click(object sender, EventArgs e) {
             FormModificarZona formModificarZona = new FormModificarZona();
-            formModificarZona.Show();
-            Globales.transition();
-            Close();
+            formModificarZona.ShowDialog();
         }
 
         protected void agregarZona_Click(object sender, EventArgs e) {
             FormAgregarZona formAgregarZona = new FormAgregarZona();
-            formAgregarZona.Show();
-            Globales.transition();
-            Close();
+            formAgregarZona.ShowDialog();
         }
 
         protected void agregarPlatillo_Click(object sender, EventArgs e) {
