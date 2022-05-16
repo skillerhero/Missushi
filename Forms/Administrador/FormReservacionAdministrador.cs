@@ -19,13 +19,14 @@ namespace Missushi.Forms.Administrador {
             lblBarraTitulo.Visible = true;
             lblBarraTitulo.Width = lblTitulo.Width;
             lblBarraTitulo.BringToFront();
-            centrarComponente(lblTitulo);
-            centrarComponente(lblBarraTitulo);
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
             cargarDataGrid();
         }
 
         private void cargarDataGrid() {
             try {
+                int width = 0;
                 MySqlDataAdapter dataAdapter;
                 dataAdapter = ConexionBD.consultarTablaAdapter("reservacion");
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
@@ -33,6 +34,18 @@ namespace Missushi.Forms.Administrador {
                 dataAdapter.Fill(ds);
                 dgReservaciones.ReadOnly = true;
                 dgReservaciones.DataSource = ds.Tables[0];
+                dgReservaciones.Columns["idReservacion"].HeaderText = "ID";
+                dgReservaciones.Columns["fechaHoraInicio"].HeaderText = "Inicio";
+                dgReservaciones.Columns["fechaHoraFin"].HeaderText = "Fin";
+                dgReservaciones.Columns["cantidadPersonas"].HeaderText = "No. Personas";
+                dgReservaciones.Columns["idZona"].HeaderText = "Zona";
+                dgReservaciones.Columns["estado"].HeaderText = "Estado";
+                foreach (DataGridViewColumn col in dgReservaciones.Columns) {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    width += col.Width;
+                }
+                dgReservaciones.Width = width;
+                dgReservaciones.Location = centrarComponente(dgReservaciones);
             } catch (Exception ex) {
                 MessageBox.Show("No se pudo conectar con la base de datos.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dgReservaciones.Visible = false;

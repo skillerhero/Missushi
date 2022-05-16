@@ -75,7 +75,7 @@ namespace Missushi.Forms.Cliente {
             panelPadre.AutoScroll = false;
             panelPadre.VerticalScroll.Visible = false;
             panelPadre.AutoScroll = true;
-            centrarComponente(panelHacerReseña);
+            panelHacerReseña.Location = centrarComponente(panelHacerReseña);
 
         }
 

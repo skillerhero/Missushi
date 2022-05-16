@@ -111,10 +111,10 @@ namespace Missushi.Forms.Administrador {
             // txtCorreoSuspender
             // 
             this.txtCorreoSuspender.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtCorreoSuspender.Location = new System.Drawing.Point(505, 473);
-            this.txtCorreoSuspender.Multiline = true;
+            this.txtCorreoSuspender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCorreoSuspender.Location = new System.Drawing.Point(505, 470);
             this.txtCorreoSuspender.Name = "txtCorreoSuspender";
-            this.txtCorreoSuspender.Size = new System.Drawing.Size(155, 23);
+            this.txtCorreoSuspender.Size = new System.Drawing.Size(155, 29);
             this.txtCorreoSuspender.TabIndex = 5;
             // 
             // FormSuspenderUsuario

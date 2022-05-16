@@ -11,11 +11,12 @@ namespace Missushi.Forms {
         public FormDiseño() {
             InitializeComponent();
         }
-        public void centrarComponente(Control componente) {
-            componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
+        public Point centrarComponente(Control componente) {
+            componente.Location = new Point((1024 - componente.Width) / 2, componente.Location.Y);
+            return componente.Location;
         }
 
-        public void centrarComponenteHorizontal(Control componente) {
+        public void centrarComponenteHorizontal(ref Control componente) {
             componente.Location = new Point((this.Width - componente.Width) / 2, componente.Location.Y);
         }
 
@@ -43,8 +44,8 @@ namespace Missushi.Forms {
             lblTitulo.Text = "INICIAR SESIÓN";            
             lblBarraTitulo.Visible = true;
             lblBarraTitulo.Width = lblTitulo.Width;
-            centrarComponente(lblTitulo);
-            centrarComponente(lblBarraTitulo);
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
         }
 
         protected void cargarPantallaUbicacion() {
@@ -86,8 +87,8 @@ namespace Missushi.Forms {
             lblTitulo.Text = "RESEÑAS";
             lblBarraTitulo.Visible = true;
             lblBarraTitulo.Width = lblTitulo.Width;
-            centrarComponente(lblTitulo);
-            centrarComponente(lblBarraTitulo);
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
         }
 
         protected void cargarPantallaRegistro() {
@@ -99,8 +100,10 @@ namespace Missushi.Forms {
             lblTitulo.Text = "REGISTRO";
             lblBarraTitulo.Visible = true;
             lblBarraTitulo.Width = lblTitulo.Width;
-            centrarComponente(lblTitulo);
-            centrarComponente(lblBarraTitulo);
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
         }
 
         protected void cargarFormBDAdmin() {
@@ -109,8 +112,8 @@ namespace Missushi.Forms {
             lblTitulo.Text = "BASE DE DATOS";
             lblBarraTitulo.Visible = true;
             lblBarraTitulo.Width = lblTitulo.Width;
-            centrarComponente(lblTitulo);
-            centrarComponente(lblBarraTitulo);
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
         }
 
         protected void cargarSuspenderUsuario() {
@@ -119,8 +122,18 @@ namespace Missushi.Forms {
             lblTitulo.Text = "USUARIOS";
             lblBarraTitulo.Visible = true;
             lblBarraTitulo.Width = lblTitulo.Width;
-            centrarComponente(lblTitulo);
-            centrarComponente(lblBarraTitulo);
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
+        }
+
+        protected void cargarPantallaHistorial() {
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "HISTORIAL";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
         }
         //-------------------------------------------------------------Usuario------------------------------------------------
         protected void cargarPantallaMain() {

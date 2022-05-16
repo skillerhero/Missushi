@@ -9,10 +9,11 @@ namespace Missushi.Forms.Cliente {
             InitializeComponent();
             cargarBarraUsuario();
             cargarDataGrid();
-            centrarComponente(dgReservaciones);
+            cargarPantallaHistorial();
         }
         private void cargarDataGrid() {
             try {
+                int width = 0;
                 MySqlDataAdapter dataAdapter;
                 dataAdapter = ConexionBD.consultarReservacionAdapter(Globales.usuarioActual.IdUsuario);
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
@@ -28,7 +29,11 @@ namespace Missushi.Forms.Cliente {
                 dgReservaciones.Columns["estado"].HeaderText = "Estado";
                 foreach (DataGridViewColumn col in dgReservaciones.Columns) {
                     col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    width += col.Width;
                 }
+                dgReservaciones.Width = width;
+                dgReservaciones.Location = centrarComponente(dgReservaciones);
+
             }
             catch (Exception ex) {
                 MessageBox.Show("No se pudo conectar con la base de datos.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -62,6 +67,5 @@ namespace Missushi.Forms.Cliente {
             }
 
         }
-
     }
 }

@@ -105,20 +105,20 @@ namespace Missushi.Forms
             // txtCorreo
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
-            this.txtCorreo.Location = new System.Drawing.Point(477, 321);
-            this.txtCorreo.Multiline = true;
+            this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCorreo.Location = new System.Drawing.Point(477, 319);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(175, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(175, 29);
             this.txtCorreo.TabIndex = 1;
             // 
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
-            this.txtContraseña.Location = new System.Drawing.Point(476, 384);
-            this.txtContraseña.Multiline = true;
+            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtContraseña.Location = new System.Drawing.Point(476, 382);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(175, 26);
+            this.txtContraseña.Size = new System.Drawing.Size(175, 29);
             this.txtContraseña.TabIndex = 2;
             // 
             // btnIngresar

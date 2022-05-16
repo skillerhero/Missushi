@@ -30,6 +30,9 @@ namespace Missushi.Forms.Administrador {
                 dgTablaUsuarios.Columns["correo"].HeaderText = "Correo";
                 dgTablaUsuarios.Columns["tipo"].HeaderText = "Tipo";
                 dgTablaUsuarios.Columns["estado"].HeaderText = "Estado";
+                foreach (DataGridViewColumn col in dgTablaUsuarios.Columns) {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             }
             catch (Exception ex)
             {

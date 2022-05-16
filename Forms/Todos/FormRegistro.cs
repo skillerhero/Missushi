@@ -18,7 +18,7 @@ namespace Missushi.Forms{
             cbTipo.Items.Add("Gerente");
             cbTipo.Text = cbTipo.Items[0].ToString();
             cargarPantallaRegistro();
-            centrarComponente(panelRegistro);
+            panelRegistro.Location = centrarComponente(panelRegistro);
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e){
