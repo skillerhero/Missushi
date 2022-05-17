@@ -16,6 +16,14 @@ namespace Missushi.Forms.Gerente {
             cbTipo.Items.Add("Postres");
             cbTipo.Items.Add("Bebidas");
             cbTipo.Text = cbTipo.Items[0].ToString();
+
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "Modificar Platillo";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
         }
 
         private void cargarDataGrid() {
@@ -35,6 +43,9 @@ namespace Missushi.Forms.Gerente {
                 dgPlatillosModi.Columns["precio"].HeaderText = "Precio";
                 dgPlatillosModi.Columns["foto"].HeaderText = "Foto";
                 dgPlatillosModi.Columns["tipo"].HeaderText = "Tipo";
+                foreach (DataGridViewColumn col in dgPlatillosModi.Columns) {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             }
             catch (Exception ex)
             {
@@ -105,22 +116,22 @@ namespace Missushi.Forms.Gerente {
         }
 
 
-        private void dgPlatillosModi_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            int selectedrowindex = dgPlatillosModi.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dgPlatillosModi.Rows[selectedrowindex];
-            var idPlatillo = selectedRow.Cells["idPlatillo"].Value;
-            var nombre = selectedRow.Cells["nombre"].Value;
-            var descripcion = selectedRow.Cells["descripcion"].Value;
-            var precio = selectedRow.Cells["precio"].Value;
-            var foto = selectedRow.Cells["foto"].Value;
-            var tipo = selectedRow.Cells["tipo"].Value;
-            txtNombre.Text = nombre.ToString();
-            txtDescripcion.Text = descripcion.ToString();
-            txtPrecio.Text = precio.ToString();
-            txtFoto.Text = foto.ToString();
-            cbTipo.SelectedIndex = cbTipo.FindStringExact(tipo.ToString());
+        private void dgPlatillosModi_SelectionChanged(object sender, EventArgs e) {
+            if (dgPlatillosModi.SelectedCells.Count > 0) {
+                int selectedrowindex = dgPlatillosModi.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgPlatillosModi.Rows[selectedrowindex];
+                var idPlatillo = selectedRow.Cells["idPlatillo"].Value;
+                var nombre = selectedRow.Cells["nombre"].Value;
+                var descripcion = selectedRow.Cells["descripcion"].Value;
+                var precio = selectedRow.Cells["precio"].Value;
+                var foto = selectedRow.Cells["foto"].Value;
+                var tipo = selectedRow.Cells["tipo"].Value;
+                txtNombre.Text = nombre.ToString();
+                txtDescripcion.Text = descripcion.ToString();
+                txtPrecio.Text = precio.ToString();
+                txtFoto.Text = foto.ToString();
+                cbTipo.SelectedIndex = cbTipo.FindStringExact(tipo.ToString());
+            }
         }
-
-       
     }
 }
