@@ -5,8 +5,8 @@ using Missushi.Forms.Cliente;
 using Missushi.Clases;
 
 namespace Missushi.Forms.Administrador {
-    public partial class FormReservacionAdministrador : FormDiseño {
-        public FormReservacionAdministrador() {
+    public partial class FormPanelReservaciones : FormDiseño {
+        public FormPanelReservaciones() {
             InitializeComponent();
             cargarBarraUsuario();
         }
@@ -28,7 +28,7 @@ namespace Missushi.Forms.Administrador {
             try {
                 int width = 0;
                 MySqlDataAdapter dataAdapter;
-                dataAdapter = ConexionBD.consultarTablaAdapter("reservacion");
+                dataAdapter = ConexionBD.consultarReservacionDiaAdapter(dpDia.Value);
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
                 DataSet ds = new DataSet();
                 dataAdapter.Fill(ds);
@@ -89,6 +89,14 @@ namespace Missushi.Forms.Administrador {
                     pbCancelarReservacion.Cursor = Cursors.Default;
                 }
             }
+        }
+
+        private void dpDia_ValueChanged(object sender, EventArgs e) {
+            cargarDataGrid();
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e) {
+            cargarDataGrid();
         }
     }
 }

@@ -6,16 +6,14 @@ namespace Missushi{
     public partial class FormMain{
         public FormMain(){
             InitializeComponent();
-            Globales globales = new Globales();
-            Globales.instancia = this;
             cargarPantallaPrincipal();
-            cargarInfoRestaurante();
-        }
-
-        private void FormMain_FormClosing(object sender, FormClosingEventArgs e){
-            if(ConexionBD.connection != null) {
-                ConexionBD.connection.Close();
+            if (Globales.usuarioActual.usuarioLogeado()) {
+                HandleCreated -= new EventHandler(mostrarPantallaDeCarga);
+                cargarBarraUsuario();
+                return;
             }
+            Globales.instancia = this;
+            cargarInfoRestaurante();
         }
 
         private void cargarInfoRestaurante() {

@@ -167,6 +167,7 @@ namespace Missushi.Forms.Cliente {
             0,
             0,
             0});
+            this.nudCantidadPersonas.ValueChanged += new System.EventHandler(this.nudCantidadPersonas_ValueChanged);
             // 
             // lblCantidadPersonas
             // 

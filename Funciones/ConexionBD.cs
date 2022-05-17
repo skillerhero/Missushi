@@ -561,7 +561,7 @@ namespace Missushi.Funciones{
         }
 
         static public bool cancelarReservacion(int idReservacion) {
-            string sql = "UPDATE reservacion SET estado = 'Cancelada' where idReservacion = @0;";
+            string sql = "UPDATE reservacion SET estado = 'Cancelada' where idReservacion = @0 and estado = 'En espera';";
             if (connection != null) {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);

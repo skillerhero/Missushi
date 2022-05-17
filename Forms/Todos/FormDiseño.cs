@@ -137,10 +137,6 @@ namespace Missushi.Forms {
             lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
         }
         //-------------------------------------------------------------Usuario------------------------------------------------
-        protected void cargarPantallaMain() {
-            cargarPantallaPrincipal();
-            cargarBarraUsuario();
-        }
         protected void cargarBarraUsuario() {
             pbSalir.Visible = true;
             lblIngresar.Visible = false;
@@ -355,13 +351,6 @@ namespace Missushi.Forms {
             Close();
         }
 
-        protected void reservacionGerente_Click(object sender, EventArgs e) {
-            FormReservacionGerente formReservacionGerente = new FormReservacionGerente();
-            formReservacionGerente.Show();
-            Globales.transition();
-            Close();
-        }
-
         protected void nada_Click(object sender, EventArgs e) {
 
         }
@@ -393,7 +382,7 @@ namespace Missushi.Forms {
                         ("Modificar info del restaurante",modificarInfoRestaurante_Click),
                         ("Modificar zona",modificarZona_Click),
                         ("Agregar zona",agregarZona_Click),
-                      ("Consultar reservaciones",reservacionGerente_Click),
+                      ("Reservaciones",ReservacionesAdmin_Click),
                       ("Disponibilidad", Disponibilidad_Click)
                  });
                 }
@@ -404,16 +393,16 @@ namespace Missushi.Forms {
         private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {
             if (Globales.transicion) {
                 Globales.transicion = false;
-            } else if (Globales.usuarioActual.Tipo == 'C' && this is not FormMainCliente) {
-                FormMainCliente formMainCliente = new FormMainCliente();
+            } else if (Globales.usuarioActual.Tipo == 'C' && this is not FormMain) {
+                FormMain formMainCliente = new FormMain();
                 formMainCliente.Show();
-            } else if (Globales.usuarioActual.Tipo == 'A' && this is not FormMainAdministrador) {
-                FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
+            } else if (Globales.usuarioActual.Tipo == 'A' && this is not FormMain) {
+                FormMain formMainAdministrador = new FormMain();
                 formMainAdministrador.Show();
-            } else if (Globales.usuarioActual.Tipo == 'G' && this is not FormMainGerente) {
-                FormMainGerente formMainGerente = new FormMainGerente();
+            } else if (Globales.usuarioActual.Tipo == 'G' && this is not FormMain) {
+                FormMain formMainGerente = new FormMain();
                 formMainGerente.Show();
-            } else {
+            } else{
                 Globales.instancia.Show();
                 Globales.constructor();
             }
@@ -433,7 +422,7 @@ namespace Missushi.Forms {
             Close();
         }
         protected void ReservacionesAdmin_Click(object sender, EventArgs e) {
-            FormReservacionAdministrador formReservacionAdministrador = new FormReservacionAdministrador();
+            FormPanelReservaciones formReservacionAdministrador = new FormPanelReservaciones();
             Globales.transition();
             formReservacionAdministrador.Show();
             Close();

@@ -12,6 +12,7 @@ namespace Missushi.Forms.Administrador {
         }
         private void cargarDataGrid() {
             try {
+                int width = 0;
                 MySqlDataAdapter dataAdapter;
                 dataAdapter = ConexionBD.consultarTablaAdapter("usuario");
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
@@ -19,6 +20,13 @@ namespace Missushi.Forms.Administrador {
                 dataAdapter.Fill(ds);
                 dgUsuarios.ReadOnly = true;
                 dgUsuarios.DataSource = ds.Tables[0];
+                dgUsuarios.Columns["contrasenia"].Visible = false;
+                foreach (DataGridViewColumn col in dgUsuarios.Columns) {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                    width += col.Width;
+                }
+                dgUsuarios.Width = width;
+                dgUsuarios.Location = new Point((Width - dgUsuarios.Width) / 2, dgUsuarios.Location.Y);
             } catch (Exception ex) {
                 MessageBox.Show("No se pudo conectar con la base de datos.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dgUsuarios.Visible = false;

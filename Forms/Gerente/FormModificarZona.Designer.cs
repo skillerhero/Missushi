@@ -34,7 +34,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(103, 199);
+            this.btnModificar.Location = new System.Drawing.Point(137, 200);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 0;
@@ -44,14 +44,14 @@
             // 
             // nudCupo
             // 
-            this.nudCupo.Location = new System.Drawing.Point(87, 85);
+            this.nudCupo.Location = new System.Drawing.Point(121, 86);
             this.nudCupo.Name = "nudCupo";
             this.nudCupo.Size = new System.Drawing.Size(120, 23);
             this.nudCupo.TabIndex = 2;
             // 
             // txtFotoZona
             // 
-            this.txtFotoZona.Location = new System.Drawing.Point(87, 140);
+            this.txtFotoZona.Location = new System.Drawing.Point(121, 141);
             this.txtFotoZona.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFotoZona.Name = "txtFotoZona";
             this.txtFotoZona.Size = new System.Drawing.Size(110, 23);
@@ -59,7 +59,7 @@
             // 
             // btnElegirZona
             // 
-            this.btnElegirZona.Location = new System.Drawing.Point(103, 26);
+            this.btnElegirZona.Location = new System.Drawing.Point(137, 27);
             this.btnElegirZona.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnElegirZona.Name = "btnElegirZona";
             this.btnElegirZona.Size = new System.Drawing.Size(82, 22);
@@ -71,7 +71,7 @@
             // lblCupo
             // 
             this.lblCupo.AutoSize = true;
-            this.lblCupo.Location = new System.Drawing.Point(25, 87);
+            this.lblCupo.Location = new System.Drawing.Point(59, 88);
             this.lblCupo.Name = "lblCupo";
             this.lblCupo.Size = new System.Drawing.Size(36, 15);
             this.lblCupo.TabIndex = 5;
@@ -80,7 +80,7 @@
             // lblFoto
             // 
             this.lblFoto.AutoSize = true;
-            this.lblFoto.Location = new System.Drawing.Point(34, 148);
+            this.lblFoto.Location = new System.Drawing.Point(68, 149);
             this.lblFoto.Name = "lblFoto";
             this.lblFoto.Size = new System.Drawing.Size(47, 15);
             this.lblFoto.TabIndex = 6;
@@ -90,7 +90,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 243);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(320, 243);
             this.Controls.Add(this.lblFoto);
             this.Controls.Add(this.lblCupo);
             this.Controls.Add(this.btnElegirZona);

@@ -14,6 +14,25 @@ namespace Missushi.Forms.Cliente {
             cargarBarraUsuario();
         }
 
+        private void FormReservacionCliente_Load(object sender, EventArgs e) {
+            comprobarHoraHoy();
+            cbHoraInicio.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbHoraInicio.DisplayMember = "Text";
+            cbHoraInicio.ValueMember = "Value";
+            btnHacerReservacion.Enabled = false;
+            nudCantidadPersonas.Enabled = false;
+            dpFechaInicio.MinDate = DateTime.Today;
+            dpFechaInicio.MaxDate = DateTime.Today.AddDays(7);
+            if (Globales.usuarioActual.Tipo == 'C') {
+                Globales.usuarioSeleccionado = Globales.usuarioActual;
+                btnElegirUsuario.Text = Globales.usuarioSeleccionado.Nombres + " " + Globales.usuarioSeleccionado.Apellidos;
+                btnElegirUsuario.Click -= new EventHandler(btnElegirUsuario_Click);
+                btnElegirUsuario.Cursor = Cursors.Default;
+            } else {
+                Globales.usuarioSeleccionado = new Usuario();
+            }
+        }
+
         private void btnHacerReservacion_Click(object sender, EventArgs e) {
             try {
                 DateTime fechaInicio = obtenerFechaInicio();
@@ -26,6 +45,10 @@ namespace Missushi.Forms.Cliente {
                 if (ConexionBD.usuarioTieneReservacionesEnEspera(Globales.usuarioSeleccionado.IdUsuario)) {
                     MessageBox.Show("Tiene una reservación en espera. Cáncelela o asista a la reservación.");
                     Close();
+                    return;
+                }
+                if (!comprobaciones()) {
+                    MessageBox.Show("Se han actualizado los cupos, por favor vuelva a seleccionar los datos de la reservación.");
                     return;
                 }
                 ConexionBD.agregarReservacion(fechaInicio, fechaFin, cantidadPersonas, Globales.usuarioSeleccionado.IdUsuario, idZona, estado);
@@ -42,101 +65,9 @@ namespace Missushi.Forms.Cliente {
             if (formElegirUsuario.ShowDialog() == DialogResult.OK) {
                 Globales.usuarioSeleccionado = ConexionBD.consultarUsuario(Globales.usuarioSeleccionado.IdUsuario);
                 btnElegirUsuario.Text = Globales.usuarioSeleccionado.Nombres + " " + Globales.usuarioSeleccionado.Apellidos;
-                comprobaciones();
-            }
-        }
-        private void comprobaciones() {
-            if (comprobarCupo() && comprobarId()) {
-                btnHacerReservacion.Enabled = true;
-            }
-        }
-        private bool comprobarId() {
-            if (Globales.usuarioSeleccionado.IdUsuario == -1) {
-                return false;
-            }
-            return true;
-        }
-
-        private void mandarCorreo() {
-            try {
-                Usuario usuario = Globales.usuarioSeleccionado;
-                string remitente = "missushi.contacto@gmail.com";
-                string destinatario = usuario.Correo;
-                //string copiaA = "danna.medina2869@alumnos.udg.mx";
-
-               
-                var dirRemitente = new MailAddress(remitente, "Missushi");
-                var dirDestinatario = new MailAddress(destinatario, usuario.Nombres);
-                const string contra = "frribGLDb7D2mf";
-                const string asunto = "Reservación";
-                string body = "";
-
-                var smtp = new SmtpClient {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(dirRemitente.Address, contra)
-                };
-                var message = new MailMessage(dirRemitente, dirDestinatario);
-                //message.Bcc.Add(copiaA);
-                message.AlternateViews.Add(GetEmbeddedImage());
-                message.Subject = asunto;
-                message.Body = body;
-                message.IsBodyHtml = true;
-                smtp.Send(message);
-            } catch (Exception ex) {
-                MessageBox.Show(ex.Message);
             }
         }
 
-        private AlternateView GetEmbeddedImage() {
-            Reservacion reservacion = ConexionBD.consultarReservacion(Globales.usuarioSeleccionado.IdUsuario);
-            Usuario usuario = Globales.usuarioSeleccionado;
-            QRCodeGenerator qr = new QRCodeGenerator();
-            string url = "http://" + ConexionBD.ipServidor + "/login/login.php?idReservacion=" + reservacion.IdReservacion;
-            QRCodeData data = qr.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
-            QRCode code = new QRCode(data);
-
-            Bitmap b = code.GetGraphic(5);
-            ImageConverter ic = new ImageConverter();
-            Byte[]? ba = ic.ConvertTo(b, typeof(Byte[])) as Byte[];
-            MemoryStream memoryStream = new MemoryStream(ba);
-
-            LinkedResource res = new LinkedResource(memoryStream);
-            res.ContentId = Guid.NewGuid().ToString();
-            res.ContentType.Name = "reservacion.jpg";
-            string htmlBody =
-                "<h2>Aquí están los datos de tu reservación.<h2/>" +
-                "<h3><b>Nombre:</b> " + usuario.Nombres + " " + usuario.Apellidos + ".<h3>" +
-                "<h3><b>Personas:</b> " + reservacion.CantidadPersonas + ".<h3>" +
-                "<h3><b>Fecha y hora inicio:</b> " + reservacion.FechaHoraInicio + "<h3>" +
-                "<h3><b>Fecha y hora fin:</b> " + reservacion.FechaHoraFin + "<h3>" +
-                "<h3><b>Zona:</b> " + reservacion.IdZona + ".<h3><br>" +
-                @"<img src='cid:" + res.ContentId + @"'/>";
-            AlternateView alternateView = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
-            alternateView.LinkedResources.Add(res);
-            return alternateView;
-        }
-        private void FormReservacionCliente_Load(object sender, EventArgs e) {
-            comprobarHoraHoy();
-            cbHoraInicio.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbHoraInicio.DisplayMember = "Text";
-            cbHoraInicio.ValueMember = "Value";
-            btnHacerReservacion.Enabled = false;
-            nudCantidadPersonas.Enabled = false;
-            dpFechaInicio.MinDate = DateTime.Today;
-            dpFechaInicio.MaxDate = DateTime.Today.AddDays(7);
-            if(Globales.usuarioActual.Tipo == 'C') {
-                Globales.usuarioSeleccionado = Globales.usuarioActual;
-                btnElegirUsuario.Text = Globales.usuarioSeleccionado.Nombres + " " + Globales.usuarioSeleccionado.Apellidos;
-                btnElegirUsuario.Click -= new EventHandler(btnElegirUsuario_Click);
-                btnElegirUsuario.Cursor = Cursors.Default;
-            } else {
-                Globales.usuarioSeleccionado = new Usuario();
-            }
-        }
         private void btnElegirZona_Click(object sender, EventArgs e) {
             FormElegirZona formElegirZona = new FormElegirZona(obtenerFechaInicio());
             if (formElegirZona.ShowDialog() == DialogResult.OK) {
@@ -144,6 +75,21 @@ namespace Missushi.Forms.Cliente {
                 this.nudCantidadPersonas.Focus();
                 comprobarCupo();
             }
+        }
+
+        private bool comprobaciones() {
+            if (comprobarCupo() > 0 && comprobarId() && DateTime.Now < obtenerFechaInicio()) {
+                btnHacerReservacion.Enabled = true;
+                return true;
+            } else {
+                return false;
+            }
+        }
+        private bool comprobarId() {
+            if (Globales.usuarioSeleccionado.IdUsuario == -1) {
+                return false;
+            }
+            return true;
         }
 
         private DateTime obtenerFechaInicio() {
@@ -191,23 +137,22 @@ namespace Missushi.Forms.Cliente {
             comprobarCupo();
         }
 
-        private bool comprobarCupo() {
+        private int comprobarCupo() {
             if (Globales.zonaSeleccionada.IdZona == -1) {
-                return false;
+                return 0;
             }
             int cupoZona = ConexionBD.consultarCupoZona(Globales.zonaSeleccionada.IdZona, obtenerFechaInicio());
             if (cupoZona == 0) {
                 btnHacerReservacion.Enabled = false;
                 nudCantidadPersonas.Enabled = false;
                 MessageBox.Show("No hay cupos en esta zona y horario.\nPuede seleccionar otra zona u horario.");
-                return false;
+                return 0;
             }
             if (cbHoraInicio.Enabled == true) {
-                nudCantidadPersonas.Maximum = cupoZona;
                 btnHacerReservacion.Enabled = true;
                 nudCantidadPersonas.Enabled = true;
             }
-            return true;
+            return cupoZona;
         }
 
         private void comprobarHoraHoy() {
@@ -279,6 +224,76 @@ namespace Missushi.Forms.Cliente {
                 cbHoraInicio.Enabled = true;
             }
             cbHoraInicio.DataSource = horarios;
+        }
+
+        private void nudCantidadPersonas_ValueChanged(object sender, EventArgs e) {
+            int cupo = comprobarCupo();
+            if (nudCantidadPersonas.Value > cupo) {
+                MessageBox.Show("Cupo máximo: " + cupo + " personas.");
+                nudCantidadPersonas.Value = cupo;
+            }
+        }
+
+        private void mandarCorreo() {
+            try {
+                Usuario usuario = Globales.usuarioSeleccionado;
+                string remitente = "missushi.contacto@gmail.com";
+                string destinatario = usuario.Correo;
+                //string copiaA = "danna.medina2869@alumnos.udg.mx";
+
+
+                var dirRemitente = new MailAddress(remitente, "Missushi");
+                var dirDestinatario = new MailAddress(destinatario, usuario.Nombres);
+                const string contra = "frribGLDb7D2mf";
+                const string asunto = "Reservación";
+                string body = "";
+
+                var smtp = new SmtpClient {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(dirRemitente.Address, contra)
+                };
+                var message = new MailMessage(dirRemitente, dirDestinatario);
+                //message.Bcc.Add(copiaA);
+                message.AlternateViews.Add(GetEmbeddedImage());
+                message.Subject = asunto;
+                message.Body = body;
+                message.IsBodyHtml = true;
+                smtp.Send(message);
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private AlternateView GetEmbeddedImage() {
+            Reservacion reservacion = ConexionBD.consultarReservacion(Globales.usuarioSeleccionado.IdUsuario);
+            Usuario usuario = Globales.usuarioSeleccionado;
+            QRCodeGenerator qr = new QRCodeGenerator();
+            string url = "http://" + ConexionBD.ipServidor + "/login/login.php?idReservacion=" + reservacion.IdReservacion;
+            QRCodeData data = qr.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(data);
+
+            Bitmap b = code.GetGraphic(5);
+            ImageConverter ic = new ImageConverter();
+            Byte[]? ba = ic.ConvertTo(b, typeof(Byte[])) as Byte[];
+            MemoryStream memoryStream = new MemoryStream(ba);
+
+            LinkedResource res = new LinkedResource(memoryStream);
+            res.ContentId = Guid.NewGuid().ToString();
+            res.ContentType.Name = "reservacion.jpg";
+            string htmlBody =
+                "<h2>Aquí están los datos de tu reservación.<h2/>" +
+                "<h3><b>Nombre:</b> " + usuario.Nombres + " " + usuario.Apellidos + ".<h3>" +
+                "<h3><b>Personas:</b> " + reservacion.CantidadPersonas + ".<h3>" +
+                "<h3><b>Fecha y hora inicio:</b> " + reservacion.FechaHoraInicio + "<h3>" +
+                "<h3><b>Fecha y hora fin:</b> " + reservacion.FechaHoraFin + "<h3>" +
+                "<h3><b>Zona:</b> " + reservacion.IdZona + ".<h3><br>" +
+                @"<img src='cid:" + res.ContentId + @"'/>";
+            AlternateView alternateView = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
+            alternateView.LinkedResources.Add(res);
+            return alternateView;
         }
     }
 }

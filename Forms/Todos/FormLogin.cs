@@ -1,5 +1,4 @@
 ﻿using Missushi.Clases;
-using Missushi.Forms.Gerente;
 using Missushi.Funciones;
 
 namespace Missushi.Forms{
@@ -12,13 +11,13 @@ namespace Missushi.Forms{
 
         private void entrar() {
             if (Globales.usuarioActual.Tipo == 'C') {
-                FormMainCliente formMainCliente = new FormMainCliente();
+                FormMain formMainCliente = new FormMain();
                 formMainCliente.Show();
             } else if (Globales.usuarioActual.Tipo == 'A') {
-                FormMainAdministrador formMainAdministrador = new FormMainAdministrador();
+                FormMain formMainAdministrador = new FormMain();
                 formMainAdministrador.Show();
             } else if (Globales.usuarioActual.Tipo == 'G') {
-                FormMainGerente formMainGerente = new FormMainGerente();
+                FormMain formMainGerente = new FormMain();
                 formMainGerente.Show();
             }
             Globales.transition();
