@@ -81,7 +81,7 @@ namespace Missushi.Forms.Administrador {
             this.dgTablaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgTablaUsuarios.Size = new System.Drawing.Size(730, 280);
             this.dgTablaUsuarios.TabIndex = 0;
-            this.dgTablaUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTablaUsuarios_CellDoubleClick);
+            this.dgTablaUsuarios.SelectionChanged += new System.EventHandler(this.dgTablaUsuarios_SelectionChanged);
             // 
             // lblSuspenderU
             // 
@@ -113,6 +113,7 @@ namespace Missushi.Forms.Administrador {
             this.txtCorreoSuspender.BackColor = System.Drawing.Color.Gainsboro;
             this.txtCorreoSuspender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCorreoSuspender.Location = new System.Drawing.Point(505, 470);
+            this.txtCorreoSuspender.Multiline = true;
             this.txtCorreoSuspender.Name = "txtCorreoSuspender";
             this.txtCorreoSuspender.Size = new System.Drawing.Size(155, 29);
             this.txtCorreoSuspender.TabIndex = 5;

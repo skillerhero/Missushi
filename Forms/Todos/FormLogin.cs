@@ -7,6 +7,7 @@ namespace Missushi.Forms{
         public FormLogin(){
             InitializeComponent();
             this.cargarPantallaIngresar();
+            pbLogin.Cursor = Cursors.Default;
         }
 
         private void entrar() {

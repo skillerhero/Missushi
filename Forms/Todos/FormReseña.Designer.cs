@@ -25,6 +25,7 @@ namespace Missushi.Forms.Cliente {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReseña));
             this.panelPadre = new System.Windows.Forms.Panel();
             this.panelReseñas = new System.Windows.Forms.Panel();
             this.btnEliminar = new Missushi.Forms.BotonPersonalizado();
@@ -55,6 +56,7 @@ namespace Missushi.Forms.Cliente {
             // 
             // panelReseñas
             // 
+            this.panelReseñas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelReseñas.Controls.Add(this.btnEliminar);
             this.panelReseñas.Controls.Add(this.lblBarraInferior2);
             this.panelReseñas.Controls.Add(this.lblBarraInferior);
@@ -148,7 +150,7 @@ namespace Missushi.Forms.Cliente {
             // btnHacerReseña
             // 
             this.btnHacerReseña.BackColor = System.Drawing.SystemColors.Window;
-            this.btnHacerReseña.BackgroundImage = global::Missushi.Properties.Resources.flechareseña;
+            this.btnHacerReseña.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHacerReseña.BackgroundImage")));
             this.btnHacerReseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnHacerReseña.FlatAppearance.BorderSize = 0;
             this.btnHacerReseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -181,6 +183,7 @@ namespace Missushi.Forms.Cliente {
             // FormReseña
             // 
             this.AcceptButton = this.btnHacerReseña;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.panelHacerReseña);

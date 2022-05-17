@@ -8,12 +8,18 @@ namespace Missushi.Forms.Gerente {
             InitializeComponent();
             cargarBarraUsuario();
             cargarDataGridEliminar();
+            lblTitulo.Visible = true;
+            lblTitulo.desactivarLabel();
+            lblTitulo.Text = "Modificar Menú";
+            lblBarraTitulo.Visible = true;
+            lblBarraTitulo.Width = lblTitulo.Width;
+            lblTitulo.Location = centrarComponente(lblTitulo);
+            lblBarraTitulo.Location = centrarComponente(lblBarraTitulo);
         }
 
         private void cargarDataGridEliminar() {
             try{
                 MySqlDataAdapter dataAdapter;
-
                 dataAdapter = ConexionBD.consultarTablaAdapter("menu");
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
                 DataSet ds = new DataSet();
@@ -26,6 +32,9 @@ namespace Missushi.Forms.Gerente {
                 dgTablaEliminar.Columns["precio"].HeaderText = "Precio";
                 dgTablaEliminar.Columns["foto"].HeaderText = "Foto";
                 dgTablaEliminar.Columns["tipo"].HeaderText = "Tipo";
+                foreach (DataGridViewColumn col in dgTablaEliminar.Columns) {
+                    col.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
             }
             catch (Exception ex){
                 MessageBox.Show("No se pudo conectar con la base de datos.\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -53,20 +62,30 @@ namespace Missushi.Forms.Gerente {
         }
 
 
-        private void dgTablaEliminar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            int selectedrowindex = dgTablaEliminar.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dgTablaEliminar.Rows[selectedrowindex];
-            var idPlatillo = selectedRow.Cells["idPlatillo"].Value;
-            var nombre = selectedRow.Cells["nombre"].Value;
-            var descripcion = selectedRow.Cells["descripcion"].Value;
-            var precio = selectedRow.Cells["precio"].Value;
-            var foto = selectedRow.Cells["foto"].Value;
-
-            txtIdPlatillo.Text = idPlatillo.ToString();
+        private void txtIdPlatillo_TextChanged(object sender, EventArgs e) {
+            if (Validacion.IsNumeric(txtIdPlatillo.Text)) {
+                btnEliminarPlatillo.Enabled = true;
+                pbEliminarPlatillo.Enabled = true;
+                pbEliminarPlatillo.Cursor = Cursors.Hand;
+            } else {
+                btnEliminarPlatillo.Enabled = false;
+                pbEliminarPlatillo.Enabled = false;
+                pbEliminarPlatillo.Cursor = Cursors.Default;
+            }
         }
 
+        private void dgTablaEliminar_SelectionChanged(object sender, EventArgs e) {
+            if (dgTablaEliminar.SelectedCells.Count > 0) {
+                int selectedrowindex = dgTablaEliminar.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgTablaEliminar.Rows[selectedrowindex];
+                var idPlatillo = selectedRow.Cells["idPlatillo"].Value;
+                var nombre = selectedRow.Cells["nombre"].Value;
+                var descripcion = selectedRow.Cells["descripcion"].Value;
+                var precio = selectedRow.Cells["precio"].Value;
+                var foto = selectedRow.Cells["foto"].Value;
 
-
-       
+                txtIdPlatillo.Text = idPlatillo.ToString();
+            } 
+        }
     }
 }

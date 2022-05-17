@@ -38,6 +38,7 @@ namespace Missushi.Forms {
         protected void cargarPantallaIngresar() {
             noCargarPantallaPrincipal();
             lblIngresar.colorLetra = Globales.verdeFuerteLetra;
+            lblIngresar.Enabled = false;
             lblTitulo.colorLetra = Globales.verdeFuerteLetra;
             lblTitulo.Visible = true;
             lblTitulo.desactivarLabel();
@@ -415,6 +416,7 @@ namespace Missushi.Forms {
                 formMainGerente.Show();
             } else {
                 Globales.instancia.Show();
+                Globales.constructor();
             }
         }
 

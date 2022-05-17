@@ -62,13 +62,13 @@ namespace Missushi.Forms.Administrador {
             }
 
         }
-
-        private void dgTablaUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            int selectedrowindex = dgTablaUsuarios.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dgTablaUsuarios.Rows[selectedrowindex];
-            var correo = selectedRow.Cells["correo"].Value;
-            txtCorreoSuspender.Text = correo.ToString();
+        private void dgTablaUsuarios_SelectionChanged(object sender, EventArgs e) {
+            if (dgTablaUsuarios.SelectedCells.Count > 0) {
+                int selectedrowindex = dgTablaUsuarios.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgTablaUsuarios.Rows[selectedrowindex];
+                var correo = selectedRow.Cells["correo"].Value;
+                txtCorreoSuspender.Text = correo.ToString();
+            }
         }
-
     }
 }

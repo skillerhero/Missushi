@@ -39,10 +39,10 @@ namespace Missushi.Forms
             this.txtCorreo = new Missushi.Forms.TextBoxPersonalizado();
             this.txtContraseña = new Missushi.Forms.TextBoxPersonalizado();
             this.btnIngresar = new Missushi.Forms.BotonPersonalizado();
-            this.pictureBoxPersonalizado1 = new Missushi.Forms.PictureBoxPersonalizado();
+            this.pbLogin = new Missushi.Forms.PictureBoxPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPersonalizado1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCorreo
@@ -107,6 +107,7 @@ namespace Missushi.Forms
             this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtCorreo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCorreo.Location = new System.Drawing.Point(477, 319);
+            this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(175, 29);
             this.txtCorreo.TabIndex = 1;
@@ -116,6 +117,7 @@ namespace Missushi.Forms
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(216)))), ((int)(((byte)(196)))));
             this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtContraseña.Location = new System.Drawing.Point(476, 382);
+            this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(175, 29);
@@ -137,16 +139,16 @@ namespace Missushi.Forms
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             this.btnIngresar.Paint += new System.Windows.Forms.PaintEventHandler(this.cortarEsquinas);
             // 
-            // pictureBoxPersonalizado1
+            // pbLogin
             // 
-            this.pictureBoxPersonalizado1.BackColor = System.Drawing.Color.White;
-            this.pictureBoxPersonalizado1.Image = global::Missushi.Properties.Resources.login;
-            this.pictureBoxPersonalizado1.Location = new System.Drawing.Point(402, 141);
-            this.pictureBoxPersonalizado1.Name = "pictureBoxPersonalizado1";
-            this.pictureBoxPersonalizado1.Size = new System.Drawing.Size(220, 165);
-            this.pictureBoxPersonalizado1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPersonalizado1.TabIndex = 0;
-            this.pictureBoxPersonalizado1.TabStop = false;
+            this.pbLogin.BackColor = System.Drawing.Color.White;
+            this.pbLogin.Image = global::Missushi.Properties.Resources.login;
+            this.pbLogin.Location = new System.Drawing.Point(427, 141);
+            this.pbLogin.Name = "pbLogin";
+            this.pbLogin.Size = new System.Drawing.Size(170, 165);
+            this.pbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogin.TabIndex = 0;
+            this.pbLogin.TabStop = false;
             // 
             // FormLogin
             // 
@@ -159,7 +161,7 @@ namespace Missushi.Forms
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.pictureBoxPersonalizado1);
+            this.Controls.Add(this.pbLogin);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -169,7 +171,7 @@ namespace Missushi.Forms
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
-            this.Controls.SetChildIndex(this.pictureBoxPersonalizado1, 0);
+            this.Controls.SetChildIndex(this.pbLogin, 0);
             this.Controls.SetChildIndex(this.lblCorreo, 0);
             this.Controls.SetChildIndex(this.lblContraseña, 0);
             this.Controls.SetChildIndex(this.txtCorreo, 0);
@@ -178,7 +180,7 @@ namespace Missushi.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPersonalizado1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +196,6 @@ namespace Missushi.Forms
         private TextBoxPersonalizado txtCorreo;
         private TextBoxPersonalizado txtContraseña;
         private BotonPersonalizado btnIngresar;
-        private PictureBoxPersonalizado pictureBoxPersonalizado1;
+        private PictureBoxPersonalizado pbLogin;
     }
 }
