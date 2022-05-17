@@ -7,13 +7,13 @@ namespace Missushi{
         public FormMain(){
             InitializeComponent();
             cargarPantallaPrincipal();
+            cargarInfoRestaurante();
             if (Globales.usuarioActual.usuarioLogeado()) {
                 HandleCreated -= new EventHandler(mostrarPantallaDeCarga);
                 cargarBarraUsuario();
                 return;
             }
             Globales.instancia = this;
-            cargarInfoRestaurante();
         }
 
         private void cargarInfoRestaurante() {
@@ -35,6 +35,16 @@ namespace Missushi{
             if(formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
                 this.BringToFront();
                 this.Activate();
+            }
+        }
+
+        private void FormMain_VisibleChanged(object sender, EventArgs e) {
+            cargarPantallaPrincipal();
+            cargarInfoRestaurante();
+            if (Globales.usuarioActual.usuarioLogeado()) {
+                HandleCreated -= new EventHandler(mostrarPantallaDeCarga);
+                cargarBarraUsuario();
+                return;
             }
         }
     }

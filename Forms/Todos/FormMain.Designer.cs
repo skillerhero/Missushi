@@ -30,6 +30,7 @@ namespace Missushi
         private void InitializeComponent()
         {
             this.lblInfoRestaurante = new Missushi.Forms.LabelPersonalizado();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInfoRestaurante
@@ -48,12 +49,18 @@ namespace Missushi
             // 
             // FormMain
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.lblInfoRestaurante);
             this.Name = "FormMain";
             this.Text = "Missushi - Home";
+            this.VisibleChanged += new System.EventHandler(this.FormMain_VisibleChanged);
             this.HandleCreated += new System.EventHandler(this.mostrarPantallaDeCarga);
+            this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
+            this.Controls.SetChildIndex(this.lblTitulo, 0);
+            this.Controls.SetChildIndex(this.lblBarraTitulo, 0);
             this.Controls.SetChildIndex(this.lblInfoRestaurante, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLetrasLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,5 +1,7 @@
 ﻿using Missushi.Clases;
 using Missushi.Funciones;
+using System.Runtime.InteropServices;
+
 namespace Missushi.Forms.Gerente {
     public partial class FormModificarInfoRestaurante : Form {
         public FormModificarInfoRestaurante() {
@@ -15,6 +17,8 @@ namespace Missushi.Forms.Gerente {
             txtDireccionMaps.Text = restaurante.DireccionMaps;
             txtTelefono.Text = restaurante.Telefono;
             txtFotoPrincipal.Text = restaurante.FotoPrincipal;
+            txtFotoMapaZonas.Text = restaurante.FotoMapaZonas;
+            txtFotoMaps.Text = restaurante.FotoMaps;
             if (ConexionBD.existeGerente()) {
                 txtIdGerente.Text = gerente.IdUsuario.ToString();
                 txtNombreGerente.Text = gerente.Nombres + " " + gerente.Apellidos;
@@ -41,10 +45,33 @@ namespace Missushi.Forms.Gerente {
                     ConexionBD.insertarRestaurante(nombre, descripcion, direccion, direccionMaps, fotoMaps, fotoMapaZonas, telefono, fotoPrincipal, idGerente);
                 }
                 MessageBox.Show("Modificado con éxito.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Globales.restaurante = ConexionBD.consultarRestaurante();
                 this.DialogResult = DialogResult.OK;
             } catch (Exception ex) {
                 ConexionBD.manejarErrores(ex);
                 this.DialogResult = DialogResult.No;
+            }
+        }
+        //----------------------Código para redondear el botón-----------------------
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+           int nLeftRect,     // x-coordinate of upper-left corner
+           int nTopRect,      // y-coordinate of upper-left corner
+           int nRightRect,    // x-coordinate of lower-right corner
+           int nBottomRect,   // y-coordinate of lower-right corner
+           int nWidthEllipse, // height of ellipse
+           int nHeightEllipse // width of ellipse
+        );
+
+        [DllImport("gdi32.dll", EntryPoint = "DeleteObject")]
+        private static extern bool DeleteObject(IntPtr hObject);
+
+        protected void cortarEsquinas(object sender, PaintEventArgs e) {
+            if (sender.GetType().Name == "BotonPersonalizado") {
+                IntPtr ptr = CreateRoundRectRgn(2, 3, ((BotonPersonalizado)sender).Width, ((BotonPersonalizado)sender).Height, 15, 15);
+                ((BotonPersonalizado)sender).Region = Region.FromHrgn(ptr);
+                DeleteObject(ptr);
+
             }
         }
     }
