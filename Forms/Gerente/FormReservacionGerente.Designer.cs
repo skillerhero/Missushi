@@ -113,13 +113,14 @@
             // 
             // FormReservacionGerente
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.btnRecargar);
             this.Controls.Add(this.dpDia);
             this.Controls.Add(this.dgReservaciones);
             this.Name = "FormReservacionGerente";
-            this.Text = "FormReservacionGerente";
+            this.Text = "Missushi - Modificar reservación";
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);

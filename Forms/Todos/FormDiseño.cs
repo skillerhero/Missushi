@@ -349,7 +349,7 @@ namespace Missushi.Forms {
         }
 
         protected void eliminarPlatillo_Click(object sender, EventArgs e) {
-            FormEliminarPlatillo formEliminarPlatillo = new FormEliminarPlatillo();
+            FormModificarMenu formEliminarPlatillo = new FormModificarMenu();
             formEliminarPlatillo.Show();
             Globales.transition();
             Close();
@@ -389,8 +389,7 @@ namespace Missushi.Forms {
                     inicializarMenuDesplegable(new List<(string, EventHandler)> {
                         ("",nada_Click),
                         ("Modificar platillos",modificarPlatillo_Click),
-                        ("Eliminar Platillos",eliminarPlatillo_Click),
-                        ("Agregar Platillos",agregarPlatillo_Click),
+                        ("Modificar Menú",eliminarPlatillo_Click),
                         ("Modificar info del restaurante",modificarInfoRestaurante_Click),
                         ("Modificar zona",modificarZona_Click),
                         ("Agregar zona",agregarZona_Click),

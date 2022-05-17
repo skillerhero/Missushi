@@ -49,7 +49,7 @@
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Location = new System.Drawing.Point(158, 531);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(87, 20);
+            this.lblDescripcion.Size = new System.Drawing.Size(69, 15);
             this.lblDescripcion.TabIndex = 1;
             this.lblDescripcion.Text = "Descripcion";
             // 
@@ -58,7 +58,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(275, 526);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(110, 27);
+            this.txtDescripcion.Size = new System.Drawing.Size(110, 23);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtPrecio
@@ -66,7 +66,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(593, 424);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(110, 27);
+            this.txtPrecio.Size = new System.Drawing.Size(110, 23);
             this.txtPrecio.TabIndex = 4;
             // 
             // lblPrecio
@@ -74,7 +74,7 @@
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Location = new System.Drawing.Point(477, 429);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(50, 20);
+            this.lblPrecio.Size = new System.Drawing.Size(40, 15);
             this.lblPrecio.TabIndex = 3;
             this.lblPrecio.Text = "Precio";
             // 
@@ -83,7 +83,7 @@
             this.txtFoto.Location = new System.Drawing.Point(593, 466);
             this.txtFoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFoto.Name = "txtFoto";
-            this.txtFoto.Size = new System.Drawing.Size(110, 27);
+            this.txtFoto.Size = new System.Drawing.Size(110, 23);
             this.txtFoto.TabIndex = 6;
             // 
             // lblFoto
@@ -91,7 +91,7 @@
             this.lblFoto.AutoSize = true;
             this.lblFoto.Location = new System.Drawing.Point(477, 472);
             this.lblFoto.Name = "lblFoto";
-            this.lblFoto.Size = new System.Drawing.Size(39, 20);
+            this.lblFoto.Size = new System.Drawing.Size(31, 15);
             this.lblFoto.TabIndex = 5;
             this.lblFoto.Text = "Foto";
             // 
@@ -100,7 +100,7 @@
             this.txtNombre.Location = new System.Drawing.Point(276, 473);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(110, 27);
+            this.txtNombre.Size = new System.Drawing.Size(110, 23);
             this.txtNombre.TabIndex = 8;
             // 
             // lblNombre
@@ -108,7 +108,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(159, 478);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(64, 20);
+            this.lblNombre.Size = new System.Drawing.Size(51, 15);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Nombre";
             // 
@@ -117,7 +117,7 @@
             this.lblTipo.AutoSize = true;
             this.lblTipo.Location = new System.Drawing.Point(178, 436);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(39, 20);
+            this.lblTipo.Size = new System.Drawing.Size(30, 15);
             this.lblTipo.TabIndex = 9;
             this.lblTipo.Text = "Tipo";
             // 
@@ -128,12 +128,11 @@
             this.cbTipo.Location = new System.Drawing.Point(276, 424);
             this.cbTipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(110, 28);
+            this.cbTipo.Size = new System.Drawing.Size(110, 23);
             this.cbTipo.TabIndex = 10;
             // 
             // dgPlatillosModi
             // 
-
             this.dgPlatillosModi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgPlatillosModi.BackgroundColor = System.Drawing.Color.White;
             this.dgPlatillosModi.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -199,6 +198,7 @@
             // 
             // FormModificarPlatillo
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.dgPlatillosModi);
@@ -215,7 +215,7 @@
             this.Controls.Add(this.lblDescripcion);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormModificarPlatillo";
-            this.Text = "FormModificarPlatillo";
+            this.Text = "Missushi - Modificar platillo";
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
             this.Controls.SetChildIndex(this.lblBarraTitulo, 0);

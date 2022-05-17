@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormValoracion));
             this.lblBarraTitulo = new System.Windows.Forms.Label();
             this.lblTitulo = new Missushi.Forms.LabelPersonalizado();
             this.pbEstrella1 = new System.Windows.Forms.PictureBox();
@@ -130,6 +131,7 @@
             // 
             // FormValoracion
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(496, 261);
@@ -141,9 +143,10 @@
             this.Controls.Add(this.pbEstrella1);
             this.Controls.Add(this.lblBarraTitulo);
             this.Controls.Add(this.lblTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormValoracion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormValoracion";
+            this.Text = "Missushi - Valoración";
             ((System.ComponentModel.ISupportInitialize)(this.pbEstrella1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEstrella2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEstrella3)).EndInit();

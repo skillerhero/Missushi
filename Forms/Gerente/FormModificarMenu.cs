@@ -3,8 +3,8 @@ using Missushi.Funciones;
 using MySqlConnector;
 
 namespace Missushi.Forms.Gerente {
-    public partial class FormEliminarPlatillo : FormDiseño {
-        public FormEliminarPlatillo() {
+    public partial class FormModificarMenu : FormDiseño {
+        public FormModificarMenu() {
             InitializeComponent();
             cargarBarraUsuario();
             cargarDataGridEliminar();

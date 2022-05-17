@@ -189,7 +189,7 @@ namespace Missushi.Forms.Cliente {
             this.Controls.Add(this.panelHacerReseña);
             this.Controls.Add(this.panelPadre);
             this.Name = "FormReseña";
-            this.Text = "FormReseña";
+            this.Text = "Missushi - Reseñas";
             this.Controls.SetChildIndex(this.panelPadre, 0);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);
             this.Controls.SetChildIndex(this.lblTitulo, 0);
