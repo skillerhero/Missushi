@@ -64,9 +64,11 @@
             this.cbHora.Size = new System.Drawing.Size(143, 28);
             this.cbHora.TabIndex = 3;
             this.cbHora.ValueMember = "Value";
+            this.cbHora.SelectedIndexChanged += new System.EventHandler(this.cbHora_SelectedIndexChanged);
             // 
             // FormDisponibilidad
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 600);
             this.Controls.Add(this.cbHora);

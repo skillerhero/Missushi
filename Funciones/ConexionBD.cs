@@ -429,7 +429,7 @@ namespace Missushi.Funciones{
                 }
                 connection.Close();
                 connection.Open();
-                sql = "SELECT COALESCE(SUM(cantidadPersonas),0) as ocupado from reservacion where idZona = @0 and fechaHoraInicio = @1;";
+                sql = "SELECT COALESCE(SUM(cantidadPersonas),0) as ocupado from reservacion where idZona = @0 and fechaHoraInicio = @1 and estado = 'En espera';";
                 cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.AddWithValue("@0", idZona);
                 cmd.Parameters.AddWithValue("@1", fechaInicio);

@@ -208,6 +208,7 @@ namespace Missushi.Forms.Todos {
 
         private void dtFecha_ValueChanged(object sender, EventArgs e) {
             comprobarHoraHoy();
+            cargarZonas();
         }
 
         protected override void OnScroll(ScrollEventArgs se) {
