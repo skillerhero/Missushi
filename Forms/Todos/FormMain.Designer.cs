@@ -54,6 +54,7 @@ namespace Missushi
             this.Controls.Add(this.lblInfoRestaurante);
             this.Name = "FormMain";
             this.Text = "Missushi - Home";
+            this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.VisibleChanged += new System.EventHandler(this.FormMain_VisibleChanged);
             this.HandleCreated += new System.EventHandler(this.mostrarPantallaDeCarga);
             this.Controls.SetChildIndex(this.pbLetrasLogo, 0);

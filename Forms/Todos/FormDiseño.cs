@@ -224,7 +224,7 @@ namespace Missushi.Forms {
         private void lblIngresar_Click(object sender, EventArgs e) {
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
-            if (this is not FormMain) {
+            if (this is not FormMain || Globales.usuarioActual.usuarioLogeado()) {
                 Globales.transition();
                 Close();
             } else {
@@ -234,7 +234,7 @@ namespace Missushi.Forms {
         private void lblRegistro_Click(object sender, EventArgs e) {
             FormRegistro formRegistro = new FormRegistro();
             formRegistro.Show();
-            if (this is not FormMain) {
+            if (this is not FormMain || Globales.usuarioActual.usuarioLogeado()) {
                 Globales.transition();
                 Close();
             } else {
@@ -245,9 +245,8 @@ namespace Missushi.Forms {
         private void Menu_Click(object sender, EventArgs e) {
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
-            if (this is not FormMain) {
+            if (this is not FormMain || Globales.usuarioActual.usuarioLogeado()) {
                 Globales.transition();
-                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -256,9 +255,8 @@ namespace Missushi.Forms {
         private void Ubicacion_Click(object sender, EventArgs e) {
             FormUbicacion formUbicacion = new FormUbicacion();
             formUbicacion.Show();
-            if (this is not FormMain) {
+            if (this is not FormMain || Globales.usuarioActual.usuarioLogeado()) {
                 Globales.transition();
-                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -268,9 +266,8 @@ namespace Missushi.Forms {
         private void Disponibilidad_Click(object sender, EventArgs e) {
             FormDisponibilidad formDisponibilidad = new FormDisponibilidad();
             formDisponibilidad.Show();
-            if (this is not FormMain) {
+            if (this is not FormMain || Globales.usuarioActual.usuarioLogeado()) {
                 Globales.transition();
-                DialogResult = DialogResult.Cancel;
                 Close();
             } else {
                 Hide();
@@ -294,7 +291,7 @@ namespace Missushi.Forms {
         }
         private void pbSalir_Click(object sender, EventArgs e) {
             Globales.usuarioActual = new Usuario();
-            if (this is not FormMain) {
+            if (this is not FormMain || Globales.usuarioActual.usuarioLogeado()) {
                 Globales.instancia.Show();
                 Close();
             } else {
@@ -393,15 +390,9 @@ namespace Missushi.Forms {
         private void FormDiseño_FormClosing(object sender, FormClosingEventArgs e) {
             if (Globales.transicion) {
                 Globales.transicion = false;
-            } else if (Globales.usuarioActual.Tipo == 'C' && this is not FormMain) {
-                FormMain formMainCliente = new FormMain();
-                formMainCliente.Show();
-            } else if (Globales.usuarioActual.Tipo == 'A' && this is not FormMain) {
-                FormMain formMainAdministrador = new FormMain();
-                formMainAdministrador.Show();
-            } else if (Globales.usuarioActual.Tipo == 'G' && this is not FormMain) {
-                FormMain formMainGerente = new FormMain();
-                formMainGerente.Show();
+            } else if ((Globales.usuarioActual.usuarioLogeado()) && this is not FormMain) {
+                FormMain formMain = new FormMain();
+                formMain.Show();
             } else{
                 Globales.instancia.Show();
                 Globales.constructor();
@@ -480,7 +471,7 @@ namespace Missushi.Forms {
         private void Reseñas_Click(object sender, EventArgs e) {
             FormReseña formReseña = new FormReseña();
             formReseña.Show();
-            if (this is not FormMain) {
+            if (this is not FormMain || Globales.usuarioActual.usuarioLogeado()) {
                 Globales.transition();
                 Close();
             } else {

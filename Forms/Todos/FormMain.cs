@@ -1,10 +1,11 @@
 using Missushi.Funciones;
 using Missushi.Clases;
 using Missushi.Forms.Todos;
+using Missushi.Forms.Cliente;
 
-namespace Missushi{
-    public partial class FormMain{
-        public FormMain(){
+namespace Missushi {
+    public partial class FormMain {
+        public FormMain() {
             InitializeComponent();
             cargarPantallaPrincipal();
             cargarInfoRestaurante();
@@ -19,7 +20,7 @@ namespace Missushi{
         private void cargarInfoRestaurante() {
             Restaurante restaurante = Globales.restaurante;
             Usuario gerente = Globales.gerente;
-            if (!ConexionBD.existeInfoRestaurante()){
+            if (!ConexionBD.existeInfoRestaurante()) {
                 restaurante.Telefono = "No registrado.";
             }
             if (!ConexionBD.existeGerente()) {
@@ -32,19 +33,33 @@ namespace Missushi{
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
             FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();
             formPantallaDeCarga.setDuracionTimer(2);
-            if(formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
+            if (formPantallaDeCarga.ShowDialog() == DialogResult.OK) {
                 this.BringToFront();
                 this.Activate();
             }
         }
 
         private void FormMain_VisibleChanged(object sender, EventArgs e) {
-            cargarPantallaPrincipal();
-            cargarInfoRestaurante();
+            if(this == Globales.instancia) {
+                cargarInfoRestaurante();
+            }
+        }
+
+        private void FormMain_Shown(object sender, EventArgs e) {
             if (Globales.usuarioActual.usuarioLogeado()) {
                 HandleCreated -= new EventHandler(mostrarPantallaDeCarga);
                 cargarBarraUsuario();
-                return;
+                if (Visible == true && ConexionBD.existeReservacionAsistida(Globales.usuarioActual.IdUsuario) && ConexionBD.existeReseña(Globales.usuarioActual.IdUsuario) == -1) {
+                    DialogResult dialogResult = MessageBox.Show("¿Le gustaria dejar una reseña?", "¡Nos interesa saber tu opinión!", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes) {
+                        FormReseña formReseña = new FormReseña();
+                        Globales.transition();
+                        formReseña.Show();
+                        Close();
+                    } else if (dialogResult == DialogResult.No) {
+
+                    }
+                }
             }
         }
     }

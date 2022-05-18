@@ -96,6 +96,7 @@ namespace Missushi.Funciones{
         }
 
 
+
         static public bool consultarPrimerUsuario(char tipo) {
             bool existe = false;
             string sql = "SELECT * FROM usuario where tipo = @0;";
@@ -504,6 +505,41 @@ namespace Missushi.Funciones{
             return true;
         }
 
+        static public int existeReseña(int idUsuario) {
+            string sql = "SELECT idResenia FROM resenia WHERE idUsuario = @0;";
+            int idReseña = -1;
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", idUsuario);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read()) {
+                    idReseña = reader.GetInt32(0);
+                }
+                connection.Close();
+            }
+            return idReseña;
+        }
+
+        static public bool actualizarReseña(int idUsuario, int cantidadEstrellas, string comentario, DateTime fecha, int idReseña) {
+            string sql = "UPDATE resenia SET idUsuario = @0,cantidadEstrellas = @1,comentario = @2,fecha = @3 where idResenia = @4;";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.Add("@0", MySqlDbType.Int32).Value = idUsuario;
+                cmd.Parameters.Add("@1", MySqlDbType.Int32).Value = cantidadEstrellas;
+                cmd.Parameters.Add("@2", MySqlDbType.String).Value = comentario;
+                cmd.Parameters.Add("@3", MySqlDbType.DateTime).Value = fecha.Date;
+                cmd.Parameters.Add("@4", MySqlDbType.Int32).Value = idReseña;
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                return true;
+            } else
+                return false;
+        }
+
+
         /*--------------------------------------Reservacion--------------------------------------*/
         static public bool agregarReservacion(DateTime fechaHoraInicio, DateTime fechaHoraFin, int cantidadPersonas, int idUsuario, int idZona, string estado) {
             string sql = "INSERT INTO reservacion(fechaHoraInicio, fechaHoraFin, cantidadPersonas, idUsuario, idZona, estado) VALUES(@0, @1, @2, @3, @4, @5);";
@@ -619,6 +655,22 @@ namespace Missushi.Funciones{
                 connection.Close();
             }
             return adapter;
+        }
+
+        static public bool existeReservacionAsistida(int idUsuario) {
+            bool existe = false;
+            string sql = "SELECT * FROM reservacion WHERE idUsuario = @0 and estado = 'Asistio';";
+            if (connection != null) {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(sql, connection);
+                cmd.Parameters.AddWithValue("@0", idUsuario);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read()) {
+                    existe = true;
+                }
+                connection.Close();
+            }
+            return existe;
         }
 
 

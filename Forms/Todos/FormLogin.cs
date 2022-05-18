@@ -10,15 +10,9 @@ namespace Missushi.Forms{
         }
 
         private void entrar() {
-            if (Globales.usuarioActual.Tipo == 'C') {
-                FormMain formMainCliente = new FormMain();
-                formMainCliente.Show();
-            } else if (Globales.usuarioActual.Tipo == 'A') {
-                FormMain formMainAdministrador = new FormMain();
-                formMainAdministrador.Show();
-            } else if (Globales.usuarioActual.Tipo == 'G') {
-                FormMain formMainGerente = new FormMain();
-                formMainGerente.Show();
+            if (Globales.usuarioActual.Tipo == 'C' || Globales.usuarioActual.Tipo == 'A' || Globales.usuarioActual.Tipo == 'G') {
+                FormMain form = new FormMain();
+                form.Show();
             }
             Globales.transition();
             Close();

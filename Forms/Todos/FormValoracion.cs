@@ -74,9 +74,17 @@ namespace Missushi.Forms.Cliente {
 
         private void btnEnviar_Click(object sender, EventArgs e) {
             try {
-                ConexionBD.agregarResenia(Globales.usuarioActual.IdUsuario, Globales.reseñaSeleccionada.CantidadEstrellas, Globales.reseñaSeleccionada.Comentario, DateTime.Now);
-                MessageBox.Show("Reseña hecha con éxito.");
-                DialogResult = DialogResult.OK;
+                int idReseña = ConexionBD.existeReseña(Globales.usuarioActual.IdUsuario);
+                if (idReseña == -1) {
+                    ConexionBD.agregarResenia(Globales.usuarioActual.IdUsuario, Globales.reseñaSeleccionada.CantidadEstrellas, Globales.reseñaSeleccionada.Comentario, DateTime.Now);
+                    MessageBox.Show("Reseña hecha con éxito.");
+                    DialogResult = DialogResult.OK;
+                } else {
+                    ConexionBD.actualizarReseña(Globales.usuarioActual.IdUsuario, Globales.reseñaSeleccionada.CantidadEstrellas, Globales.reseñaSeleccionada.Comentario, DateTime.Now, idReseña);
+                    MessageBox.Show("Reseña actualizada con éxito.");
+                    DialogResult = DialogResult.OK;
+                }
+              
             } catch (Exception ex) {
                 ConexionBD.manejarErrores(ex);
             }

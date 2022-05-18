@@ -121,15 +121,21 @@ namespace Missushi.Forms.Todos {
                     fechaInicio = fechaInicio.AddHours(8);
                     break;
                 case 1:
-                    fechaInicio = fechaInicio.AddHours(11);
+                    fechaInicio = fechaInicio.AddHours(10);
                     break;
                 case 2:
-                    fechaInicio = fechaInicio.AddHours(14);
+                    fechaInicio = fechaInicio.AddHours(12);
                     break;
                 case 3:
-                    fechaInicio = fechaInicio.AddHours(17);
+                    fechaInicio = fechaInicio.AddHours(14);
                     break;
                 case 4:
+                    fechaInicio = fechaInicio.AddHours(16);
+                    break;
+                case 5:
+                    fechaInicio = fechaInicio.AddHours(18);
+                    break;
+                case 6:
                     fechaInicio = fechaInicio.AddHours(20);
                     break;
             }
