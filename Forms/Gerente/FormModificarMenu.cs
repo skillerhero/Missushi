@@ -50,9 +50,8 @@ namespace Missushi.Forms.Gerente {
                 if (ConexionBD.eliminarPlatillo(idPlatillo)){
                     MessageBox.Show("Eliminado con éxito,", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cargarDataGridEliminar();
-                }
-                else{
-                    MessageBox.Show("Ocurrio un error");
+                }else{
+                    MessageBox.Show("No se pudo eliminar.");
                 }
             }
             catch (Exception ex){

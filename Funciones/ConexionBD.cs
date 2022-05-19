@@ -764,10 +764,13 @@ namespace Missushi.Funciones{
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = idPlatillo;
                 cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0) {
+                    return true;
+                }
                 connection.Close();
             }
-            return true;
+            return false;
         }
     }
 }
