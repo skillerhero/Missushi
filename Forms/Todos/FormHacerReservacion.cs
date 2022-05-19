@@ -73,15 +73,16 @@ namespace Missushi.Forms.Cliente {
             if (formElegirZona.ShowDialog() == DialogResult.OK) {
                 this.btnElegirZona.Text = "Zona " + Globales.zonaSeleccionada.IdZona;
                 this.nudCantidadPersonas.Focus();
-                comprobarCupo();
+                comprobaciones();
             }
         }
 
         private bool comprobaciones() {
-            if (comprobarCupo() > 0 && comprobarId() && DateTime.Now < obtenerFechaInicio()) {
+            if (comprobarCupo() > 0 && comprobarId() && DateTime.Now < obtenerFechaInicio() && Globales.usuarioSeleccionado.IdUsuario != -1) {
                 btnHacerReservacion.Enabled = true;
                 return true;
             } else {
+                btnHacerReservacion.Enabled = false;
                 return false;
             }
         }
@@ -168,6 +169,7 @@ namespace Missushi.Forms.Cliente {
             if (dpFechaInicio.Value.Date != DateTime.Today) {
                 cbHoraInicio.DataSource = horarios;
                 cbHoraInicio.Enabled = true;
+                btnElegirZona.Enabled = true;
                 return;
             }
             TimeSpan horario1 = new TimeSpan(8, 0, 0);
@@ -181,6 +183,7 @@ namespace Missushi.Forms.Cliente {
             if (DateTime.Now.TimeOfDay > horario7) {
                 horarios = null;
                 cbHoraInicio.Enabled = false;
+                btnElegirZona.Enabled = false;
             } else if (DateTime.Now.TimeOfDay > horario6) {
                 horarios = new[] {
                     new { Text = "20:00-22:00", Value = 6}
@@ -219,9 +222,10 @@ namespace Missushi.Forms.Cliente {
                      new { Text = "16:00-18:00", Value = 4 },
                      new { Text = "18:00-20:00", Value = 5},
                      new { Text = "20:00-22:00", Value = 6}
-            };
+                };
             } else {
                 cbHoraInicio.Enabled = true;
+                btnElegirZona.Enabled = true;
             }
             cbHoraInicio.DataSource = horarios;
         }
@@ -284,13 +288,15 @@ namespace Missushi.Forms.Cliente {
             res.ContentId = Guid.NewGuid().ToString();
             res.ContentType.Name = "reservacion.jpg";
             string htmlBody =
-                "<h2>Aquí están los datos de tu reservación.<h2/>" +
-                "<h3><b>Nombre:</b> " + usuario.Nombres + " " + usuario.Apellidos + ".<h3>" +
-                "<h3><b>Personas:</b> " + reservacion.CantidadPersonas + ".<h3>" +
-                "<h3><b>Fecha y hora inicio:</b> " + reservacion.FechaHoraInicio + "<h3>" +
-                "<h3><b>Fecha y hora fin:</b> " + reservacion.FechaHoraFin + "<h3>" +
-                "<h3><b>Zona:</b> " + reservacion.IdZona + ".<h3><br>" +
-                @"<img src='cid:" + res.ContentId + @"'/>";
+            "<font face='Century Gothic' align='center'>"+
+            "<div align = 'center'>"+@"<img src = 'cid:" + res.ContentId + @"'/></div>"+
+            "<h2 style = 'color: #61784f'> Tu reservacion es... </h2>"+ 
+            "<p><b style = 'color: #8f443c'> Nombre:</b> "+ usuario.Nombres + " " + usuario.Apellidos+"</p>" +
+            "<p><b style = 'color: #8f443c'> Personas:</b> "+ reservacion.CantidadPersonas +" </p>" +
+            "<p><b style = 'color: #8f443c'> Fecha y hora de inicio:</b> "+ reservacion.FechaHoraInicio+ "</p>" +
+            "<p><b style = 'color: #8f443c'> Fecha y hora de fin:</b> "+ reservacion.FechaHoraFin+"</p>"+
+            "<p><b style = 'color: #8f443c'> Zona:</b> "+ reservacion.IdZona + " </p>" +
+            "</font>";
             AlternateView alternateView = AlternateView.CreateAlternateViewFromString(htmlBody, null, MediaTypeNames.Text.Html);
             alternateView.LinkedResources.Add(res);
             return alternateView;
