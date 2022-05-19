@@ -4,32 +4,41 @@ using System.Diagnostics;
 
 namespace Missushi.Forms.Todos {
     public partial class FormDisponibilidad : FormDiseño {
-        private List<Zona> zonas = ConexionBD.consultarZonas();
+        private List<Zona> zonas;
         private List<PictureBox> pictureBoxList = new List<PictureBox>();
         private List<Label> labelList = new List<Label>();
         private FormPantallaDeCarga formPantallaDeCarga;
         public FormDisponibilidad() {
-            this.SetStyle(ControlStyles.UserPaint, true);
-            InitializeComponent();
-            this.DoubleBuffered = true;
-            AutoScroll = false;
-            HorizontalScroll.Enabled = false;
-            HorizontalScroll.Visible = false;
-            HorizontalScroll.Maximum = 0;
-            AutoScroll = true;
-            cargarPantallaDisponibilidad();
-            cbHora.DisplayMember = "Text";
-            cbHora.ValueMember = "Value";
-            cbHora.BackColor = Globales.rosaTextBox;
-            dtFecha.MinDate = DateTime.Today;
-            dtFecha.MaxDate = DateTime.Today.AddDays(7);
-            dtFecha.Invalidate();
+            try {
+                zonas = ConexionBD.consultarZonas();
+                this.SetStyle(ControlStyles.UserPaint, true);
+                InitializeComponent();
+                this.DoubleBuffered = true;
+                AutoScroll = false;
+                HorizontalScroll.Enabled = false;
+                HorizontalScroll.Visible = false;
+                HorizontalScroll.Maximum = 0;
+                AutoScroll = true;
+                cargarPantallaDisponibilidad();
+                cbHora.DisplayMember = "Text";
+                cbHora.ValueMember = "Value";
+                cbHora.BackColor = Globales.rosaTextBox;
+                dtFecha.MinDate = DateTime.Today;
+                dtFecha.MaxDate = DateTime.Today.AddDays(7);
+                dtFecha.Invalidate();
+            }catch(Exception e) {
+                ConexionBD.manejarErrores(e);
+            }
         }
 
         private void FormDisponibilidad_Load(object sender, EventArgs e) {
-            pbMapaZonas.ImageLocation = Globales.restaurante.FotoMapaZonas;
-            comprobarHoraHoy();
-            cargarZonas();
+            try {
+                pbMapaZonas.ImageLocation = Globales.restaurante.FotoMapaZonas;
+                comprobarHoraHoy();
+                cargarZonas();
+            } catch(Exception ex) {
+                ConexionBD.manejarErrores(ex);
+            }
         }
 
         private void cbHora_SelectedIndexChanged(object sender, EventArgs e) {

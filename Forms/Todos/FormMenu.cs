@@ -10,7 +10,11 @@ namespace Missushi.Forms{
         }
 
         private void FormMenu_Load(object sender, EventArgs e) {
-            mostrarMenu();
+            try {
+                mostrarMenu();
+            } catch (Exception ex) {
+                ConexionBD.manejarErrores(ex);
+            }
         }
 
         private void mostrarMenu() {

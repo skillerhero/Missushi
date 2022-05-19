@@ -18,17 +18,21 @@ namespace Missushi {
         }
 
         private void cargarInfoRestaurante() {
-            Restaurante restaurante = Globales.restaurante;
-            Usuario gerente = Globales.gerente;
-            if (!ConexionBD.existeInfoRestaurante()) {
-                restaurante.Telefono = "No registrado.";
+            try {
+                Restaurante restaurante = Globales.restaurante;
+                Usuario gerente = Globales.gerente;
+                if (!ConexionBD.existeInfoRestaurante()) {
+                    restaurante.Telefono = "No registrado.";
+                }
+                if (!ConexionBD.existeGerente()) {
+                    gerente.Correo = "No registrado.";
+                }
+                lblInfoRestaurante.colorLetra = Color.Black;
+                lblInfoRestaurante.desactivarLabel();
+                lblInfoRestaurante.Text = "Correo: " + gerente.Correo + "    Teléfono: " + restaurante.Telefono;
+            } catch(Exception e) {
+                ConexionBD.manejarErrores(e);
             }
-            if (!ConexionBD.existeGerente()) {
-                gerente.Correo = "No registrado.";
-            }
-            lblInfoRestaurante.colorLetra = Color.Black;
-            lblInfoRestaurante.desactivarLabel();
-            lblInfoRestaurante.Text = "Correo: " + gerente.Correo + "    Teléfono: " + restaurante.Telefono;
         }
         private void mostrarPantallaDeCarga(Object sender, EventArgs e) {
             FormPantallaDeCarga formPantallaDeCarga = new FormPantallaDeCarga();

@@ -6,10 +6,14 @@ namespace Missushi.Forms.Cliente {
     public partial class FormReseña : FormDiseño {
         public FormReseña() {
             InitializeComponent();
-            cargarPantallaReseñas();
-            cargarReseñas();
-            if (!Globales.usuarioActual.usuarioLogeado()) {
-                panelHacerReseña.Visible = false;
+            try {
+                cargarPantallaReseñas();
+                cargarReseñas();
+                if (!Globales.usuarioActual.usuarioLogeado()) {
+                    panelHacerReseña.Visible = false;
+                }
+            } catch (Exception ex) {
+                ConexionBD.manejarErrores(ex);
             }
         }
 

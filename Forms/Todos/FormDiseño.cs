@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using Missushi.Forms.Administrador;
 using Missushi.Forms.Gerente;
+using Missushi.Funciones;
 
 namespace Missushi.Forms {
     public partial class FormDiseño : Form {
@@ -21,7 +22,12 @@ namespace Missushi.Forms {
         }
 
         protected void cargarPantallaPrincipal() {
-            pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
+            try {
+                pbImagenesRestaurante.ImageLocation = Globales.restaurante.FotoPrincipal;
+            }catch(Exception e) {
+                ConexionBD.manejarErrores(e);
+            }
+            
             lblRegistro.Visible = true;
             lblIngresar.Visible = true;
             btnReseñas.Visible = true;

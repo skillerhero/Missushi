@@ -1,4 +1,5 @@
 ﻿using Missushi.Clases;
+using Missushi.Funciones;
 using System.Diagnostics;
 
 namespace Missushi.Forms.Todos {
@@ -10,12 +11,16 @@ namespace Missushi.Forms.Todos {
         }
 
         private void cargarDatos() {
-            pbFotoMaps.ImageLocation = Globales.restaurante.FotoMaps;
-            lblDescripcion.Text = Globales.restaurante.Descripcion;
-            lblDireccion.Text = Globales.restaurante.Direccion;
-            pbFotoMaps.Location = centrarComponente(pbFotoMaps);
-            lblDescripcion.Location = centrarComponente(lblDescripcion);
-            lblDireccion.Location = centrarComponente(lblDireccion);
+            try {
+                pbFotoMaps.ImageLocation = Globales.restaurante.FotoMaps;
+                lblDescripcion.Text = Globales.restaurante.Descripcion;
+                lblDireccion.Text = Globales.restaurante.Direccion;
+                pbFotoMaps.Location = centrarComponente(pbFotoMaps);
+                lblDescripcion.Location = centrarComponente(lblDescripcion);
+                lblDireccion.Location = centrarComponente(lblDireccion);
+            } catch (Exception e) {
+                ConexionBD.manejarErrores(e);
+            }
         }
 
         private void pbFotoMaps_Click(object sender, EventArgs e) {

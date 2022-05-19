@@ -25,31 +25,39 @@ namespace Missushi.Clases {
         static public Font letraGabriola = new Font("Gabriola", 15.25F, FontStyle.Regular);
         static public Font letraCenturyGothic;
         public Globales() {
-            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
-            customCulture.NumberFormat.NumberDecimalSeparator = ".";
-            Thread.CurrentThread.CurrentCulture = customCulture;
-            usuarioActual = new Usuario();
-            usuarioSeleccionado = new Usuario();
-            platilloSeleccionado = new Menu();
-            zonaSeleccionada = new Zona();
-            reseñaSeleccionada = new Reseña();
-            restaurante = ConexionBD.consultarRestaurante();
-            gerente = ConexionBD.consultarGerente();
+            try {
+                System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
+                customCulture.NumberFormat.NumberDecimalSeparator = ".";
+                Thread.CurrentThread.CurrentCulture = customCulture;
+                usuarioActual = new Usuario();
+                usuarioSeleccionado = new Usuario();
+                platilloSeleccionado = new Menu();
+                zonaSeleccionada = new Zona();
+                reseñaSeleccionada = new Reseña();
+                restaurante = ConexionBD.consultarRestaurante();
+                gerente = ConexionBD.consultarGerente();
+            } catch(Exception e) {
+                ConexionBD.manejarErrores(e);
+            }
         }
         static public void constructor() {
-            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
-            customCulture.NumberFormat.NumberDecimalSeparator = ".";
-            Thread.CurrentThread.CurrentCulture = customCulture;
-            usuarioActual = new Usuario();
-            usuarioSeleccionado = new Usuario();
-            platilloSeleccionado = new Menu();
-            zonaSeleccionada = new Zona();
-            reseñaSeleccionada = new Reseña();
-            restaurante = ConexionBD.consultarRestaurante();
-            gerente = ConexionBD.consultarGerente();
+            try {
+                System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)Thread.CurrentThread.CurrentCulture.Clone();
+                customCulture.NumberFormat.NumberDecimalSeparator = ".";
+                Thread.CurrentThread.CurrentCulture = customCulture;
+                usuarioActual = new Usuario();
+                usuarioSeleccionado = new Usuario();
+                platilloSeleccionado = new Menu();
+                zonaSeleccionada = new Zona();
+                reseñaSeleccionada = new Reseña();
+                restaurante = ConexionBD.consultarRestaurante();
+                gerente = ConexionBD.consultarGerente();
 
-            letraGabriola = new Font("Gabriola", 15.25F, FontStyle.Regular);
-            letraCenturyGothic = new Font("Century Gothic", 8F, FontStyle.Regular);
+                letraGabriola = new Font("Gabriola", 15.25F, FontStyle.Regular);
+                letraCenturyGothic = new Font("Century Gothic", 8F, FontStyle.Regular);
+            } catch(Exception e) {
+                ConexionBD.manejarErrores(e);
+            }
         }
 
         public static void transition() {
