@@ -479,7 +479,7 @@ namespace Missushi.Funciones{
 
         static public List<Reseña> consultarReseñas() {
             List<Reseña> reseñas = new List<Reseña>();
-            string sql = "SELECT * FROM resenia;";
+            string sql = "SELECT * FROM resenia order by idResenia desc;";
             if (connection != null) {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
