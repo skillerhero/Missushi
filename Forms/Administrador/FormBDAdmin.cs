@@ -17,8 +17,7 @@ namespace Missushi.Forms.Administrador {
                   "zona",
                  "restaurante",
                  "menu",
-                 "resenia",
-                 "historial"
+                 "resenia"
             };
             cbTablas.DisplayMember = "Text";
             cbTablas.DataSource = tablas;
