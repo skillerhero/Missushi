@@ -77,9 +77,10 @@ namespace Missushi.Forms
             this.gerenteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 75);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(179, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(299, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // clienteToolStripMenuItem
             // 
