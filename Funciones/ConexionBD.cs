@@ -765,10 +765,10 @@ namespace Missushi.Funciones{
                 cmd.Parameters.Add("@0", MySqlDbType.VarChar, 50).Value = idPlatillo;
                 cmd.CommandType = CommandType.Text;
                 int rowsAffected = cmd.ExecuteNonQuery();
+                connection.Close();
                 if (rowsAffected > 0) {
                     return true;
                 }
-                connection.Close();
             }
             return false;
         }
